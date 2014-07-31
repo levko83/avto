@@ -1,0 +1,5 @@
+2014.02.13 12:46:54	1	Начало импорта БД `avto`
+2014.02.13 12:46:54	1	Файл: avto_shins_new_2014-02-13_14-32-39.sql.gz
+2014.02.13 12:46:54	1	Установлена кодировка соединения: `binary`
+2014.02.13 12:46:54	1	Импорт таблицы `avto_marks`
+2014.02.13 12:46:54	4	MySQL Error: Unknown column \'translit\' in \'field list\' (/var/www/ponzps26/data/www/new.extraload.com.ua/sxd/index.php:1587)

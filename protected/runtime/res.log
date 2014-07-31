@@ -1,0 +1,480 @@
+Array
+(
+    [price] => stdClass Object
+        (
+            [min_price] => 321
+            [max_price] => 4453
+            [one] => 1
+        )
+
+    [shins_profile_width] => Array
+        (
+            [] => - все -
+            [0] => 0
+            [125] => 125
+            [135] => 135
+            [145] => 145
+            [155] => 155
+            [165] => 165
+            [175] => 175
+            [185] => 185
+            [195] => 195
+            [205] => 205
+            [215] => 215
+            [225] => 225
+            [235] => 235
+            [245] => 245
+            [255] => 255
+            [265] => 265
+            [275] => 275
+            [285] => 285
+            [295] => 295
+            [305] => 305
+            [315] => 315
+            [325] => 325
+            [335] => 335
+            [345] => 345
+            [355] => 355
+            [375] => 375
+        )
+
+    [shins_load_index] => Array
+        (
+            [] => 
+            [100] => 100
+            [100-1000-kg-] => 100 (1000 кг)
+            [100-475-kg-] => 100 (475 кг)
+            [100-800-kg-] => 100 (800 кг)
+            [101] => 101
+            [101-475-kg-] => 101 (475 кг)
+            [101-615-kg-] => 101 (615 кг)
+            [101-825-kg-] => 101 (825 кг)
+            [102] => 102
+            [102-475-kg-] => 102 (475 кг)
+            [102-615-kg-] => 102 (615 кг)
+            [102-850-kg-] => 102 (850 кг)
+            [103] => 103
+            [103-875-kg-] => 103 (875 кг)
+            [104] => 104
+            [104-500-kg-] => 104 (500 кг)
+            [104-900-kg-] => 104 (900 кг)
+            [104-975-kg-] => 104 (975 кг)
+            [105] => 105
+            [105-925-kg-] => 105 (925 кг)
+            [106] => 106
+            [106-475-kg-] => 106 (475 кг)
+            [106-950-kg-] => 106 (950 кг)
+            [106-975-kg-] => 106 (975 кг)
+            [107] => 107
+            [107-475-kg-] => 107 (475 кг)
+            [107-500-kg-] => 107 (500 кг)
+            [107-900-kg-] => 107 (900 кг)
+            [107-975-kg-] => 107 (975 кг)
+            [108] => 108
+            [108-1000-kg-] => 108 (1000 кг)
+            [108-475-kg-] => 108 (475 кг)
+            [109] => 109
+            [109-1030-kg-] => 109 (1030 кг)
+            [109-975-kg-] => 109 (975 кг)
+            [110] => 110
+            [110-1060-kg-] => 110 (1060 кг)
+            [111-1090-kg-] => 111 (1090 кг)
+            [112] => 112
+            [112-1120-kg-] => 112 (1120 кг)
+            [112-975-kg-] => 112 (975 кг)
+            [113] => 113
+            [113-1150-kg-] => 113 (1150 кг)
+            [113-975-kg-] => 113 (975 кг)
+            [114-1180-kg-] => 114 (1180 кг)
+            [115] => 115
+            [115-1215-kg-] => 115 (1215 кг)
+            [116-1250-kg-] => 116 (1250 кг)
+            [117-1285-kg-] => 117 (1285 кг)
+            [118-1320-kg-] => 118 (1320 кг)
+            [119-1360-kg-] => 119 (1360 кг)
+            [120] => 120
+            [120-1250-kg-] => 120 (1250 кг)
+            [120-1400-kg-] => 120 (1400 кг)
+            [121-1450-kg-] => 121 (1450 кг)
+            [122-1500-kg-] => 122 (1500 кг)
+            [123-1550-kg-] => 123 (1550 кг)
+            [124-1600-kg-] => 124 (1600 кг)
+            [125-1650-kg-] => 125 (1650 кг)
+            [126-1700-kg-] => 126 (1700 кг)
+            [127-1750-kg-] => 127 (1750 кг)
+            [128-1800-kg-] => 128 (1800 кг)
+            [129-1850-kg-] => 129 (1850 кг)
+            [63-272-kg-] => 63 (272 кг)
+            [64-280-kg-] => 64 (280 кг)
+            [65-290-kg-] => 65 (290 кг)
+            [66-300-kg-] => 66 (300 кг)
+            [68-315-kg-] => 68 (315 кг)
+            [68-690-kg-] => 68 (690 кг)
+            [69-325-kg-] => 69 (325 кг)
+            [69-690-kg-] => 69 (690 кг)
+            [70-335-kg-] => 70 (335 кг)
+            [70-690-kg-] => 70 (690 кг)
+            [71-345-kg-] => 71 (345 кг)
+            [72-355-kg-] => 72 (355 кг)
+            [72-690-kg-] => 72 (690 кг)
+            [73-365-kg-] => 73 (365 кг)
+            [73-560-kg-] => 73 (560 кг)
+            [74-375-kg-] => 74 (375 кг)
+            [75-387-kg-] => 75 (387 кг)
+            [75-475-kg-] => 75 (475 кг)
+            [76-400-kg-] => 76 (400 кг)
+            [77-412-kg-] => 77 (412 кг)
+            [78-426-kg-] => 78 (426 кг)
+            [79] => 79
+            [79-437-kg-] => 79 (437 кг)
+            [80-450-kg-] => 80 (450 кг)
+            [81] => 81
+            [81-462-kg-] => 81 (462 кг)
+            [82] => 82
+            [82-437-kg-] => 82 (437 кг)
+            [82-475-kg-] => 82 (475 кг)
+            [82-560-kg-] => 82 (560 кг)
+            [82-615-kg-] => 82 (615 кг)
+            [82-690-kg-] => 82 (690 кг)
+            [82-710-kg-] => 82 (710 кг)
+            [83-478-kg-] => 83 (478 кг)
+            [84] => 84
+            [84-437-kg-] => 84 (437 кг)
+            [84-475-kg-] => 84 (475 кг)
+            [84-500-kg-] => 84 (500 кг)
+            [84-560-kg-] => 84 (560 кг)
+            [84-615-kg-] => 84 (615 кг)
+            [84-670-kg-] => 84 (670 кг)
+            [84-690-kg-] => 84 (690 кг)
+            [85] => 85
+            [85-475-kg-] => 85 (475 кг)
+            [85-515-kg-] => 85 (515 кг)
+            [85-690-kg-] => 85 (690 кг)
+            [86] => 86
+            [86-475-kg-] => 86 (475 кг)
+            [86-530-kg-] => 86 (530 кг)
+            [86-615-kg-] => 86 (615 кг)
+            [87] => 87
+            [87-475-kg-] => 87 (475 кг)
+            [87-545-kg-] => 87 (545 кг)
+            [87-670-kg-] => 87 (670 кг)
+            [88] => 88
+            [88-475-kg-] => 88 (475 кг)
+            [88-545-kg-] => 88 (545 кг)
+            [88-560-kg-] => 88 (560 кг)
+            [88-615-kg-] => 88 (615 кг)
+            [89] => 89
+            [89-437-kg-] => 89 (437 кг)
+            [89-580-kg-] => 89 (580 кг)
+            [89-615-kg-] => 89 (615 кг)
+            [89-975-kg-] => 89 (975 кг)
+            [90] => 90
+            [90-437-kg-] => 90 (437 кг)
+            [90-600-kg-] => 90 (600 кг)
+            [90-975-kg-] => 90 (975 кг)
+            [91] => 91
+            [91-475-kg-] => 91 (475 кг)
+            [91-500-kg-] => 91 (500 кг)
+            [91-615-kg-] => 91 (615 кг)
+            [91-670-kg-] => 91 (670 кг)
+            [92] => 92
+            [92-437-kg-] => 92 (437 кг)
+            [92-475-kg-] => 92 (475 кг)
+            [92-560-kg-] => 92 (560 кг)
+            [92-615-kg-] => 92 (615 кг)
+            [92-630-kg-] => 92 (630 кг)
+            [92-670-kg-] => 92 (670 кг)
+            [92-690-kg-] => 92 (690 кг)
+            [93] => 93
+            [93-475-kg-] => 93 (475 кг)
+            [93-615-kg-] => 93 (615 кг)
+            [93-650-kg-] => 93 (650 кг)
+            [93-800-kg-] => 93 (800 кг)
+            [94] => 94
+            [94-437-kg-] => 94 (437 кг)
+            [94-475-kg-] => 94 (475 кг)
+            [94-615-kg-] => 94 (615 кг)
+            [94-670-kg-] => 94 (670 кг)
+            [95] => 95
+            [95-1030-kg-] => 95 (1030 кг)
+            [95-437-kg-] => 95 (437 кг)
+            [95-475-kg-] => 95 (475 кг)
+            [95-615-kg-] => 95 (615 кг)
+            [95-650-kg-] => 95 (650 кг)
+            [95-670-kg-] => 95 (670 кг)
+            [95-690-kg-] => 95 (690 кг)
+            [96] => 96
+            [96-437-kg-] => 96 (437 кг)
+            [96-475-kg-] => 96 (475 кг)
+            [96-670-kg-] => 96 (670 кг)
+            [96-690-kg-] => 96 (690 кг)
+            [96-710-kg-] => 96 (710 кг)
+            [97] => 97
+            [97-615-kg-] => 97 (615 кг)
+            [97-670-kg-] => 97 (670 кг)
+            [97-730-kg-] => 97 (730 кг)
+            [98] => 98
+            [98-1450-kg-] => 98 (1450 кг)
+            [98-437-kg-] => 98 (437 кг)
+            [98-475-kg-] => 98 (475 кг)
+            [98-615-kg-] => 98 (615 кг)
+            [98-750-kg-] => 98 (750 кг)
+            [99] => 99
+            [99-475-kg-] => 99 (475 кг)
+            [99-615-kg-] => 99 (615 кг)
+            [99-670-kg-] => 99 (670 кг)
+            [99-775-kg-] => 99 (775 кг)
+            [net-dannyh] => нет данных
+            [net-dannyh-1120-kg-] => нет данных (1120 кг)
+            [net-dannyh-475-kg-] => нет данных (475 кг)
+            [net-dannyh-615-kg-] => нет данных (615 кг)
+            [net-dannyh-670-kg-] => нет данных (670 кг)
+            [net-dannyh-775-kg-] => нет данных (775 кг)
+            [net-dannyh-800-kg-] => нет данных (800 кг)
+        )
+
+    [shins_profile_height] => Array
+        (
+            [] => - все -
+            [25] => 25
+            [30] => 30
+            [35] => 35
+            [40] => 40
+            [45] => 45
+            [50] => 50
+            [55] => 55
+            [60] => 60
+            [65] => 65
+            [70] => 70
+            [75] => 75
+            [80] => 80
+            [85] => 85
+            [90] => 90
+            [95] => 95
+            [105] => 105
+        )
+
+    [shins_diametr] => Array
+        (
+            [12] => <a href='/shini-R.html'>12</a>
+            [13] => <a href='/shini-R.html'>13</a>
+            [14] => <a href='/shini-R.html'>14</a>
+            [15] => <a href='/shini-R.html'>15</a>
+            [16] => <a href='/shini-R.html'>16</a>
+            [17] => <a href='/shini-R.html'>17</a>
+            [18] => <a href='/shini-R.html'>18</a>
+            [19] => <a href='/shini-R.html'>19</a>
+            [20] => <a href='/shini-R.html'>20</a>
+            [21] => <a href='/shini-R.html'>21</a>
+            [22] => <a href='/shini-R.html'>22</a>
+            [23] => <a href='/shini-R.html'>23</a>
+            [24] => <a href='/shini-R.html'>24</a>
+            [25] => <a href='/shini-R.html'>25</a>
+            [26] => <a href='/shini-R.html'>26</a>
+            [28] => <a href='/shini-R.html'>28</a>
+            [30] => <a href='/shini-R.html'>30</a>
+        )
+
+    [shins_season] => Array
+        (
+            [2] => всесезонные
+            [3] => зимние
+            [4] => летние
+        )
+
+    [shins_type_of_avto] => Array
+        (
+            [] => - все -
+            [2] => внедорожные
+            [3] => легковые
+        )
+
+    [shins_run_flat_technology_id] => Array
+        (
+            [2] => 2
+        )
+
+    [shins_spike_id] => Array
+        (
+            [2] => 2
+        )
+
+    [vendor_name] => Array
+        (
+            [2279] => <a href='/shini-accelera.html'>Accelera</a>
+            [5325] => <a href='/shini-achilles.html'>Achilles</a>
+            [7661] => <a href='/shini-aderenza.html'>Aderenza</a>
+            [2784] => <a href='/shini-aeolus.html'>Aeolus</a>
+            [5334] => <a href='/shini-altenzo.html'>Altenzo</a>
+            [4464] => <a href='/shini-america.html'>America</a>
+            [2280] => <a href='/shini-amtel.html'>Amtel</a>
+            [60] => <a href='/shini-apollo.html'>Apollo</a>
+            [4928] => <a href='/shini-arctic-claw.html'>Arctic Claw</a>
+            [7665] => <a href='/shini-atturo.html'>Atturo</a>
+            [4237] => <a href='/shini-aurora-tire.html'>Aurora Tire</a>
+            [2853] => <a href='/shini-austone.html'>Austone</a>
+            [5807] => <a href='/shini-autoguard.html'>Autoguard</a>
+            [2278] => <a href='/shini-avon.html'>AVON</a>
+            [2282] => <a href='/shini-barum.html'>Barum</a>
+            [2281] => <a href='/shini-bfgoodrich.html'>BFGoodrich</a>
+            [7757] => <a href='/shini-big-o-tires.html'>Big O Tires</a>
+            [9199] => <a href='/shini-blackstone.html'>Blackstone</a>
+            [8057] => <a href='/shini-brasa.html'>Brasa</a>
+            [2283] => <a href='/shini-bridgestone.html'>Bridgestone</a>
+            [7775] => <a href='/shini-capitol.html'>Capitol</a>
+            [2966] => <a href='/shini-ceat.html'>CEAT</a>
+            [2284] => <a href='/shini-continental.html'>Continental</a>
+            [5137] => <a href='/shini-contyre.html'>Contyre</a>
+            [2285] => <a href='/shini-cooper.html'>Cooper</a>
+            [8378] => <a href='/shini-cooper-chengshan.html'>Cooper Chengshan</a>
+            [2363] => <a href='/shini-cordiant.html'>Cordiant</a>
+            [7787] => <a href='/shini-cordovan.html'>Cordovan</a>
+            [382] => <a href='/shini-daewoo.html'>Daewoo</a>
+            [5665] => <a href='/shini-dayton.html'>Dayton</a>
+            [2364] => <a href='/shini-dean-tires.html'>Dean Tires</a>
+            [2366] => <a href='/shini-debica.html'>Debica</a>
+            [24246] => <a href='/shini-delinte.html'>Delinte</a>
+            [5146] => <a href='/shini-dextero.html'>Dextero</a>
+            [7503] => <a href='/shini-dick-cepek.html'>Dick Cepek</a>
+            [5755] => <a href='/shini-diplomat.html'>Diplomat</a>
+            [2367] => <a href='/shini-dunlop.html'>Dunlop</a>
+            [6049] => <a href='/shini-durun.html'>Durun</a>
+            [7630] => <a href='/shini-effiplus.html'>Effiplus</a>
+            [5817] => <a href='/shini-esa-tecar.html'>ESA-Tecar</a>
+            [7820] => <a href='/shini-evergreen.html'>Evergreen</a>
+            [2368] => <a href='/shini-falken.html'>Falken</a>
+            [3181] => <a href='/shini-fate.html'>Fate</a>
+            [2369] => <a href='/shini-federal.html'>Federal</a>
+            [4096] => <a href='/shini-fedima.html'>Fedima</a>
+            [3184] => <a href='/shini-fenix.html'>Fenix</a>
+            [2371] => <a href='/shini-firestone.html'>Firestone</a>
+            [3194] => <a href='/shini-fortio.html'>Fortio</a>
+            [6544] => <a href='/shini-fortuna.html'>Fortuna</a>
+            [2372] => <a href='/shini-fulda.html'>Fulda</a>
+            [6551] => <a href='/shini-fullrun.html'>Fullrun</a>
+            [7841] => <a href='/shini-fullway.html'>Fullway</a>
+            [2373] => <a href='/shini-fuzion.html'>Fuzion</a>
+            [2375] => <a href='/shini-general-tire.html'>General Tire</a>
+            [2377] => <a href='/shini-gislaved.html'>Gislaved</a>
+            [15906] => <a href='/shini-goldway.html'>Goldway</a>
+            [2378] => <a href='/shini-goodride.html'>Goodride</a>
+            [2379] => <a href='/shini-goodyear.html'>Goodyear</a>
+            [6077] => <a href='/shini-greendiamond.html'>GreenDiamond</a>
+            [7436] => <a href='/shini-gremax.html'>Gremax</a>
+            [2374] => <a href='/shini-gt-radial.html'>GT Radial</a>
+            [7855] => <a href='/shini-haida-group.html'>Haida Group</a>
+            [2380] => <a href='/shini-hankook.html'>Hankook</a>
+            [1202] => <a href='/shini-hercules.html'>Hercules</a>
+            [7859] => <a href='/shini-hifly.html'>Hifly</a>
+            [3265] => <a href='/shini-imperial.html'>Imperial</a>
+            [4525] => <a href='/shini-infinity-tyres.html'>Infinity Tyres</a>
+            [16024] => <a href='/shini-insa-turbo.html'>Insa Turbo</a>
+            [4104] => <a href='/shini-interco.html'>Interco</a>
+            [6611] => <a href='/shini-interstate.html'>Interstate</a>
+            [2532] => <a href='/shini-ironman.html'>Ironman</a>
+            [7875] => <a href='/shini-jinyu.html'>Jinyu</a>
+            [3375] => <a href='/shini-kelly.html'>Kelly</a>
+            [11369] => <a href='/shini-kenda.html'>Kenda</a>
+            [5838] => <a href='/shini-kenex.html'>Kenex</a>
+            [4217] => <a href='/shini-kinforest.html'>Kinforest</a>
+            [2381] => <a href='/shini-kingstar.html'>KingStar</a>
+            [2382] => <a href='/shini-kleber.html'>Kleber</a>
+            [3388] => <a href='/shini-kormoran.html'>Kormoran</a>
+            [2383] => <a href='/shini-kumho.html'>Kumho</a>
+            [7889] => <a href='/shini-landsail.html'>Landsail</a>
+            [2384] => <a href='/shini-lassa.html'>Lassa</a>
+            [3317] => <a href='/shini-linglong.html'>LingLong</a>
+            [2385] => <a href='/shini-mabor.html'>Mabor</a>
+            [5728] => <a href='/shini-maloya.html'>Maloya</a>
+            [2386] => <a href='/shini-marangoni.html'>Marangoni</a>
+            [2387] => <a href='/shini-marshal.html'>Marshal</a>
+            [2388] => <a href='/shini-mastercraft.html'>Mastercraft</a>
+            [2389] => <a href='/shini-matador.html'>Matador</a>
+            [5213] => <a href='/shini-maxtrek.html'>Maxtrek</a>
+            [2390] => <a href='/shini-maxxis.html'>Maxxis</a>
+            [4219] => <a href='/shini-mayrun.html'>Mayrun</a>
+            [2391] => <a href='/shini-medeo.html'>Medeo</a>
+            [16355] => <a href='/shini-mentor.html'>Mentor</a>
+            [2186] => <a href='/shini-michelin.html'>Michelin</a>
+            [3443] => <a href='/shini-mickey-thompson.html'>Mickey Thompson</a>
+            [5843] => <a href='/shini-milestone.html'>Milestone</a>
+            [3450] => <a href='/shini-minerva.html'>Minerva</a>
+            [7909] => <a href='/shini-multi-mile.html'>Multi-Mile</a>
+            [3481] => <a href='/shini-nankang.html'>Nankang</a>
+            [6719] => <a href='/shini-neuton.html'>Neuton</a>
+            [7916] => <a href='/shini-nexen-roadstone.html'>Nexen/Roadstone</a>
+            [3499] => <a href='/shini-nitto.html'>Nitto</a>
+            [3501] => <a href='/shini-nokian.html'>Nokian</a>
+            [3503] => <a href='/shini-nordman.html'>Nordman</a>
+            [29] => <a href='/shini-novex.html'>Novex</a>
+            [21441] => <a href='/shini-ovation-tyres.html'>Ovation Tyres</a>
+            [24763] => <a href='/shini-pace.html'>PACE</a>
+            [24775] => <a href='/shini-petlas.html'>Petlas</a>
+            [3565] => <a href='/shini-pirelli.html'>Pirelli</a>
+            [18816] => <a href='/shini-pirelli-pzero.html'>Pirelli PZero</a>
+            [24789] => <a href='/shini-platin.html'>Platin</a>
+            [3571] => <a href='/shini-pneumant.html'>Pneumant</a>
+            [7937] => <a href='/shini-point-s.html'>Point S</a>
+            [3573] => <a href='/shini-points.html'>PointS</a>
+            [6775] => <a href='/shini-premiorri.html'>Premiorri</a>
+            [4128] => <a href='/shini-pro-comp.html'>Pro Comp</a>
+            [3628] => <a href='/shini-regal.html'>Regal</a>
+            [3640] => <a href='/shini-riken.html'>Riken</a>
+            [7952] => <a href='/shini-rockstone.html'>Rockstone</a>
+            [3654] => <a href='/shini-rosava.html'>Rosava</a>
+            [7954] => <a href='/shini-rotalla.html'>Rotalla</a>
+            [1632] => <a href='/shini-rotex.html'>Rotex</a>
+            [6819] => <a href='/shini-sagitar.html'>Sagitar</a>
+            [7076] => <a href='/shini-sailun.html'>Sailun</a>
+            [3691] => <a href='/shini-sava.html'>Sava</a>
+            [3705] => <a href='/shini-semperit.html'>Semperit</a>
+            [244] => <a href='/shini-silverstone.html'>SilverStone</a>
+            [7970] => <a href='/shini-sime-tyres.html'>Sime Tyres</a>
+            [3720] => <a href='/shini-simex.html'>Simex</a>
+            [7035] => <a href='/shini-sonar.html'>Sonar</a>
+            [6192] => <a href='/shini-sonny.html'>Sonny</a>
+            [4197] => <a href='/shini-sportiva.html'>Sportiva</a>
+            [4198] => <a href='/shini-starfire.html'>Starfire</a>
+            [3748] => <a href='/shini-starperformer.html'>Starperformer</a>
+            [3758] => <a href='/shini-sumitomo.html'>Sumitomo</a>
+            [3759] => <a href='/shini-sumo.html'>Sumo</a>
+            [7978] => <a href='/shini-sunitrac.html'>Sunitrac</a>
+            [3680] => <a href='/shini-sunny.html'>SUNNY</a>
+            [16912] => <a href='/shini-suntek.html'>SUNTEK</a>
+            [3771] => <a href='/shini-syron.html'>Syron</a>
+            [7986] => <a href='/shini-telstar-tire.html'>Telstar Tire</a>
+            [6882] => <a href='/shini-thunderer.html'>Thunderer</a>
+            [3806] => <a href='/shini-tigar.html'>Tigar</a>
+            [3815] => <a href='/shini-toyo.html'>Toyo</a>
+            [5277] => <a href='/shini-tracmax.html'>Tracmax</a>
+            [4916] => <a href='/shini-trayal.html'>Trayal</a>
+            [6892] => <a href='/shini-tri-ace.html'>Tri Ace</a>
+            [4200] => <a href='/shini-triangle-group.html'>Triangle Group</a>
+            [3824] => <a href='/shini-tunga.html'>Tunga</a>
+            [3842] => <a href='/shini-uniroyal.html'>Uniroyal</a>
+            [6213] => <a href='/shini-viatti.html'>Viatti</a>
+            [1554] => <a href='/shini-viking.html'>Viking</a>
+            [3877] => <a href='/shini-vredestein.html'>Vredestein</a>
+            [4591] => <a href='/shini-vsp.html'>VSP</a>
+            [3883] => <a href='/shini-wanli.html'>Wanli</a>
+            [4749] => <a href='/shini-westlake.html'>Westlake</a>
+            [4822] => <a href='/shini-westlake-tyres.html'>Westlake Tyres</a>
+            [5863] => <a href='/shini-winter-tact.html'>Winter Tact</a>
+            [3913] => <a href='/shini-yokohama.html'>Yokohama</a>
+            [3925] => <a href='/shini-zeetex.html'>Zeetex</a>
+            [6936] => <a href='/shini-zeta.html'>ZETA</a>
+            [3941] => <a href='/shini-altajskij-shinnyj-kombinat.html'>Алтайский шинный комбинат</a>
+            [3942] => <a href='/shini-belshina.html'>Белшина</a>
+            [3946] => <a href='/shini-voltajr.html'>Волтайр</a>
+            [3947] => <a href='/shini-voronezh-shina.html'>Воронеж-шина</a>
+            [3956] => <a href='/shini-dneproshina.html'>Днепрошина</a>
+            [3969] => <a href='/shini-kshz.html'>КШЗ</a>
+            [3978] => <a href='/shini-mshz.html'>МШЗ</a>
+            [5868] => <a href='/shini-master-sport.html'>Мастер-Спорт</a>
+            [3986] => <a href='/shini-nizhnekamskshina.html'>Нижнекамскшина</a>
+            [3991] => <a href='/shini-omskshina.html'>Омскшина</a>
+            [4020] => <a href='/shini-uralshina.html'>Уралшина</a>
+            [4032] => <a href='/shini-yashz.html'>ЯШЗ</a>
+        )
+
+)

@@ -1,0 +1,3875 @@
+﻿/*________Переменные LESS________*/
+@mainWidth: 1200px;
+@mainWidth2: 99%;
+@sidebarRightWidth: 20%;
+@sidebarLeftWidth: 20%;
+@footerHeight: 204px;
+@headerHeight: 226px;
+@spaceOut: 5px;
+@squeezeWidth: 79%;
+
+/* вертикальный градиента */
+.l-g-d(@g:~"#ff0, #0f0, #0ff",@p:" ") {
+  background: -moz-linear-gradient(@g);
+  background: -webkit-linear-gradient(@g);
+  background: -o-linear-gradient(@g);
+  background: -ms-linear-gradient(@g);
+  background: linear-gradient(@g);
+  -pie-background: linear-gradient(@g) ~"@{p}";
+  behavior: url(pie/PIE.htc);
+}
+
+/*________Стандартные________*/
+h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #fff;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.hide {
+  display: none;
+}
+
+#wrapper {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+  width: 100%;
+  header {
+    position: relative;
+    width: 100%;
+    background: url(images/header_bg.jpg);
+    z-index: 3;
+  }
+  .main-center {
+    position: relative;
+    width: @mainWidth - @spaceOut*2;
+    margin: 0 auto;
+    padding: 40px @spaceOut 0;
+  }
+  .region-menu {
+    background: #333;
+    border-top: 1px solid #292929;
+  }
+  #container {
+    position: relative;
+    width: @mainWidth - @spaceOut*2;
+    margin: 0 auto (@footerHeight+30);
+    padding: 23px @spaceOut;
+    #sidebar-second {
+      width: @sidebarRightWidth;
+    }
+    #sidebar-first {
+      width: @sidebarLeftWidth;
+    }
+  }
+  footer {
+    position: absolute;
+    bottom: 0px;
+    background: #333;
+    width: 100%;
+    .footer-content {
+      position: relative;
+      width: @mainWidth - @spaceOut*2;
+      padding: 15px @spaceOut;
+      height: @footerHeight;
+      margin: 0 auto;
+    }
+  }
+}
+
+.breadcrumbs {
+  margin-left: 10px;
+  margin-bottom: 15px;
+  div {
+    display: inline-block;
+    a {
+      color: #70B8DF;
+    }
+  }
+}
+
+body {
+  color: #000000;
+  font-family: Arial;
+  font-size: 0.875em;
+}
+
+.cart-error {
+  padding: 10px;
+  font-weight: bold;
+  color: #ff0000;
+}
+
+#wrapper {
+  /*______________________________________________________________ HEADER ____________________________________________________________*/
+
+  header {
+    /*----- Обратный звонок шапка ----*/
+    .top-header {
+      font-family: Segoe UI;
+      font-size: 18px;
+      color: #9b9b9b;
+      position: absolute;
+      width: 100%;
+      background: url(images/phone_header_bg.png) repeat-x left center;
+      border-bottom: 1px solid #292929;
+      z-index: 5;
+      p {
+        position: relative;
+        width: @mainWidth - @spaceOut*2 - 14;
+        margin: 0 auto;
+        padding: 7px @spaceOut 11px @spaceOut+ 14;
+        background: url(images/phone_header.png) no-repeat left center;
+        a {
+          padding: 1px 8px;
+          background: #eede00;
+          border: 1px solid #e4cc00;
+          font-size: 14px;
+          margin-left: 15px;
+          color: #000;
+          border-top: 1px solid #fdf650;
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          text-decoration: none;
+          -webkit-box-shadow: 0 -1px 1px #eede00;
+          box-shadow: 0 -1px 1px #eede00;
+          &:hover {
+            background: #c8bb02;
+          }
+        }
+      }
+      .cart-480 {
+        display: none;
+      }
+    }
+    /*----- Логотип ------*/
+    #logo-floater-480 {
+      display: none;
+    }
+
+    /*----- Блок Корзины ------*/
+    .cart {
+      position: absolute;
+      right: @spaceOut;
+      top: 78px;
+      min-height: 77px;
+      color: #fff;
+      padding-left: 97px;
+      background: url(images/cart_bg.png) no-repeat left center;
+      .roundblock {
+        h3 {
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        p {
+          margin: 5px 0;
+          span {
+            color: #848282;
+          }
+        }
+        a {
+          color: #70b8df;
+          display: block;
+          margin-top: 10px;
+        }
+      }
+    }
+    #cart-block {
+      display: none;
+    }
+    /*----- Обратный звонок шапка ----*/
+    .top-header-480 {
+      color: #9B9B9B;
+      display: none;
+      font-family: Segoe UI;
+      font-size: 14px;
+      line-height: 15px;
+      position: absolute;
+      right: 4px;
+      top: 80px;
+      width: 150px;
+      p {
+        a {
+          background: #eede00;
+          border: 1px solid #e4cc00;
+          color: #000;
+          border-top: 1px solid #fdf650;
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          -webkit-box-shadow: 0 -1px 1px #eede00;
+          box-shadow: 0 -1px 1px #eede00;
+          display: block;
+          font-size: 12px;
+          line-height: 10px;
+          margin-left: 7px;
+          margin-top: 3px;
+          padding: 4px 0;
+          text-align: center;
+          text-decoration: none;
+          width: 117px;
+          &:hover {
+            background: #e1d402;
+          }
+        }
+      }
+    }
+    /*----- Блок поиска ------*/
+    #search-block {
+      width: 100%;
+      background: #2A2A2A;
+      padding: 8px 0;
+      border-top: 1px solid #414141;
+      border-bottom: 1px solid #414141;
+      .search-form {
+        position: relative;
+        width: @mainWidth - @spaceOut*2;
+        padding: 0 @spaceOut;
+        margin: 0 auto;
+        form {
+          input[type='text'] {
+            width: 75%;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            border: 1px solid #242424;
+            -webkit-box-shadow: 0 1px 1px #474646;
+            box-shadow: 0 1px 1px #474646;
+            color: #cecece;
+            padding: 6px 20px 6px 15px;
+            float: left;
+          }
+          input[type='submit'] {
+            width: 28px;
+            height: 22px;
+            border: none;
+            margin-left: -32px;
+            position: absolute;
+            top: 50%;
+            margin-top: -11px;
+            z-index: 1;
+            background: url(images/serch_picto.png) no-repeat center center;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    /*-- Мы в социальных сетях --*/
+    #social-networks {
+      position: absolute;
+      top: 1px;
+      right: @spaceOut;
+      ul {
+        li {
+          a {
+            width: 30px;
+            height: 30px;
+            -webkit-border-radius: 30px;
+            border-radius: 30px;
+            display: block;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            behavior: url(pie/PIE.htc);
+            &.vk {
+              background-image: url(images/social_vk.png);
+            }
+            &.f {
+              background-image: url(images/social_odnok.png);
+            }
+            &.t {
+              background-image: url(images/social_twiter.png);
+            }
+            &.g {
+              background-image: url(images/social_g.png);
+            }
+            &:hover {
+              background-position: center top;
+            }
+          }
+          float: left;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    /*----- Главное меню ------*/
+    .top-menu {
+      width: @mainWidth - @spaceOut*2;
+      padding: 0 @spaceOut;
+      margin: 0 auto;
+      ul {
+        li {
+          float: left;
+          a {
+            font-family: Segoe UI;
+            font-size: 1em;
+            color: #fffefe;
+            padding: 10px 0;
+            display: block;
+            border-left: 1px solid #414141;
+            border-right: 1px solid #292929;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            &:hover, &.active {
+              background: #414141;
+              border-top: 1px solid #e8c200;
+              padding-top: 9px;
+            }
+          }
+          &.first {
+            a {
+              border-left: 1px solid #292929;
+            }
+          }
+          ul {
+            position: absolute;
+            display: none;
+            li {
+              float: none;
+              position: relative;
+              background: #333;
+              a {
+                border-bottom: 1px solid #414141;
+                border-top: 1px solid #292929;
+                &:hover, &.active {
+                  padding-top: 10px;
+                  border-top: 1px solid #e8c200;
+                }
+              }
+              ul {
+                position: absolute;
+                right: -100%;
+                top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    /*----- Главное меню width=480------*/
+    #top-menu-width-480 {
+      display: none;
+    }
+  }
+
+}
+
+/*___________________________________________________ CONTENT ________________________________________________*/
+section {
+  /*----- Подбор по автомобилю------*/
+  .selection-car {
+    width: 49%;
+    float: left;
+    #tabs {
+      .tabs_menu {
+        position: absolute;
+        li {
+          list-style: none;
+          float: left;
+          padding: 5px 12px;
+          background: #dedede;
+          border-radius: 5px 5px 0 0;
+          color: #abaaaa;
+          cursor: pointer;
+          font-size: 16px;
+          &.active_tab {
+            background: url(images/tabs_bg.jpg);
+            border-top: 1px solid #dedede;
+            border-left: 1px solid #dedede;
+            border-right: 1px solid #dedede;
+            color: #000;
+          }
+        }
+      }
+      .tabs_content {
+        clear: both;
+        margin-top: 40px;
+        z-index: -1;
+        background: url(images/tabs_bg.jpg);
+        border: 1px solid #dedede;
+        & > div {
+          padding: 15px;
+          display: none;
+          .form-select {
+            float: left;
+            width: 50%;
+            h3 {
+              color: #000;
+              font-weight: lighter;
+              margin: 10px 0;
+            }
+            select {
+              width: 90%;
+              border: 1px solid #dcdcdc;
+              -webkit-border-radius: 5px;
+              border-radius: 5px;
+              padding: 3px;
+              cursor: pointer;
+              option {
+              }
+            }
+          }
+          .form-actions {
+            clear: both;
+            padding-top: 20px;
+            input {
+              margin: 0 auto;
+              display: block;
+              background: #EEE300;
+              border-left: 1px solid #e4cc00;
+              border-right: 1px solid #e4cc00;
+              border-bottom: 1px solid #e4cc00;
+              border-top: 1px solid #fdf650;
+              -webkit-box-shadow: 0 -1px 1px #e4cc00;
+              box-shadow: 0 -1px 1px #e4cc00;
+              -webkit-border-radius: 4px;
+              border-radius: 4px;
+              padding: 4px 12px;
+              color: #010101;
+              font-size: 17px;
+              text-shadow: 2px 2px 2px #fcf27d;
+              font-weight: bold;
+              cursor: pointer;
+              &:hover {
+                background: #D5C903;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*----- Оплата и Доставка------*/
+  .payment-delivery {
+    width: 49%;
+    float: right;
+    ul {
+      border: 1px solid #dedede;
+      padding: 15px;
+      background: url(images/tabs_bg.jpg);
+      li {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 13px 0;
+        padding: 3px 0 3px 37px;
+        line-height: 18px;
+        background: url(images/delivery_e_0.png) no-repeat left 5px;
+        span {
+          display: block;
+          font-size: 14px;
+          font-weight: normal;
+        }
+        &.element-1 {
+          background: url(images/delivery_e_1.png) no-repeat left top;
+        }
+        &.element-2 {
+          background: url(images/delivery_e_2.png) no-repeat left top;
+        }
+        &.element-3 {
+          background: url(images/delivery_e_3.png) no-repeat left top;
+        }
+      }
+    }
+  }
+}
+
+/*------------ ШИНЫ -------------*/
+section.tire-drive {
+  h2 {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 8px 0 8px 50px;
+    margin-top: 10px;
+    background: url(images/tire_h2.png) no-repeat left center;
+  }
+  .tire-drive-form {
+    .form-select {
+      float: left;
+      width: 18.5%;
+      h3 {
+        color: #000;
+        font-weight: lighter;
+        margin: 0 0 10px;
+      }
+      select {
+        width: 90%;
+        border: 1px solid #dcdcdc;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+      }
+    }
+    .form-actions {
+      padding-top: 17px;
+      input {
+        display: block;
+        background: #EEE300;
+        border-left: 1px solid #e4cc00;
+        border-right: 1px solid #e4cc00;
+        border-bottom: 1px solid #e4cc00;
+        border-top: 1px solid #fdf650;
+        -webkit-box-shadow: 0 -1px 1px #e4cc00;
+        box-shadow: 0 -1px 1px #e4cc00;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding: 4px 12px;
+        color: #010101;
+        font-size: 17px;
+        text-shadow: 2px 2px 2px #fcf27d;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+          background: #D5C903;
+        }
+      }
+    }
+  }
+  /*---------------- Слайдер ------------------*/
+  .slider-tire-drive {
+    width: 100%;
+    margin-top: 15px;
+    .content {
+      .slider-filter {
+        padding: 5px 0;
+        background: #F0EEEE;
+        border-top: 1px solid #e5e5e5;
+        h3 {
+          float: left;
+          color: #000;
+          font-weight: normal;
+          line-height: 28px;
+          margin: 0 5px;
+        }
+        form {
+          float: left;
+          input {
+            border: 1px solid #e2e2e2;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            padding: 5px;
+          }
+        }
+        .pagination {
+          float: right;
+          margin-right: 51px;
+          line-height: 28px;
+        }
+      }
+      .ad {
+        height: 178px;
+        padding: 5px 0;
+        overflow: hidden;
+        position: relative;
+        width: 190px;
+        border: 1px solid #e5e5e5;
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+        .title {
+          text-align: center;
+          position: absolute;
+          margin-left: 5%;
+          top: 77%;
+          width: 90%;
+          a {
+            color: #0e99d3;
+          }
+        }
+      }
+      .ad:hover {
+        border: 1px solid #f4ee56;
+      }
+    }
+    .jcarousel-container {
+      border: 1px solid #e1e1e1;
+      .jcarousel-clip-horizontal {
+        height: 190px;
+        overflow: hidden;
+      }
+      .jcarousel-prev, .jcarousel-next {
+        height: 27px;
+        width: 27px;
+        position: absolute;
+        top: -35px;
+        cursor: pointer;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 50px;
+        border-radius: 50px;
+      }
+      .jcarousel-prev {
+        background: #f2f2f2 url('images/ad_prev.jpg') no-repeat center;
+        right: 111px;
+      }
+      .jcarousel-next {
+        background: #f2f2f2 url('images/ad_next.jpg') no-repeat center;
+        right: 14px;
+      }
+    }
+  }
+}
+
+/*------------ ДИСКИ -------------*/
+section.sections-drive {
+  h2 {
+    background: url(images/drive_h2.png) no-repeat left center;
+  }
+  .tire-drive-form {
+    .form-select {
+      float: left;
+      width: 12.15%;
+      h3 {
+        color: #000;
+        font-weight: lighter;
+        margin: 0 0 10px;
+      }
+      select {
+        width: 90%;
+        border: 1px solid #dcdcdc;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+/*------------- Подбор по марке авто ----------------*/
+.selection-brands {
+  display: none;
+  h2 {
+    margin-top: 20px;
+  }
+  ul {
+    padding: 10px 5px;
+    border: 1px solid #e5e5e5;
+    li {
+      float: left;
+      width: 125px;
+      margin-right: 31px;
+      a {
+        color: #000;
+        padding: 4px 8px;
+        padding-left: 30px;
+        display: block;
+        background: url(images/img_brands.jpg) no-repeat left center;
+      }
+    }
+  }
+}
+
+/*-------------------------------------------------------Правая колонка-----------------------------------------------------*/
+aside#sidebar-second {
+  /*-------------- Акции -------------*/
+  .action {
+    margin: 5px 0 0 5px;
+    border: 1px solid #424242;
+    h3 {
+      padding: 7px 10px;
+      background: #424242;
+    }
+    .content {
+      padding: 5px;
+    }
+    .read-all {
+      padding: 5px;
+      a {
+        color: #0E99D3;
+      }
+    }
+  }
+  /*-------------- Товары со скидкой -------------*/
+  .discounted-items {
+    margin: 5px 0 0 5px;
+    border: 1px solid #e8d300;
+    max-height: 562px;
+    overflow: hidden;
+    h2 {
+      padding: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      background: #e8d300;
+    }
+    .content {
+      padding: 4px;
+      .view-row {
+        padding: 17px 0;
+        background: url(images/action_li_bg.jpg) no-repeat center bottom;
+        div {
+          margin-bottom: 3px;
+        }
+        .image-row {
+          float: left;
+          margin-right: 15px;
+        }
+        .row-title {
+          a {
+            color: #70B8DF;
+          }
+        }
+        &.last {
+          background: none;
+        }
+        .old-price {
+          font-size: 11px;
+          text-decoration: line-through;
+        }
+        .price {
+          font-size: 18px;
+          color: #bf1010;
+        }
+      }
+    }
+  }
+}
+
+/*------------ НОВОСТИ -------------*/
+section.news {
+  clear: both;
+  padding-top: 10px;
+  width: 100%;
+  .content {
+    .view-row {
+      padding: 10px;
+      border: 1px solid #e5e5e5;
+      margin: 10px 0;
+      .image-row {
+        float: left;
+        margin-right: 10px;
+      }
+      .data {
+        color: #919191;
+      }
+      .row-title {
+        margin: 10px 0;
+        a {
+          color: #0E99D3;
+        }
+      }
+      .desc {
+
+        .linc {
+          color: #0E99D3;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  .read-all {
+    text-align: right;
+    a {
+      color: #0E99D3;
+    }
+  }
+}
+
+/*------------ Основной текст страници -------------*/
+article {
+  margin-top: 10px;
+  width: 100%;
+  clear: both;
+  .content {
+    .field-name-body {
+      font-size: 12px;
+      color: #8a8a8a;
+    }
+  }
+  .read-all {
+    margin: 10px 0;
+    a {
+      color: #0E99D3;
+    }
+  }
+}
+
+/*____________________________________________________________ СТРАНИЦА ШИНЫ ДИСКИ _________________________________________________________________________*/
+
+/*------------------------- Левая колонка -------------------------------*/
+aside#sidebar-first {
+  margin: 0 15px 15px 0;
+  .filter {
+    background: url(images/tabs_bg.jpg);
+    border: 1px solid #dedede;
+    padding: 0 0 15px 0;
+    h3 {
+      color: #000;
+      margin: 8px 0;
+      font-size: 14px;
+      font-weight: normal;
+    }
+    .selection-car {
+      padding: 15px;
+      background: #DEDEDE;
+      h3 {
+        font-weight: bold;
+      }
+      .content {
+        margin-top: 15px;
+      }
+      .select {
+        h3 {
+          font-weight: normal;
+          margin-bottom: 10px;
+        }
+        select {
+          width: 87%;
+          padding: 3px;
+          border: 1px solid #DCDCDC;
+          border-radius: 4px;
+          option {
+
+          }
+        }
+      }
+    }
+    .price-slider {
+      padding: 15px;
+      h3 {
+        font-weight: bold;
+      }
+      .form-item {
+        width: 70px;
+        float: left;
+        margin-right: 40px;
+        margin-bottom: 20px;
+        input {
+          border: 1px solid #DCDCDC;
+          border-radius: 4px;
+          margin-right: 5px;
+          margin-top: 10px;
+          padding: 2px;
+          width: 61px;
+        }
+      }
+      #webform-component-prise-max {
+        width: 94px;
+        margin-right: 0;
+      }
+      #slider-range {
+        clear: both;
+        width: 100%;
+        height: 3px;
+        margin: 15px 0;
+      }
+      .form-submit {
+        background: none repeat scroll 0 0 #EEE300;
+        border-color: #FDF650 #E4CC00 #E4CC00;
+        border-left: 1px solid #E4CC00;
+        border-radius: 4px;
+        border-right: 1px solid #E4CC00;
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: 0 -1px 1px #E4CC00;
+        color: #010101;
+        cursor: pointer;
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-left: 15px;
+        padding: 3px 7px;
+        text-shadow: 2px 2px 2px #FCF27D;
+      }
+    }
+    .options {
+      background: #DEDEDE;
+      padding: 15px;
+      h3 {
+        display: inline;
+        line-height: 20px;
+      }
+      .form-select {
+        margin: 3px 0;
+        padding: 3px 0;
+        select {
+          float: right;
+          border: 1px solid #DCDCDC;
+          border-radius: 4px;
+          width: 70px;
+          &:hover {
+            border: 1px solid #f5af42;
+          }
+        }
+      }
+      .diametr {
+        padding: 15px 0;
+        .checkbox {
+          max-height: 336px;
+          overflow: auto;
+          margin-top: 10px;
+          label {
+            a {
+              color: #000000;
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+    .checkboxs {
+      padding: 15px;
+      h3 {
+        font-weight: bold;
+      }
+      .checkbox {
+        label {
+          padding-left: 22px;
+          height: 14px;
+          display: block;
+          margin: 3px 0;
+          background: url(images/checkbox_bg.png) no-repeat left bottom;
+          &:hover {
+            background-position: left -14px;
+          }
+          &.active {
+            background-position: left top;
+          }
+          input {
+            display: none;
+          }
+        }
+      }
+      &.brand .checkbox {
+        height: 336px;
+        overflow: auto;
+        label {
+          a {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    .form-actions {
+      input {
+        display: block;
+        background: #EEE300;
+        border-left: 1px solid #e4cc00;
+        border-right: 1px solid #e4cc00;
+        border-bottom: 1px solid #e4cc00;
+        border-top: 1px solid #fdf650;
+        -webkit-box-shadow: 0 -1px 1px #e4cc00;
+        box-shadow: 0 -1px 1px #e4cc00;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding: 3px 7px;
+        color: #010101;
+        font-size: 14px;
+        text-shadow: 2px 2px 2px #fcf27d;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+/*----------------- Фильтр Дисков ------------------*/
+body.drive {
+  .filter-page {
+    .rim-color {
+      .checkbox {
+        height: 195px;
+        overflow: auto;
+      }
+    }
+  }
+  .parameter-block #tabs .tabs_content > div table tr th, .parameter-block #tabs .tabs_content > div table tr td {
+    width: 2%;
+  }
+}
+
+/*------------------------- Основной контент -------------------------------*/
+/* Кнопка филтер */
+.filter-button {
+  position: absolute;
+  top: 3px;
+  right: 20px;
+  padding: 5px 10px;
+  display: block;
+  background: #0E99D3;
+  text-decoration: none;
+  color: #fff;
+  border-top: 1px solid #87cce9;
+  border-left: 1px solid #87cce9;
+  border-right: 1px solid #0b7dac;
+  border-bottom: 1px solid #0b7dac;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  &:hover {
+    background: #0b6e98;
+  }
+}
+
+.products, .drive-index, .tires-index {
+  padding-left: 15px;
+  .breadcrumbs {
+    margin-left: 0;
+  }
+  .field-name-title {
+    font-family: Segoe UI;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .field-name-product-hed {
+    height: 300px;
+    .description-block {
+      width: 49%;
+      float: left;
+      .product-gallery {
+        float: left;
+        .slides_container {
+          width: 180px;
+          height: 222px;
+          overflow: hidden;
+          position: relative;
+          margin-bottom: 20px;
+        }
+        .rating {
+          padding-left: 16%;
+          margin-bottom: 15px;
+        }
+        .pagination {
+          width: 285px;
+          li {
+            float: left;
+            border: 1px solid #cdcdcd;
+            margin: 0 5px;
+            a {
+              padding: 2px 5px;
+              display: block;
+              img {
+
+              }
+            }
+          }
+        }
+      }
+      .product-options {
+        font-weight: bold;
+
+        & > div {
+          margin: 10px 0;
+        }
+        .price {
+          color: #bf1010;
+          font-size: 34px;
+        }
+        span {
+          font-weight: normal;
+        }
+        .sison {
+          margin-top: 20px;
+        }
+        .car-type {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .payment-delivery {
+      margin-top: 20px;
+    }
+  }
+}
+
+/*----- Мне нравится -----*/
+.i-like {
+  margin: 25px 0;
+  margin-top: 80px;
+  height: 20px;
+  & > div {
+    margin-right: 30px;
+    float: left;
+    width: 110px;
+  }
+}
+
+/*----- Параметров товара------*/
+.parameter-block, .drive-index-block, .tires-index-block {
+  #tabs {
+    padding-top: 1px;
+    .tabs_menu {
+      position: absolute;
+      margin-left: 1px;
+      z-index: 2;
+      li {
+        list-style: none;
+        float: left;
+        color: #abaaaa;
+        cursor: pointer;
+        font-size: 16px;
+        border-right: 1px solid #d5d5d5;
+        border-top: 1px solid #d5d5d5;
+        z-index: 1;
+        a {
+          padding: 3px 12px;
+          display: block;
+        }
+        &.first {
+          border-left: 1px solid #d5d5d5;
+        }
+        &.active_tab {
+          .l-g-d(~"#eee500, #eedb00");
+          border-top: 1px solid #e4cc00;
+          border-left: 1px solid #e4cc00;
+          border-right: none;
+          padding-bottom: 1px;
+          z-index: 2;
+          margin-left: -1px;
+          a {
+            color: #000;
+            padding: 3px 12px;
+            border-top: 1px solid #fdf650;
+            border-left: 1px solid #fdf650;
+            border-right: 1px solid #e4cc00;
+          }
+        }
+      }
+    }
+    .tabs_content {
+      margin-top: 22px;
+      z-index: -1;
+      background: url(images/product_option.png) repeat-x left top;
+      & > div {
+        display: none;
+        padding: 6px 0;
+        table {
+          width: 100%;
+          tr {
+            background: #F0EEEE;
+            padding: 6px 0;
+            th {
+              padding: 8px 0;
+              width: 16.6%;
+              font-weight: bold;
+            }
+            td {
+              width: 16.6%;
+              text-align: center;
+              padding: 8px 0;
+              a {
+                display: block;
+                background: #EEE300;
+                border-left: 1px solid #e4cc00;
+                border-right: 1px solid #e4cc00;
+                border-bottom: 1px solid #e4cc00;
+                border-top: 1px solid #fdf650;
+                -webkit-box-shadow: 0 -1px 1px #e4cc00;
+                box-shadow: 0 -1px 1px #e4cc00;
+                -webkit-border-radius: 2px;
+                border-radius: 2px;
+                padding: 3px 5px;
+                color: #010101;
+                font-size: 14px;
+                text-shadow: 2px 2px 2px #fcf27d;
+                font-weight: bold;
+                cursor: pointer;
+                margin: 0 auto;
+                text-decoration: none;
+                width: 65px;
+                &:hover {
+                  background: #C8BB02;
+                }
+              }
+              &.element-0 {
+                font-weight: bold;
+              }
+              &.element-2 {
+                color: #999;
+              }
+              &.element-4 {
+                font-weight: bold;
+              }
+              .tires_count {
+                width: 24%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*----- Описание товара ------*/
+.product-desc {
+  margin: 15px 0 15px 0;
+  h4 {
+    background: url(images/product_option.png) repeat-x left bottom;
+    padding-bottom: 4px;
+    border-left: 1px solid #E4CC00;
+    span {
+      .l-g-d(~"#eee500, #eedb00");
+      display: block;
+      font-weight: bold;
+      padding: 8px 15px;
+      text-align: center;
+      width: 100px;
+      border-top: 1px solid #fdf650;
+      border-right: 1px solid #E4CC00;
+      -webkit-box-shadow: -1px -1px 1px #E4CC00;
+      box-shadow: -1px -1px 1px #E4CC00;
+    }
+
+  }
+  .product-desc-body {
+
+    padding: 10px 0;
+  }
+}
+
+/*------------------------ Отзывы ------------------------*/
+/* Звезды */
+div.vote-wrap {
+  overflow: hidden;
+  .vote-hover {
+    float: left;
+    cursor: pointer;
+    .vote-block {
+      position: relative;
+      .vote-stars {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .vote-active {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+  .vote-result {
+    color: #ccc;
+    font-size: 14px;
+    margin-top: 0;
+    padding-left: 0;
+  }
+  .vote-success {
+    clear: both;
+    color: #ccc;
+    font-size: 12px;
+    margin: 0 0 0 3px;
+  }
+}
+
+.rewievs {
+  h2 {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 15px;
+    background: #F0EEEE;
+    a {
+      color: #0e99d3;
+    }
+  }
+  .views-row {
+    padding: 15px 0;
+    border-bottom: 1px solid #e5e5e5;
+    & > div {
+      margin: 8px 0;
+    }
+    /* Контент */
+    .rewiev-fild-title {
+      color: #505050;
+      font-weight: bold;
+      span {
+        font-size: 12px;
+        color: #b4b4b4;
+        margin-left: 15px;
+        font-weight: normal;
+      }
+    }
+    .answer {
+      a {
+        color: #0e99d3;
+      }
+    }
+  }
+  .rewiev-footer {
+    margin: 15px;
+    text-align: right;
+    a {
+      color: #0e99d3;
+    }
+  }
+}
+
+.formblock-reviews {
+  padding: 10px 0;
+  background: url(images/rewiev_bg.png) repeat-x left top;
+  h2 {
+    font-weight: bold;
+    color: #000;
+    font-size: 14px;
+  }
+  form {
+    .form-item-title {
+      height: 100px;
+      input.form-text {
+        border: 1px solid #CCCCCC;
+        border-radius: 2px;
+        padding: 3px;
+        width: 20%;
+        display: block;
+        margin: 8px 0 15px 0;
+        float: left;
+      }
+      .rating {
+        float: left;
+        margin-left: 64px;
+        margin-top: 10px;
+      }
+    }
+    .field-type-text {
+      margin-top: -30px;
+      textarea {
+        width: 50%;
+        border: 1px solid #CCCCCC;
+        border-radius: 2px;
+        height: 115px;
+        margin-top: 8px;
+      }
+    }
+    .form-actions {
+      input {
+        display: block;
+        margin: 8px 0 15px 0;
+        background: #EEE300;
+        border-left: 1px solid #e4cc00;
+        border-right: 1px solid #e4cc00;
+        border-bottom: 1px solid #e4cc00;
+        border-top: 1px solid #fdf650;
+        -webkit-box-shadow: 0 -1px 1px #e4cc00;
+        box-shadow: 0 -1px 1px #e4cc00;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding: 3px 7px;
+        color: #010101;
+        font-size: 14px;
+        text-shadow: 2px 2px 2px #fcf27d;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+          background: #C8BB02;
+        }
+      }
+    }
+  }
+}
+
+/*-----jquery UI для ползунка-----*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  width: 15px;
+  height: 28px;
+  background: url(images/slider_btn.png) no-repeat center center;
+  border-style: none;
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: -12px;
+}
+
+/*____________________________ СТРАНИЦА Каталога _____________________________________________*/
+
+body.catalog {
+  #container {
+    #center {
+      float: left;
+      margin-left: -21.2%;
+      margin-right: -21%;
+      width: 100%;
+    }
+    #squeeze {
+      float: left;
+      margin-left: 20%;
+      margin-right: 19.6%;
+      padding: 5px;
+      width: 59.6%;
+      .catalog-product {
+        margin-top: 40px;
+        .pager {
+          position: relative;
+          top: -65px;
+          ul {
+            display: table;
+            margin: 0 auto;
+          }
+        }
+        /*________ Управление каталогом ___________*/
+        .catalog-management {
+          position: relative;
+          ul.catalog-paginator {
+            li {
+              float: left;
+              a {
+                display: block;
+                padding: 2px 6px;
+                color: #0E99D3;
+              }
+              &.active {
+                a {
+                  color: #000;
+                  border: 1px solid #e5e5e5;
+                  text-decoration: none;
+                  padding: 1px 5px;
+                }
+              }
+              &:hover {
+                a {
+                  color: #000;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+          .sorting {
+            padding: 0 10px;
+            .catalog-regularize, .catalog-show {
+              margin-right: 20px;
+              float: left;
+              input {
+                border-style: none;
+                background: none;
+                color: #8d8d8d;
+                cursor: pointer;
+              }
+            }
+            .catalog-show {
+              float: right;
+            }
+          }
+        }
+        /*________ Содержимое ___________*/
+        .catalog-content {
+          .format {
+            .views-row {
+              margin: 15px 10px;
+              border: 2px solid #E5E5E5;
+              padding: 5px 10px;
+              position: relative;
+              & > div {
+                margin: 5px 0;
+              }
+              .image-row {
+                float: left;
+                margin-right: 25px;
+                position: relative;
+                img {
+                  border: 1px solid #f0f0f0;
+                }
+                .rating {
+                  padding-left: 0px;
+                }
+                .show-rewievs {
+                  position: absolute;
+                  width: 0px;
+                  height: 22px;
+                  padding-left: 25px;
+                  top: -10px;
+                  left: -10px;
+                  overflow: hidden;
+                  background: url(images/show_rewiev.png) no-repeat left top;
+                  text-decoration: none;
+                  span {
+                    display: block;
+                    padding: 2px 5px;
+                    background: #FFF;
+                    font-size: 12px;
+                    border: 1px solid #e5e5e5;
+                    color: #000;
+                  }
+                  &:hover {
+                    background-position: left bottom;
+                    width: 115px;
+                  }
+                }
+              }
+              .row-title {
+                a {
+                  color: #010101;
+                  font-weight: bold;
+                }
+              }
+              .code {
+                color: #8d8d8d;
+              }
+              .price {
+                color: #bf1010;
+                font-weight: bold;
+                margin-top: 18px;
+                span {
+                  font-size: 26px;
+                }
+              }
+              .read-more {
+                position: absolute;
+                right: 20px;
+                bottom: 25px;
+                margin: 0;
+                a {
+                  display: block;
+                  background: #EEE300;
+                  border-left: 1px solid #e4cc00;
+                  border-right: 1px solid #e4cc00;
+                  border-bottom: 1px solid #e4cc00;
+                  border-top: 1px solid #fdf650;
+                  -webkit-box-shadow: 0 -1px 1px #e4cc00;
+                  box-shadow: 0 -1px 1px #e4cc00;
+                  -webkit-border-radius: 4px;
+                  border-radius: 4px;
+                  padding: 5px 7px;
+                  color: #010101;
+                  font-size: 14px;
+                  text-shadow: 2px 2px 2px #fcf27d;
+                  font-weight: bold;
+                  text-decoration: none;
+                  &:hover {
+                    background: #DED101;
+                  }
+                }
+              }
+            }
+            &.catalog-table {
+              display: none;
+              .pager {
+                top: -60px;
+              }
+              .views-row {
+                width: 27%;
+                float: left;
+                padding-bottom: 60px;
+                min-height: 260px;
+                & > div {
+                  text-align: center;
+                }
+                .image-row {
+                  float: none;
+                  margin-right: 0;
+                  margin-bottom: 10px;
+                  .rating {
+                    padding-left: 27%;
+                  }
+                  .show-rewievs {
+                    top: -10px;
+                    left: 30px;
+                  }
+                }
+                .read-more {
+                  position: absolute;
+                  left: 50%;
+                  right: auto;
+                  bottom: 25px;
+                  margin: 0;
+                  margin-left: -50px;
+                  a {
+                    display: block;
+                    background: #EEE300;
+                    border-left: 1px solid #e4cc00;
+                    border-right: 1px solid #e4cc00;
+                    border-bottom: 1px solid #e4cc00;
+                    border-top: 1px solid #fdf650;
+                    -webkit-box-shadow: 0 -1px 1px #e4cc00;
+                    box-shadow: 0 -1px 1px #e4cc00;
+                    -webkit-border-radius: 4px;
+                    border-radius: 4px;
+                    padding: 5px 7px;
+                    color: #010101;
+                    font-size: 14px;
+                    text-shadow: 2px 2px 2px #fcf27d;
+                    font-weight: bold;
+                    text-decoration: none;
+                    &:hover {
+                      background: #DED101;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    #sidebar-first {
+      width: 20%;
+      position: relative;
+      z-index: 2;
+    }
+    #sidebar-second {
+      float: right;
+      width: 20%;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  /*----- Оплата и Доставка------*/
+  .payment-delivery {
+    margin: 5px 0 0 5px;
+    border: 1px solid #e8d300;
+    background: url(images/tabs_bg.jpg);
+    h2 {
+      padding: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      background: #e8d300;
+    }
+    ul {
+      padding: 0 5px;
+      li {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 13px 0;
+        padding: 3px 0 3px 37px;
+        line-height: 18px;
+        background: url(images/delivery_e_0.png) no-repeat left 5px;
+        span {
+          display: block;
+          font-size: 14px;
+          font-weight: normal;
+        }
+        &.element-1 {
+          background: url(images/delivery_e_1.png) no-repeat left top;
+        }
+        &.element-2 {
+          background: url(images/delivery_e_2.png) no-repeat left top;
+        }
+        &.element-3 {
+          background: url(images/delivery_e_3.png) no-repeat left top;
+        }
+      }
+    }
+  }
+  /*-------------- Товары со скидкой -------------*/
+  .discounted-items {
+    height: 948px;
+  }
+}
+
+.drives-index-node, .tires-index-node {
+  .drive-index-block, .tires-index-block {
+    margin-top: 35px;
+    .tabs_content {
+      min-height: 10px;
+      div div {
+        padding: 15px 0;
+        a {
+          display: inline-block;
+          border: 1px solid #fff;
+          width: 109px;
+          margin-right: 3px;
+          color: #0e99d2;
+          font-size: 1.2em;
+          padding: 15px 0;
+          text-align: center;
+          text-decoration: none;
+          img {
+            margin: 0 auto 5px;
+            display: block;
+          }
+          &:hover {
+            border: 1px solid #ccc;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*___________________________________________________ FOOTER _________________________________________________*/
+
+footer {
+  .footer-content {
+
+    /*----- footer-menu ------*/
+    .region-bottom-menu {
+      float: left;
+      background: #333;
+      border-top: 0px;
+      #bottom-menu {
+        float: left;
+        .bottom-pod-menu {
+          float: left;
+          margin-right: 70px;
+          ul {
+            list-style-type: disc;
+            margin-left: 15px;
+            li {
+              margin-top: 10px;
+              color: #fff;
+              a {
+                color: #fff;
+              }
+            }
+          }
+        }
+        .pod-menu-3 {
+          display: none;
+        }
+      }
+    }
+
+    /*----- Присоеденяйтесь к нам ------*/
+    #social-networks {
+      float: left;
+      ul {
+        margin-top: 20px;
+        li {
+          float: left;
+          margin-left: 15px;
+          a {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+
+    /*----- Задать вопрос ------*/
+    .ask {
+      float: left;
+      margin-top: 35px;
+      margin-left: 78px;
+      h3 {
+        text-align: center;
+      }
+      a {
+        padding: 8px 14px;
+        background: #717171;
+        border: 1px solid #929191;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        display: block;
+        margin-top: 17px;
+        color: #fff;
+        text-decoration: none;
+        -webkit-box-shadow: 0 -1px 1px #717171;
+        box-shadow: 0 -1px 1px #717171;
+        &:hover {
+          background: #4E4D4D;
+        }
+      }
+    }
+
+    /*----- Копирайты ------*/
+    #copy {
+      position: absolute;
+      left: @spaceOut;
+      bottom: 15px;
+      p {
+        color: #989595;
+      }
+    }
+  }
+}
+
+/*__________________________________________Всплывающая Корзина _________________________________________________*/
+#DOMWindow, .detailed-ordering #cart-block {
+  & > h2 {
+    font-size: 20px;
+    padding: 0 0 10px 43px;
+    background: url(images/cart_block_title.png) no-repeat left center;
+    border-bottom: 2px solid #e5e5e5;
+    margin-bottom: 0;
+  }
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #6f6f6f;
+    text-decoration: none;
+  }
+  .products-cart, .products-cart-page {
+    position: relative;
+    .views-row {
+      position: relative;
+      padding: 15px 0;
+      border-bottom: 2px solid #e5e5e5;
+      .close {
+        right: 15px;
+        top: 10px;
+        color: #a3a3a3;
+        span {
+          color: #000;
+        }
+      }
+      .text-line {
+        margin: 4px 0;
+      }
+      .image-row {
+        float: left;
+        border: 1px solid #e5e5e5;
+        margin-right: 50px;
+      }
+      .row-title {
+        a {
+          color: #0E99D3;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+      .code {
+        color: #8D8D8D;
+        margin-bottom: 31px;
+      }
+      .price-for-one {
+        span {
+          font-size: 28px;
+        }
+      }
+      .quantity {
+        margin-left: 100px;
+        input {
+          width: 30px;
+          text-align: right;
+          margin: 0 4px;
+          padding: 1px;
+        }
+      }
+      .price-oll {
+        color: #BF1010;
+        float: right;
+        span {
+          font-size: 28px;
+        }
+      }
+      .price-for-one, .quantity {
+        float: left;
+      }
+    }
+  }
+  .summarized-data {
+    #price-finali {
+      padding: 30px 0;
+      text-align: right;
+      font-size: 20px;
+      span {
+        color: #BF1010;
+        font-size: 14px;
+        span {
+          font-size: 28px;
+          margin-right: 4px;
+        }
+      }
+    }
+    .user-data {
+      & > div {
+        width: 53%;
+        float: left;
+        margin-right: 10px;
+        input {
+          width: 100%;
+          margin-top: 10px;
+        }
+        &.phone {
+          width: 28%;
+          float: right;
+        }
+      }
+    }
+  }
+  .continue-shopping {
+    float: left;
+    width: 50%;
+    padding-top: 55px;
+    span {
+      color: #0E99D3;
+      font-size: 18px;
+    }
+    a {
+      color: #0E99D3;
+    }
+  }
+  .form-action {
+    float: right;
+    width: 31%;
+    input {
+      border-style: none;
+      background: #EEE100;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #010101;
+      width: 180px;
+      text-align: center;
+      padding: 5px 0;
+      display: block;
+      margin: 25px 3px 20px auto;
+    }
+    a {
+      color: #919191;
+    }
+  }
+}
+
+/*---------- Детальное оформление заказа -------------*/
+.detailed-ordering-page {
+  h2 {
+    font-family: "Segoe UI";
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  input, select, textarea {
+    border: 1px solid #DCDCDC;
+    padding: 3px;
+    margin-top: 2px;
+    -webkit-box-shadow: inset 3px 3px 5px #e4e2e2;
+    box-shadow: inset 3px 3px 5px #e4e2e2;
+  }
+  #cart-block {
+    float: right;
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    border: 4px solid #eee400;
+    padding: 10px;
+    min-width: 587px;
+    width: 50%;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+  }
+  .detailed-ordering-form {
+    width: 35%;
+    min-width: 370px;
+    float: left;
+    label {
+      span {
+        color: red;
+      }
+    }
+    #block-web-form-application {
+      .client-form {
+        .fio {
+          label {
+            font-family: "Arial";
+            font-size: 16px;
+            font-weight: bold;
+          }
+          .form-text {
+            width: 100%;
+            margin-bottom: 15px;
+          }
+        }
+      }
+      .address-select {
+        padding: 15px 0;
+        border-bottom: 1px solid #e5e5e5;
+        .form-select {
+          margin: 18px 0;
+          label {
+            line-height: 27px;
+          }
+          select, input {
+            float: right;
+            width: 45%;
+            padding: 3px 6px;
+            margin-right: -8px;
+            font-size: 14px;
+            font-family: 'Arial';
+          }
+          select {
+            box-shadow: none;
+          }
+          input {
+            width: 42%;
+          }
+        }
+      }
+      .wishes {
+        margin: 20px 0;
+        label {
+          font-size: 17px;
+          font-weight: bold;
+          font-family: 'Arial';
+        }
+        textarea {
+          width: 100%;
+          height: 157px;
+          margin-top: 10px;
+        }
+      }
+      p {
+        margin-top: 8px;
+        padding-left: 40px;
+        background: url(images/delivery_e_0.png) no-repeat left center;
+      }
+      #edit-actions {
+        input {
+          background: none repeat scroll 0 0 #EEDE00;
+          border-color: #FDF650 #E4CC00 #E4CC00;
+          border-image: none;
+          border-radius: 5px;
+          border-right: 1px solid #E4CC00;
+          border-style: solid;
+          border-width: 1px;
+          box-shadow: 0 -1px 1px #EEDE00;
+          color: #000000;
+          font-size: 20px;
+          padding: 6px 15px;
+          font-family: "Segoe UI";
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+/*__________________________________________веб формы _________________________________________________*/
+#request-a-call {
+  display: none;
+}
+
+a.form-close {
+  background: url('images/close_box.png') no-repeat left top;
+  font-size: 0;
+  height: 20px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 20px;
+}
+
+#DOMWindow {
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  .webform-component {
+    clear: both;
+    margin: 0;
+    label {
+      color: #666;
+      font-size: 14px !important;
+      padding: 0;
+      display: block;
+      margin: 4px 0;
+    }
+  }
+  input, textarea, select {
+    width: 250px;
+    padding: 3px;
+    color: #666;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    margin: 0;
+    font: 1em "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  textarea {
+    height: 150px;
+  }
+  input:focus, textarea:focus, select:focus {
+    border: 1px solid #999;
+    background-color: #fff;
+    color: #333;
+  }
+  input.submit {
+    width: 85px;
+    cursor: pointer;
+    border: 1px solid #222;
+    background: #333;
+    color: #fff;
+  }
+  input.submit:hover {
+    background: #444;
+  }
+  input[type="submit"][disabled] {
+    background: #888;
+  }
+  fieldset {
+    padding: 0px;
+    border: 1px solid #eee;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+  }
+  legend {
+    padding: 0px;
+    font-weight: bold;
+    color: #000;
+    border: 1px solid #eee;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-bottom: 0 !important;
+    margin-bottom: 0px;
+  }
+  span.required {
+    font-size: 13px;
+    color: #ff0000;
+  }
+  /* Select the colour of the * if the field is required. */
+  input#edit-submit {
+    width: 110px;
+    border-left: 1px solid #3B7C26;
+    border-top: 1px solid #3B7C26;
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+    margin: 4px auto;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: url("images/header_bg.jpg");
+  }
+  input#edit-submit:hover {
+    background: none repeat scroll 0 0 #717171;
+  }
+  #edit-actions {
+    margin-top: 0px;
+  }
+}
+
+/*-------------------------------------------------------- IE ---------------------------------------------------------*/
+html.ie {
+  #container #center {
+    margin-right: (0-@sidebarRightWidth);
+    float: left;
+    width: 100%;
+  }
+  #container #squeeze {
+    margin-right: @sidebarRightWidth;
+  }
+  #container aside {
+    float: left;
+    z-index: 2;
+    position: relative;
+  }
+  body.front section.news {
+    width: @squeezeWidth;
+  }
+  body.front article {
+    width: @squeezeWidth;
+  }
+}
+
+/*_______________________________________________________ Стили для планшетов в ландшафтном режиме, нетбуков, ПК _________________________________________________________*/
+@media only screen and (min-width: 1025px), only screen and (min-device-width: 1025px) {
+
+  /*----- Основные параметры ------*/
+  body.front {
+    #container {
+      #center {
+        margin-right: (0-@sidebarRightWidth);
+        float: left;
+        width: 100%;
+      }
+      #squeeze {
+        margin-right: @sidebarRightWidth;
+      }
+
+      > aside {
+        float: left;
+        z-index: 2;
+        position: relative;
+      }
+    }
+  }
+
+  body.front section.news {
+    width: @squeezeWidth;
+  }
+
+  body.front article {
+    width: @squeezeWidth;
+  }
+
+  body.not-front {
+    #container {
+      #center {
+        width: 100%;
+      }
+      #squeeze {
+        margin-left: @sidebarLeftWidth;
+      }
+      #sidebar-first {
+        width: @sidebarLeftWidth;
+        float: left;
+      }
+    }
+  }
+
+  /* прячем фильтр для планшета */
+  #filter-tire-780 {
+    display: none;
+  }
+
+  .filter-button {
+    display: none;
+  }
+
+  .selection-brands {
+    display: block;
+  }
+
+  body.about, body.contacts, body.detailed-ordering-page, body.payment-delivery-page, body.delivery-city, body.news, body.news-page, body.search {
+    #container #squeeze {
+      margin-left: 0;
+    }
+  }
+
+}
+
+/*-- Страница О компании --*/
+body.about {
+  #center {
+    .node {
+      .title {
+        font-weight: bold;
+        font-size: 25px;
+      }
+      p {
+        margin-bottom: 15px;
+        line-height: 18px;
+      }
+      div {
+        h3 {
+          color: #000000;
+          margin-bottom: 15px;
+          margin-top: 23px;
+        }
+        ul {
+          list-style: decimal outside none;
+          margin-left: 45px;
+          li {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+/*-- Страница Контакты --*/
+body.contacts {
+  #center {
+    .node {
+      .title {
+        font-weight: bold;
+        font-size: 25px;
+      }
+      p {
+        margin-bottom: 15px;
+        line-height: 18px;
+        &.contact-email {
+          font-weight: bold;
+        }
+      }
+      div.telefon {
+        margin: 15px 0;
+        span {
+          display: block;
+          margin: 8px 0;
+          font-weight: bold;
+        }
+      }
+      div.kalendar-contact {
+        margin-top: 15px;
+        p {
+          margin: 3px 0;
+          strong {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+/*-- Оплата и доставка --*/
+body.payment-delivery-page, body.delivery-city, body.news-page, body.search {
+  .node {
+    .title {
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+    .p-d-wrapp {
+      &>div {
+        float: left;
+        width: 45%;
+        .p-d-title {
+          h2 {
+            font-size: 1.7em;
+            font-weight: bold;
+            padding-left: 40px;
+            padding-top: 5px;
+            background: url("images/delivery_e_0.png") no-repeat scroll left 11px rgba(0, 0, 0, 0);
+          }
+          p {
+            color: #2F2F2F;
+            font-size: 1.4em;
+            margin: 1.2em 0 0.8em;
+          }
+        }
+        &.payment {
+          .p-d-title {
+            h2 {
+              background: url("images/delivery_e_1.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+            }
+          }
+        }
+        .delivery-content {
+          .grey_text {
+            color: #777777;
+          }
+          .bold {
+            font-weight: bold;
+          }
+          .grey_text.it {
+            font-style: italic;
+          }
+          p {
+            font-size: 1em;
+            line-height: 1.4em;
+            margin: 0.8em 0;
+            span {
+              font-weight: bold;
+            }
+            a {
+              color: #2F9AE9;
+              cursor: pointer;
+              outline: medium none;
+              text-decoration: underline;
+              &:hover {
+                text-decoration: none;
+                color: #2F9AE9;
+              }
+            }
+            .orange {
+              color: #EB4321;
+              font-weight: bold;
+            }
+          }
+          ul {
+            margin: 1em 0;
+            li {
+              line-height: 1.4em;
+              list-style: none outside none;
+              margin: 0.5em 0;
+              padding: 5px 0;
+              padding-left: 40px;
+            }
+          }
+          .advantages {
+            li {
+              font-weight: bold;
+              background: url("images/delivery_e_0.png") no-repeat left center;
+
+              &.element-1 {
+                background-image: url("images/delivery_e_1.png");
+              }
+              &.element-2 {
+                background-image: url("images/delivery_e_2.png");
+              }
+            }
+          }
+        }
+      }
+      .payment {
+        float: right;
+      }
+    }
+    #delivery-map {
+      margin-top: 3rem;
+      h2 {
+        margin-bottom: 1.4em;
+      }
+      img {
+        margin: 0 auto;
+        display: block;
+      }
+    }
+    .delivery-city-list {
+      margin: 10px 0;
+      overflow: hidden;
+      position: relative;
+      .city-list-title {
+        font-size: 1.4em;
+        line-height: 1.1em;
+        font-weight: normal;
+        margin: 1.2em 0 0.8em;
+      }
+      ul {
+        float: left;
+        margin: 0 3% 0 0;
+        width: 25%;
+        li {
+          line-height: 1.4em;
+          list-style: none outside none;
+          margin: 0.5em 0;
+          padding-left: 30px;
+          background: url("images/li_city.png") no-repeat scroll 8px 3px rgba(0, 0, 0, 0);
+          position: relative;
+          width: 220px;
+          a {
+            color: #2F9AE9;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-- Оплата и доставка --*/
+body.delivery-city {
+  .city-wrapp {
+    .city-select-list {
+      .selection-city {
+        margin-bottom: 30px;
+        #tabs {
+          padding-top: 1px;
+          .tabs_menu {
+            position: absolute;
+            margin-left: 1px;
+            z-index: 2;
+            li {
+              list-style:none;
+              float:left;
+              color:#abaaaa;
+              cursor:pointer;
+              font-size: 16px;
+              border-right: 1px solid #d5d5d5;
+              border-top: 1px solid #d5d5d5;
+              z-index: 1;
+              a {
+                padding:3px 12px;
+                display: block;
+              }
+              &.first {
+                border-left: 1px solid #d5d5d5;
+              }
+              &.active_tab {
+                .l-g-d(~"#eee500, #eedb00");
+                border-top: 1px solid #e4cc00;
+                border-left: 1px solid #e4cc00;
+                border-right: none;
+                padding-bottom: 1px;
+                z-index: 2;
+                margin-left: -1px;
+                a {
+                  color:#000;
+                  padding:3px 12px;
+                  border-top: 1px solid #fdf650;
+                  border-left: 1px solid #fdf650;
+                  border-right: 1px solid #e4cc00;
+                }
+              }
+            }
+          }
+          .tabs_content {
+            margin-top: 22px;
+            z-index:-1;
+            background: url(images/product_option.png) repeat-x left top;
+            padding-top: 6px;
+            &>div {
+              display:none;
+              padding: 2rem 1rem;
+              background: #fff;
+              box-shadow: -1px 5px 6px #7c7c7c;
+              ul {
+                li {
+                  background: url("images/li_round.png") no-repeat scroll left 11px rgba(0, 0, 0, 0);
+                  line-height: 1.4em;
+                  list-style: none outside none;
+                  margin: 0.5em 0;
+                  padding-left: 30px;
+                  span {
+                    display: block;
+                    padding-bottom: 5px;
+                    span {
+                      background: url("../image/icons.png") no-repeat scroll 3px -1650px rgba(0, 0, 0, 0);
+                      cursor: pointer;
+                      display: inline;
+                      font-size: 1.3em;
+                      line-height: 1.3em;
+                      padding: 0 15px 0 0;
+                      vertical-align: bottom;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .row {
+        margin-bottom: 2rem;
+        label {
+          color: #000000;
+          display: inline-block;
+          font-size: 1.5em;
+          font-weight: normal;
+          margin-bottom: 5px;
+        }
+        .input {
+          background: #FFFFFF;
+          border: 1px solid #CCCCCC;
+          border-radius: 7px 7px 7px 7px;
+          margin-left: 1px;
+          padding: 5px;
+          display: inline-block;
+          max-width: 200px;
+          width: 50%;
+          select {
+            background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+            border: medium none;
+            display: block;
+            font-size: 1.4em;
+            width: 100%;
+          }
+        }
+      }
+      .delivery_hide_text {
+        p {
+          a {
+            color: #2F9AE9;
+            cursor: pointer;
+            outline: medium none;
+            text-decoration: underline;
+            &:hover {
+              color: #2F9AE9;
+              text-decoration: none;
+            }
+          }
+        }
+        .choice_links {
+          color: #2F9AE9;
+          font-size: 1.3em;
+          font-style: italic;
+          margin: 40px 0;
+          overflow: hidden;
+          &>div {
+            background: url("../image/choice_links_shadow.png") no-repeat scroll 0 100% rgba(0, 0, 0, 0);
+            float: left;
+            padding-bottom: 7px;
+            width: 49%;
+            .icon {
+              background: url("../image/chooce_tire_rim.png") no-repeat scroll 5px 100% rgba(0, 0, 0, 0);
+              float: left;
+              height: 40px;
+              width: 100px;
+            }
+            .link_text {
+              display: block;
+              padding-top: 10px;
+              a {
+                color: #2F9AE9;
+                &:hover {
+                  color: #2F9AE9;
+                  text-decoration: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-- Страница Новостей --*/
+body.news {
+  .news {
+    .news-item {
+      clear: both;
+      .new-img {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 20px;
+      }
+      .new-body {
+        margin-bottom: 1.3rem;
+        .new-date {
+          color: #414141;
+          font-size: 0.9em;
+        }
+        h3 {
+          color: #000000;
+          font-size: 18px;
+          margin-bottom: 8px;
+          a {
+            text-decoration: none;
+            color: #000;
+            &:hover {
+              color: #d1ca42;
+            }
+          }
+        }
+        .content {
+          .text-new {
+            line-height: 18px;
+          }
+          .more-link{
+            margin-left: 7px;
+            color: #0E99D3;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*-- Страница Новости --*/
+body.news-page {
+  .news-page {
+    .content {
+      .new-page-head {
+        float: left;
+        margin-right: 2rem;
+        width: 45%;
+        margin-bottom: 1.3rem;
+        img {
+          width: 100%;
+        }
+        .new-date {
+          color: #414141;
+          font-size: 0.9em;
+          margin-top: 5px;
+        }
+      }
+      .text {
+        p {
+          margin-bottom: 1.2rem;
+          line-height: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+/*_______________________________________________________ Стили для планшетов в ландшафтном режиме. _________________________________________________________*/
+@media only screen and (min-width: 641px) and (max-width: 1024px), only screen and (min-device-width: 641px) and (max-device-width: 1024px) {
+
+  #wrapper {
+    header {
+      /*----- Блок поиска ------*/
+      #search-block {
+        .search-form {
+          width: @mainWidth2;
+          form {
+            input[type='text'] {
+              width: @mainWidth2 - 200px;
+              width: 65%;
+            }
+          }
+        }
+      }
+      /*----- Главное меню ------*/
+      #top-menu {
+        width: @mainWidth2;
+        ul {
+          li {
+            a {
+              padding: 10px 0;
+              font-size: 0.8em;
+              &:hover, &.active {
+                padding-top: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .main-center {
+      width: @mainWidth2;
+    }
+    .region-menu {
+    }
+    #container {
+      width: @mainWidth2;
+      /*-------------Левая колонка----------*/
+      #sidebar-second {
+        width: 100%;
+      }
+      /*------- Основной контент внутряки -------*/
+      .products {
+        padding-left: 0;
+      }
+      aside#sidebar-first {
+        display: none;
+      }
+      /*____________________________фильтр для планшета___________________________*/
+      #filter-tire-780 {
+        display: block;
+      }
+      .filter {
+        background: url(images/tabs_bg.jpg);
+        border: 1px solid #dedede;
+        padding: 20px 0 20px 0;
+        width: 100%;
+        h3 {
+          color: #000;
+          margin: 8px 0;
+          font-size: 12px;
+          font-weight: normal;
+        }
+        .selection-car {
+          width: 100%;
+          float: none;
+          padding: 15px 0;
+          background: #DEDEDE;
+          & > h3 {
+            font-weight: bold;
+          }
+          .content {
+            margin-top: 15px;
+          }
+          .select {
+            width: 17%;
+            float: left;
+            margin: 5px 9% 15px 1%;
+            h3 {
+              font-weight: normal;
+              margin-bottom: 10px;
+            }
+            select {
+              width: 100%;
+              padding: 3px;
+              border: 1px solid #DCDCDC;
+              border-radius: 4px;
+              option {
+
+              }
+            }
+            &.last {
+              margin-right: 0;
+            }
+          }
+        }
+
+        .price-slider-780 {
+          padding: 15px;
+          width: 65%;
+          float: left;
+          margin-bottom: -20px;
+          h3 {
+            font-weight: bold;
+          }
+          .form-item {
+            width: 70px;
+            float: left;
+            margin-right: 40px;
+            margin-bottom: 20px;
+            input {
+              border: 1px solid #DCDCDC;
+              border-radius: 4px;
+              margin-right: 5px;
+              margin-top: 10px;
+              padding: 2px;
+              width: 61px;
+            }
+          }
+          #webform-component-prise-max {
+            width: 94px;
+            margin-right: 0;
+          }
+          #slider-range {
+            width: 53%;
+            height: 3px;
+            margin: 32px 0 0 30px;
+            float: left;
+            display: none;
+          }
+        }
+        .selects {
+          width: 30%;
+          float: right;
+          margin-top: 35px;
+          margin-bottom: -160px;
+          .options {
+            background: #DEDEDE;
+            padding: 15px;
+            margin-bottom: 10px;
+            padding: 4px 15px;
+            h3 {
+              display: inline;
+              line-height: 20px;
+            }
+            .form-select {
+              margin: 3px 0;
+              padding: 3px 0;
+              select {
+                float: right;
+                border: 1px solid #DCDCDC;
+                border-radius: 4px;
+                width: 70px;
+                &:hover {
+                  border: 1px solid #f5af42;
+                }
+              }
+            }
+          }
+        }
+        .checkboxs {
+          padding: 15px;
+          width: 65%;
+          clear: both;
+          margin-bottom: -40px;
+          h3 {
+            font-weight: bold;
+          }
+          & > div {
+            float: left;
+            margin-right: 12%;
+            width: 25%;
+            position: relative;
+          }
+          .checkbox {
+            label {
+              background: url("http://new.extraload.com.ua/css/images/checkbox_bg.png") no-repeat scroll left bottom rgba(0, 0, 0, 0);
+              display: block;
+              height: 14px;
+              margin: 3px 0;
+              padding-left: 22px;
+              a {
+                color: #000000;
+                text-decoration: none;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+              &:hover {
+                background-position: left -14px;
+              }
+              &.active {
+                background-position: left top;
+              }
+              input {
+                display: none;
+              }
+            }
+            &.run-flat {
+              font-size: 12px;
+              line-height: 14px;
+              margin-top: 43px;
+            }
+          }
+          .brand .checkbox {
+            height: 132px;
+            overflow: hidden;
+          }
+          .rim-color .checkbox {
+            height: 132px;
+            overflow: hidden;
+          }
+          .brand, .rim-color {
+            h3 {
+              margin-bottom: 20px;
+            }
+          }
+          .checkbox-pagination {
+            position: absolute;
+            width: 89px;
+            height: 21px;
+            background: url(images/checkbox_pagination.png) no-repeat center center;
+            left: 50%;
+            margin-left: -45px;
+            top: 17px;
+            cursor: pointer;
+            &.down {
+              background-image: url(images/checkbox_pagination_down.png);
+              bottom: -17px;
+              top: auto;
+            }
+          }
+          .spike {
+            margin-right: 0;
+            margin-top: 28px;
+          }
+        }
+        .form-actions {
+          input {
+            display: block;
+            background: #EEE300;
+            border-left: 1px solid #e4cc00;
+            border-right: 1px solid #e4cc00;
+            border-bottom: 1px solid #e4cc00;
+            border-top: 1px solid #fdf650;
+            -webkit-box-shadow: 0 -1px 1px #e4cc00;
+            box-shadow: 0 -1px 1px #e4cc00;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            padding: 3px 7px;
+            color: #010101;
+            font-size: 14px;
+            text-shadow: 2px 2px 2px #fcf27d;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 15px 0 auto;
+            &:hover {
+              background: #c8bb02;
+            }
+          }
+        }
+      }
+      /*------------ НОВОСТИ -------------*/
+      section.news {
+        width: 100%;
+      }
+      /*---------------Правая колонка----------------*/
+      aside#sidebar-second {
+        /*-------------- Акции -------------*/
+        .action {
+          float: left;
+          width: 26%;
+          margin: 5px 0 0 0;
+          margin-right: 0.5%;
+        }
+        /*-------------- Товары со скидкой -------------*/
+        .discounted-items {
+          margin: 5px 0 0 0;
+          float: right;
+          height: 146px;
+          overflow: hidden;
+          width: 72.5%;
+          h2 {
+            margin-bottom: 0;
+          }
+          .content {
+            padding-left: 16%;
+            .view-row {
+              padding: 6px 0;
+              margin-bottom: 15px;
+              margin-left: 2%;
+              width: 46%;
+              background-image: url(images/action_li_bg2.jpg);
+              background-repeat: no-repeat;
+              background-position: right center;
+              float: left;
+              &:nth-child(2) {
+                background-image: none;
+              }
+              div {
+                margin-bottom: 3px;
+              }
+              .image-row {
+                float: left;
+              }
+              .row-title {
+                a {
+                  color: #70B8DF;
+                }
+              }
+              &.last {
+                background: none;
+              }
+              .old-price {
+                font-size: 11px;
+                text-decoration: line-through;
+              }
+              .price {
+                font-size: 18px;
+                color: #bf1010;
+              }
+            }
+          }
+        }
+      }
+    }
+    footer {
+      .footer-content {
+        /*----- footer-menu ------*/
+        .region-bottom-menu {
+          #bottom-menu {
+            .bottom-pod-menu {
+              margin-right: 40px;
+            }
+          }
+        }
+        width: @mainWidth2;
+
+        /*----- Задать вопрос ------*/
+        .ask {
+          margin-left: 35px;
+        }
+      }
+    }
+  }
+
+  /*-------- Страница каталога ------------*/
+  body.catalog #container #squeeze {
+    width: 100%;
+    .catalog-product .catalog-content .format.catalog-table .views-row {
+      width: 27.53%;
+    }
+  }
+
+  body.catalog {
+    #filter-tire-780 {
+      display: block;
+      clear: both;
+    }
+    /*----- Оплата и Доставка------*/
+    .payment-delivery {
+      margin: 5px 0 0 0;
+      width: 38%;
+      float: left;
+      height: 235px;
+    }
+    /*-------------- Товары со скидкой -------------*/
+    #wrapper #container aside#sidebar-second .discounted-items {
+      width: 60.5%;
+      height: 235px;
+      .content {
+        .view-row {
+          padding: 53px 0;
+        }
+      }
+    }
+    aside#sidebar-second {
+      margin-bottom: 20px;
+    }
+  }
+
+  /*---------- Детальное оформление заказа -------------*/
+  .detailed-ordering-page {
+    h2 {
+      text-align: center;
+    }
+    #cart-block {
+      float: none;
+      margin: 0 auto 30px;
+      width: 90%;
+    }
+    .detailed-ordering-form {
+      width: 60%;
+      margin: 0 auto;
+      float: none;
+    }
+  }
+
+}
+
+/*_______________________________________________________ Стили для планшетов в портретном режиме. _________________________________________________________*/
+@media only screen and (min-width: 1px) and (max-width: 640px), only screen and (min-device-width: 1px) and (max-device-width: 640px) {
+  #wrapper {
+    .main-center {
+      padding-top: 84px;
+    }
+    header {
+      .top-header {
+        p {
+          display: none;
+        }
+        .cart-480 {
+          display: block;
+          .roundblock {
+            a {
+              color: #FFFFFF;
+              display: block;
+              font-size: 16px;
+              line-height: 36px;
+              margin: 0 auto;
+              text-decoration: none;
+              width: 202px;
+              span {
+                padding: 1px 8px;
+                background: #eede00;
+                border: 1px solid #e4cc00;
+                font-size: 16px;
+                margin-left: 10px;
+                color: #000;
+                border-top: 1px solid #fdf650;
+                -webkit-border-radius: 5px;
+                border-radius: 5px;
+                text-decoration: none;
+                -webkit-box-shadow: 0 -1px 1px #eede00;
+                box-shadow: 0 -1px 1px #eede00;
+                &:hover {
+                  background: #e1d402;
+                }
+              }
+            }
+          }
+        }
+      }
+      /*----- Логотип ------*/
+      #logo-floater {
+        display: none;
+      }
+      #logo-floater-480 {
+        display: block;
+        img {
+          width: 55%;
+        }
+      }
+      /*----- Блок Корзины ------*/
+      .cart {
+        display: none;
+      }
+      /*----- Обратный звонок шапка ----*/
+      .top-header-480 {
+        display: block;
+      }
+      /*----- Блок поиска ------*/
+      #search-block {
+        .search-form {
+          width: @mainWidth2;
+          form {
+            input[type='text'] {
+              width: @mainWidth2 - 10;
+            }
+          }
+        }
+      }
+      /*-- Мы в социальных сетях --*/
+      #social-networks {
+        display: none;
+      }
+      /*----- Главное меню ------*/
+      #top-menu {
+        display: none;
+      }
+      /*----- Главное меню width=480------*/
+      #top-menu-width-480 {
+        display: block;
+        width: @mainWidth2;
+        ul {
+          li {
+            a {
+
+              padding: 12px 0;
+              font-size: 1em;
+              &:hover, &.active {
+                padding-top: 11px;
+              }
+            }
+            ul {
+              position: absolute;
+              li {
+                background: #333;
+                float: none;
+                a {
+                  border-bottom: 1px solid #414141;
+                  border-top: 1px solid #292929;
+                  &:hover, &.active {
+                    padding-top: 12px;
+                    border-top: 1px solid #e8c200;
+                  }
+                }
+              }
+            }
+            &.last {
+              a {
+                border-left: 1px solid #414141;
+                border-right: 1px solid #292929;
+                color: #FFFEFE;
+                cursor: pointer;
+                display: block;
+                font-family: Segoe UI;
+                font-size: 1em;
+                padding: 12px 0;
+                text-align: center;
+                text-decoration: none;
+                &:hover, &.active {
+                  padding-top: 11px;
+                  background: #414141;
+                  border-top: 1px solid #e8c200;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .main-center {
+      width: @mainWidth2;
+    }
+    /*------------------------------------------------ CONTEINER -------------------------------------------*/
+    #container {
+      padding-right: 5px;
+      width: @mainWidth2;
+      /*------------ НОВОСТИ -------------*/
+      section.news {
+        display: none;
+      }
+      /*------------ Подбор по автомобилю -------------*/
+      .sections-car {
+        height: 269px;
+        .selection-car {
+          float: none;
+          margin: 0 auto;
+          width: 100%;
+          & > h3 {
+            text-align: center;
+            font-size: 15px;
+          }
+        }
+        .payment-delivery {
+          display: none;
+        }
+        .tabs_menu {
+          left: 50%;
+          margin-left: -74px;
+        }
+        .tabs_content {
+          margin-left: -5px;
+          & > div {
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+      }
+      /*------------ ШИНЫ -------------*/
+      section.tire-drive {
+        & > div {
+          position: relative;
+        }
+        .tire-drive-form {
+          width: 50%;
+          float: left;
+          .form-select {
+            float: none;
+            width: 100%;
+            h3 {
+              margin: 10px 0;
+            }
+          }
+          .form-actions {
+            input {
+              padding: 4px 12px;
+              font-size: 14px;
+            }
+          }
+        }
+        /*---------------- Слайдер ------------------*/
+        .slider-tire-drive {
+          width: 37.1%;
+          position: absolute;
+          top: 50%;
+          right: 10%;
+          margin-top: -95px;
+          .content {
+            .slider-filter {
+              display: none;
+            }
+          }
+          .jcarousel-container {
+            width: 100%;
+            .jcarousel-prev, .jcarousel-next {
+              height: 45px;
+              width: 21px;
+              position: absolute;
+              top: 50%;
+              margin-top: -22px;
+              border: none;
+              -webkit-border-radius: 50px 0 0 50px;
+              border-radius: 50px 0 0 50px;
+            }
+            .jcarousel-prev {
+              background: #f2f2f2 url('images/phone_prev.png') no-repeat center;
+              left: -21px;
+            }
+            .jcarousel-next {
+              background: #f2f2f2 url('images/phone_next.png') no-repeat center;
+              right: -21px;
+              -webkit-border-radius: 0 50px 50px 0;
+              border-radius: 0 50px 50px 0;
+            }
+          }
+        }
+      }
+
+      /*____________________________фильтр для телефона___________________________*/
+      aside#sidebar-first {
+        display: none;
+      }
+      #filter-tire-780 {
+        display: block;
+      }
+      .filter {
+        background: url(images/tabs_bg.jpg);
+        border: 1px solid #dedede;
+        width: 100%;
+        margin-left: -13px;
+        padding: 20px 10px;
+        h3 {
+          color: #000;
+          margin: 8px 0;
+          font-size: 11px;
+          font-weight: normal;
+        }
+        .selection-car {
+          width: 100%;
+          float: none;
+          padding: 15px 0;
+          background: #DEDEDE;
+          & > h3 {
+            font-size: 15px;
+            text-align: center;
+            font-weight: bold;
+          }
+          .content {
+            margin-top: 15px;
+            .select {
+              float: left;
+              margin: 5px 25% 15px 1%;
+              width: 36%;
+              h3 {
+                font-weight: normal;
+                margin-bottom: 10px;
+              }
+              select {
+                width: 100%;
+                padding: 3px;
+                border: 1px solid #DCDCDC;
+                border-radius: 4px;
+                option {
+
+                }
+              }
+              &.last {
+                margin-right: 0;
+              }
+            }
+            .model {
+              margin-right: 0;
+            }
+          }
+        }
+
+        .price-slider-780 {
+          width: 80%;
+          float: none;
+          margin: 0 auto;
+          & > h3 {
+            font-weight: bold;
+            text-align: center;
+            font-size: 15px;
+          }
+          .form-item {
+            width: 140px;
+            float: left;
+            marign-left: 39px;
+            input {
+              border: 1px solid #DCDCDC;
+              border-radius: 4px;
+              margin-right: 5px;
+              margin-top: 10px;
+              padding: 5px;
+              width: 61px;
+            }
+          }
+          #webform-component-prise-max {
+            width: 127px;
+            margin-right: 2px;
+            float: right;
+          }
+          #slider-range {
+            width: 88%;
+            height: 3px;
+            margin: 32px 0 0 30px;
+            clear: both;
+            display: none;
+          }
+        }
+        .selects {
+          width: 57%;
+          float: right;
+          margin-top: 50px;
+          margin-bottom: -210px;
+          .options {
+            background: #DEDEDE;
+            padding: 15px;
+            margin-bottom: 10px;
+            padding: 4px 15px;
+            h3 {
+              display: inline;
+              line-height: 20px;
+            }
+            .form-select {
+              margin: 3px 0;
+              padding: 3px 0;
+              select {
+                float: right;
+                border: 1px solid #DCDCDC;
+                border-radius: 4px;
+                width: 70px;
+                &:hover {
+                  border: 1px solid #f5af42;
+                }
+              }
+            }
+          }
+        }
+        .checkboxs {
+          padding: 15px;
+          width: 65%;
+          clear: both;
+          margin-bottom: -40px;
+          h3 {
+            font-weight: bold;
+          }
+          & > div {
+            width: 50%;
+            position: relative;
+          }
+          .checkbox {
+            label {
+              background: url("http://new.extraload.com.ua/css/images/checkbox_bg.png") no-repeat scroll left bottom rgba(0, 0, 0, 0);
+              display: block;
+              height: 14px;
+              margin: 3px 0;
+              padding-left: 22px;
+              a {
+                color: #000000;
+                text-decoration: none;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+              &:hover {
+                background-position: left -14px;
+              }
+              &.active {
+                background-position: left top;
+              }
+              input {
+                display: none;
+              }
+            }
+            &.run-flat {
+              margin-top: 15px;
+            }
+          }
+          .brand, .rim-color {
+            h3 {
+              margin-bottom: 20px;
+            }
+          }
+          .seasonality {
+            float: left;
+            margin-top: 30px;
+          }
+          .brand .checkbox {
+            height: 132px;
+            overflow: hidden;
+          }
+          .rim-color .checkbox {
+            height: 132px;
+            overflow: hidden;
+          }
+          .checkbox-pagination {
+            position: absolute;
+            width: 89px;
+            height: 21px;
+            background: url(images/checkbox_pagination.png) no-repeat center center;
+            left: 50%;
+            margin-left: -45px;
+            top: 10px;
+            cursor: pointer;
+            &.down {
+              background-image: url(images/checkbox_pagination_down.png);
+              bottom: -20px;
+              top: auto;
+            }
+          }
+          .spike {
+            margin-left: 1px;
+            margin-top: 30px;
+            float: left;
+          }
+        }
+        .form-actions {
+          input {
+            display: block;
+            background: #EEE300;
+            border-left: 1px solid #e4cc00;
+            border-right: 1px solid #e4cc00;
+            border-bottom: 1px solid #e4cc00;
+            border-top: 1px solid #fdf650;
+            -webkit-box-shadow: 0 -1px 1px #e4cc00;
+            box-shadow: 0 -1px 1px #e4cc00;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            padding: 3px 7px;
+            color: #010101;
+            font-size: 14px;
+            text-shadow: 2px 2px 2px #fcf27d;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 15px 0 auto;
+          }
+        }
+      }
+      /*------------------------- Основной контент телефон -------------------------------*/
+      .products {
+        padding-left: 0px;
+        padding-right: 5px;
+        .field-name-title {
+          font-family: Segoe UI;
+          font-weight: bold;
+          font-size: 11px;
+          margin-bottom: 20px;
+        }
+        .field-name-product-hed {
+          .description-block {
+            width: 100%;
+            .product-gallery {
+              float: left;
+              .slides_container {
+                width: 180px;
+                height: 222px;
+                overflow: hidden;
+                position: relative;
+                margin-bottom: 20px;
+              }
+              .rating {
+              }
+              .pagination {
+                width: 285px;
+                li {
+                  float: left;
+                  border: 1px solid #cdcdcd;
+                  margin: 0 5px;
+                  a {
+                    padding: 2px 5px;
+                    display: block;
+                    img {
+
+                    }
+                  }
+                }
+              }
+            }
+            .product-options {
+              font-size: 9px;
+              & > div {
+                margin: 4px 0;
+              }
+              .price {
+                color: #bf1010;
+                font-size: 23px;
+              }
+              .sison {
+                margin-top: 6px;
+              }
+              .car-type {
+                margin-bottom: 6px;
+              }
+            }
+          }
+          .payment-delivery {
+            display: none;
+          }
+        }
+      }
+      /*----- Мне нравится -----*/
+      .i-like {
+        display: none;
+      }
+      /*----- Параметров товара------*/
+      .parameter-block {
+        #tabs {
+          .tabs_content {
+            & > div {
+              font-size: 11px;
+              table {
+                tr {
+                  th {
+                    &.element-2 {
+                      color: #999;
+                      display: none;
+                    }
+                  }
+                  td {
+                    &.element-2 {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .selection-brands {
+        display: none;
+      }
+
+      /*-------------------------------------------------------Правая колонка-----------------------------------------------------*/
+      #sidebar-second {
+        width: 99.4%;
+        /*-------------- Акции -------------*/
+        .action {
+          margin: 10px 0 0;
+        }
+        /*-------------- Товары со скидкой -------------*/
+        .discounted-items {
+          margin: 5px 0 0;
+          max-height: 455px;
+          .content {
+            padding: 4px;
+            .view-row {
+              background: url(images/action_li_bg.jpg) no-repeat right bottom;
+              width: 50%;
+              float: left;
+              height: 105px;
+              &:nth-child(2n+2) {
+                background-position: left bottom;
+              }
+              .image-row {
+                height: 110px;
+              }
+              .row-title {
+                a {
+                  font-size: 10px;
+                  color: #70B8DF;
+                }
+              }
+              &.last {
+                background: none;
+              }
+              .diametr {
+                font-size: 12px;
+              }
+              .old-price {
+                font-size: 10px;
+                text-decoration: line-through;
+              }
+              .price {
+                font-size: 16px;
+                color: #bf1010;
+              }
+            }
+          }
+        }
+      }
+    }
+    /*--всего по чуть чуть --*/
+    .catalog-show, .catalog-regularize {
+      float: none !important;
+      clear: both;
+      font-size: 14px !important;
+      input {
+        font-size: 12px !important;
+        padding: 0 !important;
+      }
+    }
+    .selection-brands {
+      display: none;
+    }
+    .catalog-table .show-rewievs {
+      left: 7px !important;
+    }
+    .catalog-list .read-more {
+      position: static !important;
+      text-align: center;
+      width: 100px;
+      margin-left: 115px !important;
+    }
+    /*------------------------------------------------ FOOTER -------------------------------------------*/
+    footer {
+      .footer-content {
+        width: @mainWidth2;
+        /*----- footer-menu ------*/
+        .region-bottom-menu {
+          #bottom-menu {
+            .bottom-pod-menu {
+              font-size: 12px;
+              margin-right: 0;
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+            .pod-menu-1 {
+              position: absolute;
+              left: 50%;
+              margin-left: -30px;
+            }
+            .pod-menu-2 {
+              position: absolute;
+              right: 15px;
+            }
+          }
+        }
+        /*----- Присоеденяйтесь к нам ------*/
+        #social-networks {
+          float: none;
+          display: block;
+          position: absolute;
+          right: 10px;
+          bottom: 15px;
+          h3 {
+            display: none;
+          }
+        }
+        /*----- Задать вопрос ------*/
+        .ask {
+          display: none;
+        }
+        /*----- Копирайты ------*/
+        #copy {
+          p {
+            font-size: 0.6em;
+          }
+        }
+      }
+    }
+  }
+
+  /*-------- Страница каталога ------------*/
+  body.catalog #container #squeeze {
+    width: 100%;
+    .catalog-product .catalog-content .format.catalog-table .views-row {
+      width: 37%;
+      height: 250px;
+    }
+  }
+
+  body.catalog {
+    #filter-tire-780 {
+      display: block;
+      clear: both;
+    }
+  }
+
+  body.catalog .payment-delivery {
+    margin: 0;
+    margin-right: 5px;
+  }
+
+  body.catalog #wrapper #container #sidebar-second .discounted-items {
+    margin-right: 5px;
+    margin-bottom: 20px;
+  }
+
+  body.catalog {
+
+  }
+
+  body.drive #wrapper #container .filter .form-actions {
+    padding-right: 30px;
+    padding-top: 20px;
+  }
+
+  /*-------- Страница дисков ------------*/
+  body.drive {
+    #wrapper #container .filter {
+      .selects {
+        width: 100%;
+        margin-bottom: 0;
+        .options {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+      .checkboxs {
+        width: 80%;
+        margin: 0 auto;
+        & > div {
+          width: auto;
+          float: left;
+        }
+        .rim-color {
+          float: right;
+          .checkbox {
+            overflow: hidden;
+          }
+        }
+      }
+      .form-actions {
+        clear: both;
+      }
+    }
+  }
+
+  /*-------- Оплата и доставка ------------*/
+
+
+  body.tire #wrapper #container .filter .checkboxs .checkbox-pagination.up {
+    top: 15px;
+  }
+
+  body.payment-delivery-page {
+    .node {
+      .p-d-wrapp {
+        &>div {
+          width: 100%;
+          float: none;
+        }
+      }
+      #delivery-map {
+        display: none;
+      }
+      .delivery-city-list {
+        ul {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  body.delivery-city {
+    .city-wrapp .city-select-list .delivery_hide_text .choice_links > div {
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  /*---------- Детальное оформление заказа -------------*/
+  .detailed-ordering-page {
+    h2 {
+      text-align: center;
+    }
+    #cart-block {
+      float: none;
+      margin: 0 auto 30px;
+      width: 90%;
+      min-width: 20%;
+      .products-cart-page .views-row {
+        .image-row {
+          margin-right: 7px;
+        }
+        .price-oll {
+          span {
+            font-size: 18px;
+          }
+        }
+        .price-for-one {
+          span {
+            font-size: 17px;
+          }
+        }
+        .quantity {
+          clear: both;
+          margin-left: 110px;
+        }
+        .close {
+          right: 3px;
+          top: 3px;
+        }
+      }
+    }
+    .detailed-ordering-form {
+      width: 90%;
+      margin: 0 auto;
+      float: none;
+      min-width: 20%;
+      #block-web-form-application {
+        .address-select {
+          .form-select {
+            input {
+              width: 39%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

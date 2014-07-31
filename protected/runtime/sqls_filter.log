@@ -1,0 +1,10 @@
+SELECT MIN(price) AS min_price, MAX(price) AS max_price, 1 AS one FROM shinsIndex WHERE price > 0 GROUP BY one
+SELECT shins_profile_width FROM shinsIndex GROUP BY shins_profile_width ORDER BY shins_profile_width ASC LIMIT 500000
+SELECT shins_load_index_translit, shins_load_index FROM shinsIndex GROUP BY shins_load_index ORDER BY shins_load_index ASC LIMIT 500000
+SELECT shins_profile_height FROM shinsIndex WHERE shins_profile_height > 0 GROUP BY shins_profile_height ORDER BY shins_profile_height ASC LIMIT 500000
+SELECT shins_diametr FROM shinsIndex WHERE  shins_diametr > 0.0 GROUP BY shins_diametr ORDER BY shins_diametr ASC LIMIT 500000
+SELECT shins_season_id, shins_season FROM shinsIndex WHERE shins_season_id > 1 GROUP BY shins_season_id ORDER BY shins_season ASC LIMIT 500000
+SELECT shins_type_of_avto_id, shins_type_of_avto FROM shinsIndex WHERE shins_type_of_avto_id > 1 GROUP BY shins_type_of_avto_id ORDER BY shins_type_of_avto ASC LIMIT 500000
+SELECT shins_run_flat_technology_id FROM shinsIndex WHERE shins_run_flat_technology_id = 2 GROUP BY shins_run_flat_technology_id
+SELECT shins_spike_id FROM shinsIndex WHERE shins_spike_id = 2 GROUP BY shins_spike_id
+SELECT vendor_id, vendor_name FROM shinsIndex WHERE vendor_id > 1 GROUP BY vendor_id ORDER BY vendor_name ASC LIMIT 500000
