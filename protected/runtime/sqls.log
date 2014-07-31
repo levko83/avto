@@ -1,0 +1,3 @@
+SELECT `disks_display_id`, `disks_display_name`, `disks_type`, `disks_display_translit`, `disks_rating`, `image_name`, MIN(min_display_price_fixture) AS min_price
+FROM `disksIndex`
+GROUP BY `disks_display_id` LIMIT 20

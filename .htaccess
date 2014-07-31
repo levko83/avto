@@ -1,0 +1,12 @@
+AddDefaultCharset utf-8
+Options +FollowSymLinks
+#IndexIgnore */*
+php_value upload_max_filesize 3M
+php_value post_max_size 12M
+RewriteEngine on
+RedirectMatch 403 /\..*$
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . /index.php [L]
+

@@ -1,0 +1,2575 @@
+Array
+(
+    [0] => Array
+        (
+            [0] => Array
+                (
+                    [min_price] => 321
+                    [max_price] => 4453
+                    [one] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [0] => Array
+                (
+                    [shins_profile_width] => 0
+                )
+
+            [1] => Array
+                (
+                    [shins_profile_width] => 125
+                )
+
+            [2] => Array
+                (
+                    [shins_profile_width] => 135
+                )
+
+            [3] => Array
+                (
+                    [shins_profile_width] => 145
+                )
+
+            [4] => Array
+                (
+                    [shins_profile_width] => 155
+                )
+
+            [5] => Array
+                (
+                    [shins_profile_width] => 165
+                )
+
+            [6] => Array
+                (
+                    [shins_profile_width] => 175
+                )
+
+            [7] => Array
+                (
+                    [shins_profile_width] => 185
+                )
+
+            [8] => Array
+                (
+                    [shins_profile_width] => 195
+                )
+
+            [9] => Array
+                (
+                    [shins_profile_width] => 205
+                )
+
+            [10] => Array
+                (
+                    [shins_profile_width] => 215
+                )
+
+            [11] => Array
+                (
+                    [shins_profile_width] => 225
+                )
+
+            [12] => Array
+                (
+                    [shins_profile_width] => 235
+                )
+
+            [13] => Array
+                (
+                    [shins_profile_width] => 245
+                )
+
+            [14] => Array
+                (
+                    [shins_profile_width] => 255
+                )
+
+            [15] => Array
+                (
+                    [shins_profile_width] => 265
+                )
+
+            [16] => Array
+                (
+                    [shins_profile_width] => 275
+                )
+
+            [17] => Array
+                (
+                    [shins_profile_width] => 285
+                )
+
+            [18] => Array
+                (
+                    [shins_profile_width] => 295
+                )
+
+            [19] => Array
+                (
+                    [shins_profile_width] => 305
+                )
+
+            [20] => Array
+                (
+                    [shins_profile_width] => 315
+                )
+
+            [21] => Array
+                (
+                    [shins_profile_width] => 325
+                )
+
+            [22] => Array
+                (
+                    [shins_profile_width] => 335
+                )
+
+            [23] => Array
+                (
+                    [shins_profile_width] => 345
+                )
+
+            [24] => Array
+                (
+                    [shins_profile_width] => 355
+                )
+
+            [25] => Array
+                (
+                    [shins_profile_width] => 375
+                )
+
+        )
+
+    [2] => Array
+        (
+            [0] => Array
+                (
+                    [shins_load_index_translit] => 
+                    [shins_load_index] => 
+                )
+
+            [1] => Array
+                (
+                    [shins_load_index_translit] => 100
+                    [shins_load_index] => 100
+                )
+
+            [2] => Array
+                (
+                    [shins_load_index_translit] => 100-1000-kg-
+                    [shins_load_index] => 100 (1000 кг)
+                )
+
+            [3] => Array
+                (
+                    [shins_load_index_translit] => 100-475-kg-
+                    [shins_load_index] => 100 (475 кг)
+                )
+
+            [4] => Array
+                (
+                    [shins_load_index_translit] => 100-800-kg-
+                    [shins_load_index] => 100 (800 кг)
+                )
+
+            [5] => Array
+                (
+                    [shins_load_index_translit] => 101
+                    [shins_load_index] => 101
+                )
+
+            [6] => Array
+                (
+                    [shins_load_index_translit] => 101-475-kg-
+                    [shins_load_index] => 101 (475 кг)
+                )
+
+            [7] => Array
+                (
+                    [shins_load_index_translit] => 101-615-kg-
+                    [shins_load_index] => 101 (615 кг)
+                )
+
+            [8] => Array
+                (
+                    [shins_load_index_translit] => 101-825-kg-
+                    [shins_load_index] => 101 (825 кг)
+                )
+
+            [9] => Array
+                (
+                    [shins_load_index_translit] => 102
+                    [shins_load_index] => 102
+                )
+
+            [10] => Array
+                (
+                    [shins_load_index_translit] => 102-475-kg-
+                    [shins_load_index] => 102 (475 кг)
+                )
+
+            [11] => Array
+                (
+                    [shins_load_index_translit] => 102-615-kg-
+                    [shins_load_index] => 102 (615 кг)
+                )
+
+            [12] => Array
+                (
+                    [shins_load_index_translit] => 102-850-kg-
+                    [shins_load_index] => 102 (850 кг)
+                )
+
+            [13] => Array
+                (
+                    [shins_load_index_translit] => 103
+                    [shins_load_index] => 103
+                )
+
+            [14] => Array
+                (
+                    [shins_load_index_translit] => 103-875-kg-
+                    [shins_load_index] => 103 (875 кг)
+                )
+
+            [15] => Array
+                (
+                    [shins_load_index_translit] => 104
+                    [shins_load_index] => 104
+                )
+
+            [16] => Array
+                (
+                    [shins_load_index_translit] => 104-500-kg-
+                    [shins_load_index] => 104 (500 кг)
+                )
+
+            [17] => Array
+                (
+                    [shins_load_index_translit] => 104-900-kg-
+                    [shins_load_index] => 104 (900 кг)
+                )
+
+            [18] => Array
+                (
+                    [shins_load_index_translit] => 104-975-kg-
+                    [shins_load_index] => 104 (975 кг)
+                )
+
+            [19] => Array
+                (
+                    [shins_load_index_translit] => 105
+                    [shins_load_index] => 105
+                )
+
+            [20] => Array
+                (
+                    [shins_load_index_translit] => 105-925-kg-
+                    [shins_load_index] => 105 (925 кг)
+                )
+
+            [21] => Array
+                (
+                    [shins_load_index_translit] => 106
+                    [shins_load_index] => 106
+                )
+
+            [22] => Array
+                (
+                    [shins_load_index_translit] => 106-475-kg-
+                    [shins_load_index] => 106 (475 кг)
+                )
+
+            [23] => Array
+                (
+                    [shins_load_index_translit] => 106-950-kg-
+                    [shins_load_index] => 106 (950 кг)
+                )
+
+            [24] => Array
+                (
+                    [shins_load_index_translit] => 106-975-kg-
+                    [shins_load_index] => 106 (975 кг)
+                )
+
+            [25] => Array
+                (
+                    [shins_load_index_translit] => 107
+                    [shins_load_index] => 107
+                )
+
+            [26] => Array
+                (
+                    [shins_load_index_translit] => 107-475-kg-
+                    [shins_load_index] => 107 (475 кг)
+                )
+
+            [27] => Array
+                (
+                    [shins_load_index_translit] => 107-500-kg-
+                    [shins_load_index] => 107 (500 кг)
+                )
+
+            [28] => Array
+                (
+                    [shins_load_index_translit] => 107-900-kg-
+                    [shins_load_index] => 107 (900 кг)
+                )
+
+            [29] => Array
+                (
+                    [shins_load_index_translit] => 107-975-kg-
+                    [shins_load_index] => 107 (975 кг)
+                )
+
+            [30] => Array
+                (
+                    [shins_load_index_translit] => 108
+                    [shins_load_index] => 108
+                )
+
+            [31] => Array
+                (
+                    [shins_load_index_translit] => 108-1000-kg-
+                    [shins_load_index] => 108 (1000 кг)
+                )
+
+            [32] => Array
+                (
+                    [shins_load_index_translit] => 108-475-kg-
+                    [shins_load_index] => 108 (475 кг)
+                )
+
+            [33] => Array
+                (
+                    [shins_load_index_translit] => 109
+                    [shins_load_index] => 109
+                )
+
+            [34] => Array
+                (
+                    [shins_load_index_translit] => 109-1030-kg-
+                    [shins_load_index] => 109 (1030 кг)
+                )
+
+            [35] => Array
+                (
+                    [shins_load_index_translit] => 109-975-kg-
+                    [shins_load_index] => 109 (975 кг)
+                )
+
+            [36] => Array
+                (
+                    [shins_load_index_translit] => 110
+                    [shins_load_index] => 110
+                )
+
+            [37] => Array
+                (
+                    [shins_load_index_translit] => 110-1060-kg-
+                    [shins_load_index] => 110 (1060 кг)
+                )
+
+            [38] => Array
+                (
+                    [shins_load_index_translit] => 111-1090-kg-
+                    [shins_load_index] => 111 (1090 кг)
+                )
+
+            [39] => Array
+                (
+                    [shins_load_index_translit] => 112
+                    [shins_load_index] => 112
+                )
+
+            [40] => Array
+                (
+                    [shins_load_index_translit] => 112-1120-kg-
+                    [shins_load_index] => 112 (1120 кг)
+                )
+
+            [41] => Array
+                (
+                    [shins_load_index_translit] => 112-975-kg-
+                    [shins_load_index] => 112 (975 кг)
+                )
+
+            [42] => Array
+                (
+                    [shins_load_index_translit] => 113
+                    [shins_load_index] => 113
+                )
+
+            [43] => Array
+                (
+                    [shins_load_index_translit] => 113-1150-kg-
+                    [shins_load_index] => 113 (1150 кг)
+                )
+
+            [44] => Array
+                (
+                    [shins_load_index_translit] => 113-975-kg-
+                    [shins_load_index] => 113 (975 кг)
+                )
+
+            [45] => Array
+                (
+                    [shins_load_index_translit] => 114-1180-kg-
+                    [shins_load_index] => 114 (1180 кг)
+                )
+
+            [46] => Array
+                (
+                    [shins_load_index_translit] => 115
+                    [shins_load_index] => 115
+                )
+
+            [47] => Array
+                (
+                    [shins_load_index_translit] => 115-1215-kg-
+                    [shins_load_index] => 115 (1215 кг)
+                )
+
+            [48] => Array
+                (
+                    [shins_load_index_translit] => 116-1250-kg-
+                    [shins_load_index] => 116 (1250 кг)
+                )
+
+            [49] => Array
+                (
+                    [shins_load_index_translit] => 117-1285-kg-
+                    [shins_load_index] => 117 (1285 кг)
+                )
+
+            [50] => Array
+                (
+                    [shins_load_index_translit] => 118-1320-kg-
+                    [shins_load_index] => 118 (1320 кг)
+                )
+
+            [51] => Array
+                (
+                    [shins_load_index_translit] => 119-1360-kg-
+                    [shins_load_index] => 119 (1360 кг)
+                )
+
+            [52] => Array
+                (
+                    [shins_load_index_translit] => 120
+                    [shins_load_index] => 120
+                )
+
+            [53] => Array
+                (
+                    [shins_load_index_translit] => 120-1250-kg-
+                    [shins_load_index] => 120 (1250 кг)
+                )
+
+            [54] => Array
+                (
+                    [shins_load_index_translit] => 120-1400-kg-
+                    [shins_load_index] => 120 (1400 кг)
+                )
+
+            [55] => Array
+                (
+                    [shins_load_index_translit] => 121-1450-kg-
+                    [shins_load_index] => 121 (1450 кг)
+                )
+
+            [56] => Array
+                (
+                    [shins_load_index_translit] => 122-1500-kg-
+                    [shins_load_index] => 122 (1500 кг)
+                )
+
+            [57] => Array
+                (
+                    [shins_load_index_translit] => 123-1550-kg-
+                    [shins_load_index] => 123 (1550 кг)
+                )
+
+            [58] => Array
+                (
+                    [shins_load_index_translit] => 124-1600-kg-
+                    [shins_load_index] => 124 (1600 кг)
+                )
+
+            [59] => Array
+                (
+                    [shins_load_index_translit] => 125-1650-kg-
+                    [shins_load_index] => 125 (1650 кг)
+                )
+
+            [60] => Array
+                (
+                    [shins_load_index_translit] => 126-1700-kg-
+                    [shins_load_index] => 126 (1700 кг)
+                )
+
+            [61] => Array
+                (
+                    [shins_load_index_translit] => 127-1750-kg-
+                    [shins_load_index] => 127 (1750 кг)
+                )
+
+            [62] => Array
+                (
+                    [shins_load_index_translit] => 128-1800-kg-
+                    [shins_load_index] => 128 (1800 кг)
+                )
+
+            [63] => Array
+                (
+                    [shins_load_index_translit] => 129-1850-kg-
+                    [shins_load_index] => 129 (1850 кг)
+                )
+
+            [64] => Array
+                (
+                    [shins_load_index_translit] => 63-272-kg-
+                    [shins_load_index] => 63 (272 кг)
+                )
+
+            [65] => Array
+                (
+                    [shins_load_index_translit] => 64-280-kg-
+                    [shins_load_index] => 64 (280 кг)
+                )
+
+            [66] => Array
+                (
+                    [shins_load_index_translit] => 65-290-kg-
+                    [shins_load_index] => 65 (290 кг)
+                )
+
+            [67] => Array
+                (
+                    [shins_load_index_translit] => 66-300-kg-
+                    [shins_load_index] => 66 (300 кг)
+                )
+
+            [68] => Array
+                (
+                    [shins_load_index_translit] => 68-315-kg-
+                    [shins_load_index] => 68 (315 кг)
+                )
+
+            [69] => Array
+                (
+                    [shins_load_index_translit] => 68-690-kg-
+                    [shins_load_index] => 68 (690 кг)
+                )
+
+            [70] => Array
+                (
+                    [shins_load_index_translit] => 69-325-kg-
+                    [shins_load_index] => 69 (325 кг)
+                )
+
+            [71] => Array
+                (
+                    [shins_load_index_translit] => 69-690-kg-
+                    [shins_load_index] => 69 (690 кг)
+                )
+
+            [72] => Array
+                (
+                    [shins_load_index_translit] => 70-335-kg-
+                    [shins_load_index] => 70 (335 кг)
+                )
+
+            [73] => Array
+                (
+                    [shins_load_index_translit] => 70-690-kg-
+                    [shins_load_index] => 70 (690 кг)
+                )
+
+            [74] => Array
+                (
+                    [shins_load_index_translit] => 71-345-kg-
+                    [shins_load_index] => 71 (345 кг)
+                )
+
+            [75] => Array
+                (
+                    [shins_load_index_translit] => 72-355-kg-
+                    [shins_load_index] => 72 (355 кг)
+                )
+
+            [76] => Array
+                (
+                    [shins_load_index_translit] => 72-690-kg-
+                    [shins_load_index] => 72 (690 кг)
+                )
+
+            [77] => Array
+                (
+                    [shins_load_index_translit] => 73-365-kg-
+                    [shins_load_index] => 73 (365 кг)
+                )
+
+            [78] => Array
+                (
+                    [shins_load_index_translit] => 73-560-kg-
+                    [shins_load_index] => 73 (560 кг)
+                )
+
+            [79] => Array
+                (
+                    [shins_load_index_translit] => 74-375-kg-
+                    [shins_load_index] => 74 (375 кг)
+                )
+
+            [80] => Array
+                (
+                    [shins_load_index_translit] => 75-387-kg-
+                    [shins_load_index] => 75 (387 кг)
+                )
+
+            [81] => Array
+                (
+                    [shins_load_index_translit] => 75-475-kg-
+                    [shins_load_index] => 75 (475 кг)
+                )
+
+            [82] => Array
+                (
+                    [shins_load_index_translit] => 76-400-kg-
+                    [shins_load_index] => 76 (400 кг)
+                )
+
+            [83] => Array
+                (
+                    [shins_load_index_translit] => 77-412-kg-
+                    [shins_load_index] => 77 (412 кг)
+                )
+
+            [84] => Array
+                (
+                    [shins_load_index_translit] => 78-426-kg-
+                    [shins_load_index] => 78 (426 кг)
+                )
+
+            [85] => Array
+                (
+                    [shins_load_index_translit] => 79
+                    [shins_load_index] => 79
+                )
+
+            [86] => Array
+                (
+                    [shins_load_index_translit] => 79-437-kg-
+                    [shins_load_index] => 79 (437 кг)
+                )
+
+            [87] => Array
+                (
+                    [shins_load_index_translit] => 80-450-kg-
+                    [shins_load_index] => 80 (450 кг)
+                )
+
+            [88] => Array
+                (
+                    [shins_load_index_translit] => 81
+                    [shins_load_index] => 81
+                )
+
+            [89] => Array
+                (
+                    [shins_load_index_translit] => 81-462-kg-
+                    [shins_load_index] => 81 (462 кг)
+                )
+
+            [90] => Array
+                (
+                    [shins_load_index_translit] => 82
+                    [shins_load_index] => 82
+                )
+
+            [91] => Array
+                (
+                    [shins_load_index_translit] => 82-437-kg-
+                    [shins_load_index] => 82 (437 кг)
+                )
+
+            [92] => Array
+                (
+                    [shins_load_index_translit] => 82-475-kg-
+                    [shins_load_index] => 82 (475 кг)
+                )
+
+            [93] => Array
+                (
+                    [shins_load_index_translit] => 82-560-kg-
+                    [shins_load_index] => 82 (560 кг)
+                )
+
+            [94] => Array
+                (
+                    [shins_load_index_translit] => 82-615-kg-
+                    [shins_load_index] => 82 (615 кг)
+                )
+
+            [95] => Array
+                (
+                    [shins_load_index_translit] => 82-690-kg-
+                    [shins_load_index] => 82 (690 кг)
+                )
+
+            [96] => Array
+                (
+                    [shins_load_index_translit] => 82-710-kg-
+                    [shins_load_index] => 82 (710 кг)
+                )
+
+            [97] => Array
+                (
+                    [shins_load_index_translit] => 83-478-kg-
+                    [shins_load_index] => 83 (478 кг)
+                )
+
+            [98] => Array
+                (
+                    [shins_load_index_translit] => 84
+                    [shins_load_index] => 84
+                )
+
+            [99] => Array
+                (
+                    [shins_load_index_translit] => 84-437-kg-
+                    [shins_load_index] => 84 (437 кг)
+                )
+
+            [100] => Array
+                (
+                    [shins_load_index_translit] => 84-475-kg-
+                    [shins_load_index] => 84 (475 кг)
+                )
+
+            [101] => Array
+                (
+                    [shins_load_index_translit] => 84-500-kg-
+                    [shins_load_index] => 84 (500 кг)
+                )
+
+            [102] => Array
+                (
+                    [shins_load_index_translit] => 84-560-kg-
+                    [shins_load_index] => 84 (560 кг)
+                )
+
+            [103] => Array
+                (
+                    [shins_load_index_translit] => 84-615-kg-
+                    [shins_load_index] => 84 (615 кг)
+                )
+
+            [104] => Array
+                (
+                    [shins_load_index_translit] => 84-670-kg-
+                    [shins_load_index] => 84 (670 кг)
+                )
+
+            [105] => Array
+                (
+                    [shins_load_index_translit] => 84-690-kg-
+                    [shins_load_index] => 84 (690 кг)
+                )
+
+            [106] => Array
+                (
+                    [shins_load_index_translit] => 85
+                    [shins_load_index] => 85
+                )
+
+            [107] => Array
+                (
+                    [shins_load_index_translit] => 85-475-kg-
+                    [shins_load_index] => 85 (475 кг)
+                )
+
+            [108] => Array
+                (
+                    [shins_load_index_translit] => 85-515-kg-
+                    [shins_load_index] => 85 (515 кг)
+                )
+
+            [109] => Array
+                (
+                    [shins_load_index_translit] => 85-690-kg-
+                    [shins_load_index] => 85 (690 кг)
+                )
+
+            [110] => Array
+                (
+                    [shins_load_index_translit] => 86
+                    [shins_load_index] => 86
+                )
+
+            [111] => Array
+                (
+                    [shins_load_index_translit] => 86-475-kg-
+                    [shins_load_index] => 86 (475 кг)
+                )
+
+            [112] => Array
+                (
+                    [shins_load_index_translit] => 86-530-kg-
+                    [shins_load_index] => 86 (530 кг)
+                )
+
+            [113] => Array
+                (
+                    [shins_load_index_translit] => 86-615-kg-
+                    [shins_load_index] => 86 (615 кг)
+                )
+
+            [114] => Array
+                (
+                    [shins_load_index_translit] => 87
+                    [shins_load_index] => 87
+                )
+
+            [115] => Array
+                (
+                    [shins_load_index_translit] => 87-475-kg-
+                    [shins_load_index] => 87 (475 кг)
+                )
+
+            [116] => Array
+                (
+                    [shins_load_index_translit] => 87-545-kg-
+                    [shins_load_index] => 87 (545 кг)
+                )
+
+            [117] => Array
+                (
+                    [shins_load_index_translit] => 87-670-kg-
+                    [shins_load_index] => 87 (670 кг)
+                )
+
+            [118] => Array
+                (
+                    [shins_load_index_translit] => 88
+                    [shins_load_index] => 88
+                )
+
+            [119] => Array
+                (
+                    [shins_load_index_translit] => 88-475-kg-
+                    [shins_load_index] => 88 (475 кг)
+                )
+
+            [120] => Array
+                (
+                    [shins_load_index_translit] => 88-545-kg-
+                    [shins_load_index] => 88 (545 кг)
+                )
+
+            [121] => Array
+                (
+                    [shins_load_index_translit] => 88-560-kg-
+                    [shins_load_index] => 88 (560 кг)
+                )
+
+            [122] => Array
+                (
+                    [shins_load_index_translit] => 88-615-kg-
+                    [shins_load_index] => 88 (615 кг)
+                )
+
+            [123] => Array
+                (
+                    [shins_load_index_translit] => 89
+                    [shins_load_index] => 89
+                )
+
+            [124] => Array
+                (
+                    [shins_load_index_translit] => 89-437-kg-
+                    [shins_load_index] => 89 (437 кг)
+                )
+
+            [125] => Array
+                (
+                    [shins_load_index_translit] => 89-580-kg-
+                    [shins_load_index] => 89 (580 кг)
+                )
+
+            [126] => Array
+                (
+                    [shins_load_index_translit] => 89-615-kg-
+                    [shins_load_index] => 89 (615 кг)
+                )
+
+            [127] => Array
+                (
+                    [shins_load_index_translit] => 89-975-kg-
+                    [shins_load_index] => 89 (975 кг)
+                )
+
+            [128] => Array
+                (
+                    [shins_load_index_translit] => 90
+                    [shins_load_index] => 90
+                )
+
+            [129] => Array
+                (
+                    [shins_load_index_translit] => 90-437-kg-
+                    [shins_load_index] => 90 (437 кг)
+                )
+
+            [130] => Array
+                (
+                    [shins_load_index_translit] => 90-600-kg-
+                    [shins_load_index] => 90 (600 кг)
+                )
+
+            [131] => Array
+                (
+                    [shins_load_index_translit] => 90-975-kg-
+                    [shins_load_index] => 90 (975 кг)
+                )
+
+            [132] => Array
+                (
+                    [shins_load_index_translit] => 91
+                    [shins_load_index] => 91
+                )
+
+            [133] => Array
+                (
+                    [shins_load_index_translit] => 91-475-kg-
+                    [shins_load_index] => 91 (475 кг)
+                )
+
+            [134] => Array
+                (
+                    [shins_load_index_translit] => 91-500-kg-
+                    [shins_load_index] => 91 (500 кг)
+                )
+
+            [135] => Array
+                (
+                    [shins_load_index_translit] => 91-615-kg-
+                    [shins_load_index] => 91 (615 кг)
+                )
+
+            [136] => Array
+                (
+                    [shins_load_index_translit] => 91-670-kg-
+                    [shins_load_index] => 91 (670 кг)
+                )
+
+            [137] => Array
+                (
+                    [shins_load_index_translit] => 92
+                    [shins_load_index] => 92
+                )
+
+            [138] => Array
+                (
+                    [shins_load_index_translit] => 92-437-kg-
+                    [shins_load_index] => 92 (437 кг)
+                )
+
+            [139] => Array
+                (
+                    [shins_load_index_translit] => 92-475-kg-
+                    [shins_load_index] => 92 (475 кг)
+                )
+
+            [140] => Array
+                (
+                    [shins_load_index_translit] => 92-560-kg-
+                    [shins_load_index] => 92 (560 кг)
+                )
+
+            [141] => Array
+                (
+                    [shins_load_index_translit] => 92-615-kg-
+                    [shins_load_index] => 92 (615 кг)
+                )
+
+            [142] => Array
+                (
+                    [shins_load_index_translit] => 92-630-kg-
+                    [shins_load_index] => 92 (630 кг)
+                )
+
+            [143] => Array
+                (
+                    [shins_load_index_translit] => 92-670-kg-
+                    [shins_load_index] => 92 (670 кг)
+                )
+
+            [144] => Array
+                (
+                    [shins_load_index_translit] => 92-690-kg-
+                    [shins_load_index] => 92 (690 кг)
+                )
+
+            [145] => Array
+                (
+                    [shins_load_index_translit] => 93
+                    [shins_load_index] => 93
+                )
+
+            [146] => Array
+                (
+                    [shins_load_index_translit] => 93-475-kg-
+                    [shins_load_index] => 93 (475 кг)
+                )
+
+            [147] => Array
+                (
+                    [shins_load_index_translit] => 93-615-kg-
+                    [shins_load_index] => 93 (615 кг)
+                )
+
+            [148] => Array
+                (
+                    [shins_load_index_translit] => 93-650-kg-
+                    [shins_load_index] => 93 (650 кг)
+                )
+
+            [149] => Array
+                (
+                    [shins_load_index_translit] => 93-800-kg-
+                    [shins_load_index] => 93 (800 кг)
+                )
+
+            [150] => Array
+                (
+                    [shins_load_index_translit] => 94
+                    [shins_load_index] => 94
+                )
+
+            [151] => Array
+                (
+                    [shins_load_index_translit] => 94-437-kg-
+                    [shins_load_index] => 94 (437 кг)
+                )
+
+            [152] => Array
+                (
+                    [shins_load_index_translit] => 94-475-kg-
+                    [shins_load_index] => 94 (475 кг)
+                )
+
+            [153] => Array
+                (
+                    [shins_load_index_translit] => 94-615-kg-
+                    [shins_load_index] => 94 (615 кг)
+                )
+
+            [154] => Array
+                (
+                    [shins_load_index_translit] => 94-670-kg-
+                    [shins_load_index] => 94 (670 кг)
+                )
+
+            [155] => Array
+                (
+                    [shins_load_index_translit] => 95
+                    [shins_load_index] => 95
+                )
+
+            [156] => Array
+                (
+                    [shins_load_index_translit] => 95-1030-kg-
+                    [shins_load_index] => 95 (1030 кг)
+                )
+
+            [157] => Array
+                (
+                    [shins_load_index_translit] => 95-437-kg-
+                    [shins_load_index] => 95 (437 кг)
+                )
+
+            [158] => Array
+                (
+                    [shins_load_index_translit] => 95-475-kg-
+                    [shins_load_index] => 95 (475 кг)
+                )
+
+            [159] => Array
+                (
+                    [shins_load_index_translit] => 95-615-kg-
+                    [shins_load_index] => 95 (615 кг)
+                )
+
+            [160] => Array
+                (
+                    [shins_load_index_translit] => 95-650-kg-
+                    [shins_load_index] => 95 (650 кг)
+                )
+
+            [161] => Array
+                (
+                    [shins_load_index_translit] => 95-670-kg-
+                    [shins_load_index] => 95 (670 кг)
+                )
+
+            [162] => Array
+                (
+                    [shins_load_index_translit] => 95-690-kg-
+                    [shins_load_index] => 95 (690 кг)
+                )
+
+            [163] => Array
+                (
+                    [shins_load_index_translit] => 96
+                    [shins_load_index] => 96
+                )
+
+            [164] => Array
+                (
+                    [shins_load_index_translit] => 96-437-kg-
+                    [shins_load_index] => 96 (437 кг)
+                )
+
+            [165] => Array
+                (
+                    [shins_load_index_translit] => 96-475-kg-
+                    [shins_load_index] => 96 (475 кг)
+                )
+
+            [166] => Array
+                (
+                    [shins_load_index_translit] => 96-670-kg-
+                    [shins_load_index] => 96 (670 кг)
+                )
+
+            [167] => Array
+                (
+                    [shins_load_index_translit] => 96-690-kg-
+                    [shins_load_index] => 96 (690 кг)
+                )
+
+            [168] => Array
+                (
+                    [shins_load_index_translit] => 96-710-kg-
+                    [shins_load_index] => 96 (710 кг)
+                )
+
+            [169] => Array
+                (
+                    [shins_load_index_translit] => 97
+                    [shins_load_index] => 97
+                )
+
+            [170] => Array
+                (
+                    [shins_load_index_translit] => 97-615-kg-
+                    [shins_load_index] => 97 (615 кг)
+                )
+
+            [171] => Array
+                (
+                    [shins_load_index_translit] => 97-670-kg-
+                    [shins_load_index] => 97 (670 кг)
+                )
+
+            [172] => Array
+                (
+                    [shins_load_index_translit] => 97-730-kg-
+                    [shins_load_index] => 97 (730 кг)
+                )
+
+            [173] => Array
+                (
+                    [shins_load_index_translit] => 98
+                    [shins_load_index] => 98
+                )
+
+            [174] => Array
+                (
+                    [shins_load_index_translit] => 98-1450-kg-
+                    [shins_load_index] => 98 (1450 кг)
+                )
+
+            [175] => Array
+                (
+                    [shins_load_index_translit] => 98-437-kg-
+                    [shins_load_index] => 98 (437 кг)
+                )
+
+            [176] => Array
+                (
+                    [shins_load_index_translit] => 98-475-kg-
+                    [shins_load_index] => 98 (475 кг)
+                )
+
+            [177] => Array
+                (
+                    [shins_load_index_translit] => 98-615-kg-
+                    [shins_load_index] => 98 (615 кг)
+                )
+
+            [178] => Array
+                (
+                    [shins_load_index_translit] => 98-750-kg-
+                    [shins_load_index] => 98 (750 кг)
+                )
+
+            [179] => Array
+                (
+                    [shins_load_index_translit] => 99
+                    [shins_load_index] => 99
+                )
+
+            [180] => Array
+                (
+                    [shins_load_index_translit] => 99-475-kg-
+                    [shins_load_index] => 99 (475 кг)
+                )
+
+            [181] => Array
+                (
+                    [shins_load_index_translit] => 99-615-kg-
+                    [shins_load_index] => 99 (615 кг)
+                )
+
+            [182] => Array
+                (
+                    [shins_load_index_translit] => 99-670-kg-
+                    [shins_load_index] => 99 (670 кг)
+                )
+
+            [183] => Array
+                (
+                    [shins_load_index_translit] => 99-775-kg-
+                    [shins_load_index] => 99 (775 кг)
+                )
+
+            [184] => Array
+                (
+                    [shins_load_index_translit] => net-dannyh
+                    [shins_load_index] => нет данных
+                )
+
+            [185] => Array
+                (
+                    [shins_load_index_translit] => net-dannyh-1120-kg-
+                    [shins_load_index] => нет данных (1120 кг)
+                )
+
+            [186] => Array
+                (
+                    [shins_load_index_translit] => net-dannyh-475-kg-
+                    [shins_load_index] => нет данных (475 кг)
+                )
+
+            [187] => Array
+                (
+                    [shins_load_index_translit] => net-dannyh-615-kg-
+                    [shins_load_index] => нет данных (615 кг)
+                )
+
+            [188] => Array
+                (
+                    [shins_load_index_translit] => net-dannyh-670-kg-
+                    [shins_load_index] => нет данных (670 кг)
+                )
+
+            [189] => Array
+                (
+                    [shins_load_index_translit] => net-dannyh-775-kg-
+                    [shins_load_index] => нет данных (775 кг)
+                )
+
+            [190] => Array
+                (
+                    [shins_load_index_translit] => net-dannyh-800-kg-
+                    [shins_load_index] => нет данных (800 кг)
+                )
+
+        )
+
+    [3] => Array
+        (
+            [0] => Array
+                (
+                    [shins_profile_height] => 25
+                )
+
+            [1] => Array
+                (
+                    [shins_profile_height] => 30
+                )
+
+            [2] => Array
+                (
+                    [shins_profile_height] => 35
+                )
+
+            [3] => Array
+                (
+                    [shins_profile_height] => 40
+                )
+
+            [4] => Array
+                (
+                    [shins_profile_height] => 45
+                )
+
+            [5] => Array
+                (
+                    [shins_profile_height] => 50
+                )
+
+            [6] => Array
+                (
+                    [shins_profile_height] => 55
+                )
+
+            [7] => Array
+                (
+                    [shins_profile_height] => 60
+                )
+
+            [8] => Array
+                (
+                    [shins_profile_height] => 65
+                )
+
+            [9] => Array
+                (
+                    [shins_profile_height] => 70
+                )
+
+            [10] => Array
+                (
+                    [shins_profile_height] => 75
+                )
+
+            [11] => Array
+                (
+                    [shins_profile_height] => 80
+                )
+
+            [12] => Array
+                (
+                    [shins_profile_height] => 85
+                )
+
+            [13] => Array
+                (
+                    [shins_profile_height] => 90
+                )
+
+            [14] => Array
+                (
+                    [shins_profile_height] => 95
+                )
+
+            [15] => Array
+                (
+                    [shins_profile_height] => 105
+                )
+
+        )
+
+    [4] => Array
+        (
+            [0] => Array
+                (
+                    [shins_diametr] => 12.000000
+                )
+
+            [1] => Array
+                (
+                    [shins_diametr] => 13.000000
+                )
+
+            [2] => Array
+                (
+                    [shins_diametr] => 14.000000
+                )
+
+            [3] => Array
+                (
+                    [shins_diametr] => 15.000000
+                )
+
+            [4] => Array
+                (
+                    [shins_diametr] => 16.000000
+                )
+
+            [5] => Array
+                (
+                    [shins_diametr] => 17.000000
+                )
+
+            [6] => Array
+                (
+                    [shins_diametr] => 18.000000
+                )
+
+            [7] => Array
+                (
+                    [shins_diametr] => 19.000000
+                )
+
+            [8] => Array
+                (
+                    [shins_diametr] => 20.000000
+                )
+
+            [9] => Array
+                (
+                    [shins_diametr] => 21.000000
+                )
+
+            [10] => Array
+                (
+                    [shins_diametr] => 22.000000
+                )
+
+            [11] => Array
+                (
+                    [shins_diametr] => 23.000000
+                )
+
+            [12] => Array
+                (
+                    [shins_diametr] => 24.000000
+                )
+
+            [13] => Array
+                (
+                    [shins_diametr] => 25.000000
+                )
+
+            [14] => Array
+                (
+                    [shins_diametr] => 26.000000
+                )
+
+            [15] => Array
+                (
+                    [shins_diametr] => 28.000000
+                )
+
+            [16] => Array
+                (
+                    [shins_diametr] => 30.000000
+                )
+
+        )
+
+    [5] => Array
+        (
+            [0] => Array
+                (
+                    [shins_season_id] => 2
+                    [shins_season] => всесезонные
+                )
+
+            [1] => Array
+                (
+                    [shins_season_id] => 3
+                    [shins_season] => зимние
+                )
+
+            [2] => Array
+                (
+                    [shins_season_id] => 4
+                    [shins_season] => летние
+                )
+
+        )
+
+    [6] => Array
+        (
+            [0] => Array
+                (
+                    [shins_type_of_avto_id] => 2
+                    [shins_type_of_avto] => внедорожные
+                )
+
+            [1] => Array
+                (
+                    [shins_type_of_avto_id] => 3
+                    [shins_type_of_avto] => легковые
+                )
+
+        )
+
+    [7] => Array
+        (
+            [0] => Array
+                (
+                    [shins_run_flat_technology_id] => 2
+                )
+
+        )
+
+    [8] => Array
+        (
+            [0] => Array
+                (
+                    [shins_spike_id] => 2
+                )
+
+        )
+
+    [9] => Array
+        (
+            [0] => Array
+                (
+                    [vendor_id] => 2279
+                    [vendor_name] => Accelera
+                )
+
+            [1] => Array
+                (
+                    [vendor_id] => 5325
+                    [vendor_name] => Achilles
+                )
+
+            [2] => Array
+                (
+                    [vendor_id] => 7661
+                    [vendor_name] => Aderenza
+                )
+
+            [3] => Array
+                (
+                    [vendor_id] => 2784
+                    [vendor_name] => Aeolus
+                )
+
+            [4] => Array
+                (
+                    [vendor_id] => 5334
+                    [vendor_name] => Altenzo
+                )
+
+            [5] => Array
+                (
+                    [vendor_id] => 4464
+                    [vendor_name] => America
+                )
+
+            [6] => Array
+                (
+                    [vendor_id] => 2280
+                    [vendor_name] => Amtel
+                )
+
+            [7] => Array
+                (
+                    [vendor_id] => 60
+                    [vendor_name] => Apollo
+                )
+
+            [8] => Array
+                (
+                    [vendor_id] => 4928
+                    [vendor_name] => Arctic Claw
+                )
+
+            [9] => Array
+                (
+                    [vendor_id] => 7665
+                    [vendor_name] => Atturo
+                )
+
+            [10] => Array
+                (
+                    [vendor_id] => 4237
+                    [vendor_name] => Aurora Tire
+                )
+
+            [11] => Array
+                (
+                    [vendor_id] => 2853
+                    [vendor_name] => Austone
+                )
+
+            [12] => Array
+                (
+                    [vendor_id] => 5807
+                    [vendor_name] => Autoguard
+                )
+
+            [13] => Array
+                (
+                    [vendor_id] => 2278
+                    [vendor_name] => AVON
+                )
+
+            [14] => Array
+                (
+                    [vendor_id] => 2282
+                    [vendor_name] => Barum
+                )
+
+            [15] => Array
+                (
+                    [vendor_id] => 2281
+                    [vendor_name] => BFGoodrich
+                )
+
+            [16] => Array
+                (
+                    [vendor_id] => 7757
+                    [vendor_name] => Big O Tires
+                )
+
+            [17] => Array
+                (
+                    [vendor_id] => 9199
+                    [vendor_name] => Blackstone
+                )
+
+            [18] => Array
+                (
+                    [vendor_id] => 8057
+                    [vendor_name] => Brasa
+                )
+
+            [19] => Array
+                (
+                    [vendor_id] => 2283
+                    [vendor_name] => Bridgestone
+                )
+
+            [20] => Array
+                (
+                    [vendor_id] => 7775
+                    [vendor_name] => Capitol
+                )
+
+            [21] => Array
+                (
+                    [vendor_id] => 2966
+                    [vendor_name] => CEAT
+                )
+
+            [22] => Array
+                (
+                    [vendor_id] => 2284
+                    [vendor_name] => Continental
+                )
+
+            [23] => Array
+                (
+                    [vendor_id] => 5137
+                    [vendor_name] => Contyre
+                )
+
+            [24] => Array
+                (
+                    [vendor_id] => 2285
+                    [vendor_name] => Cooper
+                )
+
+            [25] => Array
+                (
+                    [vendor_id] => 8378
+                    [vendor_name] => Cooper Chengshan
+                )
+
+            [26] => Array
+                (
+                    [vendor_id] => 2363
+                    [vendor_name] => Cordiant
+                )
+
+            [27] => Array
+                (
+                    [vendor_id] => 7787
+                    [vendor_name] => Cordovan
+                )
+
+            [28] => Array
+                (
+                    [vendor_id] => 382
+                    [vendor_name] => Daewoo
+                )
+
+            [29] => Array
+                (
+                    [vendor_id] => 5665
+                    [vendor_name] => Dayton
+                )
+
+            [30] => Array
+                (
+                    [vendor_id] => 2364
+                    [vendor_name] => Dean Tires
+                )
+
+            [31] => Array
+                (
+                    [vendor_id] => 2366
+                    [vendor_name] => Debica
+                )
+
+            [32] => Array
+                (
+                    [vendor_id] => 24246
+                    [vendor_name] => Delinte
+                )
+
+            [33] => Array
+                (
+                    [vendor_id] => 5146
+                    [vendor_name] => Dextero
+                )
+
+            [34] => Array
+                (
+                    [vendor_id] => 7503
+                    [vendor_name] => Dick Cepek
+                )
+
+            [35] => Array
+                (
+                    [vendor_id] => 5755
+                    [vendor_name] => Diplomat
+                )
+
+            [36] => Array
+                (
+                    [vendor_id] => 2367
+                    [vendor_name] => Dunlop
+                )
+
+            [37] => Array
+                (
+                    [vendor_id] => 6049
+                    [vendor_name] => Durun
+                )
+
+            [38] => Array
+                (
+                    [vendor_id] => 7630
+                    [vendor_name] => Effiplus
+                )
+
+            [39] => Array
+                (
+                    [vendor_id] => 5817
+                    [vendor_name] => ESA-Tecar
+                )
+
+            [40] => Array
+                (
+                    [vendor_id] => 7820
+                    [vendor_name] => Evergreen
+                )
+
+            [41] => Array
+                (
+                    [vendor_id] => 2368
+                    [vendor_name] => Falken
+                )
+
+            [42] => Array
+                (
+                    [vendor_id] => 3181
+                    [vendor_name] => Fate
+                )
+
+            [43] => Array
+                (
+                    [vendor_id] => 2369
+                    [vendor_name] => Federal
+                )
+
+            [44] => Array
+                (
+                    [vendor_id] => 4096
+                    [vendor_name] => Fedima
+                )
+
+            [45] => Array
+                (
+                    [vendor_id] => 3184
+                    [vendor_name] => Fenix
+                )
+
+            [46] => Array
+                (
+                    [vendor_id] => 2371
+                    [vendor_name] => Firestone
+                )
+
+            [47] => Array
+                (
+                    [vendor_id] => 3194
+                    [vendor_name] => Fortio
+                )
+
+            [48] => Array
+                (
+                    [vendor_id] => 6544
+                    [vendor_name] => Fortuna
+                )
+
+            [49] => Array
+                (
+                    [vendor_id] => 2372
+                    [vendor_name] => Fulda
+                )
+
+            [50] => Array
+                (
+                    [vendor_id] => 6551
+                    [vendor_name] => Fullrun
+                )
+
+            [51] => Array
+                (
+                    [vendor_id] => 7841
+                    [vendor_name] => Fullway
+                )
+
+            [52] => Array
+                (
+                    [vendor_id] => 2373
+                    [vendor_name] => Fuzion
+                )
+
+            [53] => Array
+                (
+                    [vendor_id] => 2375
+                    [vendor_name] => General Tire
+                )
+
+            [54] => Array
+                (
+                    [vendor_id] => 2377
+                    [vendor_name] => Gislaved
+                )
+
+            [55] => Array
+                (
+                    [vendor_id] => 15906
+                    [vendor_name] => Goldway
+                )
+
+            [56] => Array
+                (
+                    [vendor_id] => 2378
+                    [vendor_name] => Goodride
+                )
+
+            [57] => Array
+                (
+                    [vendor_id] => 2379
+                    [vendor_name] => Goodyear
+                )
+
+            [58] => Array
+                (
+                    [vendor_id] => 6077
+                    [vendor_name] => GreenDiamond
+                )
+
+            [59] => Array
+                (
+                    [vendor_id] => 7436
+                    [vendor_name] => Gremax
+                )
+
+            [60] => Array
+                (
+                    [vendor_id] => 2374
+                    [vendor_name] => GT Radial
+                )
+
+            [61] => Array
+                (
+                    [vendor_id] => 7855
+                    [vendor_name] => Haida Group
+                )
+
+            [62] => Array
+                (
+                    [vendor_id] => 2380
+                    [vendor_name] => Hankook
+                )
+
+            [63] => Array
+                (
+                    [vendor_id] => 1202
+                    [vendor_name] => Hercules
+                )
+
+            [64] => Array
+                (
+                    [vendor_id] => 7859
+                    [vendor_name] => Hifly
+                )
+
+            [65] => Array
+                (
+                    [vendor_id] => 3265
+                    [vendor_name] => Imperial
+                )
+
+            [66] => Array
+                (
+                    [vendor_id] => 4525
+                    [vendor_name] => Infinity Tyres
+                )
+
+            [67] => Array
+                (
+                    [vendor_id] => 16024
+                    [vendor_name] => Insa Turbo
+                )
+
+            [68] => Array
+                (
+                    [vendor_id] => 4104
+                    [vendor_name] => Interco
+                )
+
+            [69] => Array
+                (
+                    [vendor_id] => 6611
+                    [vendor_name] => Interstate
+                )
+
+            [70] => Array
+                (
+                    [vendor_id] => 2532
+                    [vendor_name] => Ironman
+                )
+
+            [71] => Array
+                (
+                    [vendor_id] => 7875
+                    [vendor_name] => Jinyu
+                )
+
+            [72] => Array
+                (
+                    [vendor_id] => 3375
+                    [vendor_name] => Kelly
+                )
+
+            [73] => Array
+                (
+                    [vendor_id] => 11369
+                    [vendor_name] => Kenda
+                )
+
+            [74] => Array
+                (
+                    [vendor_id] => 5838
+                    [vendor_name] => Kenex
+                )
+
+            [75] => Array
+                (
+                    [vendor_id] => 4217
+                    [vendor_name] => Kinforest
+                )
+
+            [76] => Array
+                (
+                    [vendor_id] => 2381
+                    [vendor_name] => KingStar
+                )
+
+            [77] => Array
+                (
+                    [vendor_id] => 2382
+                    [vendor_name] => Kleber
+                )
+
+            [78] => Array
+                (
+                    [vendor_id] => 3388
+                    [vendor_name] => Kormoran
+                )
+
+            [79] => Array
+                (
+                    [vendor_id] => 2383
+                    [vendor_name] => Kumho
+                )
+
+            [80] => Array
+                (
+                    [vendor_id] => 7889
+                    [vendor_name] => Landsail
+                )
+
+            [81] => Array
+                (
+                    [vendor_id] => 2384
+                    [vendor_name] => Lassa
+                )
+
+            [82] => Array
+                (
+                    [vendor_id] => 3317
+                    [vendor_name] => LingLong
+                )
+
+            [83] => Array
+                (
+                    [vendor_id] => 2385
+                    [vendor_name] => Mabor
+                )
+
+            [84] => Array
+                (
+                    [vendor_id] => 5728
+                    [vendor_name] => Maloya
+                )
+
+            [85] => Array
+                (
+                    [vendor_id] => 2386
+                    [vendor_name] => Marangoni
+                )
+
+            [86] => Array
+                (
+                    [vendor_id] => 2387
+                    [vendor_name] => Marshal
+                )
+
+            [87] => Array
+                (
+                    [vendor_id] => 2388
+                    [vendor_name] => Mastercraft
+                )
+
+            [88] => Array
+                (
+                    [vendor_id] => 2389
+                    [vendor_name] => Matador
+                )
+
+            [89] => Array
+                (
+                    [vendor_id] => 5213
+                    [vendor_name] => Maxtrek
+                )
+
+            [90] => Array
+                (
+                    [vendor_id] => 2390
+                    [vendor_name] => Maxxis
+                )
+
+            [91] => Array
+                (
+                    [vendor_id] => 4219
+                    [vendor_name] => Mayrun
+                )
+
+            [92] => Array
+                (
+                    [vendor_id] => 2391
+                    [vendor_name] => Medeo
+                )
+
+            [93] => Array
+                (
+                    [vendor_id] => 16355
+                    [vendor_name] => Mentor
+                )
+
+            [94] => Array
+                (
+                    [vendor_id] => 2186
+                    [vendor_name] => Michelin
+                )
+
+            [95] => Array
+                (
+                    [vendor_id] => 3443
+                    [vendor_name] => Mickey Thompson
+                )
+
+            [96] => Array
+                (
+                    [vendor_id] => 5843
+                    [vendor_name] => Milestone
+                )
+
+            [97] => Array
+                (
+                    [vendor_id] => 3450
+                    [vendor_name] => Minerva
+                )
+
+            [98] => Array
+                (
+                    [vendor_id] => 7909
+                    [vendor_name] => Multi-Mile
+                )
+
+            [99] => Array
+                (
+                    [vendor_id] => 3481
+                    [vendor_name] => Nankang
+                )
+
+            [100] => Array
+                (
+                    [vendor_id] => 6719
+                    [vendor_name] => Neuton
+                )
+
+            [101] => Array
+                (
+                    [vendor_id] => 7916
+                    [vendor_name] => Nexen/Roadstone
+                )
+
+            [102] => Array
+                (
+                    [vendor_id] => 3499
+                    [vendor_name] => Nitto
+                )
+
+            [103] => Array
+                (
+                    [vendor_id] => 3501
+                    [vendor_name] => Nokian
+                )
+
+            [104] => Array
+                (
+                    [vendor_id] => 3503
+                    [vendor_name] => Nordman
+                )
+
+            [105] => Array
+                (
+                    [vendor_id] => 29
+                    [vendor_name] => Novex
+                )
+
+            [106] => Array
+                (
+                    [vendor_id] => 21441
+                    [vendor_name] => Ovation Tyres
+                )
+
+            [107] => Array
+                (
+                    [vendor_id] => 24763
+                    [vendor_name] => PACE
+                )
+
+            [108] => Array
+                (
+                    [vendor_id] => 24775
+                    [vendor_name] => Petlas
+                )
+
+            [109] => Array
+                (
+                    [vendor_id] => 3565
+                    [vendor_name] => Pirelli
+                )
+
+            [110] => Array
+                (
+                    [vendor_id] => 18816
+                    [vendor_name] => Pirelli PZero
+                )
+
+            [111] => Array
+                (
+                    [vendor_id] => 24789
+                    [vendor_name] => Platin
+                )
+
+            [112] => Array
+                (
+                    [vendor_id] => 3571
+                    [vendor_name] => Pneumant
+                )
+
+            [113] => Array
+                (
+                    [vendor_id] => 7937
+                    [vendor_name] => Point S
+                )
+
+            [114] => Array
+                (
+                    [vendor_id] => 3573
+                    [vendor_name] => PointS
+                )
+
+            [115] => Array
+                (
+                    [vendor_id] => 6775
+                    [vendor_name] => Premiorri
+                )
+
+            [116] => Array
+                (
+                    [vendor_id] => 4128
+                    [vendor_name] => Pro Comp
+                )
+
+            [117] => Array
+                (
+                    [vendor_id] => 3628
+                    [vendor_name] => Regal
+                )
+
+            [118] => Array
+                (
+                    [vendor_id] => 3640
+                    [vendor_name] => Riken
+                )
+
+            [119] => Array
+                (
+                    [vendor_id] => 7952
+                    [vendor_name] => Rockstone
+                )
+
+            [120] => Array
+                (
+                    [vendor_id] => 3654
+                    [vendor_name] => Rosava
+                )
+
+            [121] => Array
+                (
+                    [vendor_id] => 7954
+                    [vendor_name] => Rotalla
+                )
+
+            [122] => Array
+                (
+                    [vendor_id] => 1632
+                    [vendor_name] => Rotex
+                )
+
+            [123] => Array
+                (
+                    [vendor_id] => 6819
+                    [vendor_name] => Sagitar
+                )
+
+            [124] => Array
+                (
+                    [vendor_id] => 7076
+                    [vendor_name] => Sailun
+                )
+
+            [125] => Array
+                (
+                    [vendor_id] => 3691
+                    [vendor_name] => Sava
+                )
+
+            [126] => Array
+                (
+                    [vendor_id] => 3705
+                    [vendor_name] => Semperit
+                )
+
+            [127] => Array
+                (
+                    [vendor_id] => 244
+                    [vendor_name] => SilverStone
+                )
+
+            [128] => Array
+                (
+                    [vendor_id] => 7970
+                    [vendor_name] => Sime Tyres
+                )
+
+            [129] => Array
+                (
+                    [vendor_id] => 3720
+                    [vendor_name] => Simex
+                )
+
+            [130] => Array
+                (
+                    [vendor_id] => 7035
+                    [vendor_name] => Sonar
+                )
+
+            [131] => Array
+                (
+                    [vendor_id] => 6192
+                    [vendor_name] => Sonny
+                )
+
+            [132] => Array
+                (
+                    [vendor_id] => 4197
+                    [vendor_name] => Sportiva
+                )
+
+            [133] => Array
+                (
+                    [vendor_id] => 4198
+                    [vendor_name] => Starfire
+                )
+
+            [134] => Array
+                (
+                    [vendor_id] => 3748
+                    [vendor_name] => Starperformer
+                )
+
+            [135] => Array
+                (
+                    [vendor_id] => 3758
+                    [vendor_name] => Sumitomo
+                )
+
+            [136] => Array
+                (
+                    [vendor_id] => 3759
+                    [vendor_name] => Sumo
+                )
+
+            [137] => Array
+                (
+                    [vendor_id] => 7978
+                    [vendor_name] => Sunitrac
+                )
+
+            [138] => Array
+                (
+                    [vendor_id] => 3680
+                    [vendor_name] => SUNNY
+                )
+
+            [139] => Array
+                (
+                    [vendor_id] => 16912
+                    [vendor_name] => SUNTEK
+                )
+
+            [140] => Array
+                (
+                    [vendor_id] => 3771
+                    [vendor_name] => Syron
+                )
+
+            [141] => Array
+                (
+                    [vendor_id] => 7986
+                    [vendor_name] => Telstar Tire
+                )
+
+            [142] => Array
+                (
+                    [vendor_id] => 6882
+                    [vendor_name] => Thunderer
+                )
+
+            [143] => Array
+                (
+                    [vendor_id] => 3806
+                    [vendor_name] => Tigar
+                )
+
+            [144] => Array
+                (
+                    [vendor_id] => 3815
+                    [vendor_name] => Toyo
+                )
+
+            [145] => Array
+                (
+                    [vendor_id] => 5277
+                    [vendor_name] => Tracmax
+                )
+
+            [146] => Array
+                (
+                    [vendor_id] => 4916
+                    [vendor_name] => Trayal
+                )
+
+            [147] => Array
+                (
+                    [vendor_id] => 6892
+                    [vendor_name] => Tri Ace
+                )
+
+            [148] => Array
+                (
+                    [vendor_id] => 4200
+                    [vendor_name] => Triangle Group
+                )
+
+            [149] => Array
+                (
+                    [vendor_id] => 3824
+                    [vendor_name] => Tunga
+                )
+
+            [150] => Array
+                (
+                    [vendor_id] => 3842
+                    [vendor_name] => Uniroyal
+                )
+
+            [151] => Array
+                (
+                    [vendor_id] => 6213
+                    [vendor_name] => Viatti
+                )
+
+            [152] => Array
+                (
+                    [vendor_id] => 1554
+                    [vendor_name] => Viking
+                )
+
+            [153] => Array
+                (
+                    [vendor_id] => 3877
+                    [vendor_name] => Vredestein
+                )
+
+            [154] => Array
+                (
+                    [vendor_id] => 4591
+                    [vendor_name] => VSP
+                )
+
+            [155] => Array
+                (
+                    [vendor_id] => 3883
+                    [vendor_name] => Wanli
+                )
+
+            [156] => Array
+                (
+                    [vendor_id] => 4749
+                    [vendor_name] => Westlake
+                )
+
+            [157] => Array
+                (
+                    [vendor_id] => 4822
+                    [vendor_name] => Westlake Tyres
+                )
+
+            [158] => Array
+                (
+                    [vendor_id] => 5863
+                    [vendor_name] => Winter Tact
+                )
+
+            [159] => Array
+                (
+                    [vendor_id] => 3913
+                    [vendor_name] => Yokohama
+                )
+
+            [160] => Array
+                (
+                    [vendor_id] => 3925
+                    [vendor_name] => Zeetex
+                )
+
+            [161] => Array
+                (
+                    [vendor_id] => 6936
+                    [vendor_name] => ZETA
+                )
+
+            [162] => Array
+                (
+                    [vendor_id] => 3941
+                    [vendor_name] => Алтайский шинный комбинат
+                )
+
+            [163] => Array
+                (
+                    [vendor_id] => 3942
+                    [vendor_name] => Белшина
+                )
+
+            [164] => Array
+                (
+                    [vendor_id] => 3946
+                    [vendor_name] => Волтайр
+                )
+
+            [165] => Array
+                (
+                    [vendor_id] => 3947
+                    [vendor_name] => Воронеж-шина
+                )
+
+            [166] => Array
+                (
+                    [vendor_id] => 3956
+                    [vendor_name] => Днепрошина
+                )
+
+            [167] => Array
+                (
+                    [vendor_id] => 3969
+                    [vendor_name] => КШЗ
+                )
+
+            [168] => Array
+                (
+                    [vendor_id] => 3978
+                    [vendor_name] => МШЗ
+                )
+
+            [169] => Array
+                (
+                    [vendor_id] => 5868
+                    [vendor_name] => Мастер-Спорт
+                )
+
+            [170] => Array
+                (
+                    [vendor_id] => 3986
+                    [vendor_name] => Нижнекамскшина
+                )
+
+            [171] => Array
+                (
+                    [vendor_id] => 3991
+                    [vendor_name] => Омскшина
+                )
+
+            [172] => Array
+                (
+                    [vendor_id] => 4020
+                    [vendor_name] => Уралшина
+                )
+
+            [173] => Array
+                (
+                    [vendor_id] => 4032
+                    [vendor_name] => ЯШЗ
+                )
+
+        )
+
+)

@@ -1,0 +1,9 @@
+2014.01.23 10:45:16	1	Начало импорта БД `avto`
+2014.01.23 10:45:16	1	Файл: avto_shins_new_2014-01-23_12-40-53.sql.gz
+2014.01.23 10:45:16	1	Установлена кодировка соединения: `binary`
+2014.01.23 10:45:16	1	Импорт таблицы `shins`
+2014.01.23 10:45:23	1	Импорт таблицы `shins_construction`
+2014.01.23 10:45:23	1	Импорт таблицы `shins_displays`
+2014.01.23 10:45:24	1	Импорт таблицы `shins_germetic_mode`
+2014.01.23 10:45:24	1	Импорт таблицы `shins_images`
+2014.01.23 10:45:24	4	MySQL Error: Unknown column \'shins_display_id\' in \'field list\' (/var/www/ponzps26/data/www/new.extraload.com.ua/sxd/index.php:1587)

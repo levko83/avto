@@ -1,0 +1,66 @@
+form div.errorMessage
+{
+    color: red;
+    font-size: 0.9em;
+}
+
+form input.error,
+form textarea.error,
+form select.error
+{
+    background: #FEE;
+    border-color: #C00;
+}
+
+.grid-view table.items th{
+	background: #3D3D3D;
+}
+
+.divScroll{
+    height: 155px;
+    overflow: auto;
+}
+
+.filter_label{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.block_odd{
+    background: #E5F1F4;
+    padding: 10px;
+}
+
+.block_even{
+    background: #F8F8F8;
+    padding: 10px;
+}
+
+.b10{
+    margin-bottom: 10px;
+}
+
+#Disks_disks_color label{
+    display: inline;
+}
+
+#Disks_vendor_id label{
+    display: inline;
+}
+
+#disksFilterGrid tr.filters{
+    display: none;
+}
+
+#Shins_vendor_id label{
+    display: inline;
+}
+
+#Shins_shins_season_id label{
+    display: inline;
+}
+
+.products_filter .btn{
+    width: 80%;
+    margin: 5px;
+}
