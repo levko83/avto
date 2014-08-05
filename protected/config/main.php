@@ -7,6 +7,9 @@
     // CWebApplication properties can be configured here.
 
 
+
+    include "db_settings.php";
+
     $cfg = array(
         'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
         'name'=>'Avto',
@@ -62,6 +65,35 @@
                 'allowAutoLogin' => true,
                 'loginUrl' => array('admin/login/login'),
             ),
+
+            'db'=>array(
+                'class'=>'system.db.CDbConnection',
+                'enableProfiling' => true,
+                'enableParamLogging' => true,
+                'connectionString' => "mysql:host={$_db_settings->host};dbname={$_db_settings->main_db_name}",
+                'emulatePrepare' => true,
+                'username' => $_db_settings->main_db_user,
+                'password' => $_db_settings->main_db_pass,
+                'charset' => 'utf8',
+            ),
+            'sphinx'=>array(
+                'class'=>'system.db.CDbConnection',
+                'connectionString' => "mysql:host=127.0.0.1;port=9306",
+                'charset' => 'utf8',
+                'enableParamLogging' => true,
+                'enableProfiling' => true,
+            ),
+            'db1'=>array(
+                'class'=>'system.db.CDbConnection',
+                'enableProfiling' => true,
+                'enableParamLogging' => true,
+                'connectionString' => "mysql:host={$_db_settings->host};dbname={$_db_settings->parser_db_name}",
+                'emulatePrepare' => true,
+                'username' => $_db_settings->parser_db_user,
+                'password' => $_db_settings->parser_db_pass,
+                'charset' => 'utf8',
+                'tablePrefix'=>'SC_',
+            ),
             /*
             'request'=>array(
                 'enableCsrfValidation' => true,
@@ -111,6 +143,7 @@
                                 array("class" => 'application.components.DrivesUrlRule'),
                                 array("class" => 'application.components.TiresUrlRule'),
                                 'index.html' => 'site/index',
+                                'test.html' => 'site/test',
                                 //'tires.html' => 'tires/index',
 
                                 //'shini-<type>.html' => array('tires/tiresSubMenu', "type" => "type") ,
@@ -170,8 +203,8 @@
                 'routes'=>array(
                     array(
                         'class'=>'CFileLogRoute',
-                        'levels'=>'trace, info, error',
-                        'categories'=>'system.*',
+                        'levels'=>'error, warning, trace, profile, info',
+                        'categories'=>'application.*',
                     ),
                     array(
                         'class' => 'CWebLogRoute',
@@ -191,6 +224,7 @@
         ),
     );
 
+    /*
     // локльная разработка
     $localDbConn = array(
         'db'=>array(
@@ -198,8 +232,8 @@
             'enableProfiling' => true,
             'connectionString' => 'mysql:host=localhost;dbname=avto',
             'emulatePrepare' => true,
-            'username' => 'avto',
-            'password' => 'jkmufdjtdjl',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8',
         ),
         'sphinx'=>array(
@@ -263,11 +297,12 @@
         ),
     );
 
-    $currDB = PHP_OS == "WINNT" ? $localDbConn : $remoteDbConn;
+    $currDB = substr($_SERVER["HTTP_HOST"], -4) == ".loc" ? $localDbConn : $remoteDbConn;
 
     foreach($currDB as $k => $v){
         $cfg["components"][$k] = $v;
     }
+    */
 
     return $cfg;
 

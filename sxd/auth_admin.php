@@ -1,20 +1,11 @@
 <?php
-
    session_start();
    if(isset($_SESSION["is_dumper"]) and $_SESSION["is_dumper"] == 1){
-       if(PHP_OS == "WINNT"){
-           $this->CFG['my_host'] = 'localhost';
-           $this->CFG['my_port'] = 3306;
-           $this->CFG['my_user'] = 'root';
-           $this->CFG['my_pass'] = '';
-           $this->CFG['my_db'] = "avto_shins_new";
-       }else{
-           $this->CFG['my_host'] = 'localhost';
-           $this->CFG['my_port'] = 3306;
-           $this->CFG['my_user'] = 'root';
-           $this->CFG['my_pass'] = 'jkmufdjtdjlf';
-           $this->CFG['my_db'] = "avto";
-       }
+       $this->CFG['my_host'] = $_db_settings->host;
+       $this->CFG['my_port'] = 3306;
+       $this->CFG['my_user'] = $_db_settings->main_db_user;
+       $this->CFG['my_pass'] = $_db_settings->main_db_pass;
+       $this->CFG['my_db'] = $_db_settings->main_db_name;
        $auth = 1;
    }
 ?>

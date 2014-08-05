@@ -54,7 +54,9 @@ class SiteController extends Controller
                 $this->breadcrumbs=array(
                     'Ошибка',
                 );
-                $this->render('error', $error);
+                $this->render('error', array(
+                    "error" => $error,
+                ));
             }
         }
 	}

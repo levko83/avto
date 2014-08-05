@@ -5,7 +5,7 @@
     </div>
     <div class="drive-type form-select select">
         <h3>Тип:</h3>
-        {CHtml::dropDownList('Disks[disks_type_id]', "", $drivesVocabs->disks_type, ['empty' => '-все-'])}
+        {CHtml::dropDownList('Disks[disks_type_id]', "", $drivesVocabs->disks_type_id, ['empty' => '-все-'])}
     </div>
     <div class="drive-width form-select select">
         <h3>Ширина диска:</h3>
