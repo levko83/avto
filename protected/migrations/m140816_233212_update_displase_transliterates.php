@@ -11,7 +11,7 @@ class m140816_233212_update_displase_transliterates extends CDbMigration
             $sql = "DROP FUNCTION IF EXISTS transliterate";
             $this->execute($sql);
             $sql = <<< SQL
-CREATE FUNCTION transliterate(s VARCHAR(500)) RETURNS VARCHAR(500)
+CREATE FUNCTION transliterate(s VARCHAR(500)) RETURNS VARCHAR(500) DETERMINISTIC
 BEGIN
 	DECLARE pos, n INTEGER;
     DECLARE c VARCHAR(5);
