@@ -28,7 +28,7 @@ class CBaseFilter{
     function __construct($indexName, $filter = array()){
         $this->_indexName = $indexName;
         $this->_filter = $filter;
-        $this->_indexFieldsInfo = Yii::app()->sphinx->createCommand("DESC {$this->_indexName}")->queryAll();
+        $this->_indexFieldsInfo = Yii::app()->sphinx->createCommand("DESC {$this->_indexName}Main")->queryAll();
     }
 
     final protected function addFilterItem($filterRuleKey, $field_1, $field_2 = null){

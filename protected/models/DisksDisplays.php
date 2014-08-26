@@ -13,6 +13,7 @@
  * @property string $meta_keywords
  * @property string $meta_description
  * @property integer $editing
+ * @property integer $edited
  *
  * The followings are the available model relations:
  * @property Disks[] $disks
@@ -40,6 +41,24 @@ class DisksDisplays extends CExtendedActiveRecord
                 "tables" => "disks_displays"
             ),
         );
+    }
+
+    protected function beforeSave()
+    {
+        if(parent::beforeSave() === false){
+            return false;
+        }
+        $this->edited = time();
+        return true;
+    }
+
+
+    protected function afterSave()
+    {
+        if(parent::afterSave() === false){
+            return false;
+        }
+        SphinxManager::reindex("disksIndexDelta");
     }
 
 	/**

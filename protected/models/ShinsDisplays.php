@@ -13,6 +13,7 @@
  * @property string $search_keywords
  * @property string $search_description
  * @property integer $editing
+ * @property integer $edited
  *
  * The followings are the available model relations:
  * @property Shins[] $shins
@@ -43,6 +44,22 @@ class ShinsDisplays extends CExtendedActiveRecord
         );
     }
 
+    protected function beforeSave()
+    {
+        if(parent::beforeSave() === false){
+            return false;
+        }
+        $this->edited = time();
+        return true;
+    }
+
+    protected function afterSave()
+	{
+        if(parent::afterSave() === false){
+            return false;
+        }
+        SphinxManager::reindex("shinsIndexDelta");
+    }
 	/**
 	 * @return array validation rules for model attributes.
 	 */

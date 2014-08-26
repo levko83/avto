@@ -35,11 +35,11 @@ class DisplaysController extends Controller
                 if($model->validate()){
                     $title = trim($model->title) == "" ? $model->display_name : $model->title;
                     $model->title = $title;
-                    $model->translit = HtmlHelper::transliterate(trim($title));
+                    //$model->translit = HtmlHelper::transliterate(trim($title));
                     if($model->save()){
                         $this->redirect("/admin/displays/disks");
                     }else{
-                        new CHttpException(500, "Ошибка сохранения дисплея");
+                        throw new CHttpException(500, "Ошибка сохранения дисплея");
                     }
                 }
             }else{
@@ -97,11 +97,11 @@ class DisplaysController extends Controller
                 if($model->validate()){
                     $title = trim($model->title) == "" ? $model->display_name : $model->title;
                     $model->title = $title;
-                    $model->translit = HtmlHelper::transliterate(trim($title));
+                    //$model->translit = HtmlHelper::transliterate(trim($title));
                     if($model->save()){
                         $this->redirect("/admin/displays/shins");
                     }else{
-                        new CHttpException(500, "Ошибка сохранения дисплея");
+                        throw new CHttpException(500, "Ошибка сохранения дисплея");
                     }
                 }
             }

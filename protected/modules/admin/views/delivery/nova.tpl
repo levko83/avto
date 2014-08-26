@@ -13,9 +13,3 @@
         <div class="span8"></div>
     </div>
 </div>
-<div id="messageDialog" title="">
-    <div>
-        <span class="icon"></span>
-        <span class="message"></span>
-    </div>
-</div>

@@ -22,6 +22,7 @@
  * @property string $description
  * @property double $price
  * @property integer $amount
+ * @property integer $edited
  * @property string $mark
  *
  * The followings are the available model relations:
@@ -95,8 +96,23 @@ class Shins extends CExtendedActiveRecord implements IECartPosition
     function getPageCount(){
         return 1;
     }
-	
-	
+
+    protected function beforeSave()
+    {
+        if(parent::beforeSave() === false){
+            return false;
+        }
+        $this->edited = time();
+        return true;
+    }
+
+    protected function afterSave()
+    {
+        if(parent::afterSave() === false){
+            return false;
+        }
+        SphinxManager::reindex("shinsIndexDelta");
+    }
 	
 
 	/**
