@@ -18,7 +18,6 @@ class Yii extends YiiBase {
 date_default_timezone_set("Europe/Kiev");
 
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
-//error_reporting(E_ALL & E_NOTICE & E_WARNING);
 
 #error_reporting(E_ALL);
 
