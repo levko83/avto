@@ -35,6 +35,7 @@
     <link href="{Yii::app()->request->baseUrl}/css/admin/form.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL STYLES -->
     <link rel="shortcut icon" href="favicon.ico" />
+    <script src="{Yii::app()->request->baseUrl}/js/admin/systemMessage.js"></script>
 </head>
 
 <body class="page-header-fixed">
@@ -220,6 +221,11 @@
                                     "visible" => Yii::app()->user->checkAccess("administrator")
                                 ],
                                 [
+                                    "label" => "<i class='icon-briefcase'></i> <span class='title'>Sphinx</span>",
+                                    "url" => ["/admin/service/sphinx"],
+                                    "visible" => Yii::app()->user->checkAccess("administrator")
+                                ],
+                                [
                                     "label" => "<i class='icon-briefcase'></i> <span class='title'>Очистить кеш</span>",
                                     "url" => ["/admin/service/clearCache"],
                                     "visible" => Yii::app()->user->checkAccess("administrator")
@@ -283,6 +289,12 @@
                 <div class="row-fluid inbox">
                     <div class="span12">
                         {$content}
+                    </div>
+                    <div id="messageDialog" title="">
+                        <div>
+                            <span class="icon"></span>
+                            <span class="message"></span>
+                        </div>
                     </div>
                 </div>
             </div>
