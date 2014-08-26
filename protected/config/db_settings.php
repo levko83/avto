@@ -24,10 +24,10 @@
        $_db_settings = (object)array(
            "host" => "localhost",
            "main_db_name" => "avto",
-           "main_db_user" => "avto",
+           "main_db_user" => "root",
            "main_db_pass" => "cbljyjdcnfybckfd",
            "parser_db_name" => "avto_parser",
-           "parser_db_user" => "avto_parser",
+           "parser_db_user" => "root",
            "parser_db_pass" => "cbljyjdcnfybckfd"
        );
    }
