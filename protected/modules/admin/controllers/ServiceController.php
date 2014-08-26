@@ -47,60 +47,71 @@ class ServiceController extends Controller
         $this->render('parser');
     }
 
+    public function actionSphinx()
+    {
+        $this->breadcrumbs=array(
+            'Обслуживание CMS',
+            'Sphinx',
+        );
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/admin/sphinx.js', CClientScript::POS_END);
+        $this->render('sphinx');
+    }
 
-    public function actionTest(){
-        $translitPattern = RegExpHelper::getTextTranslitPattern();
-        $doublePattern = RegExpHelper::getDoublePattern();
-//        $patternArr[] = "(?:\/avto=(?<avto>{$translitPattern}))?";
-        $patternArr[] = "(?:\/avto=(?<avto>[a-z0-9\-]+))?";
-        $patternArr[] = "(?:\/cena_ot=(?<priceMin>\d+))?";
-        $patternArr[] = "(?:\/cena_do=(?<priceMax>\d+))?";
-        $patternArr[] = "(?:\/brand=(?<brand2>(?:{$translitPattern}){1}(?:\;{$translitPattern})*))?";
-        $patternArr[] = "(?:\/radius=(?<radius2>(?:{$doublePattern}){1}(?:\;{$doublePattern})*))?";
-        $patternArr[] = "(?:\/shirina=(?<shirina>{$doublePattern}))?";
-        $patternArr[] = "(?:\/index_nagruzki=(?<index_nagruzki>[a-z0-9\-]+))?";
-        $patternArr[] = "(?:\/profil=(?<profil>{$doublePattern}))?";
-        $patternArr[] = "(?:\/sezon=(?<sezon>{$translitPattern}))?";
-        $patternArr[] = "(?:\/tip=(?<tip>{$translitPattern}))?";
-        $patternArr[] = "(?:\/(?<run_flat>run_flat))?";
-        $patternArr[] = "(?:\/(?<shipi>shipi))?";
-        $patternArr[] = "(?:\/(?<v_nalichii>v_nalichii))?";
-        $patternArr[] = "(?:\/page=(?<page>\d+))?";
-        $filterPattern = join("", $patternArr);
-        $pattern = "^shini(?:\-(?<brand1>(?!tipa)[a-z0-9]+(?:\-[a-z0-9]+)*)?)?(?:\-R(?<radius1>(?!tipa){$doublePattern}))?\.html{$filterPattern}$";
-        //$str = "shini-atturo.html/tip=vnedorozhnye/v_nalichii";
-        $str = "shini-R6.html";
-        if(preg_match_all("/$pattern/", $str, $matches)){
-            echo "<pre>";
-            var_dump($matches);
-            echo "</pre>";
-        }else{
-            echo "Совпадений не найдено";
+    public function actionSphinxReindex(){
+        if(!Yii::app()->request->isAjaxRequest){
+            throw new CHttpException(404, "Страница ен найдена");
+        }
+        $indexName = Yii::app()->request->getPost("indexName");
+        if($indexName){
+            switch ($indexName){
+                case "shins":
+                    $indexName = "shinsIndexMain";
+                    break;
+                case "disks":
+                    $indexName = "disksIndexMain";
+                    break;
+                default:
+                    $indexName = null;
+                    break;
+            }
+            try{
+                $reindexResponse = SphinxManager::reindex($indexName);
+                $reindexResponse = str_replace(",", "<br/>", $reindexResponse);
+                $response = array(
+                    "code" => 1,
+                    "message" => $reindexResponse,
+                );
+            }catch(Exception $e){
+                $response = array(
+                    "code" => 0,
+                    "message" => $e->getMessage(),
+                );
+            }
+            echo CJSON::encode($response);
+            Yii::app()->end();
         }
     }
 
-    public function actionTest1(){
-//        $criteria = new CDbCriteria();
-//        $criteria->addCondition('UPPER(name) = UPPER("Киев")');
-//        $criteria->compare("level", 1);
-//        $kiev_region = IntimeWarehouse::model()->find($criteria);
-//
-//        $kiev_city = $kiev_region->children()->find();
-//
-//        $criteria = new CDbCriteria();
-//        $criteria->addCondition('UPPER(name) LIKE UPPER("Киев%")');
-//        $criteria->addCondition('UPPER(name) LIKE UPPER("%обл%")');
-//        $criteria->compare("level", 1);
-//        $kiev_area_region = IntimeWarehouse::model()->find($criteria);
-//
-//        echo "<pre>";
-//        var_dump($kiev_area_region);
-//        echo "</pre>";
-
-        //IntimeWarehouse::model()->updateDataFromSite();
-        echo (string)NovaWarehouse::model()->loadXmlFromSite();
+    public function actionSphinxRestart(){
+        if(!Yii::app()->request->isAjaxRequest){
+            throw new CHttpException(404, "Страница ен найдена");
+        }
+        try{
+            $restartResponse = SphinxManager::restart();
+            $restartResponse = str_replace(",", "<br/>", $restartResponse);
+            $response = array(
+                "code" => 1,
+                "message" => $restartResponse,
+            );
+        }catch(Exception $e){
+            $response = array(
+                "code" => 0,
+                "message" => $e->getMessage(),
+            );
+        }
+        echo CJSON::encode($response);
+        Yii::app()->end();
     }
-    public function actionMake_shins_display(){}
 
     public function actionShowLog(){
         $file_name = Yii::getPathOfAlias("application.runtime").DIRECTORY_SEPARATOR."application.log";

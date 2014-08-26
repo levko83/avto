@@ -2,6 +2,9 @@
 
 // This is the configuration for yiic console application.
 // Any writable CConsoleApplication properties can be configured here.
+
+include "db_settings.php";
+
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Console Application',
@@ -12,18 +15,15 @@ return array(
 	// application components
 	'components'=>array(
 		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+            'class'=>'system.db.CDbConnection',
+            'enableProfiling' => true,
+            'enableParamLogging' => true,
+            'connectionString' => "mysql:host={$_db_settings->host};dbname={$_db_settings->main_db_name}",
+            'emulatePrepare' => true,
+            'username' => $_db_settings->main_db_user,
+            'password' => $_db_settings->main_db_pass,
+            'charset' => 'utf8',
 		),
-		// uncomment the following to use a MySQL database
-		/*
-		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=testdrive',
-			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
-			'charset' => 'utf8',
-		),
-		*/
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
