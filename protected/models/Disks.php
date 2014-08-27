@@ -23,6 +23,7 @@
  * @property double $priceMin
  * @property double $priceMax
  * @property integer $amount
+ * @property integer $edited
  * @property string $mark
  *
  * The followings are the available model relations:
@@ -50,6 +51,24 @@ class Disks extends CExtendedActiveRecord implements IECartPosition
                 "tables" => "disks"
             ),
         );
+    }
+
+    protected function beforeSave()
+    {
+        if(parent::beforeSave() === false){
+            return false;
+        }
+        $this->edited = time();
+        return true;
+    }
+
+
+    protected function afterSave()
+    {
+        if(parent::afterSave() === false){
+            return false;
+        }
+        SphinxManager::reindex("disksIndexDelta");
     }
 
 	/**
