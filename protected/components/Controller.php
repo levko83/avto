@@ -33,41 +33,64 @@ class Controller extends CController
     public $disksSubMenu = array();
     public $shinsSubMenu = array();
 
-    public function setSeoInformation($page_key){
-        $page = Menu::getInstance()->getSitePageByPageKey($page_key);
-        if($page){
-            $this->title = $page["title"];
-            if($page["hasText"] == 1){
-                $this->text = $page["text"];
+    public function setSeoInformation($page_key, $data = null){
+        $criteria = new CDbCriteria();
+        $criteria->compare("page_key", $page_key);
+        $page = PagesSeo::model()->find($criteria);
+        if(!$page){
+            return;
+        }
+        if($page->hasTemplate == 1){
+            if(!$data){
+                return;
             }
-            $this->meta_keywords = $page["meta_keywords"];
-            $this->meta_description = $page["meta_description"];
+            $templateKeywords = unserialize($page->template_keywords);
+            switch ($page_key){
+                case "shins_category":
+                    $templateKeywordsData = $data;
+                    break;
+                case "shins_brands":
+                    $templateKeywordsData = $data;
+                    break;
+                case "shins_display":
+                    $templateKeywordsData = ShinsDisplays::model()->getSeoTemplateSubstitutionData($data, $templateKeywords);
+                    break;
+                case "disks_category":
+                    $templateKeywordsData = $data;
+                    break;
+                case "disks_brands":
+                    $templateKeywordsData = $data;
+                    break;
+                case "disks_display":
+                    $templateKeywordsData = DisksDisplays::model()->getSeoTemplateSubstitutionData($data, $templateKeywords);
+                    break;
+                default:
+                    return;
+            }
+            $replaceKeywords = function($str) use ($templateKeywordsData){
+                foreach($templateKeywordsData as $keyword => $value){
+                    if(trim($value) == ""){
+                        continue;
+                    }
+                    $str = str_replace('{'.$keyword.'}', $value, $str);
+                }
+                return $str;
+            };
+            $this->title = $replaceKeywords($page->title);
+            if($page->hasText == 1){
+                $this->text = $replaceKeywords($page->text);
+            }
+            $this->meta_keywords = $replaceKeywords($page->meta_keywords);
+            $this->meta_description = $replaceKeywords($page->meta_description);
+        }else{
+            $this->title = $page->title;
+            $this->text = $page->text;
+            $this->meta_keywords = $page->meta_keywords;
+            $this->meta_description = $page->meta_description;
         }
     }
 
     protected function beforeAction($action){
-//        $shinsSubmenuData = ShinsSeason::model()->findAll(
-//                                array(
-//                                    "condition" => "id > 1",
-//                                    "order" => "value ASC",
-//                                )
-//                            );
-
-//        $i = 0;
-//        foreach($shinsSubmenuData as $item){
-//            $i++;
-//            $this->shinsSubMenu[] = array(
-//                "label" => "$item->value",
-//                "url" => array("tires/tiresSubMenu", "type" => $item->translit),
-//                "itemOptions" => array("class" => "leaf-{$i}"),
-//            );
-//        }
-//        $disksSubmenuData = DisksType::model()->findAll(
-//            array(
-//                "condition" => "id > 1",
-//                "order" => "value ASC",
-//            )
-//        );
         $makeSubMenu = function(&$subMenu, $url, $level = 1) use (&$makeSubMenu){
             foreach($subMenu as $i => &$subMenuItem){
                 $subMenuItem["itemOptions"] = array("class" => "leaf-{$i}");
@@ -97,18 +120,6 @@ class Controller extends CController
         $disksSubMenu = Menu::getInstance()->getDisksSubMenu();
         $makeSubMenu($disksSubMenu, "drives/drivesSubMenu");
         $this->disksSubMenu = $disksSubMenu;
-//        $i = 0;
-//        foreach($disksSubmenuData as $item){
-//            $i++;
-//            $this->disksSubMenu[] = array(
-//                "label" => "$item->value",
-//                "url" => array("drives/drivesSubMenu", "type" => $item->translit),
-//                "itemOptions" => array("class" => "leaf-{$i}"),
-//            );
-//        }
-//        echo "<pre>";
-//        var_dump($this->disksSubMenu);
-//        echo "</pre>";
         return true;
 
     }

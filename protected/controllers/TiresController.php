@@ -259,7 +259,6 @@ class TiresController extends Controller
             $isMobile = true;
          }else
              $isMobile = false;
-         $this->setSeoInformation("shini");
          if(isset($_GET["page"])){
              $this->noIndex = true;
          }
@@ -273,11 +272,20 @@ class TiresController extends Controller
                  "title" => "Шины"
              ),
          );
+         if(isset($filter["vendor_id"]) and count($filter["vendor_id"]) == 1){
+             $brand = ShinsVendors::model()->findByPk($filter["vendor_id"][0])->vendor_name;
+             $header = "Шины {$brand}";
+             $this->setSeoInformation("shins_brands", ["brand" => $brand]);
+         }else{
+             $header = "Шины";
+             $this->setSeoInformation("shins");
+         }
          Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/tires.js', CClientScript::POS_HEAD);
          $this->render(
             'index',
              array(
                  'dataProvider' => $dataProvider,
+                 'header' => $header,
                  'vocabs' => $vocabs,
                  'shins' => $shins,
                  'attributes' => $shins->attributeLabels(),
@@ -372,18 +380,15 @@ class TiresController extends Controller
                $isMobile = true;
            }else
                $isMobile = false;
-           $this->title = $display->title;
-           if(empty($this->title)) $this->title = $display->display_name;
-           $this->meta_keywords = $display->meta_keywords;
-           $this->meta_description = $display->meta_description;
-            $this->breadcrumbs = array(
+           $this->setSeoInformation("shins_display", $display->id);
+           $this->breadcrumbs = array(
                 array(
                     "url" => "/",
                     "title" => "Главная"
                 ),
                 array(
                     "url" => Yii::app()->createUrl("tires/tire", array("id" => $id, "translit" => $translit)),
-                    "title" => "Диски {$display->display_name}"
+                    "title" => "Шины {$display->display_name}"
                 ),
             );
            $this->render(
@@ -422,7 +427,6 @@ class TiresController extends Controller
                 );
                 Yii::app()->end();
             }
-
         }else{
             echo CJSON::encode(
                 array(
@@ -521,7 +525,7 @@ class TiresController extends Controller
 //        $shins->priceMax = $vocabs["price"]->max_price;
         // выводим вьюху
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/tires.js', CClientScript::POS_HEAD);
-        $this->setSeoInformation("shini-{$model->translit}");
+        $this->setSeoInformation("shins_category", array("category" => $breadCrumbTitle));
         if(isset($_GET["page"])){
             $this->noIndex = true;
         }
@@ -553,6 +557,7 @@ class TiresController extends Controller
                 "v10" => $v10,
                 "v8" => $v8,
                 "shins" => $shins,
+                "h2" => "Шины {$breadCrumbTitle}",
                 "filter_url" => Yii::app()->createUrl('/tires/index'),
                 "attributes" => $shins->attributeLabels(),
             )

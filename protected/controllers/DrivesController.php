@@ -94,7 +94,6 @@ class DrivesController extends Controller{
         }else
             $isMobile = false;
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/drives.js', CClientScript::POS_HEAD);
-        $this->setSeoInformation("diski");
         if(isset($_GET["page"])){
             $this->noIndex = true;
         }
@@ -108,17 +107,24 @@ class DrivesController extends Controller{
                 "title" => "Диски"
             ),
         );
+        if(isset($filter["vendor_id"]) and count($filter["vendor_id"]) == 1){
+            $brand = DisksVendors::model()->findByPk($filter["vendor_id"][0])->vendor_name;
+            $header = "Диски {$brand}";
+            $this->setSeoInformation("disks_brands", ["brand" => $brand]);
+        }else{
+            $header = "Диски";
+            $this->setSeoInformation("diski");
+        }
         $this->render(
             'index',
             array(
                 'dataProvider' => $dataProvider,
+                "header" => $header,
                 'vocabs' => $vocabs,
                 'disks' => $disks,
                 'attributes' => $disks->attributeLabels(),
                 "avto" => $avto,
-                //"variants" => $variants,
                 "isMobile" => $isMobile,
-                //"filter" => $filter,
                 "filter" => $_GET,
                 "filter_url" => $filter["avto_modification"] ?  Yii::app()->createUrl("drives/index", ["v" => $filter["avto_modification"]]) : Yii::app()->createUrl("drives/index"),
                 "avto_product_arr" => $avto_modification_arr,
@@ -198,10 +204,7 @@ class DrivesController extends Controller{
                 $isMobile = true;
             }else
                 $isMobile = false;
-            $this->title = $display->title;
-            if(empty($this->title)) $this->title = $display->display_name;
-            $this->meta_keywords = $display->meta_keywords;
-            $this->meta_description = $display->meta_description;
+            $this->setSeoInformation("disks_display", $display->id);
             $this->breadcrumbs = array(
                 array(
                     "url" => "/",
@@ -277,7 +280,7 @@ class DrivesController extends Controller{
             $isMobile = true;
         }else
             $isMobile = false;
-        $this->setSeoInformation("diski-{$model->translit}");
+        $this->setSeoInformation("disks_category", array("category" => $model->value));
         if(isset($_GET["page"])){
             $this->noIndex = true;
         }
@@ -300,6 +303,7 @@ class DrivesController extends Controller{
                 "isMobile" => $isMobile,
                 "vocabs" => $vocabs,
                 "disks" => $disks,
+                "h2" => "Диски {$model->value}",
                 "disks_type_id" => $model->id,
                 "filter_url" => Yii::app()->createUrl("drives/index"),
                 "attributes" => $disks->attributeLabels(),

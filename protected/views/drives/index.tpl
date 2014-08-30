@@ -12,6 +12,9 @@
         {if $this->breadcrumbs}
             {include file="application.views.site._breadcrumbs"}
         {/if}
+        <div class="title">
+            <h1>{$header}</h1>
+        </div>
         <a class="filter-button" href="#filter-tire-780">Фильтр</a>
         <div class="catalog-product">
             <div class="catalog-management">
