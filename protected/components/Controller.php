@@ -46,71 +46,9 @@ class Controller extends CController
     }
 
     protected function beforeAction($action){
-//        $shinsSubmenuData = ShinsSeason::model()->findAll(
-//                                array(
-//                                    "condition" => "id > 1",
-//                                    "order" => "value ASC",
-//                                )
-//                            );
-
-//        $i = 0;
-//        foreach($shinsSubmenuData as $item){
-//            $i++;
-//            $this->shinsSubMenu[] = array(
-//                "label" => "$item->value",
-//                "url" => array("tires/tiresSubMenu", "type" => $item->translit),
-//                "itemOptions" => array("class" => "leaf-{$i}"),
-//            );
-//        }
-//        $disksSubmenuData = DisksType::model()->findAll(
-//            array(
-//                "condition" => "id > 1",
-//                "order" => "value ASC",
-//            )
-//        );
-        $makeSubMenu = function(&$subMenu, $url, $level = 1) use (&$makeSubMenu){
-            foreach($subMenu as $i => &$subMenuItem){
-                $subMenuItem["itemOptions"] = array("class" => "leaf-{$i}");
-                if(count($subMenuItem["urlParams"]) == 2){
-                    $subMenuItem["url"] = array(
-                        $url,
-                        "type" => $subMenuItem["urlParams"][0],
-                        "type1" => $subMenuItem["urlParams"][1],
-                    );
-                }else{
-                    $subMenuItem["url"] = array(
-                        $url,
-                        "type" => $subMenuItem["urlParams"][0],
-                    );
-                }
-                unset($subMenuItem["urlParams"]);
-                // если есть подменю
-                if(array_key_exists("items", $subMenuItem)){
-                    $subMenuItem["submenuOptions"] = array("class" => "sub-menu-1");
-                    $makeSubMenu($subMenuItem["items"], $url, ++$level);
-                }
-            }
-        };
-        $shinsSubMenu = Menu::getInstance()->getShinsSubMenu();
-        $makeSubMenu($shinsSubMenu, "tires/tiresSubMenu");
-        $this->shinsSubMenu = $shinsSubMenu;
-        $disksSubMenu = Menu::getInstance()->getDisksSubMenu();
-        $makeSubMenu($disksSubMenu, "drives/drivesSubMenu");
-        $this->disksSubMenu = $disksSubMenu;
-//        $i = 0;
-//        foreach($disksSubmenuData as $item){
-//            $i++;
-//            $this->disksSubMenu[] = array(
-//                "label" => "$item->value",
-//                "url" => array("drives/drivesSubMenu", "type" => $item->translit),
-//                "itemOptions" => array("class" => "leaf-{$i}"),
-//            );
-//        }
-//        echo "<pre>";
-//        var_dump($this->disksSubMenu);
-//        echo "</pre>";
+        $this->shinsSubMenu = SubMenu::getInstance()->getShinsSubMenu();
+        $this->disksSubMenu = SubMenu::getInstance()->getDisksSubMenu();
         return true;
-
     }
 
 }
