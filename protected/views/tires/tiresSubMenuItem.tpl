@@ -16,7 +16,7 @@
         <div class="tires-index clearfix">
             <!--________________________________Блок Шапка продукта________________________________-->
             <div class="tires-index-title">
-                <h2>{$this->title}</h2>
+                <h2>{$h2}</h2>
                 <div class="tires-index-body">
                     {$this->text}
                 </div>

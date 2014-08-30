@@ -22,57 +22,31 @@ class PagesController extends Controller
         $this->breadcrumbs = array(
             CHtml::link("Страницы", array("/admin/pages/index")),
         );
-        $printLine = function($level){
-            if($level == 1){
-                return "--->";
-            }
-            $line = "";
-            for($i = 0; $i < $level; $i++){
-                $line .= "---";
-            }
-            return $line.">";
-        };
 		$this->render(
             'index',
             array(
-                'model' => new CArrayDataProvider(
-                                    array_map(
-                                        function($v) use ($printLine){
-                                            $v["printLine"] = $printLine;
-                                            return $v;
-                                        },
-                                        Menu::getInstance()->getSitePages()
-                                    ),
-                                    array(
-                                        'pagination' => array(
-                                            'pageSize' => 100,
-                                        ),
-                                    )
-                               ),
+                'model' => PagesSeo::model()->search()
             )
         );
 	}
 
     public function actionEdit($id){
-        $page = Pages::model()->findByPk((int)$id);
-        if(!$page){
+        $model = PagesSeo::model()->findByPk((int)$id);
+        if(!$model){
             throw new CHttpException(404, "Страница не найдена");
         }
-        $this->actionEditPage($page->id);
-    }
-
-    public function actionEditPage($id){
-        $model = Pages::model()->findByPk((int)$id);
-        if($model === null){
-            throw new CHttpException(404, "Страница не найдена");
+        if($model->hasTemplate == 1){
+            $arr = unserialize($model->template_keywords);
         }
-        if(isset($_POST["Pages"])){
-            $model->attributes = $_POST["Pages"];
-            if($model->hasText == 0){
-                $model->text = null;
-            }
-            if($model->save()){
-                $this->redirect(array("/admin/pages/index"));
+        if(isset($_POST["PagesSeo"])){
+            $model->attributes = $_POST["PagesSeo"];
+            if($model->validate()){
+                if($model->hasText == 0){
+                    $model->text = null;
+                }
+                if($model->save()){
+                    $this->redirect(array("/admin/pages/index"));
+                }
             }
         }
         $this->breadcrumbs = array(
@@ -86,33 +60,7 @@ class PagesController extends Controller
                 "model" => $model,
             )
         );
+
     }
 
-
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
 }

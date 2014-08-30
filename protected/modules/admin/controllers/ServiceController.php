@@ -167,4 +167,40 @@ class ServiceController extends Controller
         );
     }
 
+    public function actionTest(){
+//        $result = array(
+//            array(
+//                "keyword" => "name",
+//                "keyword_description" => "Имя дисплея",
+//                "index_field_name" => "disks_display_name",
+//                "condition" => "",
+//            ),
+//            array(
+//                "keyword" => "type",
+//                "keyword_description" => "Тип (квванные, литые и .т.д.)",
+//                "index_field_name" => "disks_type",
+//                "condition" => "disks_type_id > 1",
+//            ),
+//            array(
+//                "keyword" => "brand",
+//                "keyword_description" => "Производитель",
+//                "index_field_name" => "vendor_name",
+//                "condition" => "",
+//            ),
+//        );
+        $result = array(
+            array(
+                "keyword" => "brand",
+                "keyword_description" => "Бренд дисков",
+            )
+        );
+        //DisksDisplays::model()->getSeoTemplateSubstitution("diski", 297);
+        $this->render(
+            'test',
+            array(
+                "result" => serialize($result)
+            )
+        );
+    }
+
 }

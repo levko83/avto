@@ -6,7 +6,7 @@
             <span class="required">*</span>
         </label>
         <div class="controls">
-            {$News->textField($model, 'title')}
+            {$News->textField($model, 'title', ['style'=> "width: 750px;"])}
             <span for="News[title]" class="help-inline">
                 {$News->error($model, 'title')}
             </span>
@@ -41,7 +41,7 @@
             {$labels["search_keywords"]}
         </label>
         <div class="controls">
-            {$News->textArea($model, 'search_keywords')}
+            {$News->textArea($model, 'search_keywords', ['style'=> "width: 750px; height: 200px;"])}
             <span for="News[search_keywords]" class="help-inline">
                 {$News->error($model, 'search_keywords')}
             </span>
@@ -52,7 +52,7 @@
             {$labels["search_description"]}
         </label>
         <div class="controls">
-            {$News->textArea($model, 'search_description')}
+            {$News->textArea($model, 'search_description', ['style'=> "width: 750px; height: 200px;"])}
             <span for="News[search_description]" class="help-inline">
                 {$News->error($model, 'search_description')}
             </span>

@@ -16,7 +16,7 @@
         <div class="drive-index clearfix">
             <!--________________________________Блок Шапка продукта________________________________-->
             <div class="drive-index-title">
-                <h2>{$this->title}</h2>
+                <h2>{$h2}</h2>
                 <div class="drive-index-body">
                     {$this->text}
                 </div>

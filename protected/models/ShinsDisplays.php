@@ -472,4 +472,36 @@ class ShinsDisplays extends CExtendedActiveRecord
 	{
 		return parent::model($className);
 	}
+
+    public function getSeoTemplateSubstitutionData($display_id, $templateKeyWords){
+        require_once(Yii::getPathOfAlias("application.components")."/sphinxapi.php");
+        $cl = new SphinxClient();
+        $cl->SetServer('127.0.0.1', 9312);
+        foreach($templateKeyWords as $templateKeyWord){
+            $cl->ResetFilters();
+            $cl->ResetGroupBy();
+            $select = array("id", $templateKeyWord["index_field_name"]);
+            if($templateKeyWord["condition"]){
+                $select[] = "IF(".$templateKeyWord["condition"].", 1, 0) AS c1";
+                $cl->SetFilter("c1", array(1));
+            }
+            $cl->SetSelect(join(", ", $select));
+            $cl->SetFilter("shins_display_id", array($display_id));
+            $cl->SetGroupBy($templateKeyWord["index_field_name"], SPH_GROUPBY_ATTR);
+            $cl->AddQuery("", "shinsIndex");
+        }
+        $queryData = $cl->RunQueries();
+        $result = array();
+        foreach($queryData as $k => $queryDataItem){
+            if($queryDataItem["matches"]){
+                $result[$templateKeyWords[$k]["keyword"]] = array();
+                foreach($queryDataItem["matches"] as $item){
+                    $result[$templateKeyWords[$k]["keyword"]][] = $item["attrs"][$templateKeyWords[$k]["index_field_name"]];
+                }
+                $result[$templateKeyWords[$k]["keyword"]] = join(", ", $result[$templateKeyWords[$k]["keyword"]]);
+            }
+        }
+        return $result;
+    }
+
 }

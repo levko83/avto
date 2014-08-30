@@ -14,7 +14,7 @@ class ModelFilters{
 //            'HTML.SafeObject'=>true,
 //            'Output.FlashCompat'=>true,
 //        );
-        return $p->purify($value);
+        return trim($p->purify($value));
     }
 
 } 
