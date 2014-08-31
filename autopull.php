@@ -5,6 +5,8 @@
     }else{
         $ip = $_SERVER['REMOTE_ADDR'];
         $result = "Unsuccessful pull form {$ip}";
+        header("Location: /");
+        exit;
     }
     $date_now = date("d-m-Y G:i:s");
     $result = "{$date_now}\n{$result}\n\n";
