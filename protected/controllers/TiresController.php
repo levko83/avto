@@ -275,6 +275,10 @@ class TiresController extends Controller
          if(isset($filter["vendor_id"]) and count($filter["vendor_id"]) == 1){
              $brand = ShinsVendors::model()->findByPk($filter["vendor_id"][0])->vendor_name;
              $header = "Шины {$brand}";
+             $brand_description = trim(ShinsVendors::model()->findByPk($filter["vendor_id"][0])->description);
+             if($brand_description){
+                 $this->body = $brand_description;
+             }
              $this->setSeoInformation("shins_brands", ["brand" => $brand]);
          }else{
              $header = "Шины";

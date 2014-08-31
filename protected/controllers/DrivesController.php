@@ -110,6 +110,10 @@ class DrivesController extends Controller{
         if(isset($filter["vendor_id"]) and count($filter["vendor_id"]) == 1){
             $brand = DisksVendors::model()->findByPk($filter["vendor_id"][0])->vendor_name;
             $header = "Диски {$brand}";
+            $brand_description = trim(DisksVendors::model()->findByPk($filter["vendor_id"][0])->description);
+            if($brand_description){
+                $this->body = $brand_description;
+            }
             $this->setSeoInformation("disks_brands", ["brand" => $brand]);
         }else{
             $header = "Диски";

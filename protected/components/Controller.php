@@ -28,6 +28,7 @@ class Controller extends CController
     public $noIndex;
     public $title;
     public $text;
+    public $body;
     public $meta_keywords;
     public $meta_description;
     public $disksSubMenu = array();
