@@ -13,7 +13,7 @@
     </div>
     <div class="tire-season form-select select">
         <h3>Сезонность:</h3>
-        {CHtml::dropDownList('Shins[shins_season_id]', "", $tiresVocabs->shins_season_id, ['empty' => '-все-'])}
+        {CHtml::dropDownList('Shins[shins_season_id][]', "", $tiresVocabs->shins_season_id, ['empty' => '-все-'])}
     </div>
     <div class="form-actions">
         <input class="form-submit" type="submit" value="Подобрать шины">
