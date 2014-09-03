@@ -97,17 +97,7 @@ class DrivesController extends Controller{
         if(isset($_GET["page"])){
             $this->noIndex = true;
         }
-        $this->breadcrumbs = array(
-            array(
-                "url" => "/",
-                "title" => "Главная"
-            ),
-            array(
-                "url" => Yii::app()->createUrl("drives/index"),
-                "title" => "Диски"
-            ),
-        );
-        if(isset($filter["vendor_id"]) and count($filter["vendor_id"]) == 1){
+        if(count($filter) == 1 and isset($filter["vendor_id"]) and count($filter["vendor_id"]) == 1){
             $brand = DisksVendors::model()->findByPk($filter["vendor_id"][0])->vendor_name;
             $header = "Диски {$brand}";
             $brand_description = trim(DisksVendors::model()->findByPk($filter["vendor_id"][0])->description);
@@ -116,9 +106,51 @@ class DrivesController extends Controller{
             }
             $this->setSeoInformation("disks_brands", ["brand" => $brand]);
         }else{
+            $header_array = array();
+            $brand = $vocabs->getSeoValues("vendor_id", $filter);
+            if($brand){
+                $header_array[] = $brand;
+            }
+            if(isset($avto)){
+                $header_array[] = "для {$avto}";
+            }
+            $tip = $vocabs->getSeoValues("disks_type_id", $filter);
+            if($tip){
+                $header_array[] = $tip;
+            }
+            $shirina = $vocabs->getSeoValues("disks_rim_width", $filter);
+            if($shirina){
+                $header_array[] = "ширина: {$shirina}";
+            }
+            $diametr = $vocabs->getSeoValues("disks_rim_diametr", $filter, "R");
+            if($diametr){
+                $header_array[] = "диаметр: {$diametr}";
+            }
+            $et = $vocabs->getSeoValues("disks_boom", $filter);
+            if($et){
+                $header_array[] = "ET: {$et}";
+            }
+            $color = $vocabs->getSeoValues("disks_color", $filter);
+            if($color){
+                $header_array[] = "цвет: {$color}";
+            }
             $header = "Диски";
-            $this->setSeoInformation("diski");
+            $header_filter = join(", ", $header_array);
+            if($header_filter){
+                $header .= " {$header_filter}";
+            }
+            $this->setSeoInformation("disks", array("filter" => $header_filter));
         }
+        $this->breadcrumbs = array(
+            array(
+                "url" => "/",
+                "title" => "Главная"
+            ),
+            array(
+                "url" => Yii::app()->createUrl("drives/index"),
+                "title" => $header
+            ),
+        );
         $this->render(
             'index',
             array(

@@ -190,8 +190,8 @@ class ServiceController extends Controller
 //        );
         $result = array(
             array(
-                "keyword" => "brand",
-                "keyword_description" => "Бренд дисков",
+                "keyword" => "filter",
+                "keyword_description" => "Строковое представление значений фильтра",
             )
         );
         //DisksDisplays::model()->getSeoTemplateSubstitution("diski", 297);

@@ -53,6 +53,9 @@ class Controller extends CController
                 case "shins_brands":
                     $templateKeywordsData = $data;
                     break;
+                case "shins":
+                    $templateKeywordsData = $data;
+                    break;
                 case "shins_display":
                     $templateKeywordsData = ShinsDisplays::model()->getSeoTemplateSubstitutionData($data, $templateKeywords);
                     break;
@@ -60,6 +63,9 @@ class Controller extends CController
                     $templateKeywordsData = $data;
                     break;
                 case "disks_brands":
+                    $templateKeywordsData = $data;
+                    break;
+                case "disks":
                     $templateKeywordsData = $data;
                     break;
                 case "disks_display":
@@ -70,9 +76,9 @@ class Controller extends CController
             }
             $replaceKeywords = function($str) use ($templateKeywordsData){
                 foreach($templateKeywordsData as $keyword => $value){
-                    if(trim($value) == ""){
-                        continue;
-                    }
+//                    if(trim($value) == ""){
+//                        continue;
+//                    }
                     $str = str_replace('{'.$keyword.'}', $value, $str);
                 }
                 return $str;

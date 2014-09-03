@@ -259,6 +259,62 @@ class TiresController extends Controller
             $isMobile = true;
          }else
              $isMobile = false;
+         if(count($filter) == 1 and isset($filter["vendor_id"]) and count($filter["vendor_id"]) == 1){
+            $brand = ShinsVendors::model()->findByPk($filter["vendor_id"][0])->vendor_name;
+            $header = "Шины {$brand}";
+            $brand_description = trim(ShinsVendors::model()->findByPk($filter["vendor_id"][0])->description);
+            if($brand_description){
+                $this->body = $brand_description;
+            }
+            $this->setSeoInformation("shins_brands", ["brand" => $brand]);
+         }else{
+            $header_array = array();
+            $brand = $vocabs->getSeoValues("vendor_id", $filter);
+            if($brand){
+                $header_array[] = $brand;
+            }
+            if(isset($avto)){
+                $header_array[] = "для {$avto}";
+            }
+            $tip_avto = $vocabs->getSeoValues("shins_type_of_avto_id", $filter);
+            if($tip_avto){
+                $header_array[] = $tip_avto;
+            }
+            $season = $vocabs->getSeoValues("shins_season_id", $filter);
+            if($season){
+                $header_array[] = $season;
+            }
+            $shirina = $vocabs->getSeoValues("shins_profile_width", $filter);
+            if($shirina){
+                $header_array[] = "ширина: {$shirina}";
+            }
+            $profile = $vocabs->getSeoValues("shins_profile_height", $filter);
+            if($profile){
+                $header_array[] = "профиль: {$profile}";
+            }
+            $diametr = $vocabs->getSeoValues("shins_diametr", $filter, "R");
+            if($diametr){
+                $header_array[] = "диаметр: {$diametr}";
+            }
+            $load_index = $vocabs->getSeoValues("shins_load_index", $filter, "R");
+            if($load_index){
+                 $header_array[] = "индекс нагрузки: {$load_index}";
+            }
+            $run_flat = (isset($filter["shins_run_flat_technology_id"]) and count($filter["shins_run_flat_technology_id"]) == 1 and $filter["shins_run_flat_technology_id"][0] == 2) ? 1 : 0;
+            if($run_flat == 1){
+                $header_array[] = "RunFlat";
+            }
+            $spike = isset($filter["shins_spike_id"]) and count($filter["shins_spike_id"]) == 1 and $filter["shins_spike_id"][0] == 2 ? 1 : 0;
+            if($spike == "есть"){
+                $header_array[] = "шипованные";
+            }
+            $header = "Шины";
+            $header_filter = join(", ", $header_array);
+            if($header_filter){
+                $header .= " {$header_filter}";
+            }
+            $this->setSeoInformation("shins", array("filter" => $header_filter));
+         }
          if(isset($_GET["page"])){
              $this->noIndex = true;
          }
@@ -269,21 +325,9 @@ class TiresController extends Controller
              ),
              array(
                  "url" => Yii::app()->createUrl("tires/index"),
-                 "title" => "Шины"
+                 "title" => $header
              ),
          );
-         if(isset($filter["vendor_id"]) and count($filter["vendor_id"]) == 1){
-             $brand = ShinsVendors::model()->findByPk($filter["vendor_id"][0])->vendor_name;
-             $header = "Шины {$brand}";
-             $brand_description = trim(ShinsVendors::model()->findByPk($filter["vendor_id"][0])->description);
-             if($brand_description){
-                 $this->body = $brand_description;
-             }
-             $this->setSeoInformation("shins_brands", ["brand" => $brand]);
-         }else{
-             $header = "Шины";
-             $this->setSeoInformation("shins");
-         }
          Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/tires.js', CClientScript::POS_HEAD);
          $this->render(
             'index',

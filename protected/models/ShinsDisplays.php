@@ -441,6 +441,7 @@ class ShinsDisplays extends CExtendedActiveRecord
             $comm->setWhere(join(" AND ", $conditions));
         }
         $comm->setText("{$comm->getText()} OPTION max_matches=500000, ranker=none");
+        $res = $comm->queryAll();
         return new CArrayDataProvider($comm->queryAll(), array(
                 'sort' => $sort,
                 'pagination' => $pagination,

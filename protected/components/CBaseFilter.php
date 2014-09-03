@@ -153,6 +153,25 @@ class CBaseFilter{
         }
     }
 
+    public function getSeoValues($field_name, $filter, $prefix = ""){
+        $data = $this->$field_name;
+        if(!$data){
+            $field_name_translit = "{$field_name}_translit";
+            $data = $this->$field_name_translit;
+        }
+        $list = array();
+        foreach($filter[$field_name] as $v){
+            $str = $data[$v];
+            if(preg_match("/(.*)\(\+\d+\)$/u", $str, $matches) and count($matches) == 2){
+                $str = trim($matches[1]);
+                if($str != "нет данных"){
+                    $list[] = "{$prefix}{$str}";
+                }
+            }
+        }
+        return join(", ", $list);
+    }
+
     private function _generateFilterValues(){
         require_once(Yii::getPathOfAlias("application.components")."/sphinxapi.php");
         $cl = new SphinxClient();

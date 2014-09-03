@@ -25,7 +25,7 @@
                     {continue}
                 {/if}
                 {foreach from=$avto_product_item item="data"}
-                    <a href="{Yii::app()->createUrl("drives/index", ["v" => $filter["avto_modification"], "v5" => round($data["disks_rim_width"], 1), "v3" => round($data["disks_rim_diametr"], 1), "v7" => round($data["disks_boom"], 1)])}">
+                    <a href="{Yii::app()->createUrl("drives/index", ["v" => $filter["v"], "v5" => round($data["disks_rim_width"], 1), "v3" => round($data["disks_rim_diametr"], 1), "v7" => round($data["disks_boom"], 1)])}">
                         {round($data["disks_rim_width"], 1)} x {round($data["disks_rim_diametr"], 1)} ET{round($data["disks_boom"], 1)}
                     </a>&nbsp;
                 {/foreach}
