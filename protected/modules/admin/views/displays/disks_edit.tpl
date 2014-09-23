@@ -80,30 +80,6 @@
                 </span>
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label">
-                {$labels["meta_keywords"]}
-                <span class="required">*</span>
-            </label>
-            <div class="controls">
-                {$DisksDisplays->textArea($model, 'meta_keywords')}
-                <span for="DisksDisplays[meta_keywords]" class="help-inline">
-                    {$DisksDisplays->error($model, 'meta_keywords')}
-                </span>
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">
-                {$labels["meta_description"]}
-                <span class="required">*</span>
-            </label>
-            <div class="controls">
-                {$DisksDisplays->textArea($model, 'meta_description')}
-                <span for="DisksDisplays[meta_description]" class="help-inline">
-                    {$DisksDisplays->error($model, 'meta_description')}
-                </span>
-            </div>
-        </div>
         <div class="form-actions">
             <button class="btn blue" type="submit">Сохранить дисплей</button>
         </div>

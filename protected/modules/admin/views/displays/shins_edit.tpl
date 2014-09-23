@@ -80,30 +80,6 @@
                 </span>
             </div>
         </div>
-        <div class="control-group">
-            <label class="control-label">
-                {$labels["meta_keywords"]}
-                <span class="required">*</span>
-            </label>
-            <div class="controls">
-                {$ShinsDisplays->textArea($model, 'meta_keywords')}
-                <span for="ShinsDisplays[meta_keywords]" class="help-inline">
-                    {$ShinsDisplays->error($model, 'meta_keywords')}
-                </span>
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label">
-                {$labels["meta_description"]}
-                <span class="required">*</span>
-            </label>
-            <div class="controls">
-                {$ShinsDisplays->textArea($model, 'meta_description')}
-                <span for="ShinsDisplays[meta_description]" class="help-inline">
-                    {$ShinsDisplays->error($model, 'meta_description')}
-                </span>
-            </div>
-        </div>
         <div class="form-actions">
             <button class="btn blue" type="submit">Сохранить дисплей</button>
         </div>

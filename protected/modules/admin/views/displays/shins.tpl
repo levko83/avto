@@ -31,16 +31,6 @@
             'value' => '$data->display_description'
         ],
         [
-            'name' => 'meta_keywords',
-            'type' => 'raw',
-            'value' => 'CHtml::encode($data->meta_keywords)'
-        ],
-        [
-            'name' => 'meta_description',
-            'type' => 'raw',
-            'value' => 'CHtml::encode($data->meta_description)'
-        ],
-        [
             'class' => 'CButtonColumn',
             'template' => '{update}',
             'updateButtonUrl' => 'Yii::app()->createUrl("/admin/displays/shins", array("id" => $data->id))'
