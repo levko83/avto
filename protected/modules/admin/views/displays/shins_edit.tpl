@@ -71,7 +71,6 @@
         <div class="control-group">
             <label class="control-label">
                 {$labels["display_description"]}
-                <span class="required">*</span>
             </label>
             <div class="controls">
                 {$ShinsDisplays->textArea($model, 'display_description', ["class" => 'tiny'])}

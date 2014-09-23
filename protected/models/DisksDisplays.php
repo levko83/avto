@@ -73,7 +73,7 @@ class DisksDisplays extends CExtendedActiveRecord
             array('display_description', 'filter', 'filter' => array('ModelFilters', 'htmlSecurity')),
             array('display_name, actionPrice, meta_keywords, meta_description, display_description', 'filter', 'filter' => 'trim'),
             array('actionPrice', 'actionPriceValidator'),
-            array('display_name, display_description, meta_keywords, meta_description', 'required'),
+            array('display_name', 'required'),
 			array('editing', 'numerical', 'integerOnly'=>true),
 			array('display_name, translit, title', 'length', 'max'=>500),
 			// The following rule is used by search().
