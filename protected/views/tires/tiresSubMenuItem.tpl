@@ -35,7 +35,7 @@
                                     {foreach from=$inStock item=item}
                                         {*<a href="/tires.html?v11[1]={$item["vendor_id"]}">*}
                                         <a href="{Yii::app()->createUrl("tires/index", ["v11" => [$item["vendor_id"]], "v10" => $v10, "v8" => $v8, "v13" => 1])}">
-                                            <img src="{imageResizer product_type="disks_vendor" imageName=$item["vendor_image"] width=120 height=105}" alt="">
+                                            <img src="{imageResizer product_type="shins_vendor" imageName=$item["vendor_image"] width=100 height=85}" alt="">
                                             {$item["vendor_name"]}
                                         </a>
                                     {/foreach}
@@ -49,7 +49,7 @@
                                 {if count($outStock) > 0}
                                     {foreach from=$outStock item=item1}
                                         <a href="{Yii::app()->createUrl("tires/index", ["v11" => [$item1["vendor_id"]], "v10" => $v10, "v8" => $v8])}">
-                                            <img src="{imageResizer product_type="disks_vendor" imageName=$item1["vendor_image"] width=120 height=105}" alt="">
+                                            <img src="{imageResizer product_type="shins_vendor" imageName=$item1["vendor_image"] width=100 height=85}" alt="">
                                             {$item1["vendor_name"]}
                                         </a>
                                     {/foreach}
