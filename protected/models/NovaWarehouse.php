@@ -247,6 +247,7 @@ class NovaWarehouse extends CExtendedActiveRecord
                         $area = new NovaWarehouse();
                         $area->id = $regionKey;
                         $area->name = $regions[$regionKey]["rus"];
+                        $area->name_translit = HtmlHelper::transliterate($regions[$regionKey]["rus"]);
                         $area->saveNode();
                         $buff["region_object"] = $area;
                         $regionKeys[$regionKey] = $area;
@@ -261,6 +262,7 @@ class NovaWarehouse extends CExtendedActiveRecord
                     $city = new NovaWarehouse();
                     $city->xml_id = $city_item["id"];
                     $city->name = $city_item["name"];
+                    $city->name_translit = HtmlHelper::transliterate($city_item["name"]);
                     $city->appendTo($city_item["region_object"]);
                 }
                 $xml_data = simplexml_load_string(file_get_contents($fn_data));

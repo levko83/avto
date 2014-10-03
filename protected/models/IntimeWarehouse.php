@@ -179,6 +179,7 @@ class IntimeWarehouse extends CExtendedActiveRecord
                 $root = new IntimeWarehouse();
                 $root->id = $k;
                 $root->name = $region;
+                $root->name_translit = HtmlHelper::transliterate($region);
                 $root->saveNode();
             }
             foreach($xml->City as $city_xml){
@@ -202,6 +203,7 @@ class IntimeWarehouse extends CExtendedActiveRecord
                     if($region){
                         $city = new IntimeWarehouse;
                         $city->name = $cityName;
+                        $city->name_translit = HtmlHelper::transliterate($cityName);
                         $city->appendTo($region);
                         foreach($wareHouses as $wareHousesItem){
                             $wareHouse = new IntimeWarehouse;

@@ -204,6 +204,11 @@
                                 "label" => "<i class='icon-briefcase'></i> <span class='title'>Новая почта</span>",
                                 "url" => ["/admin/delivery/nova"],
                                 "visible" => Yii::app()->user->checkAccess("administrator")
+                            ],
+                            [
+                                "label" => "<i class='icon-briefcase'></i> <span class='title'>Уникальные тексты</span>",
+                                "url" => ["/admin/delivery/seo_texts"],
+                                "visible" => Yii::app()->user->checkAccess("administrator")
                             ]
                           ]
                         ],

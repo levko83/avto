@@ -9,6 +9,7 @@
     {/if}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" type="image/jpeg" href="/favicon.jpg"/>
     <link type="text/css" rel="stylesheet/less" href="{Yii::app()->request->baseUrl}/css/reset.css">
     <link type="text/css" rel="stylesheet/less" href="{Yii::app()->request->baseUrl}/css/jquery-ui-1.9.2.custom.min.css">
     <link type="text/css" rel="stylesheet/less" href="{Yii::app()->request->baseUrl}/css/lightbox.css">

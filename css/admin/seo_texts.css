@@ -1,0 +1,7 @@
+div.region{
+    cursor: pointer;
+    font-weight: bold;
+}
+ul.citys{
+   display: none;
+}
