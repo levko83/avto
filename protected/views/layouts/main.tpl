@@ -179,9 +179,9 @@
                             {$this->body}
                     </div>
                 </div>
-                <div class="read-all clearfix">
-                    <a class"read" href="#">Подробнее о подборе и заказе шин</a>
-                </div>
+                {*<div class="read-all clearfix">*}
+                    {*<a class"read" href="#">Подробнее о подборе и заказе шин</a>*}
+                {*</div>*}
             </article>
             {/if}
         </div>

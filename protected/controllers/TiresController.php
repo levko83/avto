@@ -266,6 +266,19 @@ class TiresController extends Controller
             if($brand_description){
                 $this->body = $brand_description;
             }
+            $this->breadcrumbs = array(
+                array(
+                    "url" => "/",
+                    "title" => "Главная"
+                ),
+                array(
+                    "url" => Yii::app()->createUrl("tires/index"),
+                    "title" => "Шины"
+                ),
+                array(
+                    "title" => $header
+                )
+            );
             $this->setSeoInformation("shins_brands", ["brand" => $brand]);
          }else{
             $header_array = array();
@@ -314,20 +327,13 @@ class TiresController extends Controller
                 $header .= " {$header_filter}";
             }
             $this->setSeoInformation("shins", array("filter" => $header_filter));
+            if(trim($this->text) != ""){
+                $this->body = $this->text;
+            }
          }
          if(isset($_GET["page"])){
              $this->noIndex = true;
          }
-         $this->breadcrumbs = array(
-             array(
-                 "url" => "/",
-                 "title" => "Главная"
-             ),
-             array(
-                 "url" => Yii::app()->createUrl("tires/index"),
-                 "title" => $header
-             ),
-         );
          Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/tires.js', CClientScript::POS_HEAD);
          $this->render(
             'index',
@@ -435,7 +441,11 @@ class TiresController extends Controller
                     "title" => "Главная"
                 ),
                 array(
-                    "url" => Yii::app()->createUrl("tires/tire", array("id" => $id, "translit" => $translit)),
+                    "url" => Yii::app()->createUrl("tires/index"),
+                    "title" => "Шины"
+                ),
+                array(
+//                    "url" => Yii::app()->createUrl("tires/tire", array("id" => $id, "translit" => $translit)),
                     "title" => "Шины {$display->display_name}"
                 ),
             );
@@ -582,6 +592,10 @@ class TiresController extends Controller
             array(
                 "url" => "/",
                 "title" => "Главная"
+            ),
+            array(
+                "url" => Yii::app()->createUrl("tires/index"),
+                "title" => "Шины"
             ),
             array(
                 "url" => Yii::app()->createUrl("tires/tiresSubMenu", array("type" => $type, "type" => $type1)),

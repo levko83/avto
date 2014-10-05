@@ -127,16 +127,16 @@
                 {$Shins->dropDownList($shins, "shins_profile_width", $vocabs->shins_profile_width, ['empty' => '-все-'])}
             </div>
             {/if}
-            {if $vocabs->shins_load_index_translit}
-            <div class="load-index form-select select">
-                <h3>Индекс нагрузки:</h3>
-                {$Shins->dropDownList($shins, "shins_load_index", $vocabs->shins_load_index_translit, ['empty' => '-все-'])}
-            </div>
-            {/if}
             {if $vocabs->shins_profile_height}
             <div class="profile form-select select">
                 <h3>Профиль:</h3>
                 {$Shins->dropDownList($shins, "shins_profile_height", $vocabs->shins_profile_height, ['empty' => '-все-'])}
+            </div>
+            {/if}
+            {if $vocabs->shins_load_index_translit}
+            <div class="load-index form-select select">
+            <h3>Индекс нагрузки:</h3>
+                {$Shins->dropDownList($shins, "shins_load_index", $vocabs->shins_load_index_translit, ['empty' => '-все-'])}
             </div>
             {/if}
             {if $vocabs->shins_diametr}

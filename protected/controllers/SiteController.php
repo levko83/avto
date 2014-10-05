@@ -32,6 +32,9 @@ class SiteController extends Controller
        Yii::import('application.controllers.DrivesController');
        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/index.js', CClientScript::POS_HEAD);
        $this->setSeoInformation("main");
+       if(trim($this->text) != ""){
+           $this->body = $this->text;
+       }
        $this->render(
            'index',
            array(
@@ -122,6 +125,10 @@ class SiteController extends Controller
         }
         $region_groups[] = $buff;
         $this->layout = 'application.views.layouts.delivery_page';
+        $this->setSeoInformation("payment_and_delivery");
+        if(trim($this->text) != ""){
+            $this->body = $this->text;
+        }
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/ammap/ammap.js', CClientScript::POS_HEAD);
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/ammap/maps/js/ukraineHigh.js', CClientScript::POS_HEAD);
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/delivery_map.js', CClientScript::POS_HEAD);
@@ -206,8 +213,7 @@ class SiteController extends Controller
                 "region" => $regions[$region_translit],
             )
         );
-
-        $this->text = DelivarySeo::model()->getDeliverySeoTextForCity($city_translit, $region_translit);
+        $this->body = DelivarySeo::model()->getDeliverySeoTextForCity($city_translit, $region_translit);
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/delivery.js', CClientScript::POS_HEAD);
         $this->render(
             "delivery_city",

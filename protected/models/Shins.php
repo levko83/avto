@@ -304,8 +304,7 @@ class Shins extends CExtendedActiveRecord implements IECartPosition
             $criteria->addInCondition("vendor_id", $this->vendor_id);
         }
         $criteria->addCondition("price > 0 and amount > 0");
-        return $this;
-        /*
+        //return $this;
         return new CActiveDataProvider(
             $this,
             array(
@@ -315,7 +314,6 @@ class Shins extends CExtendedActiveRecord implements IECartPosition
                 ),
             )
         );
-        */
     }
 
     public function subFilter(){

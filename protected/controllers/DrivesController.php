@@ -104,6 +104,19 @@ class DrivesController extends Controller{
             if($brand_description){
                 $this->body = $brand_description;
             }
+            $this->breadcrumbs = array(
+                array(
+                    "url" => "/",
+                    "title" => "Главная"
+                ),
+                array(
+                    "url" => Yii::app()->createUrl("drives/index"),
+                    "title" => "Диски"
+                ),
+                array(
+                     "title" => $header
+                ),
+            );
             $this->setSeoInformation("disks_brands", ["brand" => $brand]);
         }else{
             $header_array = array();
@@ -140,17 +153,10 @@ class DrivesController extends Controller{
                 $header .= " {$header_filter}";
             }
             $this->setSeoInformation("disks", array("filter" => $header_filter));
+            if(trim($this->text) != ""){
+                $this->body = $this->text;
+            }
         }
-        $this->breadcrumbs = array(
-            array(
-                "url" => "/",
-                "title" => "Главная"
-            ),
-            array(
-                "url" => Yii::app()->createUrl("drives/index"),
-                "title" => $header
-            ),
-        );
         $this->render(
             'index',
             array(
@@ -247,6 +253,10 @@ class DrivesController extends Controller{
                     "title" => "Главная"
                 ),
                 array(
+                    "url" => Yii::app()->createUrl("drives/index"),
+                    "title" => "Диски"
+                ),
+                array(
                     "url" => Yii::app()->createUrl("drives/drive", array("id" => $id, "translit" => $translit)),
                     "title" => "Диски {$display->display_name}"
                 ),
@@ -326,7 +336,11 @@ class DrivesController extends Controller{
                 "title" => "Главная"
             ),
             array(
-                "url" => Yii::app()->createUrl("drives/drivesSubMenu", array("type" => $type)),
+                "url" => Yii::app()->createUrl("drives/index"),
+                "title" => "Диски"
+            ),
+            array(
+//                "url" => Yii::app()->createUrl("drives/drivesSubMenu", array("type" => $type)),
                 "title" => "Диски {$model->value}"
             ),
         );
