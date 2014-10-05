@@ -19,7 +19,7 @@ class Delivery{
         return self::$_inst;
     }
 
-    private function getRegionalCenter($region_translit){
+    public function getRegionalCenter($region_translit){
         return Yii::app()->db->createCommand()
             ->select("n.name_translit")
             ->from("nova_warehouse n")

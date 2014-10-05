@@ -190,8 +190,12 @@ class ServiceController extends Controller
 //        );
         $result = array(
             array(
-                "keyword" => "filter",
-                "keyword_description" => "Строковое представление значений фильтра",
+                "keyword" => "city",
+                "keyword_description" => "Город",
+            ),
+            array(
+                "keyword" => "region",
+                "keyword_description" => "Область",
             )
         );
         //DisksDisplays::model()->getSeoTemplateSubstitution("diski", 297);

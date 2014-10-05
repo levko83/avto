@@ -574,7 +574,7 @@ class TiresController extends Controller
         // выводим вьюху
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/tires.js', CClientScript::POS_HEAD);
 
-        $this->setSeoInformation("shins_category", array("category" => $breadCrumbTitle));
+        $this->setSeoInformation("shins_category_{$type}", array("category" => $breadCrumbTitle));
         if(isset($_GET["page"])){
             $this->noIndex = true;
         }

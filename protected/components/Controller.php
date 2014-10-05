@@ -71,7 +71,18 @@ class Controller extends CController
                 case "disks_display":
                     $templateKeywordsData = DisksDisplays::model()->getSeoTemplateSubstitutionData($data, $templateKeywords);
                     break;
+                case "payment_and_delivery_city":
+                    $templateKeywordsData = $data;
+                    break;
                 default:
+                    if(strpos($page_key, "shins_category_") === 0){
+                        $templateKeywordsData = $data;
+                        break;
+                    }
+                    if(strpos($page_key, "disks_category_") === 0){
+                        $templateKeywordsData = $data;
+                        break;
+                    }
                     return;
             }
             $replaceKeywords = function($str) use ($templateKeywordsData){

@@ -316,7 +316,7 @@ class DrivesController extends Controller{
             $isMobile = true;
         }else
             $isMobile = false;
-        $this->setSeoInformation("disks_category", array("category" => $model->value));
+        $this->setSeoInformation("disks_category_{$type}", array("category" => $model->value));
         if(isset($_GET["page"])){
             $this->noIndex = true;
         }

@@ -134,6 +134,17 @@ class SiteController extends Controller
     }
 
     public function actionDeliveryRegion($region_translit){
+        $regional_center = Delivery::instance()->getRegionalCenter($region_translit);
+        if(!$regional_center){
+            throw new CHttpException(404, "Страница не найдена");
+        }
+        $this->redirect(
+            array(
+                "site/deliveryCity",
+                "region_translit" => $region_translit,
+                "city_translit" => $regional_center,
+            )
+        );
         $regions = Delivery::instance()->getRegions();
         if(!array_key_exists($region_translit, $regions)){
             throw new CHttpException(404, "Страница не найдена");
@@ -188,6 +199,15 @@ class SiteController extends Controller
         }
         // test
         $this->layout = 'application.views.layouts.delivery_page_city';
+        $this->setSeoInformation(
+            "payment_and_delivery_city",
+            array(
+                "city" => $cities->cities[$city_translit],
+                "region" => $regions[$region_translit],
+            )
+        );
+
+        $this->text = DelivarySeo::model()->getDeliverySeoTextForCity($city_translit, $region_translit);
         Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/delivery.js', CClientScript::POS_HEAD);
         $this->render(
             "delivery_city",

@@ -107,4 +107,17 @@ class DelivarySeo extends CExtendedActiveRecord
         return DelivarySeo::model()->findAll($criteria);
     }
 
+    public function getDeliverySeoTextForCity($city_translit, $region_translit){
+        return Yii::app()->db->createCommand()
+            ->select("t.text")
+            ->from("delivary_seo t")
+            ->join("nova_warehouse r", "(t.region_id = r.id AND r.level= 1)")
+            ->where(
+                "t.city_translit = :city_translit AND r.name_translit = :region_translit",
+                array(":city_translit" => $city_translit, ":region_translit" => $region_translit)
+            )
+            ->limit(1)
+            ->queryScalar();
+    }
+
 }

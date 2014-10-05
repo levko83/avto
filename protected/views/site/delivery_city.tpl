@@ -67,17 +67,21 @@
                 </div>
                     <div class="text delivery_hide_text">
                     <p>
-                        Полный список городов, в которых можете приобрести шины через наш интернет-магазин,
-                        находится в разделе "
-                        <a href="delivery">Оплата и доставка</a>
-                        ".
+                        {if trim($this->text == "")}
+                            Полный список городов, в которых можете приобрести шины через наш интернет-магазин,
+                            находится в разделе "
+                            <a href="{Yii::app()->createUrl("site/delivery")}">Оплата и доставка</a>
+                            ".
+                        {else}
+                            {$this->text}
+                        {/if}
                     </p>
                     <div class="choice_links">
                         <div class="tire_link">
-                            <span class="link_text"><a href="/shiny">Перейти к подбору шин</a>→</span>
+                            <span class="link_text"><a href="{Yii::app()->createUrl("tires/index")}">Перейти к подбору шин</a>→</span>
                         </div>
                         <div class="rim_link">
-                            <span class="link_text"><a href="/diski">Перейти к подбору дисков</a>→</span>
+                            <span class="link_text"><a href="{Yii::app()->createUrl("drives/index")}">Перейти к подбору дисков</a>→</span>
                         </div>
                     </div>
                 </div>
