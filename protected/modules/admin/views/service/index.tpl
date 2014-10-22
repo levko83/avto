@@ -12,11 +12,6 @@
                         Бэкап Парсера
                     </a>
                 </li>
-<!--                <li class="">-->
-<!--                    <a data-toggle="tab" href="#tab_1_2">-->
-<!--                        Section 3-->
-<!--                    </a>-->
-<!--                </li>-->
             </ul>
             <div class="tab-content">
                 <div id="tab_1_1" class="tab-pane active">
@@ -29,7 +24,7 @@
                 <div id="tab_1_2" class="tab-pane">
                     <div class="row-fluid">
                         <div class="span12">
-                            <iframe src="{Yii::app()->baseUrl}/parser/sxd/index.php" width="586" height="462" frameborder="0" style="margin:0;"></iframe>
+                            <iframe src="{Yii::app()->baseUrl}/int_comp/sxd/index.php" width="586" height="462" frameborder="0" style="margin:0;"></iframe>
                         </div>
                     </div>
                 </div>

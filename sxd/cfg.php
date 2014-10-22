@@ -1,7 +1,5 @@
 <?php
 
-include "../protected/config/db_settings.php";
-
 $CFG = array (
   'charsets' => 'cp1251 utf8 latin1',
   'lang' => 'ru',
@@ -11,12 +9,13 @@ $CFG = array (
   'backup_url' => 'backup/',
   'only_create' => 'MRG_MyISAM MERGE HEAP MEMORY',
   'globstat' => 0,
-  'my_host' => $_db_settings->host,
+  'my_host' => 'localhost',
   'my_port' => 3306,
-  'my_user' => $_db_settings->main_db_user,
-  'my_pass' => $_db_settings->main_db_pass,
+  'my_user' => 'root',
+  'my_pass' => 'root',
   'my_comp' => 0,
-  'my_db' => $_db_settings->main_db_name,
+  'my_db' => 'avto',
+  'auth' => 'admin mysql cfg',
   'user' => '',
   'pass' => '',
   'confirm' => '6',

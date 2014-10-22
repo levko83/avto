@@ -320,9 +320,9 @@
         </div>
     </div>
     {if Yii::app()->user->checkAccess("administrator")}
-        <form name="LoginForm" enctype="multipart/form-data" action="{Yii::app()->request->baseUrl}/parser/index_int.php?r=site/login" method="post" target="_blank">
+        <form name="LoginForm" enctype="multipart/form-data" action="{Yii::app()->request->baseUrl}/int_comp/index_int.php?r=site/login" method="post" target="_blank">
             <input type="hidden" name="LoginForm[username]" value="admin">
-            <input type="hidden" name="LoginForm[password]" value="admin5">
+            <input type="hidden" name="LoginForm[password]" value="YCuBywlYE">
         </form>
     {/if}
     <!-- END FOOTER -->
