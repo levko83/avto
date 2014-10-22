@@ -1,5 +1,4 @@
 <?php
-
 $CFG = array (
   'charsets' => 'cp1251 utf8 latin1',
   'lang' => 'ru',
@@ -11,11 +10,11 @@ $CFG = array (
   'globstat' => 0,
   'my_host' => 'localhost',
   'my_port' => 3306,
-  'my_user' => 'root',
-  'my_pass' => 'root',
+  'my_user' => '',
+  'my_pass' => '',
   'my_comp' => 0,
-  'my_db' => 'avto',
-  'auth' => 'admin mysql cfg',
+  'my_db' => '',
+  'auth' => 'admin',
   'user' => '',
   'pass' => '',
   'confirm' => '6',
