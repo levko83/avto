@@ -101,7 +101,7 @@ class Pricelist extends CActiveRecord
         $return=parent::beforeSave();
         if(!$return) return $return;
 
-        $file=CUploadedFile::getInstance($this,excel_file);
+        $file=CUploadedFile::getInstance($this, "excel_file");
         if ($file->type == 'application/vnd.ms-excel')
         {
             $file_directory=$_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'int_comp'.DIRECTORY_SEPARATOR.'protected'.DIRECTORY_SEPARATOR.'prices'.DIRECTORY_SEPARATOR.$this->parse_class.DIRECTORY_SEPARATOR;

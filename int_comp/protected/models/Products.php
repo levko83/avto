@@ -253,37 +253,9 @@ class Products extends CActiveRecord
             foreach ($parsed_product_result as $record)
             {
                 self::checkPrice($record->product_id,false);
-                //echo $record->product_id.'  '.$record->amount.'  '.$record->price."<br>";
-                /*$shop_product= Products::model()->findByPk($record->product_id);
-                if ($record->charge_hand>0)
-                {
-                    $temp_price=$record->price*(1+$record->charge_hand*0.01);
-                }
-                else
-                {
-                    $temp_price=$record->price*(1+$record->charge_auto*0.01);
-                }
-                if($record->money_flag=='840')
-                {
-                    $curr_con=Yii::app()->db->createCommand('SELECT currency_value FROM SC_currency_types WHERE CID=11');
-                    $currency=$curr_con->queryScalar();
-                    $currency_value=1/$currency;
-                    $temp_price=$temp_price*$currency_value;
-                }
-                //if ($shop_product->Price!==$temp_price || $shop_product->in_stock!==$record->amount)
-                if ($shop_product->Price > ceil($temp_price))
-                {
-                    $shop_product->Price=ceil($temp_price);
-                    $shop_product->in_stock=$record->amount;
-                    $shop_product->diller_name=$record->company_rel->company;
-                    $shop_product->save();
-                }*/
             }
-
-
             return true;
         }
-
         return false;
     }
 
