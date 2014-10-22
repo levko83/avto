@@ -92,7 +92,7 @@ class CartController extends Controller
             $titlePrefix = $class == "tire" ? "Шина" : "Диск";
             $cartItems[] = (object)array(
                 "id" => $position->id,
-                "image" => "/images/products/{$imagesFolder}/".HtmlHelper::resizeImage($position->image, 100, 100, $imagesPath),
+                "image" => $position->image,
                 "class" => $class,
                 "title" => "{$titlePrefix} {$position->product_name}",
                 "price" => $position->getPrice(),
@@ -304,7 +304,7 @@ class CartController extends Controller
             $titlePrefix = $class == "tire" ? "Шина" : "Диск";
             $cartItems[] = (object)array(
                 "id" => $position->id,
-                "image" => "/images/products/{$imagesFolder}/".HtmlHelper::resizeImage($position->image, 100, 100, $imagesPath),
+                "image" => $position->image,
                 "class" => $class,
                 "title" => "{$titlePrefix} {$position->product_name}",
                 "price" => $position->getPrice(),

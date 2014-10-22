@@ -13,7 +13,7 @@
                             <div class="views-row clearfix">
                                 <a class="product-delit close" product-id="{$cartItem->id}" product-type="{$cartItem->class}"href="#"><span>X</span><a>
                                 <div class="image-row">
-                                    <img src="{$cartItem->image}" alt=" " title=" " />
+                                    <img src="{imageResizer product_type=$cartItem->class imageName=$cartItem->image width=100 height=100}" alt=" " title=" " />
                                 </div>
                                 <div class="row-title text-line">{$cartItem->title}</div>
                                 <div class="code text-line">код товара: {$cartItem->id}</div>

@@ -1,13 +1,12 @@
 <h2>Ваша корзина</h2>
 <a class="cart-close close" href="#">X</a>
-
     <div class="products-cart">
         {foreach from=$cartItems key="i" item="cartItem"}
         <div class="views-row clearfix">
             <a class="product-delit close" product-id="{$cartItem->id}" product-type="{$cartItem->class}" href="#">Удалить <span>X</span><a>
             <div class="image-row">
                 {*<a href="/tires.html"><img src="img/prim3.jpg" width="100" height="100" alt=" " title=" " /></a>*}
-                <img src="{$cartItem->image}" alt=" " title=" " />
+                <img src="{imageResizer product_type=$cartItem->class imageName=$cartItem->image width=100 height=100}" alt=" " title=" " />
             </div>
             {*<div class="row-title text-line"><a href="/tires.html">ZW 610 (BP - Черный внутри полированный)</a></div>*}
             <div class="row-title text-line">{$cartItem->title}</div>

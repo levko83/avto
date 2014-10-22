@@ -192,7 +192,7 @@ $(function(){
                     width:700,
                     height: product_in_cart+310,
                     loader:1,
-                    loaderImagePath:'img/load.gif',
+//                    loaderImagePath:'images/load.gif',
                     loaderHeight:16,
                     loaderWidth:17,
                     windowSourceID:'#cart-block'

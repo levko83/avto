@@ -28,13 +28,13 @@
             <h2 class=title>Новости</h2>
             <div class="content clearfix">
                 <div class="view-row clearfix">
-                    <div class="image-row"><a href="#"><img src="/images/css/prim1.jpg" alt=" " title=" " /></a></div>
+                    <div class="image-row"><a href="#"><img src="/css/images/prim1.jpg" alt=" " title=" " /></a></div>
                     <div class="data text-line">31 Октября 2013</div>
                     <div class=row-title><a href="#">Компактный кроссовер Honda дебютировал официально</a></div>
                     <div class="desc text-line"><span class=label>Премьера серийного паркетника Honda Vezel состоялась сегодня на автосалоне в Токио. Уже известно, что модель станет глобальной, а в качестве базовой...<a class=linc href="/internal.html">Читать дальше</a></div>
                 </div>
                 <div class="view-row clearfix">
-                    <div class="image-row"><a href="#"><img src="/images/css/prim2.jpg" alt=" " title=" " /></a></div>
+                    <div class="image-row"><a href="#"><img src="/css/images/prim2.jpg" alt=" " title=" " /></a></div>
                     <div class="data text-line">31 Октября 2013</div>
                     <div class=row-title><a href="#">Компактный кроссовер Honda дебютировал официально</a></div>
                     <div class="desc text-line"><span class=label>Премьера серийного паркетника Honda Vezel состоялась сегодня на автосалоне в Токио. Уже известно, что модель станет глобальной, а в качестве базовой...<a class=linc href="/internal.html">Читать дальше</a></div>

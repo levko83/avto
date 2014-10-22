@@ -61,14 +61,11 @@ class HtmlHelper {
     public static function resizeImage($imgName, $w, $h, $imgFolder){
         $sep = DIRECTORY_SEPARATOR;
         list($name, $ext) = explode(".", $imgName);
-        $fullName = "{$name}_{$w}_{$h}.{$ext}";
-//        if(!file_exists("{$imgFolder}{$sep}{$fullName}")){
-            $image = new EasyImage("{$imgFolder}{$sep}{$name}.{$ext}");
-//            $image->resize($w, $h, EasyImage::RESIZE_WIDTH);
-            $image->resize($w, $h, EasyImage::RESIZE_AUTO);
-            $image->save("{$imgFolder}{$sep}{$fullName}");
-//        }
-        return $fullName;
+        $resultName = "{$name}_{$w}_{$h}.{$ext}";
+        $image = new EasyImage("{$imgFolder}{$sep}{$imgName}");
+        $image->resize($w, $h, EasyImage::RESIZE_AUTO);
+        $image->save("{$imgFolder}{$sep}{$resultName}");
+        return $resultName;
     }
 
 }

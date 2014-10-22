@@ -123,50 +123,7 @@
                 {*{/if}*}
             </div>
             <!--_____________________ Карзина __________________________-->
-            <div id="cart-block">
-                <h2>Ваша корзина</h2>
-                <a class="cart-close close" href="#">X</a>
-                <form>
-                    <div class="products-cart">
-                        <div class="views-row clearfix">
-                            <a class="product-delit close" href="#">Удалить <span>X</span><a>
-                                    <div class="image-row">
-                                        <a href="/tires.html"><img src="img/prim3.jpg" width="100" height="100" alt=" " title=" " /></a>
-                                    </div>
-                                    <div class="row-title text-line"><a href="/tires.html">ZW 610 (BP - Черный внутри полированный)</a></div>
-                                    <div class="code text-line">код товара: 758</div>
-                                    <div class="price-for-one text-line"><span>1 002</span> грн</div>
-                                    <div class="quantity text-line">Кол-во<input type="text" value="4">шт.</div>
-                                    <div class="price-oll text-line"><span>4 402</span> грн</div>
-                        </div>
-                        <div class="views-row clearfix">
-                            <a class="product-delit close" href="#">Удалить <span>X</span><a>
-                                    <div class="image-row">
-                                        <a href="/tires.html"><img src="img/prim3.jpg" width="100" height="100" alt=" " title=" " /></a>
-                                    </div>
-                                    <div class="row-title text-line"><a href="/tires.html">BFGOODRICH WINTER SLALOM KSI</a></div>
-                                    <div class="code text-line">код товара: 758</div>
-                                    <div class="price-for-one text-line"><span>1 002</span> грн</div>
-                                    <div class="quantity text-line">Кол-во<input type="text" value="4">шт.</div>
-                                    <div class="price-oll text-line"><span>4 402</span> грн</div>
-                        </div>
-                    </div>
-                    <div class="summarized-data">
-                        <div id="price-finali">Итого: <span>7 402</span> грн</div>
-                        <div class="user-data">
-                            Ф.И.О.:*
-                            <input type="text" value="">
-                            Телефон:*
-                            <input type="text" value="">
-                        </div>
-                        <div class="continue-shopping"><a href="#">Продолжить покупки</a></div>
-                        <div class="form-action submit">
-                            <input type="submit" value="Заказать">
-                            <a href="#">Детальное оформление заказа</a>
-                        </div>
-                    </div>
-                </form>
-            </div>
+            <div id="cart-block"></div>
         </header> <!-- /#header -->
         <!--___________________________________________ CONTEINER__________________________________________-->
         <div id="container" class="clearfix">
