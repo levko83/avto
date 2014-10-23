@@ -99,16 +99,16 @@
 
 <?php
 
-if ($model->product_id!==NULL)
+if(isset($model->product_id) and !empty($model->product_id))
 {
-    $shopProducts->dbCriteria->addCondition('productID='.$model->product_id);
+    $shopProducts->dbCriteria->addCondition('id='.$model->product_id);
     $this->widget('zii.widgets.grid.CGridView', array(
         'id'=>'pp-grid',
         'dataProvider'=>$shopProducts->search(),
         /*'filter'=>$shopProducts,*/
         'columns'=>array(
-            'category_rel.name_ru',
-            'name_ru',
+            'type',
+            'product_name',
             array(
                 'class'=>'CButtonColumn',
                 'template'=>'{unlink}',
@@ -119,7 +119,6 @@ if ($model->product_id!==NULL)
                         'url'=>'Yii::app()->createUrl("ParsedProducts/unlink", array("id"=>'.$model->id.'))',
                         'options'=>array('title'=>'Снять привязку'),
                         'visible'=>'true',
-
                     ),
                     'update'=>array(
                         'visible'=>'false',
@@ -148,14 +147,14 @@ else
                 'header'=>'Назначить',
                 'class'=>'CCheckBoxColumn',
                 'selectableRows'=>1,
-                /*'value'=>$shopProducts->productID,*/
+                'value'=> '"{$data->type}{$data->id}"',
                 'htmlOptions'=>array("width"=>"15"),
                 'checkBoxHtmlOptions'=>array(
                     'checked'=>'checked',
 
                 )),
-            'category_rel.name_ru',
-            'name_ru',
+            'type',
+            'product_name',
         ),
     ));
 }

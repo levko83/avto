@@ -96,7 +96,7 @@ class PricelistController extends Controller
 			$model->attributes=$_POST['Pricelist'];
 			if($model->save())
             {
-                Products::checkPrice(false,$id);
+                Products::checkPrice(false, false, $id);
                 if ($model->parse_class=='avtokoleso')
                 {
                     $this->render('afterUpdate',array('information'=>avtokoleso::getInfo()));

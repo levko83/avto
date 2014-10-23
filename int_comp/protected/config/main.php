@@ -24,12 +24,12 @@ return array(
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 
-		/*'gii'=>array(
+		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'111',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
-		), */
+		),
 
 	),
 
@@ -56,6 +56,7 @@ return array(
 		// uncomment the following to use a MySQL database
 
 		'db'=>array(
+            'class' => 'system.db.CDbConnection',
 			'connectionString' => "mysql:host={$_db_settings->host};dbname={$_db_settings->parser_db_name}",
 			'emulatePrepare' => true,
 			'username' => $_db_settings->parser_db_user,
@@ -63,6 +64,16 @@ return array(
 			'charset' => 'utf8',
             'tablePrefix'=>'SC_',
 		),
+
+        'db_main'=>array(
+            'class' => 'system.db.CDbConnection',
+            'connectionString' => "mysql:host={$_db_settings->host};dbname={$_db_settings->main_db_name}",
+            'emulatePrepare' => true,
+            'username' => $_db_settings->main_db_user,
+            'password' => $_db_settings->main_db_pass,
+            'charset' => 'utf8',
+            'tablePrefix'=>'SC_',
+        ),
 
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors

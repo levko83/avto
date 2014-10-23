@@ -1,0 +1,119 @@
+<?php
+
+/**
+ * This is the model class for table "shins".
+ *
+ * The followings are the available columns in table 'shins':
+ * @property integer $id
+ * @property integer $shins_display_id
+ * @property integer $vendor_id
+ * @property string $product_name
+ * @property integer $shins_type_of_avto_id
+ * @property integer $shins_season_id
+ * @property integer $shins_profile_width
+ * @property string $shins_diametr
+ * @property integer $shins_profile_height
+ * @property integer $shins_speed_index_id
+ * @property string $shins_load_index
+ * @property integer $shins_germetic_mode_id
+ * @property integer $shins_construction_id
+ * @property integer $shins_run_flat_technology_id
+ * @property integer $shins_spike_id
+ * @property string $description
+ * @property string $price
+ * @property string $amount
+ * @property string $mark
+ * @property string $shins_load_index_translit
+ * @property integer $edited
+ */
+class Shins extends CActiveRecord
+{
+
+    public function getDbConnection()
+    {
+        return Yii::app()->db_main;
+    }
+
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return 'shins';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('id, product_name, amount, price', 'safe'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id' => 'ID',
+			'product_name' => 'Product Name',
+			'price' => 'Price',
+			'amount' => 'Amount',
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('product_name',$this->product_name,true);
+		$criteria->compare('price',$this->price);
+		$criteria->compare('amount',$this->amount);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return Shins the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+}

@@ -103,22 +103,28 @@ class ParsedProductsController extends Controller
 		// $this->performAjaxValidation($model);;
 		if(isset($_POST['ParsedProducts']))
 		{
+            if($_POST['ParsedProducts']["product_id"]){
+                if(preg_match("/^(?<type>shina|disk){1}(?<id>\d+)$/", $_POST['ParsedProducts']["product_id"], $matches)){
+                    $_POST['ParsedProducts']["product_id"] = $matches["id"];
+                    $type = $matches["type"];
+                }else{
+                    $_POST['ParsedProducts']["product_id"] = "";
+                }
+            }
 			$model->attributes=$_POST['ParsedProducts'];
-
 			if($model->save())
             {
                 ParsedProducts::updateRecord($model->id);
-                if (isset($model->product_id)&&strlen($model->product_id)>0)
+                if(isset($model->product_id) && strlen($model->product_id)>0)
                 {
-                Products::checkPrice($model->product_id,false);
+                   Products::checkPrice($model->product_id, $type, false);
                 }
 				$this->redirect(array('view','id'=>$model->id));
             }
 		}
         if (isset($_GET['Products']))
         {
-         $shopProducts->attributes=$_GET['Products'];
-
+            $shopProducts->attributes=$_GET['Products'];
         }
 		$this->render('update',array(
         'model'=>$model,
@@ -133,12 +139,13 @@ class ParsedProductsController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-        $temp_product_id=$this->loadModel($id)->product_id;
+        $model = $this->loadModel($id);
+        $temp_product_id = $model->product_id;
+        $temp_product_type = $model->product_type;
         if ($this->loadModel($id)->delete())
         {
-            Products::checkPrice($temp_product_id,false);
+            Products::checkPrice($temp_product_id, $temp_product_type, $modefalse);
         }
-
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
@@ -260,7 +267,7 @@ class ParsedProductsController extends Controller
         $model=ParsedProducts::model();
         if ($model->deleteAllByAttributes(array('flag_upd'=>0)))
         {
-            Products::checkPrice(false,false);
+            Products::checkPrice(false, false, false);
             $this->redirect(array('admin'));
         }
         else throw new CHttpException('Не удалось выполнить операцию');

@@ -407,7 +407,8 @@ class Shins extends CExtendedActiveRecord implements IECartPosition
         $criteria = new CDbCriteria;
         $criteria->compare("product_id", $this->id);
         $criteria->compare("product_type", "shina");
-        return ParsedProducts::model()->find($criteria)->company_rel->company;
+//        return ParsedProducts::model()->find($criteria)->company_rel->company;
+        return "";
     }
 
     public function getRangePrice(){

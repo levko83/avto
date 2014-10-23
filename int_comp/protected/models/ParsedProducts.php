@@ -6,6 +6,7 @@
  * The followings are the available columns in table '{{parsed_products}}':
  * @property integer $id
  * @property integer $product_id
+ * @property string $product_type
  * @property integer $company_id
  * @property string $com_prod_ident
  * @property string $prod_name
@@ -52,13 +53,14 @@ class ParsedProducts extends CActiveRecord
 			array('company_id, com_prod_ident, prod_name, price, money_flag, final_price', 'required'),
 			array('product_id, company_id, charge_auto, charge_hand, money_flag, flag_upd', 'numerical', 'integerOnly'=>true),
 			array('com_prod_ident, prod_name', 'length', 'max'=>255),
+			array('product_type', 'length', 'max'=>60),
 			array('price', 'length', 'max'=>8),
 			array('amount', 'length', 'max'=>6),
 			array('final_price', 'length', 'max'=>10),
 			array('file_hash', 'length', 'max'=>32),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, product_id, company_id, com_prod_ident, charge_auto, charge_hand, prod_name, price, amount, money_flag, final_price, flag_upd, file_hash', 'safe', 'on'=>'search'),
+			array('id, product_id, product_type, company_id, com_prod_ident, charge_auto, charge_hand, prod_name, price, amount, money_flag, final_price, flag_upd, file_hash', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -82,6 +84,7 @@ class ParsedProducts extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'product_id' => 'Артикул',
+			'product_type' => 'Тип продукта',
 			'company_id' => 'Company',
             'company_rel.company'=>'Поставщик',
 			'com_prod_ident' => 'Код поставщика',
@@ -110,6 +113,7 @@ class ParsedProducts extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('product_id',$this->product_id);
+		$criteria->compare('product_type' ,$this->product_type, true);
 		$criteria->compare('company_id',$this->company_id);
 		$criteria->compare('com_prod_ident',$this->com_prod_ident,true);
 		$criteria->compare('prod_name',$this->prod_name,true);

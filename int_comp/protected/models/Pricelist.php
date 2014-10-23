@@ -139,10 +139,11 @@ class Pricelist extends CActiveRecord
     protected function clear_dir($dir)
     {
         $list = self::myscandir($dir);
-
-        foreach ($list as $file)
+        foreach($list as $file)
         {
-          unlink($dir.$file);
+          if($file != ".gitignore"){
+            unlink($dir.$file);
+          }
         }
     }
 
@@ -150,7 +151,7 @@ class Pricelist extends CActiveRecord
     {
 
         require_once($_SERVER['DOCUMENT_ROOT'].DIRECTORY_SEPARATOR.'int_comp'.DIRECTORY_SEPARATOR.'protected'.DIRECTORY_SEPARATOR.'parsers'.DIRECTORY_SEPARATOR.$parse_class.'.php');
-       $parseObj=new $parse_class($file);
+        $parseObj=new $parse_class($file);
         return $parseObj->result;
     }
 }
