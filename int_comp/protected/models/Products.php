@@ -108,9 +108,9 @@ class Products extends CActiveRecord
         if ($record_id!==false and $product_type)
         {
             if($product_type == "shina"){
-                $current_record=Shins::model()->findByPk($record_id);
+                $current_record = Shins::model()->findByPk($record_id);
             }else{
-                $current_record=Disk::model()->findByPk($record_id);
+                $current_record = Disks::model()->findByPk($record_id);
             }
             $current_record_id=$current_record->id;
             if ($current_record) {
@@ -159,7 +159,7 @@ class Products extends CActiveRecord
         {
             $parsed_product=new ParsedProducts;
             $criteriaForParsedProducts=new CDbCriteria();
-            $criteriaForParsedProducts->select='product_id';
+            $criteriaForParsedProducts->select='product_id, product_type';
             //$criteriaForParsedProducts->condition='`company_id`="'.$company_id.'" AND `product_id` IS NOT NULL AND `flag_upd` <> "0" AND `amount`>3 AND `final_price`>0';
             $criteriaForParsedProducts->condition='`company_id`="'.$company_id.'" AND `product_id` IS NOT NULL';
             //$criteriaForParsedProducts->group='product_id';
