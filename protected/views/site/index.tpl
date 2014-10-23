@@ -90,6 +90,7 @@
             </div>
         </div>
     </section>
+    {if 1 == 0}
     <section>
         <div class="selection-brands">
             <h2>Подбор по марке авто</h2>
@@ -102,3 +103,4 @@
             </ul>
         </div>
     </section>
+    {/if}

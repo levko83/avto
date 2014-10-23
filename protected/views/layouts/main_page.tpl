@@ -23,6 +23,7 @@
         {include file="application.views.site._blockActions"}
     </aside>
     <!--_______________ Блок новостей __________________-->
+    {if 1 == 0}
     <section class="sections-news news clearfix">
         <div id="block-news clearfix">
             <h2 class=title>Новости</h2>
@@ -45,4 +46,5 @@
             </div>
         </div>
     </section>
+    {/if}
 {$this->endContent()}
