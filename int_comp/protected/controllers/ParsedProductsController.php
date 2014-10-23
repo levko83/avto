@@ -144,7 +144,7 @@ class ParsedProductsController extends Controller
         $temp_product_type = $model->product_type;
         if ($this->loadModel($id)->delete())
         {
-            Products::checkPrice($temp_product_id, $temp_product_type, $modefalse);
+            Products::checkPrice($temp_product_id, $temp_product_type, false);
         }
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
