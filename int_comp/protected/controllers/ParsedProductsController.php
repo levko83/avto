@@ -107,6 +107,7 @@ class ParsedProductsController extends Controller
                 if(preg_match("/^(?<type>shina|disk){1}(?<id>\d+)$/", $_POST['ParsedProducts']["product_id"], $matches)){
                     $_POST['ParsedProducts']["product_id"] = $matches["id"];
                     $type = $matches["type"];
+                    $_POST['ParsedProducts']["product_type"] = $type;
                 }else{
                     $_POST['ParsedProducts']["product_id"] = "";
                 }
