@@ -188,7 +188,7 @@ class ServiceController extends Controller
 //                "condition" => "",
 //            ),
 //        );
-        $result = array(
+/*        $result = array(
             array(
                 "keyword" => "city",
                 "keyword_description" => "Город",
@@ -198,11 +198,12 @@ class ServiceController extends Controller
                 "keyword_description" => "Область",
             )
         );
+*/
         //DisksDisplays::model()->getSeoTemplateSubstitution("diski", 297);
         $this->render(
             'test',
             array(
-                "result" => serialize($result)
+                "result" => exec("whoami")
             )
         );
     }

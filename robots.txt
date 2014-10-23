@@ -1,5 +1,26 @@
-# robots.txt
-
 User-agent: *
-Crawl-delay: 10
 Disallow: /
+
+Disallow: /admin
+Disallow: /order_detail.html
+Disallow: /cart.html
+Disallow: /*tip=
+Disallow: /*shirina=
+Disallow: /*psd=
+Disallow: /*kpo=
+Disallow: /*et=
+Disallow: /*cvet=
+Disallow: /*avto=
+Disallow: /*profil=
+Disallow: /*index_nagruzki=
+Disallow: /*sezon=
+Disallow: /*run_flat=
+Disallow: /*shipi=
+Disallow: /*page=
+Disallow: /*brand=
+Disallow: /*tip=
+Disallow: /*sezon=
+Disallow: /*shipi=
+
+
+

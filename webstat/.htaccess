@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "/www/new.extraload.com.ua/webstat"
+AuthUserFile /var/www/ponzps26/data/etc/1055825.passwd
+DirectoryIndex index.html
+<Limit GET POST>
+	require valid-user
+</Limit>
