@@ -412,14 +412,14 @@ class Shins extends CExtendedActiveRecord implements IECartPosition
     }
 
     public function getRangePrice(){
-        $sql = "SELECT MIN(price) AS min_price, MAX(price) AS max_price
-                FROM shinsIndex
+        $sql = "SELECT min(price) as v1, max(price) as v2
+                FROM shins
                 WHERE amount > 0";
-        $rec = Yii::app()->sphinx->createCommand($sql)->queryRow();
+        $rec = Yii::app()->db->createCommand($sql)->queryRow();
         return (object)array(
-                          "min" => (int)$rec["min_price"],
-                          "max" => (int)$rec["max_price"],
-                       );
+            "min" => (int)$rec["v1"],
+            "max" => (int)$rec["v2"],
+        );
     }
 
     public function getImage(){

@@ -326,6 +326,8 @@ class ParsedProductsController extends Controller
         $model->charge_shina=Yii::app()->settings->get('system','charge_shina');
         $model->charge_disk=Yii::app()->settings->get('system','charge_disk');
         $model->callback_email=Yii::app()->settings->get('system','callback_email');
+        $currency_usd_db = Yii::app()->db->createCommand('SELECT currency_value FROM SC_currency_types WHERE CID=11')->queryScalar();
+        $model->currency_usd = round(1/$currency_usd_db, 2);
         if(isset($_POST['SettingsForm']))
         {
             $model->attributes=$_POST['SettingsForm'];
@@ -334,6 +336,13 @@ class ParsedProductsController extends Controller
                 Yii::app()->settings->set('system','charge_shina',$model->charge_shina,true);
                 Yii::app()->settings->set('system','charge_disk',$model->charge_disk,true);
                 Yii::app()->settings->set('system','callback_email',$model->callback_email,true);
+                $currency_usd = doubleval($model->currency_usd);
+                if($currency_usd > 0){
+                    $sql = "UPDATE SC_currency_types SET currency_value = :p WHERE CID=11";
+                    Yii::app()->db->createCommand($sql)->execute(array("p" => 1 / $currency_usd));
+                }else{
+                    $model->currency_usd = round(1/$currency_usd_db, 2);
+                }
             }
         }
         $this->render('configs',array('model'=>$model));

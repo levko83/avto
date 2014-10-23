@@ -1,6 +1,27 @@
 {form name="Disks" id= "disksFormFilter" htmlOptions = ["class" => "form-horizontal products_filter"]}
     <div class="form-wizard">
         <div class="block_odd">
+            <div class="row-fluid">
+                <div class="span12 filter_label">Цена:</div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6">от:</div>
+                <div class="span6">до:</div>
+            </div>
+            <div class="row-fluid b10">
+                <div class="span6">{$Disks->textField($disks, "priceMin", ["size" => 7])}</div>
+                <div class="span6">{$Disks->textField($disks, "priceMax", ["size" => 7])}</div>
+            </div>
+            <div class="row-fluid b10">
+                <div class="span12">
+                    <div id="disksSlider"></div>
+                    <script type="text/javascript">
+                        nmsp = {};
+                        nmsp.disks_min_price = {$disks->rangePrice->min};
+                        nmsp.disks_max_price = {$disks->rangePrice->max};
+                    </script>
+                </div>
+            </div>
             <div class="row-fluid b10">
                 <div class="span3 filter_label">Диаметр:</div>
                 <div class="span9">

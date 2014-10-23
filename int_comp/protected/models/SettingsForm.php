@@ -11,6 +11,7 @@ class SettingsForm extends CFormModel
     public $charge_shina;
     public $charge_disk;
     public $callback_email;
+    public $currency_usd;
 
 
     /**
@@ -23,6 +24,7 @@ class SettingsForm extends CFormModel
             array('category', 'safe'),
             // verifyCode needs to be entered correctly
             array('charge_disk, charge_shina','numerical' ),
+            array('currency_usd','numerical' ),
             array('charge_disk', 'length', 'max'=>3),
             array('charge_shina', 'length', 'max'=>3),
             array('callback_email','email'),
@@ -40,6 +42,7 @@ class SettingsForm extends CFormModel
             'charge_shina'=>'Наценка на шины в процентах',
             'charge_disk'=>'Наценка на диск в процентах',
             'callback_email'=>'E-mail для отправки заказов обратного звонка',
+            'currency_usd' => "Курс доллара"
         );
     }
 }

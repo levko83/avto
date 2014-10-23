@@ -33,6 +33,17 @@ $(document).ready(function(){
         }
     });
 
+    $("#disksSlider").slider({
+        range: true,
+        min: nmsp.disks_min_price,
+        max: nmsp.disks_max_price,
+        values: [nmsp.disks_min_price, nmsp.disks_max_price],
+        slide: function(event, ui) {
+            $("#Disks_priceMin").val(ui.values[0]);
+            $("#Disks_priceMax").val(ui.values[1]);
+        }
+    });
+
 
     $("#searchDisks").click(function(){
         $.fn.yiiGridView.update('disksFilterGrid');

@@ -46,12 +46,12 @@
                                             'sortable' => 'false'
                                         ],
                                         [
-                                            'name' => 'product_name',
+                                            'name' => 'diller_name',
+                                            'header' => 'Поставщик',
                                             'sortable' => 'false'
                                         ],
                                         [
-                                            'name' => 'provider',
-                                            'header' => 'Поставщик',
+                                            'name' => 'product_name',
                                             'sortable' => 'false'
                                         ],
                                         [
@@ -110,6 +110,11 @@
                                     columns = [
                                         [
                                             'name' => 'id',
+                                            'sortable' => 'false'
+                                        ],
+                                        [
+                                            'name' => 'diller_name',
+                                            'header' => 'Поставщик',
                                             'sortable' => 'false'
                                         ],
                                         [
