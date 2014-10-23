@@ -5,26 +5,10 @@
  *
  * The followings are the available columns in table 'shins':
  * @property integer $id
- * @property integer $shins_display_id
- * @property integer $vendor_id
  * @property string $product_name
- * @property integer $shins_type_of_avto_id
- * @property integer $shins_season_id
- * @property integer $shins_profile_width
- * @property string $shins_diametr
- * @property integer $shins_profile_height
- * @property integer $shins_speed_index_id
- * @property string $shins_load_index
- * @property integer $shins_germetic_mode_id
- * @property integer $shins_construction_id
- * @property integer $shins_run_flat_technology_id
- * @property integer $shins_spike_id
- * @property string $description
  * @property string $price
  * @property string $amount
- * @property string $mark
- * @property string $shins_load_index_translit
- * @property integer $edited
+ * @property string $diller_name
  */
 class Shins extends CActiveRecord
 {
@@ -50,7 +34,7 @@ class Shins extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, product_name, amount, price', 'safe'),
+			array('id, product_name, amount, price, diller_name', 'safe'),
 		);
 	}
 

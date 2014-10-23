@@ -141,14 +141,16 @@ class Products extends CActiveRecord
                         $temp_price=$temp_price*$currency_value;
                     }
                     $current_record->amount = $parsed_product_result->amount;
-//                    $current_record->diller_name=$parsed_product_result->company_rel->company;
+                    $current_record->diller_name=$parsed_product_result->company_rel->company;
                     $current_record->price = ceil($temp_price);
-                    if ($current_record->save()) return true;
+                    if ($current_record->save())
+                        return true;
                 }
                 else
                 {
                     $current_record->amount = null;
-                    if ($current_record->save()) return true;
+                    if ($current_record->save())
+                        return true;
                 }
             }
 

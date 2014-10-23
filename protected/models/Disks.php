@@ -25,6 +25,7 @@
  * @property integer $amount
  * @property integer $edited
  * @property string $mark
+ * @property string $diller_name
  *
  * The followings are the available model relations:
  * @property DisksVendors $vendor
@@ -214,6 +215,11 @@ class Disks extends CExtendedActiveRecord implements IECartPosition
 
     public function filter(){
         $criteria=new CDbCriteria;
+        if($this->isParam("priceMin") and $this->isParam("priceMax")){
+            $min = (double)$this->priceMin;
+            $max = (double)$this->priceMax;
+            $criteria->addCondition("price >= {$min} and price <= {$max}");
+        }
         if($this->isParam("disks_rim_diametr")){
             $v = (double)$this->disks_rim_diametr;
             $criteria->addCondition("ABS(disks_rim_diametr - {$v}) <= 0.01");

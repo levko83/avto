@@ -151,9 +151,16 @@ else
                 'htmlOptions'=>array("width"=>"15"),
                 'checkBoxHtmlOptions'=>array(
                     'checked'=>'checked',
-
                 )),
-            'type',
+            array(
+                'name' => "type",
+                "value" => '($data->type == "disk") ? "Диск" : "Шина"',
+                "filter" => array(
+                    '' => "Все товары",
+                    'shina' => 'Шины',
+                    'disk' => 'Диски',
+                )
+            ),
             'product_name',
         ),
     ));

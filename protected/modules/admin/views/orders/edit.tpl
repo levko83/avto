@@ -126,7 +126,7 @@
                             'header' => 'Название'
                         ],
                         [
-                            'name' => 'provider',
+                            'name' => 'diller_name',
                             'header' => 'Поставщик'
                         ],
                         [

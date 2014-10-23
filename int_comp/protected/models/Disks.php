@@ -6,7 +6,9 @@
  * The followings are the available columns in table 'disks':
  * @property integer $id
  * @property string $product_name
+ * @property string $diller_name
  * @property integer $amount
+
  */
 class Disks extends CActiveRecord
 {
@@ -33,7 +35,7 @@ class Disks extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-            array('id, product_name, amount, price', 'safe'),
+            array('id, product_name, amount, price, diller_name', 'safe'),
 		);
 	}
 
