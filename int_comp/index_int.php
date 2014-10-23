@@ -14,6 +14,9 @@ if (version_compare(phpversion(), "5.0.0", ">")==1) {
 // remove the following lines when in production mode
 //defined('YII_DEBUG') or define('YII_DEBUG',true);
 
+ini_set('memory_limit', '512M');
+ini_set('set_time_limit', '240');
+
 error_reporting(E_ALL & ~E_NOTICE);
 defined('YII_DEBUG') or define('YII_DEBUG',true);
 
