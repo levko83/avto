@@ -34,26 +34,22 @@
                             <ul class="phones">
                                 <li>
                                     <span class="grey_text">+38</span>
-                                    <span class="bold">0(800) 30 77 77 </span>
+                                    <span class="bold">(044) 360 68 56 </span>
                                     <span class="grey_text it"> - многоканальный</span>
                                 </li>
                                 <li>
                                     <span class="grey_text">+38</span>
-                                    <span class="bold">(044) 492 77 77 </span>
+                                    <span class="bold">(061) 220 16 92 </span>
                                     <span class="grey_text it"> - многоканальный</span>
                                 </li>
                                 <li class="kievstar">
                                     <span class="grey_text">+38</span>
-                                    <span class="bold">(067) 160 77 77 </span>
+                                    <span class="bold">(067) 837 54 34 </span>
                                 </li>
                                 <li class="mts">
                                     <span class="grey_text">+38</span>
-                                    <span class="bold">(095) 175 77 77 </span>
-                                </li>
-                                <li class="life">
-                                    <span class="grey_text">+38</span>
-                                    <span class="bold">(093) 309 77 77 </span>
-                                </li>
+                                    <span class="bold">(099) 175 56 14 </span>
+                                </li>                                
                             </ul>
                         </div>
                     </div>
@@ -66,7 +62,7 @@
                     <div class="delivery-content content">
                         <div class="content-text">
                             <p>
-                                <span class="orange">С целью улучшения сервиса интернет-магазин "Rezina.CC"  все расходы по доставке товара и пересылке денег берет на себя!</span>
+                                <span class="orange">С целью улучшения сервиса интернет-магазин "ExtraLoad.com.ua" все расходы по доставке товара и пересылке денег берет на себя!</span>
                             </p>
                             <ul class="advantages">
                                 <li class="element-0"> Доставка бесплатно!</li>
@@ -76,7 +72,7 @@
                             <p> Вы оплачиваете товар только при получении заказа на складе транспортной компании в своем городе.</p>
                             <p> Оплата заказа осуществляется в гривнах за наличный расчет.</p>
                             <p>
-                                <span class="grey_text it">*при заказе товара на сумму более 8тыс грн., интернет-магазин "Rezina.CC" оставляет за собой право взымать частичную предоплату</span>
+                                <span class="grey_text it">*при заказе товара на сумму более 6тыс грн., интернет-магазин "ExtraLoad.com.ua" оставляет за собой право взымать частичную предоплату</span>
                             </p>
                         </div>
                     </div>

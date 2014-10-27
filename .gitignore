@@ -1,2 +1,5 @@
-.idea
-.idea/*
+/.idea
+/int_comp/protected/prices/**/*.xls
+/webstat
+/sitemap*.xml
+/google*.html

@@ -1,4 +1,4 @@
-    <section class="sections-car clearfix">
+    <section class="sections-car clearfix">        
         <!--___________Блок Подбор по автомобилю___________-->
         <div class="selection-car clearfix">
             {include file="application.views.site._blockSearchByAvto"}

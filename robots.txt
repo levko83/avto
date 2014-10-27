@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /
 
 Disallow: /admin
 Disallow: /order_detail.html
@@ -21,6 +20,11 @@ Disallow: /*brand=
 Disallow: /*tip=
 Disallow: /*sezon=
 Disallow: /*shipi=
+
+Sitemap: http://extraload.com.ua/sitemap.xml
+Sitemap: http://extraload.com.ua/sitemap1.xml
+Sitemap: http://extraload.com.ua/sitemap2.xml
+Host: extraload.com.ua
 
 
 
