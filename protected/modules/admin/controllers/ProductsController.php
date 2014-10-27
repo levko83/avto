@@ -106,7 +106,7 @@ class ProductsController extends Controller
                     $display->display_name = $display_name;
                     $display->title = $display_name;
                     $display->translit = HtmlHelper::transliterate($display_name);
-                    $model->shins_display_id = $model->save(false);
+                    $model->shins_display_id = $display->save(false);
                 }
                 $transaction = Yii::app()->db->beginTransaction();
                 try{
@@ -219,7 +219,7 @@ class ProductsController extends Controller
                     $display->display_name = $display_name;
                     $display->title = $display_name;
                     $display->translit = HtmlHelper::transliterate($display_name);
-                    $model->disks_display_id = $model->save(false);
+                    $model->disks_display_id = $display->save(false);
                 }
                 $transaction = Yii::app()->db->beginTransaction();
                 try{
