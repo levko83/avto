@@ -6,7 +6,7 @@
  * Time: 17:12
  */
 
-require_once(Yii::getPathOfAlias("application.components")."/sphinxapi.php");
+require_once __DIR__."/sphinxapi.php";
 
 class FilterTires{
 
