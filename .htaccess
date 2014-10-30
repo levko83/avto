@@ -15,7 +15,7 @@ Redirect 301 /magazin-extraload-rekomenduet-legkosplavnye-diski/ http://extraloa
 Redirect 301 /magazin-extraload-rekomenduet-kovanye-diski/ http://extraload.com.ua/diski-tipa-kovanye.html
 Redirect 301 /magazin-extraload-rekomenduet-stalnye-diski/ http://extraload.com.ua/diski-tipa-shtampovannye.html
 Redirect 301 /zimnie-shiny/ http://extraload.com.ua/shini-tipa-legkovye-zimnie.html
-Redirect 301 /letnie-shiny/ http://extraload.com.ua/shini-tipa-legkovye-vsesezonnye.html
+Redirect 301 /letnie-shiny/ http://extraload.com.ua/shini-tipa-legkovye-letnie.html
 Redirect 301 /magazin-extraload-rekomenduet-vsesezonnye-shiny/ http://extraload.com.ua/shini-tipa-legkovye-vsesezonnye.html
 Redirect 301 /about/ http://extraload.com.ua/about.html
 Redirect 301 /contacts/ http://extraload.com.ua/contacts.html
