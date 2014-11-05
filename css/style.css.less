@@ -30,12 +30,23 @@ h3 {
   font-weight: bold;
 }
 
-a:hover {
-  text-decoration: none;
+a{
+  color: #70B8DF;
+  &:hover{
+     text-decoration: none;
+  }
 }
 
 .hide {
   display: none;
+}
+
+p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
 }
 
 #wrapper {
@@ -784,6 +795,9 @@ article {
   margin-top: 10px;
   width: 100%;
   clear: both;
+  strong{
+    font-weight: bold;
+  }
   .content {
     .field-name-body {
       font-size: 12px;
@@ -906,7 +920,7 @@ aside#sidebar-first {
           }
         }
       }
-      .diametr {
+      .diametr{
         padding: 15px 0;
         .checkbox {
           max-height: 336px;
@@ -947,7 +961,53 @@ aside#sidebar-first {
           }
         }
       }
+      &.seasonality .checkbox {
+        label {
+          a {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      &.run-flat .checkbox {
+        label {
+          a {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      &.spike .checkbox {
+        label {
+          a {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
       &.brand .checkbox {
+        height: 336px;
+        overflow: auto;
+        label {
+          a {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      &.rim-color .checkbox {
         height: 336px;
         overflow: auto;
         label {
@@ -1675,9 +1735,20 @@ body.catalog {
   }
 }
 
+.tires-index-body, .drive-index-body{
+  p{
+    strong{
+      font-weight: bold;
+    }
+  }
+}
+
 .drives-index-node, .tires-index-node {
   .drive-index-block, .tires-index-block {
     margin-top: 35px;
+    strong{
+      font-weight: bold;
+    }
     .tabs_content {
       min-height: 10px;
       div div {

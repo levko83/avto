@@ -65,7 +65,12 @@ class SiteController extends Controller
 	}
 
     private function _viewPage($page_key){
-        $model = Pages::model()->cache(86400)->find(
+//        $model = Pages::model()->cache(86400)->find(
+//            array(
+//                "condition" => "page_key = '{$page_key}'",
+//            )
+//        );
+        $model = PagesSeo::model()->find(
             array(
                 "condition" => "page_key = '{$page_key}'",
             )
