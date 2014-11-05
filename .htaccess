@@ -19,6 +19,8 @@ Redirect 301 /letnie-shiny/ http://extraload.com.ua/shini-tipa-legkovye-letnie.h
 Redirect 301 /magazin-extraload-rekomenduet-vsesezonnye-shiny/ http://extraload.com.ua/shini-tipa-legkovye-vsesezonnye.html
 Redirect 301 /about/ http://extraload.com.ua/about.html
 Redirect 301 /contacts/ http://extraload.com.ua/contacts.html
+Redirect 301 /payment/ http://extraload.com.ua/delivery.html
+Redirect 301 /warranty/ http://extraload.com.ua/delivery.html
 Redirect 301 /category/shini-toyo/ http://extraload.com.ua/shini-toyo.html
 Redirect 301 /category/shini-nokian/ http://extraload.com.ua/shini-nokian.html
 
@@ -208,7 +210,7 @@ Redirect 301 /category/diski-rondell/ http://extraload.com.ua/diski-rondell.html
 Redirect 301 /category/diski-sh/ http://extraload.com.ua/diski-sh.html
 Redirect 301 /category/diski-ssw/ http://extraload.com.ua/diski-ssw.html
 Redirect 301 /category/diski-stilauto/ http://extraload.com.ua/diski-stilauto.html
-Redirect 301 /category/diski-storm/ http://extraload.com.ua/diski-storm.html
+Redirect 301 /category/diski-storm/ http://extraload.com.ua/diski-storm-wheels.html
 Redirect 301 /category/diski-sw/ http://extraload.com.ua/diski-sw.html
 Redirect 301 /category/diski-tech-line/ http://extraload.com.ua/diski-tech-line.html
 Redirect 301 /category/diski-tgracing/ http://extraload.com.ua/diski-tgracing.html
