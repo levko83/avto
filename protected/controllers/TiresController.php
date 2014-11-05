@@ -248,7 +248,7 @@ class TiresController extends Controller
              $model->shinsFilter = $filter;
              //$model->shinsFilter["avto_modification"] = $avto_product_arr;
          }
-         $dataProvider = $model->searchSphinxForSite(6);
+         $dataProvider = $model->searchSphinxForSite(10);
          $shins = new Shins();
          if(count($filter) > 0){
              $shins->unsetAttributes();
@@ -435,6 +435,7 @@ class TiresController extends Controller
            }else
                $isMobile = false;
            $this->setSeoInformation("shins_display", $display->id);
+
            $this->breadcrumbs = array(
                 array(
                     "url" => "/",
@@ -445,7 +446,10 @@ class TiresController extends Controller
                     "title" => "Шины"
                 ),
                 array(
-//                    "url" => Yii::app()->createUrl("tires/tire", array("id" => $id, "translit" => $translit)),
+                   "url" => Yii::app()->createUrl("tires/index", array("v11" => array($display->shins[0]->vendor_id))),
+                   "title" => $display->shins[0]->vendor->vendor_name,
+                ),
+                array(
                     "title" => "Шины {$display->display_name}"
                 ),
             );

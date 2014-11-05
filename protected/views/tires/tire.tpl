@@ -116,7 +116,7 @@
                                 <table>
                                     <tr>
                                         <th class="element-0">Типоразмер</th>
-                                        <th class="element-1">Нагрузка</th>
+                                        <th class="element-1">Индекс нагрузки</th>
                                         <th class="element-2">Наличие</th>
                                         <th class="element-3">Цена</th>
                                         <th class="element-4"></th>
@@ -132,7 +132,7 @@
                                         </td>
                                         <td class="element-2">
                                             {if $v["amount"] >= 4}
-                                                {$v["amount"]} шт.
+                                                на складе
                                             {else}
                                                 Нет в наличии
                                             {/if}

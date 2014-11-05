@@ -257,7 +257,11 @@ class DrivesController extends Controller{
                     "title" => "Диски"
                 ),
                 array(
-                    "url" => Yii::app()->createUrl("drives/drive", array("id" => $id, "translit" => $translit)),
+                    "url" => Yii::app()->createUrl("drives/index", array("v12" => array($display->disks[0]->vendor_id))),
+                    "title" => $display->disks[0]->vendor->vendor_name,
+                ),
+                array(
+//                    "url" => Yii::app()->createUrl("drives/drive", array("id" => $id, "translit" => $translit)),
                     "title" => "Диски {$display->display_name}"
                 ),
             );
@@ -340,7 +344,6 @@ class DrivesController extends Controller{
                 "title" => "Диски"
             ),
             array(
-//                "url" => Yii::app()->createUrl("drives/drivesSubMenu", array("type" => $type)),
                 "title" => "Диски {$model->value}"
             ),
         );

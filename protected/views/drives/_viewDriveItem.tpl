@@ -23,5 +23,5 @@
        {*<li>{round($filterByParamsItem["disks_rim_width"], 1)} x {round($filterByParamsItem["disks_rim_diametr"], 1)} ET{round($filterByParamsItem["disks_boom"], 1)}</li>*}
     {*{/foreach}*}
     {*</ul>*}
-    <div class="read-more"><a href="/drives/{$data["disks_display_id"]}-{$data["disks_display_translit"]}.html">Подробнее</a></div>
+    <div class="read-more"><a href="/drives/{$data["disks_display_id"]}-{$data["disks_display_translit"]}.html">Купить</a></div>
 </div>

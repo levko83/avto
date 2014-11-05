@@ -23,5 +23,5 @@
        {*<li>{$filterByParamsItem}</li>*}
     {*{/foreach}*}
     {*</ul>*}
-    <div class="read-more"><a href="/tires/{$data["shins_display_id"]}-{$data["shins_display_translit"]}.html">Подробнее</a></div>
+    <div class="read-more"><a href="/tires/{$data["shins_display_id"]}-{$data["shins_display_translit"]}.html">Купить</a></div>
 </div>
