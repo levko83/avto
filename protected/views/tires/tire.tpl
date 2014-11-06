@@ -51,6 +51,9 @@
                         {/if}
                         {*<div class="car-type">Тип дисков: <span>литые</span></div>*}
                         <div class="product-key">Код товара: <span>{$display->id}</span></div>
+                        {if !empty($season)}
+                            <div class="sison">Сезон: <span>{$season["value"]}</span></div>
+                        {/if}
                     </div>
                 </div>
                 <!--___________Блок Оплата и Доставка___________-->
@@ -117,6 +120,11 @@
                                     <tr>
                                         <th class="element-0">Типоразмер</th>
                                         <th class="element-1">Индекс нагрузки</th>
+                                        <th class="element-1-1">Индекс скорости</th>
+                                        <th class="element-1-2">Run Flat</th>
+                                        {if $season["id"] == 3}
+                                            <th class="element-1-3">Шипы</th>
+                                        {/if}
                                         <th class="element-2">Наличие</th>
                                         <th class="element-3">Цена</th>
                                         <th class="element-4"></th>
@@ -130,6 +138,29 @@
                                         <td class="element-1">
                                             {$v["shins_load_index"]}
                                         </td>
+                                        <td class="element-1-1">
+                                            {$v["shins_speed_index"]}
+                                        </td>
+                                        <td class="element-1-2">
+                                            {if $v["shins_run_flat_technology_id"] == 2}
+                                                есть
+                                            {elseif $v["shins_run_flat_technology_id"] == 3}
+                                                нет
+                                            {else}
+                                                нет данных
+                                            {/if}
+                                        </td>
+                                        {if $season["id"] == 3}
+                                            <td class="element-1-3">
+                                                {if $v["shins_spike_id"] == 2}
+                                                    есть
+                                                {elseif $v["shins_spike_id"] == 3}
+                                                    нет
+                                                {else}
+                                                    нет данных
+                                                {/if}
+                                            </td>
+                                        {/if}
                                         <td class="element-2">
                                             {if $v["amount"] >= 4}
                                                 на складе

@@ -362,26 +362,16 @@ class TiresController extends Controller
            $min_price = $row["min_price"] == 4294967295 ? 0 : (int)$row["min_price"];
            $imagesPath = Yii::getPathOfAlias(".webrootimages.products.shins");
            $images = Yii::app()->db->createCommand("SELECT imageName FROM shins_images WHERE shins_display_id = {$display->id} GROUP BY imageName LIMIT 12")->queryAll();
-//           $sql = "SELECT id,
-//                          shins_profile_width,
-//                          shins_profile_height,
-//                          shins_diametr,
-//                          shins_load_index,
-//                          amount,
-//                          price
-//                    FROM shinsIndex
-//                    WHERE shins_profile_width > 0
-//                          AND
-//                          shins_profile_height > 0
-//                          AND
-//                          shins_diametr > 0.0
-//                          AND
-//                          shins_display_id = {$display->id}";
            $sql = "SELECT id,
                           shins_profile_width,
                           shins_profile_height,
                           shins_diametr,
                           shins_load_index,
+                          shins_run_flat_technology_id,
+                          shins_speed_index,
+                          shins_spike_id,
+                          shins_season_id,
+                          shins_season,
                           amount,
                           price
                     FROM shinsIndex
@@ -389,6 +379,23 @@ class TiresController extends Controller
                     ORDER BY shins_diametr ASC, amount DESC, shins_profile_width ASC, shins_profile_height ASC
                     LIMIT 0, 100000";
            $dataResult = Yii::app()->sphinx->createCommand($sql)->queryAll();
+           $season = function()use($dataResult){
+                $seasons = array_filter(
+                    $dataResult,
+                    function($row){
+                        return $row["shins_season_id"] > 1;
+                    }
+                );
+                if($seasons){
+                    $first_row = reset($seasons);
+                    return array(
+                        "id" => $first_row["shins_season_id"],
+                        "value" => $first_row["shins_season"]
+                    );
+                }else{
+                    return "";
+                }
+           };
            $shins_data = array();
            if(count($dataResult) > 0){
                foreach($dataResult as $item){
@@ -458,6 +465,7 @@ class TiresController extends Controller
                array(
                   "display" => $display,
                   "display_min_price" => $min_price,
+                  "season" => $season(),
                   "images" => $images,
                   "diametrs" => array_keys($shins_data),
                   "shins_data" => $shins_data,

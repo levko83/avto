@@ -327,6 +327,7 @@ class ShinsDisplays extends CExtendedActiveRecord
                     //"shins_profile_width",
                     "shins_display_name",
                     "shins_season",
+                    "shins_run_flat_technology_id",
                     "shins_display_translit",
                     "shins_rating",
                     "image_name",
