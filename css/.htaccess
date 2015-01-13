@@ -1,0 +1,4 @@
+Options -Indexes
+ExpiresActive On
+ExpiresDefault "access plus 1 day"
+

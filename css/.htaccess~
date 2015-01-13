@@ -1,0 +1,4 @@
+Options -Indexes
+#ExpiresActive On
+#ExpiresDefault "access plus 10 days"
+Header set Cache-Control "max-age=86400"
