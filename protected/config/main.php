@@ -224,7 +224,9 @@
             'imagePath' => "http://extraload.com.ua/published/publicdata/FOSHINA/attachments/SC/products_pictures",
         ),
     );
-
+    
+    
+    
     /*
     // локльная разработка
     $localDbConn = array(
