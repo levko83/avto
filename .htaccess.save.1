@@ -4,20 +4,17 @@ Options +FollowSymLinks
 php_value upload_max_filesize 3M
 php_value post_max_size 12M
 RewriteEngine on
-
-RewriteCond %{HTTP_HOST} ^www\.extraload.com\.ua$ [NC]
-RewriteRule ^(.*)$ http://extraload.com.ua/$1 [L,R=301]
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*(default|index|main)\.(html|php|htm)\ HTTP/ [NC]
-RewriteRule ^(([^/]+/)*)(default|main|index)\.(html|php|htm)$ http://extraload.com.ua$1 [L,R=301]
-
-
-
-
 RedirectMatch 403 /\..*$
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . /index.php [L]
+
+
+
+
+
+
 
 Redirect 301 /category/avtoshiny/ http://extraload.com.ua/shini.html
 Redirect 301 /category/diski/ http://extraload.com.ua/diski.html
@@ -267,3 +264,4 @@ Redirect 301 /shiny-v-cherkassi/ http://extraload.com.ua/delivery/cherkasskaya-o
 Redirect 301 /shiny-v-nezhin/ http://extraload.com.ua/delivery/chernigovskaya-oblast/nezhin.html
 Redirect 301 /shiny-v-chernigov/ http://extraload.com.ua/delivery/chernigovskaya-oblast/chernigov.html
 Redirect 301 /shiny-v-chernovtsi/ http://extraload.com.ua/delivery/chernovickaya-oblast/chernovcy.html
+

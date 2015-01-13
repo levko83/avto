@@ -20,6 +20,13 @@
 }
 
 /*________Стандартные________*/
+h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
 h2 {
   font-size: 28px;
   margin-bottom: 15px;
@@ -47,6 +54,64 @@ p {
   -webkit-margin-after: 1em;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
+}
+
+/* field-name-body */
+.field-name-body {
+color:#000;
+}
+.field-name-body > h1 {
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 15px;
+  margin-bottom: 10px;
+}
+.field-name-body > h2{
+font-size:20px;
+color:#000;
+font-weight:bold;
+margin: 20px 0 5px 0;
+}
+.field-name-body > h3{
+font-weight:bold;
+font-size:16px;
+margin: 20px 0 5px 0;
+color:#000;
+}
+.field-name-body > ul {
+margin-left:35px;
+}
+.field-name-body > ul > li {
+list-style-type:disc;
+}
+.field-name-body > p {
+text-align:justify;
+margin: 5px 0 10px 0;
+}
+
+
+/*product*/
+.product-desc-body > h2{
+font-size:20px;
+color:#000;
+font-weight:bold;
+margin: 20px 0 5px 0;
+}
+.product-desc-body > h3{
+color:#000;
+font-weight:bold;
+font-size:16px;
+margin: 20px 0 5px 0;
+}
+.product-desc-body > ul {
+margin-left:35px;
+}
+.product-desc-body > ul > li {
+list-style-type:disc;
+}
+.product-desc-body > p {
+text-align:justify;
+margin: 5px 0 15px 0;
 }
 
 #wrapper {
@@ -500,11 +565,13 @@ section {
 }
 
 /*------------ ШИНЫ -------------*/
+.tire-drive { background: url(http://extraload.com.ua/css/images/tabs_bg.jpg); padding:0px 10px 10px 10px; border: 1px solid #dedede; margin-top:15px;}
+
 section.tire-drive {
   h2 {
     border-bottom: 1px solid #e5e5e5;
-    padding: 8px 0 8px 50px;
-    margin-top: 10px;
+    padding: 15px 0 15px 50px;
+    margin-top: 0px;
     background: url(images/tire_h2.png) no-repeat left center;
   }
   .tire-drive-form {
@@ -583,10 +650,11 @@ section.tire-drive {
       }
       .ad {
         height: 178px;
-        padding: 5px 0;
+        padding: 25px 0 5px 0;
         overflow: hidden;
         position: relative;
         width: 190px;
+		background:#fff;
         border: 1px solid #e5e5e5;
         img {
           display: block;
@@ -798,12 +866,6 @@ article {
   strong{
     font-weight: bold;
   }
-  .content {
-    .field-name-body {
-      font-size: 12px;
-      color: #8a8a8a;
-    }
-  }
   .read-all {
     margin: 10px 0;
     a {
@@ -829,7 +891,7 @@ aside#sidebar-first {
     }
     .selection-car {
       padding: 15px;
-      background: #DEDEDE;
+      background: url("http://new.extraload.com.ua/css/images/checkbox_bg.png") no-repeat scroll left bottom rgba(0, 0, 0, 0);
       ul{
         li{
            a{
@@ -3318,6 +3380,7 @@ body.news-page {
         }
       }
       /*------------ ШИНЫ -------------*/
+	  
       section.tire-drive {
         & > div {
           position: relative;
@@ -3966,3 +4029,11 @@ body.news-page {
     }
   }
 }
+
+.spike{
+background: #DEDEDE;
+}
+.rim-color+.brands .brands {
+background: #DEDEDE;
+}
+

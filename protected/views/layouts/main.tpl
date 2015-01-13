@@ -36,7 +36,7 @@
         <header>
             <!--_______Блок обратный звонок______-->
             <div class="top-header">
-                <p><strong style="font-weight: bold;">(044)360-68-56</strong>, <strong style="font-weight: bold;">(061)220-16-92</strong>, (067)837-54-34, (099)175-56-14<a class="request-call" href="#">Обратный звонок</a></p>
+                <p><strong style="font-weight: bold;">(099)175-56-14</strong>, <strong style="font-weight: bold;">(061)220-16-92</strong>, (067)837-54-34<a class="request-call" href="#">Обратный звонок</a></p>
                 <div class="cart-480">
                     <div class="roundblock">
                         <a href="#"> В корзине товаров:<span>5</span></a>
@@ -89,7 +89,7 @@
                 </div>
                 <!--_______Блок обратный звонок телефонный вид______-->
                 <div class="top-header-480">
-                    <p>+38(044)360-68-56, +38(061)220-16-92, +38(067)837-54-34, +38(099)175-56-14<a class="request-call" href="#">Обратный звонок</a></p>
+                    <p>+38(099)175-56-14, +38(067)837-54-34, +38(061)220-16-92<a class="request-call" href="#">Обратный звонок</a></p>
                 </div>
             </div>
             <!--____________Блок поиска_____________-->
@@ -103,9 +103,9 @@
                     <div id="social-networks" class="block clearfix">
                         <ul>
                             <li><a class="vk" href="#" title=""></a></li>
-                            <li><a class="f" href="#" title=""></a></li>
-                            <li><a class="t" href="#" title=""></a></li>
-                            <li><a class="g" href="#" title=""></a></li>
+                            <li><a class="f" href="https://www.facebook.com/pages/Extraloadcomua/564208600302244" title=""></a></li>
+                            <li><a class="t" href="https://twitter.com/extraloadcomua" title=""></a></li>
+                            <li><a class="g" href="https://plus.google.com/+ExtraloadUa" title=""></a></li>
                         </ul>
                     </div>
                 </div>
@@ -181,8 +181,8 @@
                             <ul class="menu clearfix">
                                 <li class="first leaf"><a href="/" title="" class="active">Вконтакте</a></li>
                                 <li class="leaf"><a href="#" title="">Однокласники</a></li>
-                                <li class="leaf"><a href="#" title="">Твитер</a></li>
-                                <li class="last leaf"><a href="#" title="">Google+</a></li>
+                                <li class="leaf"><a href="https://twitter.com/extraloadcomua" title="">Твитер</a></li>
+                                <li class="last leaf"><a href="https://plus.google.com/+ExtraloadUa" title="">Google+</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -192,9 +192,9 @@
                     <h3>Присоеденяйтесь к нам:</h3>
                     <ul>
                         <li class="first"><a href="#" title=""><img src="/css/images/social_vk_c.png" alt="" title="ВКонтакте"/></a></li>
-                        <li class="leaf"><a href="#" title=""><img src="/css/images/social_odnok_c.png" alt="" title="Одноклассники"/></a></li>
-                        <li class="leaf"><a href="#" title=""><img src="/css/images/social_twiter_c.png" alt="" title="Твитер"/></a></li>
-                        <li class="last"><a href="#" title=""><img src="/css/images/social_g_c.png" alt="" title="gmail"/></a></li>
+                        <li class="leaf"><a href="https://www.facebook.com/pages/Extraloadcomua/564208600302244" title=""><img src="/css/images/social_odnok_c.png" alt="" title="Одноклассники"/></a></li>
+                        <li class="leaf"><a href="https://twitter.com/extraloadcomua" title=""><img src="/css/images/social_twiter_c.png" alt="" title="Твитер"/></a></li>
+                        <li class="last"><a href="https://plus.google.com/+ExtraloadUa" title=""><img src="/css/images/social_g_c.png" alt="" title="gmail"/></a></li>
                     </ul>
                 </div>
                 <!--Блок Задать вопрос-->
@@ -239,21 +239,7 @@
             </div>
         </footer>
     </div> <!-- /#wrapper -->
-    <!— Piwik —>
-    <script type="text/javascript">
-    	var _paq = _paq || [];
-	    _paq.push(['trackPageView']);
-	    _paq.push(['enableLinkTracking']);
-	    (function() {ldelim}
-	      var u="//piwik.extraload.com.ua/";
-	      _paq.push(['setTrackerUrl', u+'piwik.php']);
-	      _paq.push(['setSiteId', 1]);
-	      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-	      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-	    {rdelim})();
-    </script>
-    <noscript><p><img src="//piwik.extraload.com.ua/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-    <!— End Piwik Code —>	
+    	
     <script type="text/javascript">
 	(function(i,s,o,g,r,a,m){ldelim}i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ldelim}
 	   (i[r].q=i[r].q||[]).push(arguments){rdelim},i[r].l=1*new Date();a=s.createElement(o),
