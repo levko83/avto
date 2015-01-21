@@ -39,7 +39,7 @@ class shinamix
         $this->price_identity.=trim($this->objPHPExcel->getActiveSheet()->getCellByColumnAndRow(3,8)->getValue());
         $this->price_identity=md5($this->price_identity);
         $file_hash=md5_file($this->filename);
-        $curr_con=Yii::app()->db->createCommand('SELECT currency_value FROM SC_currency_types WHERE CID=11');
+        $curr_con=Yii::app()->db->createCommand('SELECT currency_value FROM SC_currency_types WHERE CID=3');
         $currency=$curr_con->queryScalar();
         $currency_value=1/$currency;
         //var_dump($this->price_identity);
@@ -57,7 +57,8 @@ class shinamix
                 $amount_temp=array();
                 preg_match_all ('/(\d+)/',$was,$amount_temp);
                 $amount=$amount_temp[0][0];
-                $money_flag=840;
+                // $money_flag=840;
+		$money_flag=980;	
                 $final_price=$price_t*$currency_value;
                 $final_price=ceil($final_price);
                 if ((strlen($prod_name)>20)&&(strlen($price_t)>1))
