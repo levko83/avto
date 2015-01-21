@@ -349,16 +349,17 @@ class DisksDisplays extends CExtendedActiveRecord
         $comm = $conn->createCommand()
             ->select($cols)
             ->group("disks_display_id")
-            ->from("disksIndex")
-            ->limit($limit);
+            ->from("disksIndex");
+//            ->limit($limit);
 
         if(count($conditions) > 0){
             $comm->setWhere(join(" AND ", $conditions));
         }
-        $sql = $comm->getText();
-        $log_file = Yii::getPathOfAlias("application.runtime")."/sqls.log";
-        if(file_exists($log_file)) unlink($log_file);
-        file_put_contents($log_file, "$sql");
+//        $sql = $comm->getText();
+//        $log_file = Yii::getPathOfAlias("application.runtime")."/sqls.log";
+//        if(file_exists($log_file)) unlink($log_file);
+//        file_put_contents($log_file, "$sql");
+        $comm->setText("{$comm->getText()} LIMIT 0, {$limit} OPTION max_matches=500000");
         $recs = $comm->queryAll();
         return new CArrayDataProvider($recs, array(
                 'sort' => $sort,

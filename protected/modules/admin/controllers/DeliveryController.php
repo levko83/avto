@@ -218,6 +218,8 @@ SQL;
 
     public function actionCitysToXml(){
         $sql = <<< SQL
+    SELECT t.region_translit, t.city_translit
+    FROM (
     SELECT t1.`name_translit` as region_translit,
            t.`name_translit` as city_translit
     FROM `nova_warehouse` t
@@ -236,19 +238,14 @@ SQL;
         FROM `intime_warehouse`
         WHERE `level` = 1
     ) t1 ON t.root = t1.id
-    WHERE t.`level` = 2
+    WHERE t.`level` = 2)  t
+    GROUP BY t.region_translit, t.city_translit
 SQL;
         $rows = Yii::app()->db->createCommand($sql)->queryAll();
-        $xml = new DOMDocument("1.0", "utf-8");
-        $citys = $xml->appendChild($xml->createElement("citys"));
+        Header('Content-type: text');
         foreach($rows as $row){
-            $city_url = "http://extraload.com.ua/delivery/{$row[region_translit]}/{$row[city_translit]}.html";
-            $city_name = "{$row[city]} ({$row[region]})";
-            $city = $citys->appendChild($xml->createElement("city"));
-            $city->appendChild($xml->createElement("city_name", $city_name));
-            $city->appendChild($xml->createElement("city_url", $city_url));
+            $city_url = "http://extraload.com.ua/delivery/{$row[region_translit]}/{$row[city_translit]}.html\n";
+            echo $city_url;
         }
-        Header('Content-type: text/xml');
-        echo $xml->saveXML();
     }
 }

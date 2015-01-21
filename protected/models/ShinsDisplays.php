@@ -320,7 +320,7 @@ class ShinsDisplays extends CExtendedActiveRecord
         }
     }
 
-    public function searchSphinxForSite($pageSize = null, $limit = 5000000){
+    public function searchSphinxForSite($pageSize = null, $limit = 500000){
         $conn = Yii::app()->sphinx;
         $cols = array(
                     "shins_display_id",
@@ -414,8 +414,8 @@ class ShinsDisplays extends CExtendedActiveRecord
         $comm = $conn->createCommand()
             ->select($cols)
             ->group("shins_display_id")
-            ->from("shinsIndex")
-            ->limit($limit);
+            ->from("shinsIndex");
+//            ->limit($limit);
         $sort = new CSort();
         $sort->sortVar = 'sort';
         $sort->defaultOrder = 'min_price ASC';
@@ -441,8 +441,8 @@ class ShinsDisplays extends CExtendedActiveRecord
         if(count($conditions) > 0){
             $comm->setWhere(join(" AND ", $conditions));
         }
-        //$comm->setText("{$comm->getText()} OPTION max_matches=500000, ranker=none");
-        $res = $comm->queryAll();
+//        $comm->setText("{$comm->getText()} LIMIT 0, 100000 OPTION max_matches=500000, ranker=none");
+        $comm->setText("{$comm->getText()} LIMIT 0, {$limit} OPTION max_matches=500000");
         return new CArrayDataProvider($comm->queryAll(), array(
                 'sort' => $sort,
                 'pagination' => $pagination,
