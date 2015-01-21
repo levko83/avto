@@ -216,4 +216,39 @@ SQL;
         );
     }
 
+    public function actionCitysToXml(){
+        $sql = <<< SQL
+    SELECT t1.`name_translit` as region_translit,
+           t.`name_translit` as city_translit
+    FROM `nova_warehouse` t
+    LEFT JOIN (
+        SELECT `id`, `name`, `name_translit`
+        FROM `nova_warehouse`
+        WHERE `level` = 1
+    ) t1 ON t.root = t1.id
+    WHERE t.`level` = 2
+    UNION
+    SELECT t1.`name_translit` as region_translit,
+           t.`name_translit` as city_translit
+    FROM `intime_warehouse` t
+    LEFT JOIN (
+        SELECT `id`, `name`, `name_translit`
+        FROM `intime_warehouse`
+        WHERE `level` = 1
+    ) t1 ON t.root = t1.id
+    WHERE t.`level` = 2
+SQL;
+        $rows = Yii::app()->db->createCommand($sql)->queryAll();
+        $xml = new DOMDocument("1.0", "utf-8");
+        $citys = $xml->appendChild($xml->createElement("citys"));
+        foreach($rows as $row){
+            $city_url = "http://extraload.com.ua/delivery/{$row[region_translit]}/{$row[city_translit]}.html";
+            $city_name = "{$row[city]} ({$row[region]})";
+            $city = $citys->appendChild($xml->createElement("city"));
+            $city->appendChild($xml->createElement("city_name", $city_name));
+            $city->appendChild($xml->createElement("city_url", $city_url));
+        }
+        Header('Content-type: text/xml');
+        echo $xml->saveXML();
+    }
 }

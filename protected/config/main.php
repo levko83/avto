@@ -185,7 +185,8 @@
                                 'admin/users' => 'admin/users/index',
                                 'admin/<product_type>_vendors' => 'admin/vendors/productsVendorsIndex',
                                 'admin/<product_type>_vendors/edit/<id>' => 'admin/vendors/productsVendorsEdit',
-                                'admin/delivery/seo_texts_edit/<region>/<city>' => 'admin/delivery/seo_texts_edit'
+                                'admin/delivery/seo_texts_edit/<region>/<city>' => 'admin/delivery/seo_texts_edit',
+                                'admin/delivery/citys_to_xml' => 'admin/delivery/citysToXml',
                 ),
             ),
             'easyImage' => array(
