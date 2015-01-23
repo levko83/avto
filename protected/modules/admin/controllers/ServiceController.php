@@ -25,6 +25,7 @@ class ServiceController extends Controller
                     "sphinx",
                     "sphinxReindex",
                     "sphinxRestart",
+                    "sitemap",
                 ),
             ),
             array('deny',
@@ -167,39 +168,89 @@ class ServiceController extends Controller
         );
     }
 
-    public function actionTest(){
-//        $result = array(
-//            array(
-//                "keyword" => "name",
-//                "keyword_description" => "Имя дисплея",
-//                "index_field_name" => "disks_display_name",
-//                "condition" => "",
-//            ),
-//            array(
-//                "keyword" => "type",
-//                "keyword_description" => "Тип (квванные, литые и .т.д.)",
-//                "index_field_name" => "disks_type",
-//                "condition" => "disks_type_id > 1",
-//            ),
-//            array(
-//                "keyword" => "brand",
-//                "keyword_description" => "Производитель",
-//                "index_field_name" => "vendor_name",
-//                "condition" => "",
-//            ),
-//        );
-/*        $result = array(
-            array(
-                "keyword" => "city",
-                "keyword_description" => "Город",
-            ),
-            array(
-                "keyword" => "region",
-                "keyword_description" => "Область",
-            )
+    public function actionSitemap(){
+        $this->breadcrumbs=array(
+            'Обслуживание CMS',
+            'Карта сайта',
         );
-*/
-        //DisksDisplays::model()->getSeoTemplateSubstitution("diski", 297);
+        $siteMap = new SiteMapSaver(Yii::getPathOfAlias("application.runtime.sitemap"));
+        $siteMap->add_url("http://extraload.com.ua/");
+        foreach(ShinsTypeOfAvto::model()->findAll("id > 1") as $type){
+            $siteMap->add_url(Yii::app()->createAbsoluteUrl("tires/tiresSubMenu", array("type" => $type->translit)));
+            foreach(ShinsSeason::model()->findAll("id > 1") as $type1){
+                $siteMap->add_url(Yii::app()->createAbsoluteUrl(
+                    "tires/tiresSubMenu",
+                    array(
+                        "type" => $type->translit,
+                        "type1" => $type1->translit,
+                    )
+                ));
+            }
+        }
+        $siteMap->add_url(Yii::app()->createAbsoluteUrl("tires/index"));
+        foreach(ShinsDisplays::model()->findAll() as $shinsDisplay){
+            $siteMap->add_url(Yii::app()->createAbsoluteUrl(
+                "tires/tire",
+                array(
+                    "id" => $shinsDisplay->id,
+                    "translit" => $shinsDisplay->translit,
+                )
+            ));
+        }
+        foreach(DisksType::model()->findAll("id > 1") as $type){
+            $siteMap->add_url(Yii::app()->createAbsoluteUrl("drives/drivesSubMenu", array("type" => $type->translit)));
+        }
+        $siteMap->add_url(Yii::app()->createAbsoluteUrl("drives/index"));
+        foreach(DisksDisplays::model()->findAll() as $disksDisplay){
+            $siteMap->add_url(Yii::app()->createAbsoluteUrl(
+                "drives/drive",
+                array(
+                    "id" => $disksDisplay->id,
+                    "translit" => $disksDisplay->translit,
+                )
+            ));
+        }
+        $siteMap->add_url(Yii::app()->createAbsoluteUrl("site/about"));
+        $siteMap->add_url(Yii::app()->createAbsoluteUrl("site/contacts"));
+        $siteMap->add_url(Yii::app()->createAbsoluteUrl("site/delivery"));
+        $sql = <<< SQL
+    SELECT t.region_translit, t.city_translit
+    FROM (
+    SELECT t1.`name_translit` as region_translit,
+           t.`name_translit` as city_translit
+    FROM `nova_warehouse` t
+    LEFT JOIN (
+        SELECT `id`, `name`, `name_translit`
+        FROM `nova_warehouse`
+        WHERE `level` = 1
+    ) t1 ON t.root = t1.id
+    WHERE t.`level` = 2
+    UNION
+    SELECT t1.`name_translit` as region_translit,
+           t.`name_translit` as city_translit
+    FROM `intime_warehouse` t
+    LEFT JOIN (
+        SELECT `id`, `name`, `name_translit`
+        FROM `intime_warehouse`
+        WHERE `level` = 1
+    ) t1 ON t.root = t1.id
+    WHERE t.`level` = 2)  t
+    GROUP BY t.region_translit, t.city_translit
+SQL;
+        foreach(Yii::app()->db->createCommand($sql)->queryAll() as $city){
+            $siteMap->add_url(Yii::app()->createAbsoluteUrl(
+                "site/deliveryCity",
+                array(
+                    "region_translit" => $city["region_translit"],
+                    "city_translit" => $city["city_translit"],
+                )
+            ));
+        }
+        $siteMap->save();
+        $this->render('sitemap', ['cnt' => $siteMap->all_nodes_count]);
+    }
+
+    public function actionTest(){
         $this->render(
             'test',
             array(

@@ -226,6 +226,11 @@
                                     "visible" => Yii::app()->user->checkAccess("administrator")
                                 ],
                                 [
+                                    "label" => "<i class='icon-briefcase'></i> <span class='title'>Карта сайта</span>",
+                                    "url" => ["/admin/service/sitemap"],
+                                    "visible" => Yii::app()->user->checkAccess("administrator")
+                                ],
+                                [
                                     "label" => "<i class='icon-briefcase'></i> <span class='title'>Sphinx</span>",
                                     "url" => ["/admin/service/sphinx"],
                                     "visible" => Yii::app()->user->checkAccess("administrator")
