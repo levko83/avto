@@ -19,6 +19,8 @@ Disallow: /*shipi=
 Disallow: /*page=
 Disallow: /*brand=
 Disallow: /*radius=
+Disallow: /v_nalichii/
+
 
 Sitemap: http://extraload.com.ua/sitemap.xml
 Sitemap: http://extraload.com.ua/sitemap1.xml
