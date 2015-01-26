@@ -19,10 +19,10 @@ Disallow: /*shipi=
 Disallow: /*page=
 Disallow: /*brand=
 Disallow: /*radius=
+Disallow: /v_nalichii/
+
 
 Sitemap: http://extraload.com.ua/sitemap.xml
-Sitemap: http://extraload.com.ua/sitemap1.xml
-Sitemap: http://extraload.com.ua/sitemap2.xml
 Host: extraload.com.ua
 
 
