@@ -28,23 +28,22 @@ class SiteController extends Controller
 	// главная страница
 	public function actionIndex()
 	{
-       Yii::import('application.controllers.TiresController');
-       Yii::import('application.controllers.DrivesController');
-       Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/index.js', CClientScript::POS_HEAD);
-       $this->setSeoInformation("main");
-       if(trim($this->text) != ""){
-           $this->body = $this->text;
-       }
-       $this->render(
-           'index',
-           array(
-//              'shinsDisplays' => ShinsDisplays::model()->searchForSite()->getData(),
-               'shinsDisplays' => ShinsDisplays::model()->searchSphinxForSite(false, 20)->getData(),
-               'disksDisplays' => DisksDisplays::model()->searchSphinxForSite(false, 20)->getData(),
-               'tiresVocabs' => new FilterByTires(),
-               'drivesVocabs' => new FilterByDrives(),
-           )
-       );
+        Yii::import('application.controllers.TiresController');
+        Yii::import('application.controllers.DrivesController');
+        Yii::app()->clientScript->registerScriptFile(Yii::app()->request->baseUrl.'/js/index.js', CClientScript::POS_HEAD);
+        $this->setSeoInformation("main");
+        if(trim($this->text) != ""){
+            $this->body = $this->text;
+        }
+        $this->render(
+            'index',
+            array(
+                'shinsDisplays' => ShinsDisplays::model()->searchSphinxForSite(false, 20)->getData(),
+                'disksDisplays' => DisksDisplays::model()->searchSphinxForSite(false, 20)->getData(),
+                'tiresVocabs' => new FilterByTires(),
+                'drivesVocabs' => new FilterByDrives(),
+            )
+        );
 	}
 
 	// страница ошибка

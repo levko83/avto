@@ -213,116 +213,115 @@ class DisksDisplays extends CExtendedActiveRecord
 
 
     public function searchSphinxForSite($pageSize = null, $limit = 5000000){
-        $conn = Yii::app()->sphinx;
-        $cols = array(
-            "disks_display_id",
-            "disks_display_name",
-            "disks_type",
-            "disks_display_translit",
-            "disks_rating",
-            "image_name",
-            "MIN(min_display_price_fixture) AS min_price"
-        );
-        $if_column_int_condition = function($fieldName, $condArray, $columnAlias){
-            $condWhere = SphinxHelper::SetIntFilter($fieldName, $condArray);
-            return "IF({$condWhere}, 1, 0) AS {$columnAlias}";
-        };
-        $if_column_float_condition = function($fieldName, $condArray, $columnAlias){
-            $condWhere = SphinxHelper::SetFloatFilter($fieldName, $condArray);
-            return "IF({$condWhere}, 1, 0) AS {$columnAlias}";
-        };
-        $conditions = array();
-        if($this->disksFilter){
-            $matches = array();
-            if($this->disksFilter["avto_modification"] and is_array($this->disksFilter["avto_modification"])){
-                $ORs = array();
-                foreach($this->disksFilter["avto_modification"] as $avto_modification_arr_line_item){
-                    foreach($avto_modification_arr_line_item as $param_value){
-                        $ANDs = array();
-                        if($param_value["disks_rim_width"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_rim_width", $param_value["disks_rim_width"]);
-                        if($param_value["disks_rim_diametr"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_rim_diametr", $param_value["disks_rim_diametr"]);
-                        if($param_value["disks_boom"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_boom", $param_value["disks_boom"]);
-                        if($param_value["disks_port_position"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_port_position", $param_value["disks_port_position"]);
-                        if($param_value["disks_fixture_port_count"]) $ANDs[] = SphinxHelper::SetIntFilter("disks_fixture_port_count", $param_value["disks_fixture_port_count"]);
-                        if($param_value["disks_fixture_port_diametr"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_fixture_port_diametr", $param_value["disks_fixture_port_diametr"]);
-                        $ORs[] = SphinxHelper::AND_Conditions($ANDs);
+        $data = SphinxQueryCache::getDisksDisplays($this->disksFilter, $limit);
+        if($data === false){
+            $conn = Yii::app()->sphinx;
+            $cols = array(
+                "disks_display_id",
+                "disks_display_name",
+                "disks_type",
+                "disks_display_translit",
+                "disks_rating",
+                "image_name",
+                "MIN(min_display_price_fixture) AS min_price"
+            );
+            $if_column_int_condition = function($fieldName, $condArray, $columnAlias){
+                $condWhere = SphinxHelper::SetIntFilter($fieldName, $condArray);
+                return "IF({$condWhere}, 1, 0) AS {$columnAlias}";
+            };
+            $if_column_float_condition = function($fieldName, $condArray, $columnAlias){
+                $condWhere = SphinxHelper::SetFloatFilter($fieldName, $condArray);
+                return "IF({$condWhere}, 1, 0) AS {$columnAlias}";
+            };
+            $conditions = array();
+            if($this->disksFilter){
+                $matches = array();
+                if($this->disksFilter["avto_modification"] and is_array($this->disksFilter["avto_modification"])){
+                    $ORs = array();
+                    foreach($this->disksFilter["avto_modification"] as $avto_modification_arr_line_item){
+                        foreach($avto_modification_arr_line_item as $param_value){
+                            $ANDs = array();
+                            if($param_value["disks_rim_width"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_rim_width", $param_value["disks_rim_width"]);
+                            if($param_value["disks_rim_diametr"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_rim_diametr", $param_value["disks_rim_diametr"]);
+                            if($param_value["disks_boom"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_boom", $param_value["disks_boom"]);
+                            if($param_value["disks_port_position"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_port_position", $param_value["disks_port_position"]);
+                            if($param_value["disks_fixture_port_count"]) $ANDs[] = SphinxHelper::SetIntFilter("disks_fixture_port_count", $param_value["disks_fixture_port_count"]);
+                            if($param_value["disks_fixture_port_diametr"]) $ANDs[] = SphinxHelper::SetFloatFilter("disks_fixture_port_diametr", $param_value["disks_fixture_port_diametr"]);
+                            $ORs[] = SphinxHelper::AND_Conditions($ANDs);
+                        }
+                    }
+                    $if_condition = SphinxHelper::OR_Conditions($ORs);
+                    $cols[] = "IF({$if_condition}, 1, 0) AS modifs";
+                    $conditions[] = "modifs = 1";
+                }
+                if($this->isParam("priceMin") and $this->isParam("priceMax")){
+                    $min = (int)$this->disksFilter["priceMin"];
+                    $max = (int)$this->disksFilter["priceMax"];
+                    $conditions[] = "price >= {$min} AND price <= {$max}";
+                    // пока привязано мало шин, отключает поиск по диапазону цен
+                }
+                if($this->isParam("inStock")){
+                    $conditions[] = "amount > 0";
+                    // пока привязано мало шин, отключает поиск по диапазону цен
+                }
+                if($this->disksFilter["disks_rim_diametr"]){
+                    $cols[] = $if_column_float_condition("disks_rim_diametr", $this->disksFilter["disks_rim_diametr"], "w1");
+                    $conditions[] = "w1 = 1";
+                }
+                if($this->disksFilter["disks_type_id"]){
+                    if(is_array($this->disksFilter["disks_type_id"])){
+                        $str = join(", ", array_map(function($v){ return (int)$v; }, $this->disksFilter["disks_type_id"]));
+                        $conditions[] = "disks_type_id IN ({$str})";
+                    }else{
+                        $v = (int)$this->disksFilter["disks_type_id"];
+                        $conditions[] = "disks_type_id = {$v}";
                     }
                 }
-                $if_condition = SphinxHelper::OR_Conditions($ORs);
-                $cols[] = "IF({$if_condition}, 1, 0) AS modifs";
-                $conditions[] = "modifs = 1";
-            }
-            if($this->isParam("priceMin") and $this->isParam("priceMax")){
-                $min = (int)$this->disksFilter["priceMin"];
-                $max = (int)$this->disksFilter["priceMax"];
-                $conditions[] = "price >= {$min} AND price <= {$max}";
-                // пока привязано мало шин, отключает поиск по диапазону цен
-            }
-            if($this->isParam("inStock")){
-                $conditions[] = "amount > 0";
-                // пока привязано мало шин, отключает поиск по диапазону цен
-            }
-            if($this->disksFilter["disks_rim_diametr"]){
-                //$conditions[] = SphinxHelper::SetFloatFilter("disks_rim_diametr", $this->disksFilter["disks_rim_diametr"]);
-                $cols[] = $if_column_float_condition("disks_rim_diametr", $this->disksFilter["disks_rim_diametr"], "w1");
-                $conditions[] = "w1 = 1";
-            }
-            if($this->disksFilter["disks_type_id"]){
-                if(is_array($this->disksFilter["disks_type_id"])){
-                    $str = join(", ", array_map(function($v){ return (int)$v; }, $this->disksFilter["disks_type_id"]));
-                    $conditions[] = "disks_type_id IN ({$str})";
-                }else{
-                    $v = (int)$this->disksFilter["disks_type_id"];
-                    $conditions[] = "disks_type_id = {$v}";
+                if($this->isParam("disks_rim_width")){
+                    $cols[] = $if_column_float_condition("disks_rim_width", $this->disksFilter["disks_rim_width"], "w2");
+                    $conditions[] = "w2 = 1";
+                }
+                if($this->isParam("disks_port_position")){
+                    $cols[] = $if_column_float_condition("disks_port_position", $this->disksFilter["disks_port_position"], "w3");
+                    $conditions[] = "w3 = 1";
+                }
+                if($this->isParam("disks_fixture_port_count")){
+                    $cols[] = $if_column_int_condition("disks_fixture_port_count", $this->disksFilter["disks_fixture_port_count"], "w4");
+                    $conditions[] = "w4 = 1";
+                }
+                if($this->isParam("disks_boom")){
+                    $cols[] = $if_column_float_condition("disks_boom", $this->disksFilter["disks_boom"], "w5");
+                    $conditions[] = "w5 = 1";
+                }
+                if($this->isParam("disks_fixture_port_diametr")){
+                    $cols[] = $if_column_float_condition("disks_fixture_port_diametr", $this->disksFilter["disks_fixture_port_diametr"], "w6");
+                    $conditions[] = "w6 = 1";
+                }
+                if($this->disksFilter["disks_color"] and is_array($this->disksFilter["disks_color"])){
+                    $matches[] = SphinxHelper::SetStringFilter("disks_color_translit", $this->disksFilter["disks_color"]);
+                }
+                if($this->disksFilter["vendor_id"]){
+                    $cols[] = $if_column_int_condition("vendor_id", $this->disksFilter["vendor_id"], "w7");
+                    $conditions[] = "w7 = 1";
+                }
+                if($matches){
+                    if(count($matches) == 1){
+                        $conditions[] = "MATCH('{$matches[0]}')";
+                    }else{
+                        $conditions[] = "MATCH('({$matches[0]}) & ({$matches[1]})')";
+                    }
                 }
             }
-            if($this->isParam("disks_rim_width")){
-                // $conditions[] = SphinxHelper::SetFloatFilter("disks_rim_width", $this->disksFilter["disks_rim_width"]);
-                $cols[] = $if_column_float_condition("disks_rim_width", $this->disksFilter["disks_rim_width"], "w2");
-                $conditions[] = "w2 = 1";
+            $comm = $conn->createCommand()
+                ->select($cols)
+                ->group("disks_display_id")
+                ->from("disksIndex");
+            if(count($conditions) > 0){
+                $comm->setWhere(join(" AND ", $conditions));
             }
-            if($this->isParam("disks_port_position")){
-                // $conditions[] = SphinxHelper::SetFloatFilter("disks_port_position", $this->disksFilter["disks_port_position"]);
-                $cols[] = $if_column_float_condition("disks_port_position", $this->disksFilter["disks_port_position"], "w3");
-                $conditions[] = "w3 = 1";
-            }
-            if($this->isParam("disks_fixture_port_count")){
-                // $conditions[] = SphinxHelper::SetIntFilter("disks_fixture_port_count", $this->disksFilter["disks_fixture_port_count"]);
-                $cols[] = $if_column_int_condition("disks_fixture_port_count", $this->disksFilter["disks_fixture_port_count"], "w4");
-                $conditions[] = "w4 = 1";
-            }
-            if($this->isParam("disks_boom")){
-                // $conditions[] = SphinxHelper::SetFloatFilter("disks_boom", $this->disksFilter["disks_boom"]);
-                $cols[] = $if_column_float_condition("disks_boom", $this->disksFilter["disks_boom"], "w5");
-                $conditions[] = "w5 = 1";
-            }
-            if($this->isParam("disks_fixture_port_diametr")){
-                // $conditions[] = SphinxHelper::SetFloatFilter("disks_fixture_port_diametr", $this->disksFilter["disks_fixture_port_diametr"]);
-                $cols[] = $if_column_float_condition("disks_fixture_port_diametr", $this->disksFilter["disks_fixture_port_diametr"], "w6");
-                $conditions[] = "w6 = 1";
-            }
-            if($this->disksFilter["disks_color"] and is_array($this->disksFilter["disks_color"])){
-//                $t = array();
-//                foreach($this->disksFilter["disks_color"] as $item){
-//                    $item = trim($item);
-//                    $t[] = "@disks_color_translit \"{$item}\" ";
-//                }
-                // $matches[] = join(" | ", $t);
-                $matches[] = SphinxHelper::SetStringFilter("disks_color_translit", $this->disksFilter["disks_color"]);
-            }
-            if($this->disksFilter["vendor_id"]){
-                //$str = join(", ", array_map(function($v){ return (int)$v; }, $this->disksFilter["vendor_id"]));
-                //$conditions[] = "vendor_id IN ({$str})";
-                $cols[] = $if_column_int_condition("vendor_id", $this->disksFilter["vendor_id"], "w7");
-                $conditions[] = "w7 = 1";
-            }
-            if($matches){
-                if(count($matches) == 1){
-                    $conditions[] = "MATCH('{$matches[0]}')";
-                }else{
-                    $conditions[] = "MATCH('({$matches[0]}) & ({$matches[1]})')";
-                }
-            }
+            $comm->setText("{$comm->getText()} LIMIT 0, {$limit} OPTION max_matches=500000");
+            $data = $comm->queryAll();
+            SphinxQueryCache::setDisksDisplays($this->disksFilter, $data, $limit);
         }
         $sort = new CSort();
         $sort->sortVar = 'sort';
@@ -346,15 +345,7 @@ class DisksDisplays extends CExtendedActiveRecord
         }else{
             $pagination = false;
         }
-        $comm = $conn->createCommand()
-            ->select($cols)
-            ->group("disks_display_id")
-            ->from("disksIndex");
-        if(count($conditions) > 0){
-            $comm->setWhere(join(" AND ", $conditions));
-        }
-    	$comm->setText("{$comm->getText()} LIMIT 0, {$limit} OPTION max_matches=500000");
-        return new CArrayDataProvider($comm->queryAll(), array(
+        return new CArrayDataProvider($data, array(
                 'sort' => $sort,
                 'pagination' => $pagination,
             )

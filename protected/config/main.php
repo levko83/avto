@@ -189,6 +189,9 @@
                                 'admin/delivery/citys_to_xml' => 'admin/delivery/citysToXml',
                 ),
             ),
+            'cache'=>array(
+                'class'=>'system.caching.CFileCache',
+            ),
             'easyImage' => array(
                 'class' => 'application.extensions.easyimage.EasyImage',
             ),
