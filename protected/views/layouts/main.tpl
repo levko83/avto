@@ -249,28 +249,32 @@
 	ga('send', 'pageview');
     </script>
     <!— Yandex.Metrika counter —>
-	<script type="text/javascript">
-	(function (d, w, c) {ldelim}
-	(w[c] = w[c] || []).push(function() {ldelim}
-	try {ldelim}
-	w.yaCounter22490305 = new Ya.Metrika({ldelim}
-	id:22490305,
-	webvisor:true
-	{rdelim});
-	{rdelim} catch(e) {ldelim} {rdelim}
-	{rdelim});
-	var n = d.getElementsByTagName("script")[0],
-	s = d.createElement("script"),
-	f = function () {ldelim} n.parentNode.insertBefore(s, n); {rdelim};
-	s.type = "text/javascript";
-	s.async = true;
-	s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
-	if (w.opera == "[object Opera]") {ldelim}
-	d.addEventListener("DOMContentLoaded", f, false);
-	{rdelim} else {ldelim} f(); {rdelim}
-	{rdelim})(document, window, "yandex_metrika_callbacks");
-	</script>
-	<noscript><div><img src="//mc.yandex.ru/watch/22490305" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<script type="text/javascript">
+(function (d, w, c) {ldelim}
+    (w[c] = w[c] || []).push(function() {ldelim}
+        try {ldelim}
+            w.yaCounter22490305 = new Ya.Metrika({ldelim}id:22490305,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    trackHash:true});
+        {rdelim} catch(e) {ldelim} {rdelim}
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () {ldelim} n.parentNode.insertBefore(s, n); {rdelim};
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {ldelim}
+        d.addEventListener("DOMContentLoaded", f, false);
+    {rdelim} else {ldelim} f(); {rdelim}
+{rdelim})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/22490305" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!— /Yandex.Metrika counter —>
 </body>
 </html>
