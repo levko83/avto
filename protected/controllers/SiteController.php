@@ -24,6 +24,17 @@ class SiteController extends Controller
 		);
 	}
 
+    public function filters()
+    {
+        return array(
+            array(
+                'COutputCache + index + about + contacts + delivery + deliveryRegion + deliveryCity',
+                'duration' => 3600 * 365,
+                'varyByParam'=>isset($_GET) ? array_keys($_GET) : array(),
+            ),
+        );
+    }
+
 
 	// главная страница
 	public function actionIndex()
@@ -229,14 +240,6 @@ class SiteController extends Controller
                 "novaWareHouses" => NovaWarehouse::model()->getWareHousesForCity($region_translit, $city_translit),
             )
         );
-    }
-
-    public function actionTest(){
-        foreach(Delivery::instance()->getRegions() as $region_translit => $region_name){
-            echo Yii::app()->createUrl("site/deliveryRegion", array("region_translit" => $region_translit));
-            echo "        ".$region_name;
-            echo "<br/>";
-        }
     }
 
 }

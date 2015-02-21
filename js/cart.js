@@ -4,6 +4,8 @@
 
     $(document).ready(function(){
 
+        showCart();
+
         $("#DetailOrder_phone").mask("(099)999-99-99");
 
         // добавление шины в карзину

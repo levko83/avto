@@ -37,6 +37,7 @@ class AvtoController extends Controller
             $criteria = new CDbCriteria;
             $criteria->order = "year, engine";
             $criteria->compare("avto_models_id", (int)$avto_model);
+            $text = "";
             foreach(AvtoModification::model()->findAll($criteria) as $avto_modification){
                 $text .= "<option value='{$avto_modification->id}'>{$avto_modification->year} - {$avto_modification->engine}</option>";
             }

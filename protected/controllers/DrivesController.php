@@ -4,6 +4,18 @@ class DrivesController extends Controller{
 
     public $layout = 'application.views.layouts.drives_page';
 
+
+    public function filters()
+    {
+        return array(
+            array(
+                'COutputCache + index + drive + drivesSubMenu',
+                'duration' => 3600 * 365,
+                'varyByParam'=>isset($_GET) ? array_keys($_GET) : array(),
+            ),
+        );
+    }
+
     // формирование списка параметров фильтра
     private function getShortPramNames(){
         return array(
