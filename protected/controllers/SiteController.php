@@ -30,7 +30,7 @@ class SiteController extends Controller
             array(
                 'COutputCache + index + about + contacts + delivery + deliveryRegion + deliveryCity',
                 'duration' => 3600 * 365,
-                'varyByParam'=>isset($_GET) ? array_keys($_GET) : array(),
+                'varyByParam' => array_merge(array_keys($_GET), array_keys($_POST)),
             ),
         );
     }
