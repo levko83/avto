@@ -8,7 +8,7 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www\.extraload.com\.ua$ [NC]
 RewriteRule ^(.*)$ http://extraload.com.ua/$1 [L,R=301]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*(default|index|main)\.(html|php|htm)\ HTTP/ [NC]
-RewriteRule ^(([^/]+/)*)(default|main|index)\.(html|php|htm)$ http://extraload.com.ua$1 [L,R=301]
+RewriteRule ^(([^/]+/)*)(default|main|index)\.(html|php|htm)$ http://extraload.com.ua/$1 [L,R=301]
 
 
 
