@@ -12,7 +12,7 @@
     <div class="seasonality text-line">{$data["shins_season"]}</div>
     <div class="code text-line">код товара: {$data["shins_display_id"]}</div>
     <div class="price text-line">
-        {if $data["min_price"] == 4294967295}
+        {if ($data["min_price"] == 4294967295 or $data["min_price"] == 0)}
         Нет в наличии
         {else}
         от <span>{$data["min_price"]}</span> грн

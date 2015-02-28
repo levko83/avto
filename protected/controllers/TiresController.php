@@ -7,9 +7,11 @@ class TiresController extends Controller
 
     public function filters()
     {
+//        $actions = "index + tire + tiresSubMenu";
+        $actions = "tire + tiresSubMenu";
         return array(
             array(
-                'COutputCache + index + tire + tiresSubMenu',
+                "COutputCache + {$actions}",
                 'duration' => 3600 * 365,
                 'varyByParam' => array_merge(array_keys($_GET), array_keys($_POST)),
             ),
