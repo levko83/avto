@@ -47,7 +47,12 @@ class ServiceController extends Controller
             'Обслуживание CMS',
             'Очистака кеша',
         );
-        $this->render('clearCache');
+        $runtime_dir = Yii::getPathOfAlias("application.runtime");
+        $result = shell_exec("rm -v {$runtime_dir}/cache/*");
+        $this->render(
+            'clearCache',
+            array("result" => $result)
+        );
     }
 
     public function actionParser()
