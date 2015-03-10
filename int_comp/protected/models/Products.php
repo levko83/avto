@@ -133,13 +133,13 @@ class Products extends CActiveRecord
                     {
                         $temp_price=$parsed_product_result->price*(1+$parsed_product_result->charge_auto*0.01);
                     }
-//                    if($parsed_product_result->money_flag=='840')
-//                    {
-//                        $curr_con=Yii::app()->db->createCommand('SELECT currency_value FROM SC_currency_types WHERE CID=11');
-//                        $currency=$curr_con->queryScalar();
-//                        $currency_value=1/$currency;
-//                        $temp_price=$temp_price*$currency_value;
-//                    }
+                    if($parsed_product_result->money_flag=='840')
+                    {
+                        $curr_con=Yii::app()->db->createCommand('SELECT currency_value FROM SC_currency_types WHERE CID=11');
+                        $currency=$curr_con->queryScalar();
+                        $currency_value=1/$currency;
+                        $temp_price=$temp_price*$currency_value;
+                    }
                     $current_record->amount = $parsed_product_result->amount;
                     $current_record->diller_name=$parsed_product_result->company_rel->company;
                     $current_record->price = ceil($temp_price);

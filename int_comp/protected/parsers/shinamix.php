@@ -72,6 +72,7 @@ class shinamix
                             $DBmodel->file_hash=$file_hash;
                             $DBmodel->flag_upd=1;
                             self::$data['upd_records']++;
+                            $DBmodel->money_flag=$money_flag;
                             if($DBmodel->amount!==$amount)
                             {
                                 $DBmodel->amount=$amount;
