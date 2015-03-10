@@ -57,8 +57,8 @@ class shinamix
                 $amount_temp=array();
                 preg_match_all ('/(\d+)/',$was,$amount_temp);
                 $amount=$amount_temp[0][0];
-                // $money_flag=840;
-		$money_flag=980;	
+                if($amount=='') $amount=0;
+		        $money_flag=840;
                 $final_price=$price_t*$currency_value;
                 $final_price=ceil($final_price);
                 if ((strlen($prod_name)>20)&&(strlen($price_t)>1))
