@@ -39,7 +39,7 @@ class shinamix
         $this->price_identity.=trim($this->objPHPExcel->getActiveSheet()->getCellByColumnAndRow(3,8)->getValue());
         $this->price_identity=md5($this->price_identity);
         $file_hash=md5_file($this->filename);
-        $curr_con=Yii::app()->db->createCommand('SELECT currency_value FROM SC_currency_types WHERE CID=3');
+        $curr_con=Yii::app()->db->createCommand('SELECT currency_value FROM SC_currency_types WHERE CID=11');
         $currency=$curr_con->queryScalar();
         $currency_value=1/$currency;
         //var_dump($this->price_identity);
