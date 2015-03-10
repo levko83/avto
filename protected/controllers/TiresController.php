@@ -385,10 +385,11 @@ class TiresController extends Controller
                           shins_season_id,
                           shins_season,
                           amount,
-                          price
+                          price,
+                          min_display_price_fixture
                     FROM shinsIndex
                     WHERE shins_display_id = {$display->id}
-                    ORDER BY shins_diametr ASC, amount DESC, shins_profile_width ASC, shins_profile_height ASC
+                    ORDER BY shins_profile_width ASC, shins_diametr ASC, shins_profile_height ASC, amount DESC
                     LIMIT 0, 100000";
            $dataResult = Yii::app()->sphinx->createCommand($sql)->queryAll();
            $season = function()use($dataResult){
@@ -414,6 +415,15 @@ class TiresController extends Controller
                   $r = round($item['shins_diametr'], 1);
                   $item["type_size"] = "{$item['shins_profile_width']}/{$item['shins_profile_height']} R{$r}";
                   $shins_data[$r][] = $item;
+               }
+               foreach($shins_data as $ind => &$shins_by_radius){
+                   $a = $w = $h = array();
+                   foreach($shins_by_radius as $i => $v){
+                       $a[$i] = (int)$v["amount"] > 0 ? 1 : 0;
+                       $w[$i] = (double)$v['shins_profile_width'];
+                       $h[$i] = (double)$v['shins_profile_height'];
+                   }
+                   array_multisort($a, SORT_DESC, $w, SORT_ASC, $h, SORT_ASC, $shins_by_radius);
                }
            }
            $feedback = new Feedbacks;
