@@ -333,6 +333,7 @@ class ShinsDisplays extends CExtendedActiveRecord
                         "shins_display_translit",
                         "shins_rating",
                         "image_name",
+                        "MAX(amount) AS max_amount",
                         "MIN(min_display_price_fixture) AS min_price"
                    );
             $conditions = array();

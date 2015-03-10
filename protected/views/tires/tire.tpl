@@ -169,7 +169,7 @@
                                             {/if}
                                         </td>
                                         <td class="element-3">
-                                            {if $v["price"] > 0}
+                                            {if $v["price"] > 0 and $v["amount"] >= 4}
                                               {$v["price"]} грн.
                                             {/if}
                                         </td>

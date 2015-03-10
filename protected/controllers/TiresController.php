@@ -370,7 +370,7 @@ class TiresController extends Controller
         $criteria->compare("id", (int)$id);
         $criteria->compare("translit", $translit);
         if($display = ShinsDisplays::model()->find($criteria)){
-           $row = Yii::app()->sphinx->createCommand('SELECT MIN(min_display_price_fixture) AS min_price FROM shinsIndex WHERE shins_display_id = '.$display->id)->queryRow();
+           $row = Yii::app()->sphinx->createCommand("SELECT MIN(min_display_price_fixture) AS min_price FROM shinsIndex WHERE shins_display_id = {$display->id} AND amount > 0")->queryRow();
            $min_price = $row["min_price"] == 4294967295 ? 0 : (int)$row["min_price"];
            $imagesPath = Yii::getPathOfAlias(".webrootimages.products.shins");
            $images = Yii::app()->db->createCommand("SELECT imageName FROM shins_images WHERE shins_display_id = {$display->id} GROUP BY imageName LIMIT 12")->queryAll();
