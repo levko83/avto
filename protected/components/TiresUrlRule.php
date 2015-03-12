@@ -27,6 +27,7 @@ class TiresUrlRule extends CExtendsBaseUrlRule{
         $patternArr[] = "(?:\/shipi=(?<shipi>(?:{$translitPattern}){1}(?:\;{$translitPattern})*))?";
         $patternArr[] = "(?:\/(?<v_nalichii>v_nalichii))?";
         $patternArr[] = "(?:\/page=(?<page>\d+))?";
+        $patternArr[] = "(?:\?sort=(?<sort>\d+))?";
         $filterPattern = join("", $patternArr);
         //$pattern = "^shini(?:\-(?<brand1>(?!tipa)[a-z0-9]+(?:\-[a-z0-9]+)*)?)?(?:\-R(?<radius>(?!tipa){$doublePattern}))?\.html{$filterPattern}$";
         $pattern = "^shini(?:\-(?<brand1>(?!tipa)[a-z0-9]+(?:\-[a-z0-9]+)*)?)?(?:\-R(?<radius1>(?!tipa){$doublePattern}))?\.html{$filterPattern}$";
@@ -148,6 +149,9 @@ class TiresUrlRule extends CExtendsBaseUrlRule{
             }
             if(isset($params["page"])){ // hub
                 $url .= "/page={$params['page']}";
+            }
+            if(isset($params["sort"])){ // hub
+                $url .= "?sort={$params['sort']}";
             }
             return $url;
         }
@@ -294,6 +298,9 @@ class TiresUrlRule extends CExtendsBaseUrlRule{
             }
             if($matches["page"]){
                 $_GET["page"] = $matches["page"];
+            }
+            if($matches["sort"]){
+                $_GET["sort"] = $matches["sort"];
             }
             return "tires/index";
         }
