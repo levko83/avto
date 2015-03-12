@@ -321,110 +321,107 @@ class ShinsDisplays extends CExtendedActiveRecord
     }
 
     public function searchSphinxForSite($pageSize = null, $limit = 500000){
-        $data = SphinxQueryCache::getShinsDisplays($this->shinsFilter, $limit);
-        if($data === false){
-            $conn = Yii::app()->sphinx;
-            $cols = array(
-                        "shins_display_id",
-                        //"shins_profile_width",
-                        "shins_display_name",
-                        "shins_season",
-                        "shins_run_flat_technology_id",
-                        "shins_display_translit",
-                        "shins_rating",
-                        "image_name",
-                        "MAX(amount) AS max_amount",
-                        "MIN(min_display_price_fixture) AS min_price"
-                   );
-            $conditions = array();
-            $joinToIntStr = function($arr){
-                return join(", ", array_map(function($v){ return (int)$v; }, $arr));
-            };
-            if($this->shinsFilter){
-                $matches = array();
-                if($this->shinsFilter["avto_modification"]){
-                    $idents = join(
-                        ", ",
-                        array_map(
-                            function($v){
-                                return (int)$v["shina_id"];
-                            },
-                            Yii::app()->db->createCommand("SELECT shina_id FROM view_shins_avto_modifications WHERE modif_id=".(int)$this->shinsFilter["avto_modification"])->queryAll()
-                        )
-                    );
-                    $conditions[] = "ident IN ({$idents})";
-                }
-                if($this->isParam("priceMin") and $this->isParam("priceMax")){
-                    $min = (int)$this->shinsFilter["priceMin"];
-                    $max = (int)$this->shinsFilter["priceMax"];
-                    $conditions[] = "price >= {$min} AND price <= {$max}";
-                   // пока привязано мало шин, отключает поиск по диапазону цен
-                }
-                if($this->isParam("inStock")){
-                    $conditions[] = "amount > 0";
-                    // пока привязано мало шин, отключает поиск по диапазону цен
-                }
-                if($this->shinsFilter["shins_profile_width"]){
-                    $v = $joinToIntStr($this->shinsFilter["shins_profile_width"]);
-                    $conditions[] = "shins_profile_width IN ({$v})";
-                }
-                if($this->shinsFilter["shins_load_index"]){
-                    //$matches[] = "@shins_load_index_translit \"{$this->shinsFilter["shins_load_index"]}\"";
-                    $matches[] = SphinxHelper::SetStringFilter("shins_load_index_translit", $this->shinsFilter["shins_load_index"]);
-                }
-                if($this->shinsFilter["shins_profile_height"]){
-                    $v = $joinToIntStr($this->shinsFilter["shins_profile_height"]);
-                    $conditions[] = "shins_profile_height IN({$v})";
-                }
-                if($this->shinsFilter["shins_diametr"]){
-                    $v = SphinxHelper::SetFloatFilter("shins_diametr", $this->shinsFilter["shins_diametr"]);
-                    $cols[] = "IF({$v}, 1 , 0) AS w1";
-                    $conditions[] = "w1 = 1";
-                }
-                if($this->shinsFilter["shins_season_id"]){
-                    if(is_array($this->shinsFilter["shins_season_id"])){
-                        $str = join(", ", array_map(function($v){ return (int)$v; }, $this->shinsFilter["shins_season_id"]));
-                        $conditions[] = "shins_season_id IN ({$str})";
-                    }else{
-                        $v = (int)$this->shinsFilter["shins_season_id"];
-                        $conditions[] = "shins_season_id = {$v}";
-                    }
-                }
-                if($this->shinsFilter["shins_type_of_avto_id"]){
-                    $v = $joinToIntStr($this->shinsFilter["shins_type_of_avto_id"]);
-                    $conditions[] = "shins_type_of_avto_id IN ({$v})";
-                }
-                if($this->shinsFilter["shins_run_flat_technology_id"]){
-                    $v = $joinToIntStr($this->shinsFilter["shins_run_flat_technology_id"]);
-                    $conditions[] = "shins_run_flat_technology_id IN ({$v})";
-                }
-                if($this->shinsFilter["shins_spike_id"]){
-                    $v = $joinToIntStr($this->shinsFilter["shins_spike_id"]);
-                    $conditions[] = "shins_spike_id IN ({$v})";
-                }
-                if($this->shinsFilter["vendor_id"] and is_array($this->shinsFilter["vendor_id"])){
-                    $str = join(", ", array_map(function($v){ return (int)$v; }, $this->shinsFilter["vendor_id"]));
-                    $conditions[] = "vendor_id IN ({$str})";
-                }
-                if($matches){
-                    if(count($matches) == 1){
-                        $conditions[] = "MATCH('{$matches[0]}')";
-                    }else{
-                        $conditions[] = "MATCH('({$matches[0]}) & ({$matches[1]})')";
-                    }
+        $conn = Yii::app()->sphinx;
+        $cols = array(
+                    "shins_display_id",
+                    //"shins_profile_width",
+                    "shins_display_name",
+                    "shins_season",
+                    "shins_run_flat_technology_id",
+                    "shins_display_translit",
+                    "shins_rating",
+                    "image_name",
+                    "display_products_availability",
+                    "display_min_price"
+               );
+        $conditions = array();
+        $joinToIntStr = function($arr){
+            return join(", ", array_map(function($v){ return (int)$v; }, $arr));
+        };
+        if($this->shinsFilter){
+            $matches = array();
+            if($this->shinsFilter["avto_modification"]){
+                $idents = join(
+                    ", ",
+                    array_map(
+                        function($v){
+                            return (int)$v["shina_id"];
+                        },
+                        Yii::app()->db->createCommand("SELECT shina_id FROM view_shins_avto_modifications WHERE modif_id=".(int)$this->shinsFilter["avto_modification"])->queryAll()
+                    )
+                );
+                $conditions[] = "ident IN ({$idents})";
+            }
+            if($this->isParam("priceMin") and $this->isParam("priceMax")){
+                $min = (int)$this->shinsFilter["priceMin"];
+                $max = (int)$this->shinsFilter["priceMax"];
+                $conditions[] = "price >= {$min} AND price <= {$max}";
+               // пока привязано мало шин, отключает поиск по диапазону цен
+            }
+            if($this->isParam("inStock")){
+                $conditions[] = "amount > 0";
+                // пока привязано мало шин, отключает поиск по диапазону цен
+            }
+            if($this->shinsFilter["shins_profile_width"]){
+                $v = $joinToIntStr($this->shinsFilter["shins_profile_width"]);
+                $conditions[] = "shins_profile_width IN ({$v})";
+            }
+            if($this->shinsFilter["shins_load_index"]){
+                //$matches[] = "@shins_load_index_translit \"{$this->shinsFilter["shins_load_index"]}\"";
+                $matches[] = SphinxHelper::SetStringFilter("shins_load_index_translit", $this->shinsFilter["shins_load_index"]);
+            }
+            if($this->shinsFilter["shins_profile_height"]){
+                $v = $joinToIntStr($this->shinsFilter["shins_profile_height"]);
+                $conditions[] = "shins_profile_height IN({$v})";
+            }
+            if($this->shinsFilter["shins_diametr"]){
+                $v = SphinxHelper::SetFloatFilter("shins_diametr", $this->shinsFilter["shins_diametr"]);
+                $cols[] = "IF({$v}, 1 , 0) AS w1";
+                $conditions[] = "w1 = 1";
+            }
+            if($this->shinsFilter["shins_season_id"]){
+                if(is_array($this->shinsFilter["shins_season_id"])){
+                    $str = join(", ", array_map(function($v){ return (int)$v; }, $this->shinsFilter["shins_season_id"]));
+                    $conditions[] = "shins_season_id IN ({$str})";
+                }else{
+                    $v = (int)$this->shinsFilter["shins_season_id"];
+                    $conditions[] = "shins_season_id = {$v}";
                 }
             }
-            $comm = $conn->createCommand()
-                ->select($cols)
-                ->group("shins_display_id")
-                ->from("shinsIndex");
-            if(count($conditions) > 0){
-                $comm->setWhere(join(" AND ", $conditions));
+            if($this->shinsFilter["shins_type_of_avto_id"]){
+                $v = $joinToIntStr($this->shinsFilter["shins_type_of_avto_id"]);
+                $conditions[] = "shins_type_of_avto_id IN ({$v})";
             }
-            $comm->setText("{$comm->getText()} LIMIT 0, {$limit} OPTION max_matches=500000");
-            $data = $comm->queryAll();
-            SphinxQueryCache::setShinsDisplays($this->shinsFilter, $data, $limit);
+            if($this->shinsFilter["shins_run_flat_technology_id"]){
+                $v = $joinToIntStr($this->shinsFilter["shins_run_flat_technology_id"]);
+                $conditions[] = "shins_run_flat_technology_id IN ({$v})";
+            }
+            if($this->shinsFilter["shins_spike_id"]){
+                $v = $joinToIntStr($this->shinsFilter["shins_spike_id"]);
+                $conditions[] = "shins_spike_id IN ({$v})";
+            }
+            if($this->shinsFilter["vendor_id"] and is_array($this->shinsFilter["vendor_id"])){
+                $str = join(", ", array_map(function($v){ return (int)$v; }, $this->shinsFilter["vendor_id"]));
+                $conditions[] = "vendor_id IN ({$str})";
+            }
+            if($matches){
+                if(count($matches) == 1){
+                    $conditions[] = "MATCH('{$matches[0]}')";
+                }else{
+                    $conditions[] = "MATCH('({$matches[0]}) & ({$matches[1]})')";
+                }
+            }
         }
+        $comm = $conn->createCommand()
+            ->select($cols)
+            ->group("shins_display_id")
+            ->from("shinsIndex");
+        if(count($conditions) > 0){
+            $comm->setWhere(join(" AND ", $conditions));
+        }
+        $comm->setText("{$comm->getText()} LIMIT 0, {$limit} OPTION max_matches=500000");
+        $sql = $comm->getText();
+        $data = $comm->queryAll();
         $sort = new CSort();
         $sort->sortVar = 'sort';
         $sort->defaultOrder = 'min_price ASC';

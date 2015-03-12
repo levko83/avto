@@ -174,12 +174,12 @@
                                             {/if}
                                         </td>
                                         <td class="element-4 add-tire">
-                                            {if $v["amount"] >= 4}
+                                            {if $v["price"] > 0 and $v["amount"] >= 4}
                                                 <a href="#" tire-id="{$v["id"]}">Купить</a>
                                             {/if}
                                         </td>
                                         <td class="element-5" >
-                                            {if $v["amount"] >= 4}
+                                            {if $v["price"] > 0 and $v["amount"] >= 4}
                                                 <input type="text" class="tires_count" tire-id="{$v["id"]}" value="4"> шт.
                                             {/if}
                                         </td>

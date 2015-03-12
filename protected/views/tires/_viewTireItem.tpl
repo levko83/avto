@@ -12,10 +12,10 @@
     <div class="seasonality text-line">{$data["shins_season"]}</div>
     <div class="code text-line">код товара: {$data["shins_display_id"]}</div>
     <div class="price text-line">
-        {if ($data["min_price"] == 4294967295 or $data["max_amount"] < 4)}
+        {if ($data["display_products_availability"] == 4294967295 or $data["display_products_availability"] < 4)}
         Нет в наличии
         {else}
-        от <span>{$data["min_price"]}</span> грн
+        от <span>{$data["display_min_price"]}</span> грн
         {/if}
     </div>
     {*<ul style="padding-top: 7px;">*}
