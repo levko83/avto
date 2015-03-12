@@ -7,7 +7,6 @@ class TiresController extends Controller
 
     public function filters()
     {
-        return;
         $actions = array("index", "tire", "tiresSubMenu");
         return array(
             array(
@@ -372,7 +371,7 @@ class TiresController extends Controller
         $criteria->compare("translit", $translit);
         if($display = ShinsDisplays::model()->find($criteria)){
            $row = Yii::app()->sphinx->createCommand("SELECT display_min_price FROM shinsIndex WHERE shins_display_id = {$display->id}")->queryRow();
-           $min_price = $row["display_min_price"] == 4294967295 ? 0 : (int)$row["display_min_price"];
+           $min_price = $row["display_min_price"];
            $imagesPath = Yii::getPathOfAlias(".webrootimages.products.shins");
            $images = Yii::app()->db->createCommand("SELECT imageName FROM shins_images WHERE shins_display_id = {$display->id} GROUP BY imageName LIMIT 12")->queryAll();
            $sql = "SELECT id,

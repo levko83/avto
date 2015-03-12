@@ -11,8 +11,8 @@
     <div class="row-title"><a href="/tires/{$data["shins_display_id"]}-{$data["shins_display_translit"]}.html">{$data["shins_display_name"]}</a></div>
     <div class="seasonality text-line">{$data["shins_season"]}</div>
     <div class="code text-line">код товара: {$data["shins_display_id"]}</div>
-    <div class="price text-line">
-        {if ($data["display_products_availability"] == 4294967295 or $data["display_products_availability"] < 4)}
+    <div class="price text-line"{if ($data["display_products_availability"] < 4)}style="color: #999;"{/if}">
+        {if ($data["display_products_availability"] < 4)}
         Нет в наличии
         {else}
         от <span>{$data["display_min_price"]}</span> грн

@@ -46,10 +46,6 @@
                                       {pager}
                                     </div>'
                         itemView = '_viewTireItem'
-                        viewData = [
-                            "filter" => $filter,
-                            "avto_product_arr" => $avto_product_arr
-                        ]
                         cssFile = false
                         sortableAttributes = ['title', 'price']
                         pager = [

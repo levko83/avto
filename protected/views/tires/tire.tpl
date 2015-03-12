@@ -47,7 +47,7 @@
                         {if $display_min_price > 0}
                         <div class="price">от {$display_min_price} грн</div>
                         {else}
-                        <div class="price">нет в наличии</div>
+                        <div class="price" style="color: #999;">нет в наличии</div>
                         {/if}
                         {*<div class="car-type">Тип дисков: <span>литые</span></div>*}
                         <div class="product-key">Код товара: <span>{$display->id}</span></div>

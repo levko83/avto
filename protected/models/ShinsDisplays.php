@@ -324,7 +324,6 @@ class ShinsDisplays extends CExtendedActiveRecord
         $conn = Yii::app()->sphinx;
         $cols = array(
                     "shins_display_id",
-                    //"shins_profile_width",
                     "shins_display_name",
                     "shins_season",
                     "shins_run_flat_technology_id",
@@ -412,28 +411,43 @@ class ShinsDisplays extends CExtendedActiveRecord
                 }
             }
         }
+        // условия для дисплев, шины которых в наличии
         $comm = $conn->createCommand()
-            ->select($cols)
-            ->group("shins_display_id")
-            ->from("shinsIndex");
-        if(count($conditions) > 0){
-            $comm->setWhere(join(" AND ", $conditions));
+                     ->select($cols)
+                     ->group("shins_display_id")
+                     ->from("shinsIndex");
+        $conditions_1 = $conditions;
+        $conditions_1[] = "display_products_availability >= 4";
+        if(count($conditions_1) > 0){
+            $comm->setWhere(join(" AND ", $conditions_1));
         }
         $comm->setText("{$comm->getText()} LIMIT 0, {$limit} OPTION max_matches=500000");
-        $sql = $comm->getText();
-        $data = $comm->queryAll();
+        $data_1 = $comm->queryAll();
+        // условия для дисплев, шины которых НЕТ в наличии
+        $comm = $conn->createCommand()
+                     ->select($cols)
+                     ->group("shins_display_id")
+                     ->from("shinsIndex");
+        $conditions_2 = $conditions;
+        $conditions_2[] = "display_products_availability < 4";
+        if(count($conditions_2) > 0){
+            $comm->setWhere(join(" AND ", $conditions_2));
+        }
+        $comm->setText("{$comm->getText()} LIMIT 0, {$limit} OPTION max_matches=500000");
+        $data_2 = $comm->queryAll();
+        // параметры сортировки
         $sort = new CSort();
         $sort->sortVar = 'sort';
-        $sort->defaultOrder = 'min_price ASC';
+        $sort->defaultOrder = 'shins_rating DESC';
         $sort->attributes = array(
             'rating'=>array(
                 'asc'=>'shins_rating DESC',
             ),
             'title'=>array(
-                'asc'=>'shins_display_translit ASC',
+                'asc'=>'shins_display_name ASC',
             ),
             'price'=>array(
-                'asc'=>'min_price ASC',
+                'asc'=>'display_min_price ASC',
             ),
         );
         if($pageSize){
@@ -444,7 +458,9 @@ class ShinsDisplays extends CExtendedActiveRecord
         }else{
             $pagination = false;
         }
-        return new CArrayDataProvider($data, array(
+        return new CMultiArrayDataProvider(
+            array($data_1, $data_2),
+            array(
                 'sort' => $sort,
                 'pagination' => $pagination,
             )
