@@ -127,11 +127,11 @@ $(function(){
 	/*_______________________________________________________ CONTENT ____________________________________________________*/
 
 		/*------ Подбор по автомобилю ------*/
-		function showTab(n) {
-			$('.tabs_content>div:visible').slideUp(0);
-			$('.tabs_content>div').eq(n).slideDown(500);
-			$('.tabs_menu li.active_tab').removeClass('active_tab');			
-			$('.tabs_menu li').eq(n).addClass('active_tab');
+		function showTab(n){
+            $('.tabs_content>div:visible').slideUp(0);
+            $('.tabs_content>div').eq(n).slideDown(500);
+            $('.tabs_menu li.active_tab').removeClass('active_tab');
+            $('.tabs_menu li').eq(n).addClass('active_tab');
 		};
 
 		$('.tabs_menu').find('li').click(function(){
@@ -140,7 +140,28 @@ $(function(){
 			//parameter_block();
 		});
 
-		showTab(0);
+        if(!$(".tabs_menu").closest(".parameter-block").length){
+            $('.tabs_content>div:visible').slideUp(0);
+            $('.tabs_content>div').eq(0).slideDown(500);
+            $('.tabs_menu li.active_tab').removeClass('active_tab');
+            $('.tabs_menu li').eq(0).addClass('active_tab');
+        }
+
+        $('.parameter-block .tabs_content>div:visible').slideUp(0);
+        $('.parameter-block .tabs_menu li.active_tab').removeClass('active_tab');
+        var is_sel = 0;
+        $('.parameter-block .tabs_menu li').each(function(){
+            if($(this).hasClass("act")){
+                is_sel = 1;
+                $(this).addClass("active_tab");
+                $('.parameter-block .tabs_content>div').eq($(this).index()).slideDown(500);
+                $(this).removeClass("act");
+            }
+        });
+        if(is_sel == 0){
+            $('.parameter-block .tabs_menu li').eq(0).addClass('active_tab');
+            $('.parameter-block .tabs_content>div').eq(0).slideDown(500);
+        }
 
         /*Ширина li в зависимости от ширины экрана*/
         function jcarouselWidth () {

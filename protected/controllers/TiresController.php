@@ -7,6 +7,7 @@ class TiresController extends Controller
 
     public function filters()
     {
+        return;
         $actions = array("index", "tire", "tiresSubMenu");
         return array(
             array(
@@ -370,7 +371,25 @@ class TiresController extends Controller
         $criteria->compare("id", (int)$id);
         $criteria->compare("translit", $translit);
         if($display = ShinsDisplays::model()->find($criteria)){
-           $row = Yii::app()->sphinx->createCommand("SELECT display_min_price FROM shinsIndex WHERE shins_display_id = {$display->id}")->queryRow();
+           if($_GET["ids"]){
+               $ids = array_map(
+                           function($v){
+                               return (int)$v;
+                           },
+                           explode(";", $_GET["ids"])
+                      );
+               $cnt = Yii::app()->sphinx->createCommand("SELECT COUNT(*) AS cnt FROM shinsIndex WHERE id IN (".join(", ", $ids).")")->queryRow();
+               if($cnt["cnt"] != count($ids)){
+                   $ids = false;
+               }
+           }else{
+               $ids = false;
+           }
+           if($ids){
+               $row = Yii::app()->sphinx->createCommand("SELECT MIN(min_display_price_fixture) AS display_min_price FROM shinsIndex WHERE id IN (".join(", ", $ids).")")->queryRow();
+           }else{
+               $row = Yii::app()->sphinx->createCommand("SELECT display_min_price FROM shinsIndex WHERE shins_display_id = {$display->id}")->queryRow();
+           }
            $min_price = $row["display_min_price"];
            $imagesPath = Yii::getPathOfAlias(".webrootimages.products.shins");
            $images = Yii::app()->db->createCommand("SELECT imageName FROM shins_images WHERE shins_display_id = {$display->id} GROUP BY imageName LIMIT 12")->queryAll();
@@ -410,12 +429,17 @@ class TiresController extends Controller
                 }
            };
            $shins_data = array();
+           $sel_tabs = array();
            if(count($dataResult) > 0){
                foreach($dataResult as $item){
-                  $r = round($item['shins_diametr'], 1);
-                  $item["type_size"] = "{$item['shins_profile_width']}/{$item['shins_profile_height']} R{$r}";
-                  $shins_data[$r][] = $item;
+                   $r = round($item['shins_diametr'], 1);
+                   $item["type_size"] = "{$item['shins_profile_width']}/{$item['shins_profile_height']} R{$r}";
+                   $shins_data[$r][] = $item;
+                   if($ids and in_array($item["id"], $ids) and !in_array($r, $sel_tabs)){
+                       $sel_tabs[] = $r;
+                   }
                }
+               ksort($shins_data);
                foreach($shins_data as $ind => &$shins_by_radius){
                    $a = $w = $h = array();
                    foreach($shins_by_radius as $i => $v){
@@ -489,6 +513,8 @@ class TiresController extends Controller
                   "display_min_price" => $min_price,
                   "season" => $season(),
                   "images" => $images,
+                  "ids" => $ids,
+                  "sel_tabs" => $sel_tabs,
                   "diametrs" => array_keys($shins_data),
                   "shins_data" => $shins_data,
                   "feedback" => $feedback,

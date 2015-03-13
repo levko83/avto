@@ -68,6 +68,16 @@ class HtmlHelper {
         return $resultName;
     }
 
+    public static function getIdsQuery($s){
+        if($s){
+            $arr = explode(",", $s);
+            return "?ids=".join(";", $arr);
+        }else{
+            return "";
+        }
+    }
+
+
 }
 
 ?>

@@ -110,7 +110,20 @@
                 <div id="tabs">
                     <ul class="tabs_menu">
                         {foreach from=$diametrs item="diametr"}
-                            <li class="first"><a>R{$diametr}</a></li>
+                            {assign var='classes' value=[]}
+                            {if in_array($diametr, $sel_tabs)}
+                                {append var="classes" value="selected"}
+                                {if $sel_tabs[0] == $diametr}
+                                    {append var="classes" value="act"}
+                                    {append var="classes" value="active_tab"}
+                                {/if}
+                            {/if}
+                            {if $classes}
+                                {assign var='classes' value=" class='"|cat:join(" ", $classes)|cat:"'"}
+                            {else}
+                                {assign var='classes' value=""}
+                            {/if}
+                            <li{$classes}><a>R{$diametr}</a></li>
                         {/foreach}
                     </ul>
                     <div class="tabs_content">
@@ -131,7 +144,7 @@
                                         <th class="element-5"></th>
                                     </tr>
                                     {foreach from=$shins_data[$diametr] item="v"}
-                                    <tr>
+                                    <tr{if in_array($v['id'], $ids)} class="filtered"{else} style="background: none;"{/if}>
                                         <td class="element-0">
                                             {$v["type_size"]}
                                         </td>

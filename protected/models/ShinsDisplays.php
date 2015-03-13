@@ -320,18 +320,42 @@ class ShinsDisplays extends CExtendedActiveRecord
         }
     }
 
+    public function getDisplayHash(){
+        if($this->shinsFilter["avto_modification"]){
+            unset($this->shinsFilter["avto_modification"]);
+        }
+        if(!$this->shinsFilter){
+            return false;
+        }
+        $myxor = function($text, $key = "xxx"){
+            $outText = "";
+            for($i=0;$i<strlen($text);)
+            {
+                for($j=0;$j<strlen($key);$j++, $i++)
+                {
+                    $outText .= $text{$i} ^ $key{$j};
+                }
+            }
+            return $outText;
+        };
+        //$arr = array("s" => 195, "p" => 65, "d" => 15);
+        $arr = $this->shinsFilter;
+        return $myxor(json_encode($arr));
+    }
+
     public function searchSphinxForSite($pageSize = null, $limit = 500000){
+        $hash = $this->getDisplayHash();
         $conn = Yii::app()->sphinx;
         $cols = array(
                     "shins_display_id",
                     "shins_display_name",
                     "shins_season",
-                    "shins_run_flat_technology_id",
                     "shins_display_translit",
                     "shins_rating",
                     "image_name",
-                    "display_products_availability",
-                    "display_min_price"
+                    "MAX(amount) AS max_amount",
+                    "MIN(price) AS min_price",
+                    "MIN(min_display_price_fixture) AS min_price_fixture",
                );
         $conditions = array();
         $joinToIntStr = function($arr){
@@ -357,10 +381,10 @@ class ShinsDisplays extends CExtendedActiveRecord
                 $conditions[] = "price >= {$min} AND price <= {$max}";
                // пока привязано мало шин, отключает поиск по диапазону цен
             }
-            if($this->isParam("inStock")){
-                $conditions[] = "amount > 0";
-                // пока привязано мало шин, отключает поиск по диапазону цен
-            }
+//            if($this->isParam("inStock")){
+//                $conditions[] = "amount > 0";
+//                // пока привязано мало шин, отключает поиск по диапазону цен
+//            }
             if($this->shinsFilter["shins_profile_width"]){
                 $v = $joinToIntStr($this->shinsFilter["shins_profile_width"]);
                 $conditions[] = "shins_profile_width IN ({$v})";
@@ -410,6 +434,7 @@ class ShinsDisplays extends CExtendedActiveRecord
                     $conditions[] = "MATCH('({$matches[0]}) & ({$matches[1]})')";
                 }
             }
+            $cols[] = "group_concat(id) as ids";
         }
         // условия для дисплев, шины которых в наличии
         $comm = $conn->createCommand()
@@ -417,19 +442,23 @@ class ShinsDisplays extends CExtendedActiveRecord
                      ->group("shins_display_id")
                      ->from("shinsIndex");
         $conditions_1 = $conditions;
-        $conditions_1[] = "display_products_availability >= 4";
+        $conditions_1[] = "amount >= 4";
         if(count($conditions_1) > 0){
             $comm->setWhere(join(" AND ", $conditions_1));
         }
         $comm->setText("{$comm->getText()} LIMIT 0, {$limit} OPTION max_matches=500000");
+        $sql = $comm->getText();
         $data_1 = $comm->queryAll();
         // условия для дисплев, шины которых НЕТ в наличии
+        if($this->shinsFilter){
+            array_pop($cols);
+        }
         $comm = $conn->createCommand()
                      ->select($cols)
                      ->group("shins_display_id")
                      ->from("shinsIndex");
         $conditions_2 = $conditions;
-        $conditions_2[] = "display_products_availability < 4";
+        $conditions_2[] = "amount < 4";
         if(count($conditions_2) > 0){
             $comm->setWhere(join(" AND ", $conditions_2));
         }
@@ -447,7 +476,7 @@ class ShinsDisplays extends CExtendedActiveRecord
                 'asc'=>'shins_display_name ASC',
             ),
             'price'=>array(
-                'asc'=>'display_min_price ASC',
+                'asc'=>'min_price ASC',
             ),
         );
         if($pageSize){
