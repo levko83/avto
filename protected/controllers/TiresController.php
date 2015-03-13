@@ -7,6 +7,7 @@ class TiresController extends Controller
 
     public function filters()
     {
+        return;
         $actions = array("index", "tire", "tiresSubMenu");
         return array(
             array(
