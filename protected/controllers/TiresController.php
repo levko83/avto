@@ -7,7 +7,9 @@ class TiresController extends Controller
 
     public function filters()
     {
-        return;
+        if(strpos(__DIR__, "extraload.loc") !== true){
+            return;
+        }
         $actions = array("index", "tire", "tiresSubMenu");
         return array(
             array(

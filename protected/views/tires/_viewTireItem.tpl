@@ -19,10 +19,57 @@
         от <span>{$data["min_price"]}</span> грн
         {/if}
     </div>
-    {*<ul style="padding-top: 7px;">*}
-    {*{foreach ShinsDisplays::model()->filterByParams($data["shins_display_id"], $filter, $avto_product_arr) as $filterByParamsItem}*}
-       {*<li>{$filterByParamsItem}</li>*}
-    {*{/foreach}*}
-    {*</ul>*}
-    <div class="read-more"><a href="{$display_url}">Купить</a></div>
+    {assign var="shins" value=ShinsDisplays::model()->getShinsByIds($data["ids"])}
+    {if $shins}
+        <table>
+            <tr>
+                <th>Типоразмер</th>
+                <th>Индекс нагрузки</th>
+                <th>Run Flat</th>
+                <th>Шипы</th>
+                <th>Цена</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {foreach $shins as $shina}
+                {assign var="type_size" value={(double)$shina["shins_profile_width"]}|cat:"/"|cat:{(double)$shina["shins_profile_height"]}|cat:" R"|cat:{(double)$shina["shins_diametr"]}}
+                <tr>
+                    <td class="element-0">
+                        {$type_size}
+                    </td>
+                    <td>
+                        {$shina["shins_load_index"]}
+                    </td>
+                    <td>
+                        {if $shina["shins_run_flat_technology_id"] == 2}
+                            есть
+                        {elseif $shina["shins_run_flat_technology_id"] == 3}
+                            нет
+                        {else}
+                            нет данных
+                        {/if}
+                    </td>
+                    <td>
+                        {if $shina["shins_spike_id"] == 2}
+                            есть
+                        {elseif $shina["shins_spike_id"] == 3}
+                            нет
+                        {else}
+                            нет данных
+                        {/if}
+                    </td>
+                    <td class="element-3">
+                        {$shina["price"]} грн.
+                    </td>
+                    <td class="add-tire">
+                        <a href="#" tire-id="{$shina["id"]}">Купить</a>
+                    </td>
+                    <td>
+                        <input type="text" class="tires_count" tire-id="{$shina["id"]}" value="4"> шт.
+                    </td>
+                </tr>
+            {/foreach}
+        </table>
+    {/if}
+    {*<div class="read-more"><a href="{$display_url}">Купить</a></div>*}
 </div>

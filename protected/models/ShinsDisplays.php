@@ -496,6 +496,30 @@ class ShinsDisplays extends CExtendedActiveRecord
         );
     }
 
+    public function getShinsByIds($ids){
+        if(!$ids){
+            return false;
+        }
+        $sql = "SELECT id,
+                       shins_profile_width,
+                       shins_profile_height,
+                       shins_diametr,
+                       shins_load_index,
+                       shins_run_flat_technology_id,
+                       shins_speed_index,
+                       shins_spike_id,
+                       shins_season_id,
+                       shins_season,
+                       amount,
+                       price,
+                       min_display_price_fixture
+               FROM shinsIndex
+               WHERE id IN ({$ids})
+               ORDER BY shins_profile_width ASC, shins_profile_height ASC, shins_diametr ASC
+               LIMIT 0, 100000";
+        return Yii::app()->sphinx->createCommand($sql)->queryAll();
+    }
+
     public function getRating(){
         $sql = "SELECT AVG(rating) AS val, COUNT(id) as cnt FROM feedbacks WHERE product_id={$this->id} AND product_type = 1 AND rating > 0";
         $row = Yii::app()->db->createCommand($sql)->queryRow();

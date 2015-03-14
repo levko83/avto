@@ -37,6 +37,7 @@
             <div class="catalog-content">
                 {widget name = "zii.widgets.CListView"
                         dataProvider = $dataProvider
+                        viewData = ["ids" => $ids]
                         ajaxUpdate = false
                         template = '<div class="catalog-management">
                                       {pager}
