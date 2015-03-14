@@ -25,7 +25,7 @@
             <tr>
                 <th>Типоразмер</th>
                 <th>Индекс нагрузки</th>
-                <th>Run Flat</th>
+                <th>Индекс скорости</th>
                 <th>Шипы</th>
                 <th>Цена</th>
                 <th></th>
@@ -41,13 +41,7 @@
                         {$shina["shins_load_index"]}
                     </td>
                     <td>
-                        {if $shina["shins_run_flat_technology_id"] == 2}
-                            есть
-                        {elseif $shina["shins_run_flat_technology_id"] == 3}
-                            нет
-                        {else}
-                            нет данных
-                        {/if}
+                        {$shina["shins_speed_index"]}
                     </td>
                     <td>
                         {if $shina["shins_spike_id"] == 2}
