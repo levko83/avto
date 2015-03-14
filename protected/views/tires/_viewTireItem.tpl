@@ -19,51 +19,59 @@
         от <span>{$data["min_price"]}</span> грн
         {/if}
     </div>
-    {assign var="shins" value=ShinsDisplays::model()->getShinsByIds($data["ids"])}
-    {if $shins}
-        <table>
-            <tr>
-                <th>Типоразмер</th>
-                <th>Индекс нагрузки</th>
-                <th>Индекс скорости</th>
-                <th>Шипы</th>
-                <th>Цена</th>
-                <th></th>
-                <th></th>
-            </tr>
-            {foreach $shins as $shina}
-                {assign var="type_size" value={(double)$shina["shins_profile_width"]}|cat:"/"|cat:{(double)$shina["shins_profile_height"]}|cat:" R"|cat:{(double)$shina["shins_diametr"]}}
+    {if $view == "list"}
+        {assign var="shins" value=ShinsDisplays::model()->getShinsByIds($data["ids"])}
+        {if $shins}
+            <table>
                 <tr>
-                    <td class="element-0">
-                        {$type_size}
-                    </td>
-                    <td>
-                        {$shina["shins_load_index"]}
-                    </td>
-                    <td>
-                        {$shina["shins_speed_index"]}
-                    </td>
-                    <td>
-                        {if $shina["shins_spike_id"] == 2}
-                            есть
-                        {elseif $shina["shins_spike_id"] == 3}
-                            нет
-                        {else}
-                            нет данных
-                        {/if}
-                    </td>
-                    <td class="element-3">
-                        {$shina["price"]} грн.
-                    </td>
-                    <td class="add-tire">
-                        <a href="#" tire-id="{$shina["id"]}">Купить</a>
-                    </td>
-                    <td>
-                        <input type="text" class="tires_count" tire-id="{$shina["id"]}" value="4"> шт.
-                    </td>
+                    <th>Типоразмер</th>
+                    <th>Индекс нагрузки</th>
+                    <th>Индекс скорости</th>
+                    <th>Шипы</th>
+                    <th>Цена</th>
+                    <th></th>
+                    <th></th>
                 </tr>
-            {/foreach}
-        </table>
+                {foreach $shins as $shina}
+                    {assign var="type_size" value={(double)$shina["shins_profile_width"]}|cat:"/"|cat:{(double)$shina["shins_profile_height"]}|cat:" R"|cat:{(double)$shina["shins_diametr"]}}
+                    <tr>
+                        <td class="element-0">
+                            {$type_size}
+                        </td>
+                        <td>
+                            {$shina["shins_load_index"]}
+                        </td>
+                        <td>
+                            {$shina["shins_speed_index"]}
+                        </td>
+                        <td>
+                            {if $shina["shins_spike_id"] == 2}
+                                есть
+                            {elseif $shina["shins_spike_id"] == 3}
+                                нет
+                            {else}
+                                нет данных
+                            {/if}
+                        </td>
+                        <td class="element-3">
+                            {$shina["price"]} грн.
+                        </td>
+                        <td class="add-tire">
+                            <a href="#" tire-id="{$shina["id"]}">Купить</a>
+                        </td>
+                        <td>
+                            <input type="text" class="tires_count" tire-id="{$shina["id"]}" value="4"> шт.
+                        </td>
+                    </tr>
+                    {if $shina@iteration == 5}
+                        {break}
+                    {/if}
+                {/foreach}
+            </table>
+            {if count($shins) > 5}
+                <a class="read-more" href="{$display_url}">смотреть еще...</a>
+            {/if}
+        {/if}
     {/if}
     {*<div class="read-more"><a href="{$display_url}">Купить</a></div>*}
 </div>
