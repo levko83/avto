@@ -242,4 +242,13 @@ class SiteController extends Controller
         );
     }
 
+    public function actionLiveSearch(){
+        throw new CHttpException(404, "Страница не найдена");
+//        if(Yii::app()->request->isAjaxRequest){
+//
+//        }else{
+//            throw new CHttpException(404);
+//        }
+    }
+
 }

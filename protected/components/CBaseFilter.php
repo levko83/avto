@@ -302,7 +302,7 @@ class CBaseFilter{
                     $v = (string)((double)number_format($v, 2, ".", ""));
                 }
             }
-            $v = "{$v} ({$item["@count"]})";
+//            $v = "{$v} ({$item["@count"]})";
             if($asUrlValue){
                 $filter = $this->_filter;
                 $filterParamKey = array_search($item[$key_field], $filter[$urlParam]);
