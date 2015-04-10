@@ -722,12 +722,13 @@ aside#sidebar-second .discounted-items {
   max-height: 562px;
   overflow: hidden;
 }
-aside#sidebar-second .discounted-items h2 {
+aside#sidebar-second .discounted-items span{
   padding: 5px;
   font-size: 18px;
   font-weight: bold;
   background: #e8d300;
-}
+  display:block;
+  }
 aside#sidebar-second .discounted-items .content {
   padding: 4px;
 }
@@ -815,11 +816,12 @@ aside#sidebar-first .filter {
   border: 1px solid #dedede;
   padding: 0 0 15px 0;
 }
-aside#sidebar-first .filter h3 {
+aside#sidebar-first .filter span {
   color: #000;
   margin: 8px 0;
   font-size: 14px;
   font-weight: normal;
+  display:block;
 }
 aside#sidebar-first .filter .selection-car {
   padding: 15px;
@@ -829,17 +831,20 @@ aside#sidebar-first .filter .selection-car ul li a {
   color: black;
   font-weight: bold;
 }
-aside#sidebar-first .filter .selection-car h3 {
+aside#sidebar-first .filter .selection-car span {
+display:block;
   font-weight: bold;
 }
 aside#sidebar-first .filter .selection-car .content {
   margin-top: 15px;
 }
-aside#sidebar-first .filter .selection-car .select h3 {
+aside#sidebar-first .filter .selection-car .select span {
+display:block;
   font-weight: normal;
   margin-bottom: 10px;
 }
 aside#sidebar-first .filter .selection-car .select select {
+display:block;
   width: 87%;
   padding: 3px;
   border: 1px solid #DCDCDC;
@@ -848,7 +853,8 @@ aside#sidebar-first .filter .selection-car .select select {
 aside#sidebar-first .filter .price-slider {
   padding: 15px;
 }
-aside#sidebar-first .filter .price-slider h3 {
+aside#sidebar-first .filter .price-slider span {
+display:block;
   font-weight: bold;
 }
 aside#sidebar-first .filter .price-slider .form-item {
@@ -897,7 +903,8 @@ aside#sidebar-first .filter .options {
   background: #DEDEDE;
   padding: 15px;
 }
-aside#sidebar-first .filter .options h3 {
+aside#sidebar-first .filter .options span {
+display:block;
   display: inline;
   line-height: 20px;
 }
@@ -932,7 +939,8 @@ aside#sidebar-first .filter .options .diametr .checkbox label a:hover {
 aside#sidebar-first .filter .checkboxs {
   padding: 15px;
 }
-aside#sidebar-first .filter .checkboxs h3 {
+aside#sidebar-first .filter .checkboxs span {
+display:block;
   font-weight: bold;
 }
 aside#sidebar-first .filter .checkboxs .checkbox label {
@@ -1343,6 +1351,13 @@ body.drive .parameter-block #tabs .tabs_content > div table tr td {
   -webkit-box-shadow: -1px -1px 1px #e4cc00;
   box-shadow: -1px -1px 1px #e4cc00;
 }
+
+.product-desc-body > h4 {
+font-weight:bold;
+  padding: 10px 15px 5px 0px;
+  background:none;
+}
+
 .product-desc .product-desc-body {
   padding: 10px 0;
 }
@@ -1698,7 +1713,7 @@ body.catalog #container #squeeze .catalog-product .catalog-content .format.catal
   padding: 5px 7px;
   color: #010101;
   font-size: 14px;
-  text-shadow: 2px 2px 2px #fcf27d;
+  text-shadow: 2px 2px 2px #fcf27d; 
   font-weight: bold;
   text-decoration: none;
 }
@@ -1707,10 +1722,10 @@ body.catalog #container #squeeze .catalog-product .catalog-content .format.catal
 }
 body.catalog #container #sidebar-first {
   width: 20%;
-  position: relative;
+  position: relative; 
   z-index: 2;
 }
-body.catalog #container #sidebar-second {
+body.catalog #container #sidebar-second { 
   float: right;
   width: 20%;
   position: relative;
@@ -1721,11 +1736,18 @@ body.catalog .payment-delivery {
   border: 1px solid #e8d300;
   background: url(images/tabs_bg.jpg);
 }
-body.catalog .payment-delivery h2 {
+body.catalog .payment-delivery span {
   padding: 5px;
   font-size: 18px;
   font-weight: bold;
   background: #e8d300;
+  display:block;
+}
+
+
+.sections-car .payment-delivery span {
+font-size: 28px;
+margin-bottom: 15px;
 }
 body.catalog .payment-delivery ul {
   padding: 0 5px;
@@ -3078,7 +3100,7 @@ body.news-page .news-page .content .text p {
     overflow: hidden;
     width: 72.5%;
   }
-  #wrapper #container aside#sidebar-second .discounted-items h2 {
+  #wrapper #container aside#sidebar-second .discounted-items span {
     margin-bottom: 0;
   }
   #wrapper #container aside#sidebar-second .discounted-items .content {
@@ -3893,7 +3915,7 @@ body.news-page .news-page .content .text p {
 }
 .spike {
   background: #DEDEDE;
-}
+} 
 .rim-color + .brands .brands {
   background: #DEDEDE;
 }

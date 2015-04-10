@@ -1,5 +1,22 @@
 <div id="tabs">
-    <h2> Подбор по автомобилю </h2>
+
+<style>
+span.selcar{
+font-size: 28px;
+margin-bottom: 15px;
+display: block;
+}
+
+section .selection-car #tabs .tabs_content > div .form-select > span {
+color: #000;
+font-weight: lighter;
+margin: 10px 0;
+display:block;
+}
+
+</style>
+
+    <span class="selcar"> Подбор по автомобилю </span>
     <ul class="tabs_menu">
         <li>Шины</li>
         <li>Диски</li>
@@ -7,7 +24,7 @@
     <div class="tabs_content clearfix">
         <div>
             <div class="manufacturer form-select select">
-                <h3>Производитель:</h3>
+                <span>Производитель:</span>
                 {CHtml function="dropDownList"
                         name="avto_mark"
                         select=""
@@ -47,7 +64,7 @@
                 }
             </div>
             <div class="model form-select select">
-                <h3>Модель:</h3>
+                <span>Модель:</span>
                 {CHtml function="dropDownList"
                        name="avto_model"
                        select=""
@@ -81,7 +98,7 @@
                 }
             </div>
             <div class="modification form-select select">
-                <h3>Модификация:</h3>
+                <span>Модификация:</span>
                 {CHtml function="dropDownList"
                        name="avto_modification"
                        select=""
@@ -98,7 +115,7 @@
         </div>
         <div>
             <div class="manufacturer form-select select">
-                <h3>Производитель:</h3>
+                <span>Производитель:</span>
                 {CHtml function="dropDownList"
                         name="avto_mark"
                         select=""
@@ -138,7 +155,7 @@
                 }
             </div>
             <div class="model form-select select">
-                <h3>Модель:</h3>
+                <span>Модель:</span>
                 {CHtml function="dropDownList"
                         name="avto_model"
                         select=""
@@ -172,7 +189,7 @@
                 }
             </div>
             <div class="modification form-select select">
-                <h3>Модификация:</h3>
+                <span>Модификация:</span>
                 {CHtml function="dropDownList"
                         name="avto_modification"
                         select=""

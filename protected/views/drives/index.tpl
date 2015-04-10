@@ -102,8 +102,17 @@
 <!--________________________________ Правая Колонка ________________________________-->
 <aside id="sidebar-second">
     <!--___________Блок Оплата и Доставка___________-->
-    <div class="payment-delivery clearfix">
-        <h2> Оплата и доставка </h2>
+				<style>
+body.catalog .payment-delivery > span {
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #e8d300;
+  display:block;
+}
+</style>
+                <div class="payment-delivery clearfix">
+                    <span> Оплата и доставка </span>
         <ul>
             <li class="element-0">Бесплатная доставка по всей Украине!</li>
             <li class="element-1">Без предоплаты и комиссии!</li>

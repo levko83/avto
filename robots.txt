@@ -1,7 +1,6 @@
 User-agent: *
 
 Disallow: /admin/
-Disallow: /cart/
 Disallow: /order_detail.html
 Disallow: /cart.html
 Disallow: /*tip=
@@ -19,6 +18,7 @@ Disallow: /*shipi=
 Disallow: /*page=
 Disallow: /*brand=
 Disallow: /*radius=
+Disallow: /*ids=
 
 Sitemap: http://extraload.com.ua/sitemap.xml
 Host: extraload.com.ua

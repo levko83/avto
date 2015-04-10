@@ -57,8 +57,15 @@
                     </div>
                 </div>
                 <!--___________Блок Оплата и Доставка___________-->
+				<style>
+.payment-delivery > span {
+font-size: 28px;
+margin-bottom: 15px;
+  display:block;
+}
+</style>
                 <div class="payment-delivery clearfix">
-                    <h2> Оплата и доставка </h2>
+                    <span> Оплата и доставка </span>
                     <ul>
                         <li class="element-0">Бесплатная доставка по всей Украине!</li>
                         <li class="element-1">Без предоплаты и комиссии!</li>
@@ -206,15 +213,67 @@
             </div>
             {if !$display->display_description|empty_string}
             <!--___________Блок Описание товара___________-->
+			
+			<style>
+				.product-desc nav {
+  background: url(/css/images/product_option.png) repeat-x left bottom!important;
+  padding-bottom: 4px;
+  border-left: 1px solid #E4CC00;
+  display:block;
+}
+.product-desc nav span {
+  background: -moz-linear-gradient(#eee500, #eedb00);
+  background: -webkit-linear-gradient(#eee500, #eedb00);
+  background: -o-linear-gradient(#eee500, #eedb00);
+  background: -ms-linear-gradient(#eee500, #eedb00);
+  background: linear-gradient(#eee500, #eedb00);
+  -pie-background: linear-gradient(#eee500, #eedb00)  ;
+  behavior: url(pie/PIE.htc);
+  display: block;
+  font-weight: bold;
+  padding: 8px 15px;
+  text-align: center;
+  width: 100px;
+  border-top: 1px solid #fdf650;
+  border-right: 1px solid #E4CC00;
+  -webkit-box-shadow: -1px -1px 1px #e4cc00;
+  box-shadow: -1px -1px 1px #e4cc00;
+}
+				
+				</style>
             <div class="product-desc">
-                <h4> <span>Описание</span> </h4>
+                <nav> <span>Описание</span> </nav>
+				
+				
+				<style>
+				.product-desc-body > h4, .product-desc-body > h5, .product-desc-body > h6 {
+font-weight:bold;
+  padding: 10px 15px 5px 0px;
+  background:none;
+  border:none;
+}
+
+				</style>
+				
                 <div class="product-desc-body">
                     {$display->display_description}
                 </div>
             </div>
             {/if}
+			
+			<style>
+			.rewievs > span {
+			font-weight: bold;
+font-size: 14px;
+padding: 10px 15px;
+background: #F0EEEE;
+display:block;
+margin-bottom: 15px;
+			
+			}
+			</style>
             <div class="rewievs">
-                <h2> Отзывы о <a href="#">{$display->display_name}</a></h2>
+                <span> Отзывы о <a href="#">{$display->display_name}</a></span>
                 <div class="rewievs-content">
                     {foreach from=$feedbacks item="feedbackItem"}
                     <div class="rewiev-0 views-row">
@@ -241,8 +300,23 @@
                 </div>
             </div>
             <!--__________Блок оставить отзыв__________-->
+			
+				<style>
+			.formblock-reviews > span {
+			font-weight: bold;
+font-size: 14px;
+padding: 0 15px 10px 15px;
+background: #F0EEEE;
+display:block;
+
+margin-bottom: 15px;
+			
+			}
+			</style>
+			
+			
             <div class="formblock-reviews">
-                <h2>Оставить отзыв</h2>
+                <span>Оставить отзыв</span>
                 {*<form id="reviews-node-form" class="node-form node-reviews-form" method="post">*}
                 {form name="Feedbacks" id='reviews-node-form' method="post" htmlOptions=["class"=>"node-form node-reviews-form"]}
                     <div>

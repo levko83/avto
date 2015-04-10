@@ -7,8 +7,18 @@
     <!--________________________________ Правая Колонка ________________________________-->
     <aside id="sidebar-second">
 <!--        Акции-->
+<style>
+.action > span {
+padding: 7px 10px;
+background: #424242;
+color: #fff;
+font-weight: bold;
+display:block;
+}
+</style>
+
         <div class="action">
-            <h3>Акция!</h3>
+            <span>Акция!</span>
             <div class="content clearfix">
                 <div class="field field-name-body field-type-text-with-summary field-label-hidden">
                     <p>Только в период с 01.12.2013 до 01.01.2014 вы имеете возможность преобрести комплект зимних шин и получить в пару к ним бесплатные диски!

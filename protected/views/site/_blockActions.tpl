@@ -1,7 +1,17 @@
 {assign var=actions value=ActionsHelper::getActions()}
 {if count($actions) > 0}
+<style>
+aside#sidebar-second .discounted-items span{
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  background: #e8d300;
+  display:block;
+
+}
+</style>
 <div class="discounted-items">
-    <h2 class=title>Товары со скидкой</h2>
+    <span class="title titless">Товары со скидкой</span>
     <div class="content clearfix">
         {foreach from=$actions item="action"}
             {if $action["type"] == "drive"}

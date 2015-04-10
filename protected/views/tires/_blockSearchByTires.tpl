@@ -1,7 +1,40 @@
 {*{form name="Shins" class="CExtendsActiveForm" id='formSearchTires'}*}
 {form name="Shins" id='formSearchTires' action="{$filter_url}"}
+
+<style>
+aside#sidebar-first .filter .options span {
+display:block;
+  display: inline;
+  line-height: 20px;
+}
+aside#sidebar-first .filter .price-slider span {
+  font-weight: bold;
+  display:block;
+}
+aside#sidebar-first .filter .selection-car .select span {
+display:block;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+aside#sidebar-first .filter .selection-car span {
+display:block;
+  font-weight: bold;
+}
+aside#sidebar-first .filter span {
+display:block;
+  color: #000;
+  margin: 8px 0;
+  font-size: 14px;
+  font-weight: normal;
+}
+aside#sidebar-first .filter .checkboxs > span {
+  font-weight: bold;
+  margin-bottom:5px;
+  display:block;
+}
+</style>
     <div class="selection-car">
-        <h3>Подбор по автомобилю</h3>
+        <span>Подбор по автомобилю</span>
         {if $avto}
             <span style="position: relative; height: 15px;">
                 {$avto}<a href="{Yii::app()->createUrl("tires/index")}"><img src="/images/close.png" style="position: absolute; right: -20px;"></a>
@@ -12,7 +45,7 @@
         {else}
             <div class="content clearfix">
                 <div class="manufacturer form-select select">
-                    <h3>Производитель:</h3>
+                    <span>Производитель:</span>
                     {CHtml function="dropDownList"
                            name="avto_mark"
                            select=""
@@ -54,7 +87,7 @@
                     }
                 </div>
                 <div class="model form-select select">
-                    <h3>Модель:</h3>
+                    <span>Модель:</span>
                     {CHtml function="dropDownList"
                            name="avto_model"
                            select=""
@@ -88,7 +121,7 @@
                     }
                 </div>
                 <div class="modification form-select select">
-                    <h3>Модификация:</h3>
+                    <span>Модификация:</span>
                     {CHtml function="dropDownList"
                            name="avto_modification"
                            select=""
@@ -103,7 +136,7 @@
     </div>
     {if $vocabs->price}
     <div class="price-slider price-slider-filter clearfix">
-        <h3>Цена <strong>от <span item="price_min">{$vocabs->price["min_price"]}</span> грн. до <span item="price_max">{$vocabs->price["max_price"]}</span> грн.</strong>:</h3>
+        <span>Цена <strong>от <span item="price_min">{$vocabs->price["min_price"]}</span> грн. до <span item="price_max">{$vocabs->price["max_price"]}</span> грн.</strong>:</span>
         <div id="webform-component-prise-min" class="form-item webform-component webform-container-inline">
             <label for="amount">От:</label>
             {$Shins->textField($shins, "priceMin")}
@@ -123,25 +156,25 @@
         <div class="options">
             {if $vocabs->shins_profile_width}
             <div class="bus-width form-select select">
-                <h3>Ширина шины:</h3>
+                <span>Ширина шины:</span>
                 {$Shins->dropDownList($shins, "shins_profile_width", $vocabs->shins_profile_width, ['empty' => '-все-'])}
             </div>
             {/if}
             {if $vocabs->shins_profile_height}
             <div class="profile form-select select">
-                <h3>Профиль:</h3>
+                <span>Профиль:</span>
                 {$Shins->dropDownList($shins, "shins_profile_height", $vocabs->shins_profile_height, ['empty' => '-все-'])}
             </div>
             {/if}
             {if $vocabs->shins_load_index_translit}
             <div class="load-index form-select select">
-            <h3>Индекс нагрузки:</h3>
+            <span>Индекс нагрузки:</span>
                 {$Shins->dropDownList($shins, "shins_load_index", $vocabs->shins_load_index_translit, ['empty' => '-все-'])}
             </div>
             {/if}
             {if $vocabs->shins_diametr}
             <div class="diametr checkboxs">
-                <h3>Диаметр:</h3>
+                <span>Диаметр:</span>
                 <div class="checkbox">
                     {$Shins->checkBoxList($shins, "shins_diametr", $vocabs->shins_diametr_as_url, ['template' => '<label class="" style="position: relative;">{input} {labelTitle}</label>'])}
                 </div>
@@ -150,7 +183,7 @@
         </div>
         {if $vocabs->shins_season_id}
         <div class="seasonality checkboxs">
-            <h3>Сезонность:</h3>
+            <span>Сезонность:</span>
             <div class="checkbox">
                 {$Shins->checkBoxList($shins, "shins_season_id", $vocabs->shins_season_id_as_url, ['template' => '<label class="" style="position: relative;">{input} {labelTitle}</label>'])}
             </div>
@@ -159,14 +192,14 @@
         {if $vocabs->shins_type_of_avto_id}
         <div class="options">
             <div class="type-car form-select select">
-                <h3>Тип авто:</h3>
+                <span>Тип авто:</span>
                 {$Shins->dropDownList($shins, "shins_type_of_avto_id", $vocabs->shins_type_of_avto_id, ['empty' => '-все-'])}
             </div>
         </div>
         {/if}
         {if $vocabs->shins_run_flat_technology_id}
         <div class="run-flat checkboxs">
-            <h3>Run Flat:</h3>
+            <span>Run Flat:</span>
             <div class="checkbox">
                 {$Shins->checkBoxList($shins, "shins_run_flat_technology_id", $vocabs->shins_run_flat_technology_id_as_url, ['template' => '<label class="" style="position: relative;">{input} {labelTitle}</label>'])}
             </div>
@@ -174,7 +207,7 @@
         {/if}
         {if $vocabs->shins_spike_id}
         <div class="spike checkboxs">
-            <h3>Шипы:</h3>
+            <span>Шипы:</span>
             <div class="checkbox">
                 {$Shins->checkBoxList($shins, "shins_spike_id", $vocabs->shins_spike_id_as_url, ['template' => '<label class="" style="position: relative;">{input} {labelTitle}</label>'])}
             </div>
@@ -182,7 +215,7 @@
         {/if}
         {if $vocabs->vendor_id > 0}
         <div class="brand checkboxs">
-            <h3>Бренд:</h3>
+            <span>Бренд:</span>
             <div class="checkbox">
                 {$Shins->checkBoxList($shins, "vendor_id", $vocabs->vendor_id_as_url, ['template' => '<label class="" style="position: relative;">{input} {labelTitle}</label>'])}
             </div>

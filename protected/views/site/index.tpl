@@ -2,20 +2,39 @@
         <!--___________Блок Подбор по автомобилю___________-->
         <div class="selection-car clearfix">
             {include file="application.views.site._blockSearchByAvto"}
-        </div>
+        </div> 
         <!--___________Блок Оплата и доставка___________-->
-        <div class="payment-delivery clearfix">
-            <h2> Оплата и доставка </h2>
-            <ul>
-                <li class="element-0">Бесплатная доставка по всей Украине!</li>
+				<style>
+.payment-delivery > span {
+font-size: 28px;
+margin-bottom: 15px;
+  display:block;
+}
+</style>
+                <div class="payment-delivery clearfix"> 
+                    <span> Оплата и доставка </span>
+            <ul style="padding: 13px 10px;"> 
+                <li class="element-0">Бесплатная доставка по всей Украине!</li> 
                 <li class="element-1">Без предоплаты и комиссии!</li>
                 <li class="element-2">100% гарантия возврата!</li>
                 <li class="element-3">Работаем 7 дней в неделю!<span>ПН-CБ: с 9:00 до 21:00<br>ВС: с 10:00 до 18:00</span></li>
             </ul>
         </div>
     </section>
+	<style>
+ .tire-drive > span {
+	border-bottom: 1px solid #e5e5e5;
+padding: 15px 0 15px 50px;
+margin-top: 0px;
+background: url(http://extraload.com.ua/css/images/tire_h2.png) no-repeat left center;
+display:block;
+font-size: 28px;
+margin-bottom: 15px;
+	}
+	</style>
+	
     <section class="sections-tire tire-drive clearfix">
-        <h2> Шины </h2>
+        <span> Шины </span>
         <!--__________________Блок Шины_________________-->
         <div class="tire clearfix">
             <div id="tire-form" class="tire-drive-form">
@@ -52,8 +71,22 @@
             </div>
         </div>
     </section>
+	<style>
+ .tire-drive > span {
+	border-bottom: 1px solid #e5e5e5;
+padding: 15px 0 15px 50px;
+margin-top: 0px;
+background: url(http://extraload.com.ua/css/images/tire_h2.png) no-repeat left center;
+display:block;
+font-size: 28px;
+margin-bottom: 15px;
+	}
+	</style>
+
+	
+	
     <section class="sections-drive tire-drive clearfix">
-        <h2> Диски </h2>
+        <span> Диски </span>
         <!--__________________Блок Диски_________________-->
         <div class="drive clearfix">
             <div id="tire-form" class="tire-drive-form">
