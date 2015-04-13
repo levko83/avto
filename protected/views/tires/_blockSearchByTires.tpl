@@ -36,7 +36,7 @@ aside#sidebar-first .filter .checkboxs > span {
     <div class="selection-car">
         <span>Подбор по автомобилю</span>
         {if $avto}
-            <span style="position: relative; height: 15px;">
+            <span style="position: relative; width: 190px;">
                 {$avto}<a href="{Yii::app()->createUrl("tires/index")}"><img src="/images/close.png" style="position: absolute; right: -20px;"></a>
                 {if isset($variants)}
                    {$variants}
