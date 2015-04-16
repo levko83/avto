@@ -26,6 +26,9 @@ class SiteController extends Controller
 
     public function filters()
     {
+        if(strpos(__DIR__, "extraload.loc") !== false){
+            return;
+        }
         return array(
             array(
                 'COutputCache + index + about + contacts + delivery + deliveryRegion + deliveryCity',

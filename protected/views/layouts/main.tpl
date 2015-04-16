@@ -98,6 +98,31 @@
                     <form id="search-block-form" method="post" action="/">
                         <input id="edit-search-block-form" class="form-text" type="text" maxlength="128" size="24" value="Введите название желаемого товара" name="search_block_form" onfocus="{literal}if (this.value == 'Введите название желаемого товара') {this.value = '';}{/literal}" onblur={literal}"if (this.value == '') {this.value = 'Введите название желаемого товара';}{/literal}" title="Введите название желаемого товара.">
                         <input class="form-submit" type="submit" value="" name="op">
+                        <ul id="search_result" style="display: none;">
+                            <li class="searched-product">
+                                <a href="#">
+                                    <img src="/images/no_photo_35_35.jpg" width="35px" height="35px"/>
+                                    <div class="product-name">
+                                        Алтайский шинный комбинат Forward Professional А-12 185/75 R16C 104/102Q
+                                    </div>
+                                    <div class="price">775 грн.</div>
+                                </a>
+                            </li>
+                            <li class="searched-product-not-avail">
+                                <a href="#">
+                                    <img src="/images/no_photo_35_35.jpg" width="35px" height="35px"/>
+                                    <div class="product-name">
+                                        Алтайский шинный комбинат Forward Professional А-12 185/75 R16C 104/102Q
+                                    </div>
+                                    <div class="price">нет в наличии</div>
+                                </a>
+                            </li>
+                            <li class="search_show_all_results">
+                                <a href="#">
+                                    Все результаты поиска
+                                </a>
+                            </li>
+                        </ul>
                     </form>
                     <!--Блок Мы в социальных сетях-->
                     <div id="social-networks" class="block clearfix">
