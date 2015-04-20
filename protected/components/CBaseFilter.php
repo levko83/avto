@@ -161,13 +161,17 @@ class CBaseFilter{
         }
         $list = array();
         foreach($filter[$field_name] as $v){
-            $str = $data[$v];
-            if(preg_match("/(.*)\(\+\d+\)$/u", $str, $matches) and count($matches) == 2){
-                $str = trim($matches[1]);
-                if($str != "нет данных"){
-                    $list[] = "{$prefix}{$str}";
-                }
+            $str = trim($data[$v]);
+            if($str != "нет данных"){
+                $list[] = "{$prefix}{$str}";
             }
+//            $str = $data[$v];
+//            if(preg_match("/(.*)\(\+\d+\)$/u", $str, $matches) and count($matches) == 2){
+//                $str = trim($matches[1]);
+//                if($str != "нет данных"){
+//                    $list[] = "{$prefix}{$str}";
+//                }
+//            }
         }
         return join(", ", $list);
     }
