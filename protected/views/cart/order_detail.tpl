@@ -109,7 +109,7 @@
                                         </div>
                                     </div>
                                     <div id="edit-actions" class="form-actions form-wrapper">
-                                        <input id="edit-submit" class="form-submit" type="submit" value="ОФОРМИТЬ ЗАКАЗ" name="op">
+                                        <input id="edit-submit" class="form-submit" type="submit" value="ОФОРМИТЬ ЗАКАЗ" name="op" onClick="ga('send', 'event', 'Knopka', 'Podtverdit');">
                                     </div>
                                 {/form}
                             </div>

@@ -19,6 +19,8 @@ Disallow: /*page=
 Disallow: /*brand=
 Disallow: /*radius=
 Disallow: /*ids=
+Disallow: /*sort=*
+Disallow: /search/
 
 Sitemap: http://extraload.com.ua/sitemap.xml
 Host: extraload.com.ua
