@@ -34,7 +34,7 @@ Redirect 301 /letnie-shiny/ http://extraload.com.ua/shini-tipa-legkovye-letnie.h
 Redirect 301 /magazin-extraload-rekomenduet-vsesezonnye-shiny/ http://extraload.com.ua/shini-tipa-legkovye-vsesezonnye.html
 Redirect 301 /about/ http://extraload.com.ua/about.html
 Redirect 301 /contacts/ http://extraload.com.ua/contacts.html
-Redirect 301 /payment/ http://extraload.com.ua/delivery.html
+Redirect 301 /payment http://extraload.com.ua/delivery.html
 Redirect 301 /warranty/ http://extraload.com.ua/delivery.html
 Redirect 301 /category/shini-toyo/ http://extraload.com.ua/shini-toyo.html
 Redirect 301 /category/shini-nokian/ http://extraload.com.ua/shini-nokian.html

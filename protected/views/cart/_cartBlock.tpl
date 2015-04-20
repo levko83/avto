@@ -36,7 +36,7 @@
             </div>
             <div class="continue-shopping"><a href="#">Продолжить покупки</a></div>
             <div class="form-action submit">
-                <input type="submit" value="Заказать">
+                <input type="submit" onClick="ga('send', 'event', 'Knopka', 'V-korzinu');" value="Заказать">
                 <a href="/order_detail.html">Детальное оформление заказа</a>
             </div>
         </form>
