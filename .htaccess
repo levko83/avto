@@ -10,7 +10,6 @@ RewriteBase /
 #RewriteRule ^(.*)$ http://extraload.com.ua/$1 [L,R=301]
 #RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
 #RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-
 #RewriteRule ^www\.extraload\.com\.ua(.*) http://google.com.ua [L]
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*(default|index|main)\.(html|php|htm)\ HTTP/ [NC]
@@ -18,11 +17,13 @@ RewriteRule ^(([^/]+/)*)(default|main|index)\.(html|php|htm)$ http://extraload.c
 
 RewriteCond %{HTTP_HOST} ^www\.extraload\.com\.ua$ [NC]
 RewriteRule ^(.*)$ http://extraload.com.ua/$1 [L,R=301]
-
 RedirectMatch 403 /\..*$
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule . /index.php [L]
+
+
+
 
 Redirect 301 /categor--y/avtoshiny/ http://extraload.com.ua/shini.html
 Redirect 301 /category/diski/ http://extraload.com.ua/diski.html

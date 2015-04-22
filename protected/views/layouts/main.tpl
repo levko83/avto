@@ -133,6 +133,132 @@
                             <li><a class="g" href="https://plus.google.com/+ExtraloadUa" title=""></a></li>
                         </ul>
                     </div>
+					
+
+<!-- start search suggest result -->									
+				
+				<style>
+.header-search-suggest-container {
+z-index: 10;
+position: relative; 
+width: 75%;
+color: #cecece;
+float: left;
+padding: 0px 35px 0px 0px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 641px), only screen and (max-device-width: 1024px) and (min-device-width: 641px){
+.header-search-suggest-container {
+width: 65%;
+padding: 0px 34px 0px 1px;
+} 
+}
+@media only screen and (max-width: 640px) and (min-width: 1px), only screen and (max-device-width: 640px) and (min-device-width: 1px){
+.header-search-suggest-container {
+width: 89%;
+padding: 0px 34px 0px 1px;
+}
+}
+
+.header-search-suggest {
+border: 1px solid #e9e9ea;
+position: relative;
+z-index: 2;
+background-color: #fff;
+border-radius: 3px;
+border-bottom: 3px solid #ccc;
+}
+.header-search-suggest-i {
+overflow: hidden;
+border-bottom: 1px solid #eaeaea;
+padding-left: 0.5em;
+cursor: pointer;
+padding-top: 0.7em;
+padding-bottom: 0.7em;
+}
+.sprite, .sprite-side, .sprite-both {
+position: relative;
+}
+.header-search-suggest-i-img {
+float: left;
+width: 50px;
+text-align: center;
+vertical-align: middle;
+}
+.header-search-suggest-i-detail {
+margin-left: 4.5em;
+margin-right: 2em;
+}
+.header-search-suggest-i-title {
+padding-bottom: 0.5em;
+}
+.header-search-suggest-i-title-link {
+word-break: break-word;
+}
+.header-search-suggest-price {
+color: #bf1010;
+font-size: 1em;
+font-weight: 500;
+}
+.header-search-suggest-i.active {
+cursor: pointer;
+}
+.header-search-suggest-i.active, .header-search-suggest-i:active {
+background-color: #f8f8f8;
+}
+.header-search-suggest-more-link {
+font-size: 1.15385em;
+display: inline-block;
+padding-left: 4em;
+padding-bottom: 0.7em;
+padding-top: 0.7em;
+}
+.header-search-suggest-i:hover{
+background-color: #f8f8f8;
+}
+</style>
+
+<div class="header-search-suggest-container" style="display:none;"> 
+	<div style="position: absolute; width: 100%;">
+		<div class="header-search-suggest">
+			<div class="header-search-suggest-g">
+
+				<div class="header-search-suggest-i sprite-side">
+					<div class="header-search-suggest-i-img">
+						<img src="/images/no_photo_35_35.jpg" width="40" height="32" alt="alt" title="title" style="border:none">
+					</div>
+					<div class="header-search-suggest-i-detail">
+						<div class="header-search-suggest-i-title">
+							<a class="header-search-suggest-i-title-link" href="#">Алтайский шинный комбинат Forward Professional А-12 185/75 R16C 104/102Q</a>
+						</div>
+						<div class="header-search-suggest-price">775 грн.</div>
+					</div>
+				</div>
+
+				<div class="header-search-suggest-i sprite-side">
+					<div class="header-search-suggest-i-img">
+						<img src="#" width="40" height="32" alt="alt" title="title" style="border:none">
+					</div>
+					<div class="header-search-suggest-i-detail">
+						<div class="header-search-suggest-i-title">
+							<a class="header-search-suggest-i-title-link" href="#">name</a>
+						</div>
+						<div class="header-search-suggest-price">price</div>
+					</div>
+				</div>
+
+				<a class="header-search-suggest-more-link" href="#show-all">
+					<span class="arrow-link-inner">Все результаты поиска</span>&nbsp;→
+				</a>
+
+			</div>
+		</div>
+	</div>
+</div>
+				
+<!-- end search suggest result -->
+
+
+
                 </div>
             </div>
             <!--______________________Блок Главное меню____________________-->
